@@ -35,7 +35,7 @@ Målgruppen är alla som tycker om utmanande skjut-spel i denna klassiska arkad-
 Det roliga med spelet fås från en kombination av den ständigt ökande utmaningen och poänginsamlingen. Spelet kan spelas om och om igen för att få ett så bra poängrekord som möjligt.
 
 \section{Spelmekanik}
-Spelaren kontrolleras av W, A, S, D eller piltangenterna tillsammans med mellanslag.
+Spelaren styrs av WASD eller piltangenterna. Spelaren skjuter med mellanslag.
 
 \section{Regler}
 \subsection{Spelplan}
@@ -70,7 +70,8 @@ Spelaren kontrolleras av W, A, S, D eller piltangenterna tillsammans med mellans
 \begin{itemize}
 \item Power-ups kan släppas ifrån fiender när spelaren förstör dem.
 \item Power-ups kan också komma in i spelplanen från sidorna.
-  \item Power-ups kan ge spelaren diverse positiva effekter.
+\item Power-ups kan ge spelaren diverse positiva effekter.
+\item Livlådor kan dyka upp antingen från förstörda fiender eller från kanten av skärmen precis som power-ups. De ger spelaren ett liv vid upplockning. %Vad händer med livlådor om spelaren har fullt liv?
 \end{itemize}
 
 \subsection{Poäng}
@@ -83,23 +84,34 @@ Spelaren kontrolleras av W, A, S, D eller piltangenterna tillsammans med mellans
 
 \section{Krav}
 \subsection{Ska-krav}
-\begin{itemize}
-\item Spelaren ska kunna röra på sig i en 2d-värld i åtta riktningar
-\item Spelaren styrs av tangentbordet.
+\begin{enumerate}
+\item Spelet ska ha en förstasida där en ny runda kan startas, spelet kan avslutas, och eventuella andra sidor kan visas.
+\item Spelet ska ha en hjälp-sida där regler och kontroller förklaras.
+\item Spelaren ska kunna röra på sig i åtta riktningar som endast begränsas av spelplanens kanter.
+\item Spelaren styrs via tangentbordet.
 \item Spelaren kan skjuta skott.
-\item Spelaren kan förstöra fiender med sin skott.
-\item Det ska finnas minst två fiender som kan röra på sig
-\item Fiender kan skjuta skott.
-\item Fiende kan skada spelaren antingen med skott eller kollidering.
+\item Spelaren kan förstöra fiender med sina skott.
 \item Spelaren kan dö.
-\item Spelaren kan samla poäng när den förstör ett fiende.
-\item 
-\end{itemize}
+\item Spelaren ska tjäna poäng när den förstör ett fiende samt för varje sekund spelaren lever.
+\item Spelarens liv och poäng ska konstant visas på skärmen under rundans gång.
+\item När spelaren tar skada ska den få en mycket kort period då den ej kan ta skada igen.
+\item När spelaren dör ska rundan avslutas och spelaren ges möjlighet att spela igen.
+\item Det ska finnas minst två typer av fiender som båda kan röra på sig.
+\item Vissa fiender ska skjuta skott.
+\item Fiender ska skada spelaren antingen genom att träffa den med skott eller genom att kollidera med den.
+\item Fiender ska ha en chans att släppa ifrån sig power-ups när de förstörs av spelaren.
+\item Spelet ska öka i svårhetsgrad ju längre spelaren lever. % Hur ska detta ske? Fler fiender? Färre power-ups?
+\end{enumerate}
 
 \subsection{Bör-krav}
-\begin{itemize}
-\item 
-  
-\end{itemize}
+\begin{enumerate}
+\item Power-ups ska dras mot spelaren då den kommer i närheten av dem
+\item Antalet intjänade poäng ska sparas när spelaren till slut förlorar och rundan är avslutad.
+\item Spelet ska ha en sida där intjänade poäng från tidigare rundor visas i en topplista.
+\item Spelet ska ha en sida där användaren kan ändra vilka tangenter som gör vad.
+\item Fiender av samma typ ska kunna ha olika rörelsemönster
+\item Spelaren ska förlora poäng när den tar skada. % Kanske på andra sätt också?
+\item Det ska finnas svårare versioner av varje fiendetyp som introduceras allt eftersom spelaren överlever en längre tid
+\end{enumerate}
 \end{document}
 
