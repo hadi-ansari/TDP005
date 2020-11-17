@@ -6,7 +6,7 @@
 \author{Hadi Ansari, \url{hadan326@student.liu.se}\\
   Nils Bark, \url{nilba048@student.liu.se}}
 \title{Kravspecifikation}
-\date{2020-11-16}
+\date{2020-11-17}
 \rhead{Hadi Ansari\\
 Nils Bark}
 
@@ -35,7 +35,7 @@ Målgruppen är alla som tycker om utmanande skjut-spel i denna klassiska arkad-
 Det roliga med spelet fås från en kombination av den ständigt ökande utmaningen och poänginsamlingen. Spelet kan spelas om och om igen för att få ett så bra poängrekord som möjligt.
 
 \section{Spelmekanik}
-Spelaren styrs av WASD eller piltangenterna. Spelaren skjuter med mellanslag.
+Spelaren styrs av W, A, S, D eller piltangenterna. Spelaren skjuter med mellanslag.
 
 \section{Regler}
 \subsection{Spelplan}
@@ -59,11 +59,12 @@ Spelaren styrs av WASD eller piltangenterna. Spelaren skjuter med mellanslag.
 
 \subsection{Fiende}
 \begin{itemize}
-\item Fienderna kan röra på sig.
+\item Fiender kan röra på sig.
 \item Fiender rör sig enligt förbestämda mönster över skärmen.
 \item Fiender kan skjuta skott baserat på en timer (till exempel var tredje sekund).
 \item Fiender kan skada spelaren genom att kollidera med den.
 \item Fiender har också ett antal liv och när de deras liv når noll dör de.
+\item Fiender kommer från höger sidan om skärmen och de rör sig år vänster tills de når slutet av sin bana  
 \end{itemize}
 
 \subsection{Power-up \& föremål}
@@ -81,6 +82,12 @@ Spelaren styrs av WASD eller piltangenterna. Spelaren skjuter med mellanslag.
 \item Man får också ett visst antal poäng för varje sekund man lever.
 \end{itemize}
 
+\newpage
+\section{Visualisering}
+Det här är ett exempel på hur spelet kan se ut.
+
+
+\includegraphics[scale=0.35]{Images/Game.png}
 
 \section{Krav}
 \subsection{Ska-krav}
@@ -101,6 +108,12 @@ Spelaren styrs av WASD eller piltangenterna. Spelaren skjuter med mellanslag.
 \item Fiender ska skada spelaren antingen genom att träffa den med skott eller genom att kollidera med den.
 \item Fiender ska ha en chans att släppa ifrån sig power-ups när de förstörs av spelaren.
 \item Spelet ska öka i svårhetsgrad ju längre spelaren lever. % Hur ska detta ske? Fler fiender? Färre power-ups?
+\item Det ska kunna finnas flera fiender av samma typ på spelplanen samtidigt.
+\item Spelaren ska kontrollera en spelarkaraktär.
+\item Fienderna ska röra på sig enligt ett mönster i spelbanan.
+\item Spelet utspelar sig i en 2D-miljö sedd från sidoperspektiv.
+\item Spelplanen har en fixerad storlek.
+\item Spelaren kan plocka upp Power-ups genom att kollidera med dem.
 \end{enumerate}
 
 \subsection{Bör-krav}
@@ -112,6 +125,56 @@ Spelaren styrs av WASD eller piltangenterna. Spelaren skjuter med mellanslag.
 \item Fiender av samma typ ska kunna ha olika rörelsemönster
 \item Spelaren ska förlora poäng när den tar skada. % Kanske på andra sätt också?
 \item Det ska finnas svårare versioner av varje fiendetyp som introduceras allt eftersom spelaren överlever en längre tid
+\item Bakgrunden ska röra på sig för att ge användaren en känsla av hastighet.
+\item Det ska finnas fler rörelsemönster som låter fienderna komma in i spelplanen från andra platser än bara högerkanten.
+
 \end{enumerate}
+
+\section{Kravuppfyllelse}
+\textit{\textbf{``Spelet ska simulera en värld som innehåller olika typer av objekt. Objekten ska ha olika beteenden och röra sig i världen och agera på olika sätt när de möter andra objekt.''}}
+
+
+Uppfylls av krav 3, 4, 5, 6, 12, 13, 14\\
+
+
+\textit{\textbf{``Det måste finnas minst tre olika typer av objekt och det ska finnas flera instanser av minst två av dessa. T.ex ett spelarobjekt och många instanser av två olika slags fiendeobjekt.''}}
+
+
+Uppfylls av krav 12, 17, 18\\
+
+\textit{\textbf{``Ett beteende som måste finnas med är att figurerna ska röra sig över skärmen. Rörelsen kan följa ett mönster och/eller vara slumpmässig. Minst ett objekt, utöver spelaren ska ha någon typ av rörelse.''}}
+
+
+Uppfylls av krav 3, 12, 19\\
+
+\textit{\textbf{``En figur ska styras av spelaren, antingen med tangentbordet eller med musen. Du kan även göra ett spel där man spelar två stycken genom att dela på tangentbordet (varje spelare använder olika tangenter). Då styr man var sin figur.''}}
+
+
+Uppfylls av krav 3, 4\\
+
+\textit{\textbf{``Grafiken ska vara tvådimensionell.''}}
+
+
+Uppfylls av krav 20\\
+
+\textit{\textbf{``Världen (spelplanen) kan antas vara lika stor som fönstret ''}}
+
+
+Uppfylls av krav 21\\
+
+\textit{\textbf{``Det ska finnas kollisionshantering, det vill säga, det ska hända olika saker när objekten möter varandra, de ska påverka varandra på något sätt. T.ex kan ett av objekten tas bort, eller så kan objekten förvandlas på något sätt, eller så kan ett nytt objekt skapas. ''}}
+
+
+Uppfylls av krav 6, 14, 22\\
+
+\textit{\textbf{``Det ska vara enkelt att lägga till eller ändra banor i spelet. Detta kan exempelvis lösas genom att läsa in banor från en fil, eller genom att ha funktioner i programkoden som bygger upp en datastruktur som definierar en bana.''}}
+
+
+Vi antar att detta uppfylls av de funktioner vi använder för att få en varierande svårighetsgrad genom att låta fiender röra sig på olika sätt och öka svårighetsgrad. Men vi är osäkra på om detta krav kan uppfyllas på rätt sätt i ett spel som inte har klart definerade banor.\\
+
+\textit{\textbf{`` Spelet måste upplevas som ett sammanhängande spel som går att spela! ''}}
+
+Ska uppfyllas av alla ska-krav tillsammans.
+
 \end{document}
 
