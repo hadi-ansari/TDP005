@@ -49,15 +49,22 @@ Spelaren styrs av W, A, S, D eller piltangenterna. Spelaren skjuter med mellansl
 \begin{itemize}
 \item Spelaren kan röra på sig i åtta riktningar.
 \item Spelaren kan skjuta skott som skadar fienderna när de kolliderar.
+\item Spelarens skott minskar fienders liv med 1.
+\item Spelaren har en bashastighet som avgör hur snabbt den kan skjuta.
 \item Spelaren kan plocka upp Power-ups genom att kolliderar med dem.
-\item Spelaren har ett antal liv.
-\item Spelaren kan få liv genom att plocka upp Power-ups.
-\item Spelaren förlorar liv när den kolliderar med skott eller fiender.
+\item Spelaren inte kan plocka upp Power-upps genom att förstöra dem med sin skott.
+\item Spelaren har tre liv och kan inte gå över detta.
+\item Spelaren kan få liv genom att plocka upp heal Power-ups.
+\item Spelaren förlorar ett liv när den kolliderar med skot.
+\item Spelaren förlorar ett eller två liv när den kolliderar med fiender (beroende på fiendetypen).
+\item När spelaren ta skada (kollision med fiende objekt eller deras skott) blir den odödlig i tre sekunder.
 \item När spelarens liv är noll förlorar man.
+
 
 \end{itemize}
 
 \subsection{Fiende}
+Fiender i spelet kan inte förtöra varandra med skott eller kollision.
 \begin{itemize}
 \item Fiender kan röra på sig.
 \item Fiender rör sig enligt förbestämda mönster över skärmen.
@@ -67,19 +74,72 @@ Spelaren styrs av W, A, S, D eller piltangenterna. Spelaren skjuter med mellansl
 \item Fiender kommer från höger sidan om skärmen och de rör sig år vänster tills de når slutet av sin bana  
 \end{itemize}
 
+
+\subsubsection*{Fiende typ1}
+\begin{itemize}
+\item Den har ett liv.
+\item Den förstörs när den kolliderar med spelaren eller när den träffar spelarens skott.
+\item När den kolliderar med spelaren minskar spelarens liv med 1.
+\item Dens skott minskar spelarens liv med 1.
+\item Den rör sig åt vänster enligt en bestämd vågrörelse (se bild).
+\item Den har röreslehastighet 3.
+\item Den sjkuter när den är i samma höjd av spelaren med en konstant hastighet (som inte förändras under spelets gång).
+\end{itemize}
+
+\subsubsection*{Fiende typ2}
+\begin{itemize}
+\item Den har två liv.
+\item Den förstörs (oavsett om den har ett eller två liv) när den kolliderar med spelaren.
+\item Den förstårs när den träffar spelarens skott två gånger.
+\item När den kolliderar med spelaren minskar spelarens liv med 2.
+\item Dens skott minskar spelarens liv med 1.
+\item Den rör sig åt vänster enligt enligt en linjärt mönster (se bild).
+\item Röreslehastighet 2.
+\item Den sjkuter när den är i samma höjd av spelaren med en konstant hastighet (som inte förändras under spelets gång).
+\end{itemize}
+
+\subsubsection*{Bomber}
+\begin{itemize}
+\item De dycker upp från höger och närmer sig till vänster sidan av skärmen med hastighet 1.
+\item Bomber minksar spelarens liv med 1 när de kolliderar med spelaren.
+\item De förstörs när de kolliderar med spelaren eller när de kolliderar med spelarens skott.
+
+\end{itemize}
+
 \subsection{Power-up \& föremål}
+
 \begin{itemize}
 \item Power-ups kan släppas ifrån fiender när spelaren förstör dem.
 \item Power-ups kan också komma in i spelplanen från sidorna.
 \item Power-ups kan ge spelaren diverse positiva effekter.
-\item Livlådor kan dyka upp antingen från förstörda fiender eller från kanten av skärmen precis som power-ups. De ger spelaren ett liv vid upplockning. %Vad händer med livlådor om spelaren har fullt liv?
+\item Livlådor kan dyka upp antingen från förstörda fiender eller från kanten av skärmen precis som power-ups. De ger spelaren ett liv vid upplockning.
 \end{itemize}
+
+\subsubsection{Heal}
+\begin{itemize}
+\item 
+\end{itemize}
+
+\subsubsection{Triple-shot}
+\begin{itemize}
+\item 
+\end{itemize}
+
+\subsubsection{Shield}
+\begin{itemize}
+\item 10 sek
+\end{itemize}
+
 
 \subsection{Poäng}
 \begin{itemize}
+\item Att plocka upp Power-ups ger
+\item Spelaren får 50 poöng när den förstör en bomb.
+\item Fiendetyp 1 ger 100 poäng.
+\item Fiendetyp 2 ger 150 poäng. 
+\item Spelaren får 300 poäng om den plockar en heal Power-ups när den har redan fullt liv.  
 \item Poäng kan samlas genom att förstöra fienderna.
-\item Svårare fiender ger mer poäng.
-\item Man får också ett visst antal poäng för varje sekund man lever.
+
 \end{itemize}
 
 \newpage
