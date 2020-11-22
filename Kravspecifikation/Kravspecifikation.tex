@@ -31,18 +31,20 @@ Ver. & Revisionsbeskrivning & Datum \\\hline
 
 
 \section{Spelidé}
-Spelet utspelar sig i en 2D-miljö från ett sidoperspektiv.
-Spelaren kan röra sig i åtta olika
+Spelet går ut på att spelaren, via sitt flygplan, ska flyga igenom banor där den möter andra fiendeplan och bomber som försöker hindra en på vägen mot slutet. 
+Målet är att samla så många poäng som möjligt genom att skjuta och förstöra så många fiender som möjligt samtidigt som spelaren undviker att själv bli träffad av fienderna eller deras skott.
+Det kommer även finnas power-ups att plocka upp i varje nivå. Dessa ger diverse positiva effekter som hjälper spelaren med sitt mål. Ju skickligare spelaren är på att samla ihop poäng, desto fler stjärnor får den i slutet av varje nivå
+
+Spelet utspelar sig i en 2D-miljö från ett sidoperspektiv. Spelaren kan röra sig i åtta olika
 riktningar och skjuta skott mot de ankommande fienderna. Skotten som spelaren skjuter gör
 skada till fienderna om den träffar och kommer till slut förstöra den. När en fiende förstörs
-får spelaren en visst antal poäng. Det finns även en chans att en förstörd fiende släpper
-ifrån sig en ``Power-up'' som ger spelaren olika fördelar. Det kommer även då och då att
-dyka upp Power-ups från högra sidan av skärmen. Fienderna kommer att närma sig från höger
-om skärmen och röra sig mot vänster. Fiendertyperna kan även ha unika rörelsemönster när
-de färdas över skärmen. Fienderna gör skada till spelaren antigen genom att vidröra den
-eller genom att träffa spelaren med sina skott (om de skjuter skott). Spelaren har ett
-antal liv som förloras allt eftersom den har blivit träffad av fienderna/deras skott.
-När spelarens liv är noll då spelet är slut.
+får spelaren en visst antal poäng. Det kommer även då och då att dyka upp Power-ups från högra sidan av skärmen. 
+Fienderna kommer att närma sig från höger om skärmen och röra sig mot vänster. 
+Fiendertyperna kan även ha unika rörelsemönster när de färdas över skärmen. 
+Fienderna gör skada till spelaren antigen genom att vidröra den
+eller genom att träffa spelaren med sina skott (om de skjuter skott). 
+Spelaren har ett antal liv som förloras allt eftersom den har blivit träffad av fienderna/deras skott.
+När spelarens liv når noll avslutas nivån.
 
 \section{Målgrupp}
 Målgruppen är alla som tycker om utmanande skjut-spel i denna klassiska arkad-stil.
@@ -66,7 +68,7 @@ Mellanslag & Skjuta skott\\\hline
 \end{table}
 
 \section{Regler}
-Nedan beskrivs regler för varje specefik spelobjekt samt poängsamlingen. 
+Nedan beskrivs de olika regler som spelet använder sig av.
 \subsection{Spelplan}
 \begin{itemize}
 \item Spelplanen har en fixerad storlek.
@@ -74,197 +76,214 @@ Nedan beskrivs regler för varje specefik spelobjekt samt poängsamlingen.
 \item Objekt som åker ut ur spelplanen förstörs.
 \end{itemize}
 
+\subsection{Hastighet}
+Alla typer av objekt på spelplanen har en egen hastighet. Denna hastighet rangordnas i detta dokument från 1 till 4, där 4 är snabbast.
+Nivåerna är inte de faktiska tal som kommer att användas (hastighet 4 är inte nödvändigtvis dubbelt så snabbt som 2) 
+utan används bara för att ge ett perspektiv kring hur de relaterar till varandra.
+
+\subsection{Skott}
+\begin{itemize}
+\item Spelaren och fienderna skjuter samma typ av skott.
+\item Ett skott gör 1 skada vid kollision med giltligt objekt.
+\item Alla skott rör sig med hastighet 4.
+\item De skadar motståndarens och minskar dens antal liv med 1.
+\end{itemize}
+
 \subsection{Spelare}
 \includegraphics[scale=0.2]{Images/Player.png}
 \begin{itemize}
+\item Spelaren har en fixerad storlek.
 \item Spelaren kan röra på sig i åtta riktningar.
-\item Spelaren kan endast skjuta skott framåt och horisontellt som skadar fienderna när de kolliderar.
-\item Spelarens skott minskar fienders liv med 1.
-\item Spelaren har en bashastighet som avgör hur snabbt den kan skjuta.
-\item Spelaren kan plocka upp Power-ups genom att kolliderar med dem.
-\item Spelaren inte kan plocka upp Power-upps genom att förstöra dem med sin skott.
+\item Spelaren skjuter skott framåt som skadar fienderna när de kolliderar.
+\item Hur ofta spelaren kan skjuta baseras på en timer mellan varje skott. 
+\item Spelaren kan plocka upp power-ups genom att kollidera med dem.
+\item Spelarens skott har ingen effekt på power-ups.
 \item Spelaren har tre liv och kan inte gå över detta.
 \item Spelaren kan få liv genom att plocka upp heal Power-ups.
-\item Spelaren förlorar ett liv när den kolliderar med skot.
-\item Spelaren förlorar ett eller två liv när den kolliderar med fiender (beroende på fiendetypen).
-\item När spelaren ta skada (kollision med fiende objekt eller deras skott) blir den odödlig i tre sekunder.
-\item När spelarens liv är noll förlorar man.
+\item Spelaren förlorar 1 liv när den kolliderar med skott.
+\item När spelaren tar skada (via kollision med fiende eller dess skott) blir den odödlig i tre sekunder.
+\item När spelarens liv når noll är spelet över.
+\item Spelaren rör sig med hastighet 2.
 
 
 \end{itemize}
 
 \subsection{Fiende}
-Fiender i spelet kan inte förstöra varandra med skott eller kollision. De inte heller kolliderar med Power-ups eller förstöra de med sitt skott. Nedan kommer allmänna regler som har tänkts följas i spelet.
+Fiender i spelet kommer att vara spelarens främsta hinder (och källa till poäng). 
+Det finns tre typer av fiender som spelaren kommer att stöta på under spelets gång. 
+Grupperingen och antalet fiender varierar från nivå till nivå. 
+Alla fiender ignorerar kollision med varandras modeller, andra fienders skott, och power-ups. De kan därmed endast ta skada från spelaren. 
+Nedan kommer allmänna regler som har tänkts följas i spelet.
 
 \begin{itemize}
 \item Fienderna kan röra på sig.
-\item Fienderna rör sig enligt förbestämda mönster (beroende på typen) över skärmen.
+\item De olika fiendetyperna rör sig med olika hastigheter.
+\item Fienderna rör sig enligt förbestämda mönster över skärmen.
+\item Olika fiendetyper rör sig i olika mönster.
 \item Fienderna skjuter skott enligt en bashastighet som spelaren.
-\item Fiender kan skada spelaren genom att kollidera med den.
-\item Fiender har också ett antal liv och när de deras liv når noll dör de.
-\item Fiender kommer från höger sidan om skärmen och de rör sig åt vänster tills de når slutet av sin bana.
+\item Fiender skadar spelaren ifall de kolliderar med den.
+\item Fiender förstörs när de kolliderar med spelaren.
+\item Fiender har ett antal liv. 
+\item När en fiendes liv når noll dör den.
+\item Fiender kommer från högersidan av skärmen och de rör sig åt vänster enligt sitt mönster tills de når slutet av spelplanen.
 \end{itemize}
 
-Olika typer av fiender i spelet består av följande.
+De olika fiendetyperna i spelet har följande egenskaper:
 
-\subsubsection*{Fiende typ1}
+\subsubsection*{Small plane}
 \includegraphics[scale=0.15]{Images/Enemy1.png}
 \begin{itemize}
+\item Den har samma (fixerade) storlek som spelaren.
 \item Den har 1 liv.
-\item Den förstörs när den kolliderar med spelaren eller när den träffar spelarens skott.
-\item När den kolliderar med spelaren minskar spelarens liv med 1.
-\item Dens skott minskar spelarens liv med 1 när den kolliderar med den.
-\item Den rör sig åt vänster enligt en bestämd vågrörelse (se figur 1).
-\item Den har röreslehastighet 3.
-\item Den kan endast skjuta skott framåt och horisontellt.
-\item Den sjkuter skott när den är i samma höjd med spelaren.
+\item Vid kollision skadar den spelaren med 1.
+\item Den rör sig åt vänster enligt en bestämd våg-liknande rörelse (se figur 1).
+\item Den har röreslehastighet 3. 
+\item Den skjuter skott rakt fram.
+\item Den skjuter skott när den är i höjd med spelaren.
 \end{itemize}
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.4]{Images/Enemy1-movement.png}
   \label{Bild 1}
-  \caption{Hur fiende typ 1 rör sig åt vänster}
+  \caption{Hur Small plane rör sig åt vänster}
 \end{figure}
 
 
 
 
-\subsubsection*{Fiende typ2}
+\subsubsection*{Big plane}
 \includegraphics[scale=0.2]{Images/Enemy2.png}
 \begin{itemize}
+\item Den har en fixerad storlek, något större än Small plane.
 \item Den har 2 liv.
-\item Den förstörs (oavsett om den har ett eller två liv) när den kolliderar med spelaren.
-\item Den förstårs när den träffar spelarens skott två gånger.
-\item När den kolliderar med spelaren minskar spelarens liv med 2.
-\item Dens skott minskar spelarens liv med 1.
+\item Vid kollision skadar den spelaren med 2.
 \item Den rör sig åt vänster enligt en linjärt mönster (se bild).
 \item Den har röreslehastighet 2.
-\item Den sjkuter när den är i samma höjd med spelaren.
+\item Den skjuter när den är i höjd med spelaren.
 \end{itemize}
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.4]{Images/Enemy2-movement.png}
   \label{Bild 2}
-  \caption{Hur fiende typ 2 rör sig åt vänster}
+  \caption{Hur Big plane rör sig åt vänster}
 \end{figure}
 
 \newpage
-\subsubsection*{Bomber}
+\subsubsection*{Bomb}
 \includegraphics[scale=0.08]{Images/Bomb.png}\\
 \begin{itemize}
-\item De dycker upp från höger och närmer sig till vänster sidan av skärmen med rörelsehastighet 1.
-\item Bomber minksar spelarens liv med 1 när de kolliderar med spelaren.
-\item De förstörs när de kolliderar med spelaren eller när de kolliderar med spelarens skott.
+\item De har en fixerad storlek, en bit mindre än spelaren.
+\item Den har 1 liv.
+\item Vid kollision skadar den spelaren med 1.
+\item Den har rörelsehastighet 1.
 
 \end{itemize}
 
-\subsection{Skott}
-\begin{itemize}
-\item Skotten kan skjutas av båda spelaren och fiende-typerna 1 och 2.
-\item Skotten har hastighet 4 (snabbare än alla föremål i spelet).
-\item De skadar motståndarens och minskar dens antal liv med 1.
-\end{itemize}
+
 
 \subsection{Power-up \& föremål}
-Power-ups kan ge spelaren diverse positiva effekter. De kommer i spelplanen från höger och närmer sig till vänser sidan. Ur spelarens perspektiv rör de på sig med hastighet 1 och plockas upp när dem kolliderar med spelaren.
-
-\begin{itemize}
-%% \item Power-ups kan släppas ifrån fiender när spelaren förstör dem.
-%% \item Power-ups kan också komma in i spelplanen från sidorna.
-\item Power-ups kan ge spelaren diverse positiva effekter.
-%% \item Livlådor kan dyka upp antingen från förstörda fiender eller från kanten av skärmen precis som power-ups. De ger spelaren ett liv vid upplockning.
-\end{itemize}
+Power-ups ger spelaren diverse positiva effekter när de plockas upp. De kommer in på spelplanen från höger sida och färdas åt vänster med hastighet 1. 
+Power-ups plockas upp av spelaren då den kolliderar med dem. Alla power-ups har samma storlek.
 
 \subsubsection*{Heal}
 \begin{itemize}
-\item Heal Power-up ökar spelarens liv med 1.
+\item Heal ökar spelarens liv med 1.
 \item Spelaren kan inte få mer än tre liv.
-  
 \end{itemize}
 
 \subsubsection*{Triple-shot}
 \begin{itemize}
-\item Triple-shot Power-up gör så att spelaren kan skjuta tre skott i varje skjutning.
-\item Denna effekt försvinner efter 15 sekunder.
-\item Spelaren kan inte få två Triple-shot power-ups samtidigt (så att det blir 30 sekunder triple-shot effekt).
+\item Triple-shot gör så att spelaren skjuter tre skott vid varje avfyrning istället för ett.
+\item Denna varar 15 sekunder.
+\item Om spelaren plockar upp en Triple-shot när den redan har effekten av en tidigare Triple-shot aktiv så återställs den kvarvarande tiden till 15 sekunder.
 \end{itemize}
 
 \subsubsection*{Shield}
 \begin{itemize}
-\item Sheild Power-up gör spelaren odödlig i 10 sekunder.
-\item Spelaren kan inte få två Sheild power-ups samtidigt (så att det blir 20 sekunder odödlighet)
+\item Shield Power-up gör spelaren odödlig i 10 sekunder.
+\item Om spelaren plockar upp en Shield när den redan har effekten av en tidigare Shield aktiv så återställs den kvarvarande tiden till 10 sekunder.
+\item Om spelaren kolliderar med en fiende och har shield-effekten aktiv så tas effekten bort och spelaren får samma odödlighetsperiod som om den hade tagit skada.  
 \end{itemize}
 
 
 \subsection{Poäng}
 \begin{itemize}
-\item Poäng kan samlas genom att förstöra fienderna.
 \item Spelaren får 50 poöng när den förstör en bomb med sitt skott.
 \item Spelaren får 100 poäng när den förstör ett fiende typ 1 med sitt skott.
 \item Spelaren får 150 poäng när den förstör ett fiende typ 2 med sitt skott.
-\item Spelaren får 300 poäng om den plockar upp en Heal Power-up när den har redan fullt liv  
-\item Uppsamling av minst 70\% av den totala poäng i spelet när spelaren har klarat av banan ger en tre-stjärna segern.
-\item Uppsamling av minst 50\% av den totala poäng i spelet när spelaren har klarat av banan ger en två-stjärna segern.
-\item Avklarat bana med mindre än 50\% av den totala poäng i spelen resulterar en segern med en sjtärna.
-
+\item Spelaren förlorar 100 poäng ifall den kolliderar med en fiende.
+\item Spelaren får 300 poäng om den plockar upp en Heal Power-up när den har redan fullt liv.
+\item När slutet av en nivå har nåtts får spelaren stjärnor baserat på hur många poäng den samlade in av nivåns totala möjliga poäng.
+\item 0-49\% ger en stjärna, 50-69\% ger två stjärnor, och 70-100\% ger tre stjärnor.
 \end{itemize}
 
 \section{Visualisering}
-Det här är ett exempel på hur spelet kan se ut. Observera att spelaren är den vänstra flygplanet som flyger åt vänster. Alla fiender och Power-upps rör sig åt höger enligt sitt mönster. Bomber och Power-ups rör sig också (långsammare än fiende flygplanen) för att ger ett känsla att spelaren flyger åt höger hela tiden.
+Det här är ett exempel på hur spelet kan se ut. Observera att spelaren är det vänstra flygplanet som pekar åt höger. Alla fiender och Power-ups rör sig åt höger enligt sitt mönster och hastighetsnivå. 
 
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.35]{Images/Game.png}
   \label{Bild 3}
-  \caption{Samtliga spelobjekt (förutom spelaren) kommer in i skärmen från höger kanten och förljer sitt mönster tills de når vänstra kanten av skärmen}
+  \caption{Ett exempel på hur en nivå kan se ut}
 \end{figure}
 
 
 \section{Krav}
-Nedan kommer ett antal krav som spelet i slutändan ska uppfylla. Ska-krav är högst prioriterad medan bör-krav ska uppfyllas om det finns gott om tid och kunskap.
+Nedan kommer alla de krav som spelet i slutändan ska uppfylla. Ska-krav är högst prioriterade medan bör-krav ska uppfyllas om det finns tid över och kunskapen som krävs.
 
 \subsection{Ska-krav}
 \begin{enumerate}
-\item Spelplanen ska ha en fixerad storlek.
-\item Spelet utspelar sig i en 2D-miljö sedd från sidoperspektiv.
-\item Spelet ska ha en förstasida där en ny runda kan startas, spelet kan avslutas, och eventuella andra sidor kan visas.
-\item Spelet ska ha en hjälp-sida där regler och kontroller förklaras.
-\item Spelaren ska kunna röra på sig i åtta riktningar som endast begränsas av spelplanens kanter.
-\item Spelaren styrs via tangentbordet.
-\item Spelaren kan skjuta skott horisontellt åt höger.
-\item Spelaren kan förstöra fiender med sina skott (1 skott för att förstöra fiende-typ 1 och 2 skott för att förståra fiende typ2).
-\item Spelaren kan dö genom att kollidera med fiender eller dess skott ett antal gånger (beroende på skadan som respektiv fiende-objekt orsakar (se specifikationerna ovan för fiender)).
-\item Efter kollison ska fiender förstöras.
-\item Spelaren ska samla poäng när den förstör ett fiende.
+\item Det ska finnas ett spelarobjekt.
+\item Spelplanen ska ha en fixerad storlek som är lika stor som skärmen.
+\item Spelet ska utspela sig i en 2D-miljö sedd från sidoperspektiv.
+\item Spelet ska ha en startmeny där en nivå kan väljas, spelet kan avslutas, och hjälpsidan visas.
+\item Spelet ska ha en hjälpsida där regler och kontroller förklaras.
+\item Alla spelobjekt som visas på spelplanen ska ha en av 4 hastigheter som bestäms av vilken typ av objekt det är.
+\item Spelaren ska kontrollera en spelarkaraktär.
+\item Spelaren ska kunna röra på sig i åtta riktningar.
+\item Spelaren ska ej kunna röra sig utanför spelplanens kanter
+\item Spelaren styrs via tangentbordet. %10
+\item Spelaren ska kunna skjuta skott framför sig.
+\item Spelaren ska kunna förstöra fiender med sina skott.
+\item Spelaren ska ta skada ifall den kolliderar med fiender eller deras skott.
+\item Vid kollison med spelaren ska fiender förstöras.
+\item Spelaren ska förlora poäng vid kollision med fiende.
+\item Spelaren ska samla poäng när den förstör en fiende.
 \item Spelaren ska samla poäng när den plockar upp en Heal Power-up när den har fullt liv.
 \item Spelarens liv och poäng ska konstant visas på skärmen under rundans gång.
-\item Spelaren ska bli odödlig när den tar skada i tre sekunder.
-\item När spelaren dör ska rundan avslutas och spelaren ges möjlighet att spela igen.
-\item Det ska finnas minst två typer av fiender som båda kan röra på sig.
-\item Vissa fiender ska skjuta skott (typ1 och typ2).
+\item Spelaren ska bli odödlig under en kort period när den tar skada.
+\item Spelaren ska inte kunna inte förstöra fiender via kollision under odödlighetsperioden. %20
+\item När spelaren dör ska rundan avslutas och spelaren ges möjlighet att spela igen eller gå tillbaka till startmenyn. 
+\item Det ska finnas 3 typer av fiender.
+\item Fiender ska röra på sig enligt förbestämda mönster och hastigheter.
+\item Vissa fiender ska skjuta skott.
+\item Fiender ska ignorera kollision med andra fienders skott och modeller.
 \item Fiender ska skada spelaren antingen genom att träffa den med skott eller genom att kollidera med den.
-\item Fiender ska böjra skjuta horisontellt när de befinner sig i samma höjd med spelaren.1§
-\item Fiender ska ha en chans att släppa ifrån sig power-ups när de förstörs av spelaren.
-  %\item Spelet ska öka i svårhetsgrad ju längre spelaren lever. % Hur ska detta ske? Fler fiender? Färre power-ups?
-\item Det ska finnas ett nivå (Level 1) i spelet.
-\item Det ska kunna läggas till flera nivåer med samma spelobjekten.
-\item Det ska kunna finnas flera fiender av samma typ på spelplanen samtidigt.
-\item Spelaren ska kontrollera en spelarkaraktär.
-\item Fienderna ska röra på sig enligt ett mönster i spelbanan.
-\item Spelaren kan plocka upp Power-ups genom att kollidera med dem.
+\item Fiender ska endast skjuta när de befinner sig i höjd med spelaren.
+\item Det ska finnas en nivå (Level 1) i spelet.
+\item Det ska kunna läggas till flera nivåer med använder samma spelobjekt.
+\item Det ska kunna finnas flera fiender av samma typ på spelplanen samtidigt. %30
+\item Fienderna ska röra på sig enligt ett mönster i spel nivån.
+\item Det ska finnas tre olika power-ups som regelbundet färdas åt vänster över spelplanen.
+\item Heal ska ge spelaren liv.
+\item Shield ska ge spelaren odödlighet.
+\item Triple-shot ska ge spelaren två extra skott. 
+\item Spelaren ska kunna plocka upp Power-ups genom att kollidera med dem.
 \end{enumerate}
 
 \subsection{Bör-krav}
 \begin{enumerate}
-\item Power-ups ska dras mot spelaren då den kommer i närheten av dem
+\item Spelet ska ha ljud för diverse händelser.
+\item Speler ska ha bakgrundsmusik.
+\item Power-ups ska dras mot spelaren då den kommer i närheten av dem.
 \item Antalet intjänade poäng ska sparas när spelaren till slut förlorar och rundan är avslutad.
 \item Spelet ska ha en sida där intjänade poäng från tidigare rundor visas i en topplista.
 \item Spelet ska ha en sida där användaren kan ändra vilka tangenter som gör vad.
-\item Fiender av samma typ ska kunna ha olika rörelsemönster
-%% \item Spelaren ska förlora poäng när den tar skada. % Kanske på andra sätt också?
-\item Det ska finnas svårare versioner av varje fiendetyp som introduceras allt eftersom spelaren överlever en längre tid
 \item Bakgrunden ska röra på sig för att ge användaren en känsla av hastighet.
-\item Det ska finnas fler rörelsemönster som låter fienderna komma in i spelplanen från andra platser än bara högerkanten.
+\item Spelet ska ha fler nivåer utöver den första.
+\item Spelaren ska få en diamant-stjärna ifall den klarar av en nivå med 100\% av alla möjliga poäng.
+\item Det ska finnas fusk-kommandon som ger enorma bonusar.
+\item Fiender ska ha en chans att släppa ifrån sig power-ups när de förstörs av spelaren.
 
 \end{enumerate}
 
@@ -272,43 +291,43 @@ Nedan kommer ett antal krav som spelet i slutändan ska uppfylla. Ska-krav är h
 \textit{\textbf{``Spelet ska simulera en värld som innehåller olika typer av objekt. Objekten ska ha olika beteenden och röra sig i världen och agera på olika sätt när de möter andra objekt.''}}
 
 
-Uppfylls av krav 3, 4, 5, 6, 12, 13, 14\\
+Uppfylls av krav 3, 8, 12, 13, 14, 15, 22, 26\\
 
 
 \textit{\textbf{``Det måste finnas minst tre olika typer av objekt och det ska finnas flera instanser av minst två av dessa. T.ex ett spelarobjekt och många instanser av två olika slags fiendeobjekt.''}}
 
 
-Uppfylls av krav 12, 17, 18\\
+Uppfylls av krav 1, 22, 32\\
 
 \textit{\textbf{``Ett beteende som måste finnas med är att figurerna ska röra sig över skärmen. Rörelsen kan följa ett mönster och/eller vara slumpmässig. Minst ett objekt, utöver spelaren ska ha någon typ av rörelse.''}}
 
 
-Uppfylls av krav 3, 12, 19\\
+Uppfylls av krav 23 och 32\\
 
 \textit{\textbf{``En figur ska styras av spelaren, antingen med tangentbordet eller med musen. Du kan även göra ett spel där man spelar två stycken genom att dela på tangentbordet (varje spelare använder olika tangenter). Då styr man var sin figur.''}}
 
 
-Uppfylls av krav 3, 4\\
+Uppfylls av krav 7 och 8\\
 
 \textit{\textbf{``Grafiken ska vara tvådimensionell.''}}
 
 
-Uppfylls av krav 20\\
+Uppfylls av krav 3\\
 
 \textit{\textbf{``Världen (spelplanen) kan antas vara lika stor som fönstret ''}}
 
 
-Uppfylls av krav 21\\
+Uppfylls av krav 2\\
 
 \textit{\textbf{``Det ska finnas kollisionshantering, det vill säga, det ska hända olika saker när objekten möter varandra, de ska påverka varandra på något sätt. T.ex kan ett av objekten tas bort, eller så kan objekten förvandlas på något sätt, eller så kan ett nytt objekt skapas. ''}}
 
 
-Uppfylls av krav 6, 14, 22\\
+Uppfylls av krav 12, 13, 14, 15, 26, 36\\
 
-\textit{\textbf{``Det ska vara enkelt att lägga till eller ändra banor i spelet. Detta kan exempelvis lösas genom att läsa in banor från en fil, eller genom att ha funktioner i programkoden som bygger upp en datastruktur som definierar en bana.''}}
+\textit{\textbf{``Det ska vara enkelt att lägga till eller ändra banor i spelet. Detta kan exempelvis lösas genom att läsa in banor från en fil, eller genom att ha funktioner i programkoden som bygger upp en datastruktur som definierar en  nivå .''}}
 
 
-Vi antar att detta uppfylls av de funktioner vi använder för att få en varierande svårighetsgrad genom att låta fiender röra sig på olika sätt och öka svårighetsgrad. Men vi är osäkra på om detta krav kan uppfyllas på rätt sätt i ett spel som inte har klart definerade banor.\\
+Uppfylls av 29\\
 
 \textit{\textbf{`` Spelet måste upplevas som ett sammanhängande spel som går att spela! ''}}
 
