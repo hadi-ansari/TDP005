@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1606043152 "Kravspecifikation.xdv" "Kravspecifikation.pdf" "Kravspecifikation" 1606043152
-  "Kravspecifikation.xdv" 1606043152 133388 54191a8d97208ebacd865c234e9043c0 "xelatex"
+["xdvipdfmx"] 1606045985 "Kravspecifikation.xdv" "Kravspecifikation.pdf" "Kravspecifikation" 1606045985
+  "Kravspecifikation.xdv" 1606045984 154872 1152a503e14d619aa0866ba912d3f7e7 "xelatex"
   (generated)
   "Kravspecifikation.pdf"
-["xelatex"] 1606043151 "Kravspecifikation.tex" "Kravspecifikation.xdv" "Kravspecifikation" 1606043152
+["xelatex"] 1606045984 "Kravspecifikation.tex" "Kravspecifikation.xdv" "Kravspecifikation" 1606045985
   "/etc/texmf/web2c/texmf.cnf" 1599059893 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -141,15 +141,23 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1599059969 4647109 83402d077dcb9fae01b22af68deb1df6 ""
+  "Images/Bomb.png" 1605648145 102560 4ed764eef3d40f5a63964de2634ba930 ""
+  "Images/Enemy1-movement.png" 1606041591 41131 bc554a80a370841d8b85cd9529b1d3f4 ""
+  "Images/Enemy1.png" 1605649075 98072 0ad235981fd54bf9a61372b673963649 ""
+  "Images/Enemy2-movement.png" 1606044989 13873 fbd4241d0a091924db45b46660a222b4 ""
+  "Images/Enemy2.png" 1605649190 62059 e19a29c93f82c183a74ae2bad7b6c442 ""
   "Images/Game.png" 1606043083 217402 c68e7af61a2789e9d0d7612496a9f5b3 ""
-  "Kravspecifikation.aux" 1606043152 2711 590dc9bcc048ab4e2efbced0186b7836 "xelatex"
-  "Kravspecifikation.out" 1606043152 881 54aed12319c98cc7f4bdab7f3daa17ad "xelatex"
-  "Kravspecifikation.tex" 1606007976 14052 daa75bd9e009cc97e7710e42be76008d ""
+  "Images/Player.png" 1606044337 29055 8deaa30a4c5f91081c47ce2868b70026 ""
+  "Kravspecifikation.aux" 1606045984 3433 174b0a5933902cd220fa2c72782c0b3a "xelatex"
+  "Kravspecifikation.out" 1606045984 881 54aed12319c98cc7f4bdab7f3daa17ad "xelatex"
+  "Kravspecifikation.tex" 1606045984 15066 5fb3242bb0e84cd01633aed41d178d27 ""
+  "Kravspecifikation.toc" 1606045984 1222 e4502e3a31d87c08ab6575b45d27de2f "xelatex"
   "TDP005mall.cls" 1605617950 1800 c554e9a1f74a965c694796e0ebe031eb ""
   "ida.png" 1605617950 7786 f8e6fdcd3fff5911dca9765ffa4de313 ""
   "lith.png" 1605617950 15882 4db45f42034d096c9aba5be88636d034 ""
   (generated)
-  "Kravspecifikation.xdv"
-  "Kravspecifikation.out"
-  "Kravspecifikation.aux"
+  "Kravspecifikation.toc"
   "Kravspecifikation.log"
+  "Kravspecifikation.aux"
+  "Kravspecifikation.out"
+  "Kravspecifikation.xdv"

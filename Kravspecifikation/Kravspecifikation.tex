@@ -14,6 +14,10 @@ Nils Bark}
 
 \begin{document}
 \projectpage
+\tableofcontents
+\thispagestyle{empty}
+\cleardoublepage
+
 \section{Revisionshistorik}
 \begin{table}[!h]
 \begin{tabularx}{\linewidth}{|l|X|l|}
@@ -27,7 +31,18 @@ Ver. & Revisionsbeskrivning & Datum \\\hline
 
 
 \section{Spelidé}
-Spelet utspelar sig i en 2D-miljö från ett sidoperspektiv. Spelaren kan röra sig i åtta olika riktningar och skjuta skott mot de ankommande fienderna. Skotten som spelaren skjuter gör skada till fienderna den träffar och kommer till slut förstöra den. När en fiende förstörs får spelaren en visst antal poäng. Det finns även en chans att en förstörd fiende släpper ifrån sig en ``Power-up'' som ger spelaren olika fördelar. Det kommer även då och då att dyka upp Power-ups från högra sidan av skärmen. Fienderna kommer att närma sig från höger om skärmen och röra sig mot vänster. Fiendertyperna kan även ha unika rörelsemönster när de färdas över skärmen. Fienderna gör skada till spelaren antigen genom att vidröra den eller genom att träffa spelaren med sina skott (om de skjuter skott). Spelaren har ett antal liv som förloras allt eftersom den har blivit träffad av fienderna/deras skott. När spelarens liv är noll då spelet är slut.
+Spelet utspelar sig i en 2D-miljö från ett sidoperspektiv.
+Spelaren kan röra sig i åtta olika
+riktningar och skjuta skott mot de ankommande fienderna. Skotten som spelaren skjuter gör
+skada till fienderna om den träffar och kommer till slut förstöra den. När en fiende förstörs
+får spelaren en visst antal poäng. Det finns även en chans att en förstörd fiende släpper
+ifrån sig en ``Power-up'' som ger spelaren olika fördelar. Det kommer även då och då att
+dyka upp Power-ups från högra sidan av skärmen. Fienderna kommer att närma sig från höger
+om skärmen och röra sig mot vänster. Fiendertyperna kan även ha unika rörelsemönster när
+de färdas över skärmen. Fienderna gör skada till spelaren antigen genom att vidröra den
+eller genom att träffa spelaren med sina skott (om de skjuter skott). Spelaren har ett
+antal liv som förloras allt eftersom den har blivit träffad av fienderna/deras skott.
+När spelarens liv är noll då spelet är slut.
 
 \section{Målgrupp}
 Målgruppen är alla som tycker om utmanande skjut-spel i denna klassiska arkad-stil.
@@ -40,15 +55,18 @@ Spelaren styrs av W, A, S, D eller piltangenterna. Spelaren skjuter med mellansl
 \begin{table}[!h]
 \begin{tabularx}{\linewidth}{|X|X|}
 \hline
-Ver. & Revisionsbeskrivning\\\hline
-0.1 & Första utkastet\\\hline
-1.0 & Komplettering efter\\\hline
+Tangentknapp & Åtgärd\\\hline
+W & Flytta spelaren uppåt\\\hline
+S & Flytta spelaren nedå\\\hline
+A & Flytta spelaren vänster\\\hline
+D & Flytta spelaren höger\\\hline
+Mellanslag & Skjuta skott\\\hline
 
 \end{tabularx}
 \end{table}
 
 \section{Regler}
-
+Nedan beskrivs regler för varje specefik spelobjekt samt poängsamlingen. 
 \subsection{Spelplan}
 \begin{itemize}
 \item Spelplanen har en fixerad storlek.
@@ -57,6 +75,7 @@ Ver. & Revisionsbeskrivning\\\hline
 \end{itemize}
 
 \subsection{Spelare}
+\includegraphics[scale=0.2]{Images/Player.png}
 \begin{itemize}
 \item Spelaren kan röra på sig i åtta riktningar.
 \item Spelaren kan endast skjuta skott framåt och horisontellt som skadar fienderna när de kolliderar.
@@ -89,18 +108,29 @@ Fiender i spelet kan inte förstöra varandra med skott eller kollision. De inte
 Olika typer av fiender i spelet består av följande.
 
 \subsubsection*{Fiende typ1}
+\includegraphics[scale=0.15]{Images/Enemy1.png}
 \begin{itemize}
 \item Den har 1 liv.
 \item Den förstörs när den kolliderar med spelaren eller när den träffar spelarens skott.
 \item När den kolliderar med spelaren minskar spelarens liv med 1.
 \item Dens skott minskar spelarens liv med 1 när den kolliderar med den.
-\item Den rör sig åt vänster enligt en bestämd vågrörelse (se bild).
+\item Den rör sig åt vänster enligt en bestämd vågrörelse (se figur 1).
 \item Den har röreslehastighet 3.
 \item Den kan endast skjuta skott framåt och horisontellt.
 \item Den sjkuter skott när den är i samma höjd med spelaren.
 \end{itemize}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.4]{Images/Enemy1-movement.png}
+  \label{Bild 1}
+  \caption{Hur fiende typ 1 rör sig åt vänster}
+\end{figure}
+
+
+
 
 \subsubsection*{Fiende typ2}
+\includegraphics[scale=0.2]{Images/Enemy2.png}
 \begin{itemize}
 \item Den har 2 liv.
 \item Den förstörs (oavsett om den har ett eller två liv) när den kolliderar med spelaren.
@@ -111,8 +141,16 @@ Olika typer av fiender i spelet består av följande.
 \item Den har röreslehastighet 2.
 \item Den sjkuter när den är i samma höjd med spelaren.
 \end{itemize}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.4]{Images/Enemy2-movement.png}
+  \label{Bild 2}
+  \caption{Hur fiende typ 2 rör sig åt vänster}
+\end{figure}
 
+\newpage
 \subsubsection*{Bomber}
+\includegraphics[scale=0.08]{Images/Bomb.png}\\
 \begin{itemize}
 \item De dycker upp från höger och närmer sig till vänster sidan av skärmen med rörelsehastighet 1.
 \item Bomber minksar spelarens liv med 1 när de kolliderar med spelaren.
@@ -174,8 +212,13 @@ Power-ups kan ge spelaren diverse positiva effekter. De kommer i spelplanen frå
 \section{Visualisering}
 Det här är ett exempel på hur spelet kan se ut. Observera att spelaren är den vänstra flygplanet som flyger åt vänster. Alla fiender och Power-upps rör sig åt höger enligt sitt mönster. Bomber och Power-ups rör sig också (långsammare än fiende flygplanen) för att ger ett känsla att spelaren flyger åt höger hela tiden.
 
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.35]{Images/Game.png}
+  \label{Bild 3}
+  \caption{Samtliga spelobjekt (förutom spelaren) kommer in i skärmen från höger kanten och förljer sitt mönster tills de når vänstra kanten av skärmen}
+\end{figure}
 
-\includegraphics[scale=0.35]{Images/Game.png}
 
 \section{Krav}
 Nedan kommer ett antal krav som spelet i slutändan ska uppfylla. Ska-krav är högst prioriterad medan bör-krav ska uppfyllas om det finns gott om tid och kunskap.

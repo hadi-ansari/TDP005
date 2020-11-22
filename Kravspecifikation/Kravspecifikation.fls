@@ -240,6 +240,15 @@ INPUT /usr/share/texlive/texmf-dist/tex/generic/stringenc/se-ascii-print.def
 INPUT /usr/share/texlive/texmf-dist/tex/generic/stringenc/se-ascii-print.def
 INPUT /usr/share/texlive/texmf-dist/tex/generic/stringenc/se-ascii-print.def
 OUTPUT Kravspecifikation.xdv
+INPUT Kravspecifikation.toc
+INPUT Kravspecifikation.toc
+OUTPUT Kravspecifikation.toc
+INPUT Images/Player.png
+INPUT Images/Enemy1.png
+INPUT Images/Enemy1-movement.png
+INPUT Images/Enemy2.png
+INPUT Images/Enemy2-movement.png
+INPUT Images/Bomb.png
 INPUT Images/Game.png
 INPUT Kravspecifikation.aux
 INPUT ./Kravspecifikation.out
