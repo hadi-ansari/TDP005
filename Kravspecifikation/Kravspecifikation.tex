@@ -2,7 +2,7 @@
 
 
 
-\newcommand{\version}{Version 0.1}
+\newcommand{\version}{Version 1.0}
 \author{Hadi Ansari, \url{hadan326@student.liu.se}\\
   Nils Bark, \url{nilba048@student.liu.se}}
 \title{Kravspecifikation}
@@ -33,7 +33,7 @@ Ver. & Revisionsbeskrivning & Datum \\\hline
 \section{Spelidé}
 Spelet går ut på att spelaren, via sitt flygplan, ska flyga igenom banor där den möter andra fiendeplan och bomber som försöker hindra en på vägen mot slutet. 
 Målet är att samla så många poäng som möjligt genom att skjuta och förstöra så många fiender som möjligt samtidigt som spelaren undviker att själv bli träffad av fienderna eller deras skott.
-Det kommer även finnas power-ups att plocka upp i varje nivå. Dessa ger diverse positiva effekter som hjälper spelaren med sitt mål. Ju skickligare spelaren är på att samla ihop poäng, desto fler stjärnor får den i slutet av varje nivå
+Det kommer även finnas power-ups att plocka upp i varje nivå. Dessa ger diverse positiva effekter som hjälper spelaren med sitt mål. Ju skickligare spelaren är på att samla ihop poäng, desto fler stjärnor får den i slutet av varje nivå.
 
 Spelet utspelar sig i en 2D-miljö från ett sidoperspektiv. Spelaren kan röra sig i åtta olika
 riktningar och skjuta skott mot de ankommande fienderna. Skotten som spelaren skjuter gör
@@ -58,15 +58,16 @@ Spelaren styrs av W, A, S, D eller piltangenterna. Spelaren skjuter med mellansl
 \begin{tabularx}{\linewidth}{|X|X|}
 \hline
 Tangentknapp & Åtgärd\\\hline
-W & Flytta spelaren uppåt\\\hline
-S & Flytta spelaren nedå\\\hline
-A & Flytta spelaren vänster\\\hline
-D & Flytta spelaren höger\\\hline
+W/\textuparrow & Flytta spelaren uppåt\\\hline
+S/\textdownarrow & Flytta spelaren nedå\\\hline
+A/\textleftarrow & Flytta spelaren vänster\\\hline
+D/\textrightarrow & Flytta spelaren höger\\\hline
 Mellanslag & Skjuta skott\\\hline
 
 \end{tabularx}
 \end{table}
 
+\newpage
 \section{Regler}
 Nedan beskrivs de olika regler som spelet använder sig av.
 \subsection{Spelplan}
@@ -150,14 +151,14 @@ De olika fiendetyperna i spelet har följande egenskaper:
 
 
 
-
+\newpage
 \subsubsection*{Big plane}
 \includegraphics[scale=0.2]{Images/Enemy2.png}
 \begin{itemize}
 \item Den har en fixerad storlek, något större än Small plane.
 \item Den har 2 liv.
 \item Vid kollision skadar den spelaren med 2.
-\item Den rör sig åt vänster enligt en linjärt mönster (se bild).
+\item Den rör sig åt vänster enligt en linjärt mönster (se figur2).
 \item Den har röreslehastighet 2.
 \item Den skjuter när den är i höjd med spelaren.
 \end{itemize}
@@ -241,8 +242,8 @@ Nedan kommer alla de krav som spelet i slutändan ska uppfylla. Ska-krav är hö
 \item Alla spelobjekt som visas på spelplanen ska ha en av 4 hastigheter som bestäms av vilken typ av objekt det är.
 \item Spelaren ska kontrollera en spelarkaraktär.
 \item Spelaren ska kunna röra på sig i åtta riktningar.
-\item Spelaren ska ej kunna röra sig utanför spelplanens kanter
-\item Spelaren styrs via tangentbordet. %10
+\item Spelaren ska ej kunna röra sig utanför spelplanens kanter.
+\item Spelaren styrs via tangentbordet.
 \item Spelaren ska kunna skjuta skott framför sig.
 \item Spelaren ska kunna förstöra fiender med sina skott.
 \item Spelaren ska ta skada ifall den kolliderar med fiender eller deras skott.
@@ -252,7 +253,7 @@ Nedan kommer alla de krav som spelet i slutändan ska uppfylla. Ska-krav är hö
 \item Spelaren ska samla poäng när den plockar upp en Heal Power-up när den har fullt liv.
 \item Spelarens liv och poäng ska konstant visas på skärmen under rundans gång.
 \item Spelaren ska bli odödlig under en kort period när den tar skada.
-\item Spelaren ska inte kunna inte förstöra fiender via kollision under odödlighetsperioden. %20
+\item Spelaren ska inte kunna inte förstöra fiender via kollision under odödlighetsperioden.
 \item När spelaren dör ska rundan avslutas och spelaren ges möjlighet att spela igen eller gå tillbaka till startmenyn. 
 \item Det ska finnas 3 typer av fiender.
 \item Fiender ska röra på sig enligt förbestämda mönster och hastigheter.
@@ -262,7 +263,7 @@ Nedan kommer alla de krav som spelet i slutändan ska uppfylla. Ska-krav är hö
 \item Fiender ska endast skjuta när de befinner sig i höjd med spelaren.
 \item Det ska finnas en nivå (Level 1) i spelet.
 \item Det ska kunna läggas till flera nivåer med använder samma spelobjekt.
-\item Det ska kunna finnas flera fiender av samma typ på spelplanen samtidigt. %30
+\item Det ska kunna finnas flera fiender av samma typ på spelplanen samtidigt.
 \item Fienderna ska röra på sig enligt ett mönster i spel nivån.
 \item Det ska finnas tre olika power-ups som regelbundet färdas åt vänster över spelplanen.
 \item Heal ska ge spelaren liv.

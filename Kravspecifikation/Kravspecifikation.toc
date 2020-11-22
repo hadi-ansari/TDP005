@@ -4,15 +4,16 @@
 \contentsline {section}{\numberline {3}Målgrupp}{2}{section.3}%
 \contentsline {section}{\numberline {4}Spelupplevelse}{2}{section.4}%
 \contentsline {section}{\numberline {5}Spelmekanik}{2}{section.5}%
-\contentsline {section}{\numberline {6}Regler}{2}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Spelplan}{2}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Spelare}{3}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Fiende}{3}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}Skott}{5}{subsection.6.4}%
-\contentsline {subsection}{\numberline {6.5}Power-up \& föremål}{5}{subsection.6.5}%
-\contentsline {subsection}{\numberline {6.6}Poäng}{6}{subsection.6.6}%
-\contentsline {section}{\numberline {7}Visualisering}{6}{section.7}%
+\contentsline {section}{\numberline {6}Regler}{3}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Spelplan}{3}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Hastighet}{3}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Skott}{3}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Spelare}{3}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Fiende}{4}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}Power-up \& föremål}{6}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}Poäng}{6}{subsection.6.7}%
+\contentsline {section}{\numberline {7}Visualisering}{7}{section.7}%
 \contentsline {section}{\numberline {8}Krav}{7}{section.8}%
 \contentsline {subsection}{\numberline {8.1}Ska-krav}{7}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Bör-krav}{8}{subsection.8.2}%
-\contentsline {section}{\numberline {9}Kravuppfyllelse}{8}{section.9}%
+\contentsline {subsection}{\numberline {8.2}Bör-krav}{9}{subsection.8.2}%
+\contentsline {section}{\numberline {9}Kravuppfyllelse}{9}{section.9}%
