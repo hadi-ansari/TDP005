@@ -9,7 +9,7 @@
 
 void process_event(sf::RenderWindow const& window, World const& world)
 {
-  
+  window.
 }
 
 
