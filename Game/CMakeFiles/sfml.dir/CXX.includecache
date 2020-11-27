@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hadi/SFML_test/Entity.h
+SFML/Graphics.hpp
+-
+iostream
+-
+
+/home/hadi/SFML_test/Player.cpp
+SFML/Graphics.hpp
+-
+iostream
+-
+Player.h
+/home/hadi/SFML_test/Player.h
+
+/home/hadi/SFML_test/Player.h
+SFML/Graphics.hpp
+-
+iostream
+-
+Entity.h
+/home/hadi/SFML_test/Entity.h
+
