@@ -16,9 +16,11 @@ public:
   void insert_object(Entity* const object);
   Player get_player() const;
   std::vector <Entity*> get_objects() const;
+  void run(sf::RenderWindow & window);
   
 private:
   std::vector <Entity*> objects{};
+  Player player{};
 };
 
 #endif

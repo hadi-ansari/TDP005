@@ -14,6 +14,12 @@ Player::Player()
       std::cerr << "Error" << std::endl;
     }
   sprite.setTexture(texture);
+  up = false;
+  down = false;
+  right = false;
+  left = false;
+
+  
 }
 
 void Player::process_event(sf::Keyboard::Key const& key)
@@ -21,25 +27,44 @@ void Player::process_event(sf::Keyboard::Key const& key)
   switch(key)
     {
     case sf::Keyboard::W:
-      location.y -= 1;
+      up = true;
       break;
     case sf::Keyboard::S:
-      location.y += 1;
+      down = true;
       break;
     case sf::Keyboard::A:
-      location.x -= 1;
+      right = true;
       break;
     case sf::Keyboard::D:
-      location.x += 1;
+      left = true;
       break;
     default:
       break;
     }
 }
-void Player::tick(sf::Time const& delta, sf::Keyboard::Key const& key)
+void Player::tick(sf::Time const& delta)
 {
-  // location += delta.milliseconds() * speed / 1000.0f;
+  // location += delta.asmilliseconds() * speed / 1000.0f;
   // sprite.setPosition(location);
-  process_event(key);
+  if(up)
+    {
+      location.y -= delta.asMilliseconds() * speed / 1000.0f;
+      up = false;
+    }
+  else if(down)
+    {
+      location.y += delta.asMilliseconds() * speed / 1000.0f;
+      down = false;
+    }
+  else if(right)
+    {
+      location.x -= delta.asMilliseconds() * speed / 1000.0f;
+      right = false;
+    }
+  else if(left)
+    {
+      location.x += delta.asMilliseconds() * speed / 1000.0f;
+      left = false;
+    }
   sprite.setPosition(location);
 }

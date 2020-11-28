@@ -11,7 +11,7 @@ class Big_Plane: public Enemy
 public:
   Big_Plane();
   
-  void tick(sf::Time const& delta, sf::Keyboard::Key const& key) override;
+  void tick(sf::Time const& delta) override;
   
 };
 

@@ -6,7 +6,7 @@
 
 struct Entity
 {
-  virtual void tick(sf::Time const& delta, sf::Keyboard::Key const& key) = 0;
+  virtual void tick(sf::Time const& delta) = 0;
 
   sf::Vector2f location{};
   sf::Texture texture;

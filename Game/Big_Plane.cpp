@@ -13,8 +13,9 @@ Big_Plane::Big_Plane()
 }
 
 
-void Big_Plane::tick(sf::Time const& delta, sf::Keyboard::Key const& key)
+void Big_Plane::tick(sf::Time const& delta)
 {
-  location.x -= delta.asMicroseconds() * speed / 1000000.0f;
+  location.x -= 1;
+  //  location.x -= delta.asMicroseconds() * speed / 1000000.0f;
   sprite.setPosition(location);
 }

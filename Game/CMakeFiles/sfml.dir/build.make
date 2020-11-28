@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hadi/SFML_test
+CMAKE_SOURCE_DIR = /home/hadi/tdp005/Game
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hadi/SFML_test
+CMAKE_BINARY_DIR = /home/hadi/tdp005/Game
 
 # Include any dependencies generated for this target.
 include CMakeFiles/sfml.dir/depend.make
@@ -59,81 +59,81 @@ include CMakeFiles/sfml.dir/flags.make
 
 CMakeFiles/sfml.dir/sfml.cpp.o: CMakeFiles/sfml.dir/flags.make
 CMakeFiles/sfml.dir/sfml.cpp.o: sfml.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hadi/SFML_test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/sfml.dir/sfml.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sfml.dir/sfml.cpp.o -c /home/hadi/SFML_test/sfml.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hadi/tdp005/Game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/sfml.dir/sfml.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sfml.dir/sfml.cpp.o -c /home/hadi/tdp005/Game/sfml.cpp
 
 CMakeFiles/sfml.dir/sfml.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sfml.dir/sfml.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hadi/SFML_test/sfml.cpp > CMakeFiles/sfml.dir/sfml.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hadi/tdp005/Game/sfml.cpp > CMakeFiles/sfml.dir/sfml.cpp.i
 
 CMakeFiles/sfml.dir/sfml.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sfml.dir/sfml.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hadi/SFML_test/sfml.cpp -o CMakeFiles/sfml.dir/sfml.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hadi/tdp005/Game/sfml.cpp -o CMakeFiles/sfml.dir/sfml.cpp.s
 
 CMakeFiles/sfml.dir/World.cpp.o: CMakeFiles/sfml.dir/flags.make
 CMakeFiles/sfml.dir/World.cpp.o: World.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hadi/SFML_test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/sfml.dir/World.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sfml.dir/World.cpp.o -c /home/hadi/SFML_test/World.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hadi/tdp005/Game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/sfml.dir/World.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sfml.dir/World.cpp.o -c /home/hadi/tdp005/Game/World.cpp
 
 CMakeFiles/sfml.dir/World.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sfml.dir/World.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hadi/SFML_test/World.cpp > CMakeFiles/sfml.dir/World.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hadi/tdp005/Game/World.cpp > CMakeFiles/sfml.dir/World.cpp.i
 
 CMakeFiles/sfml.dir/World.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sfml.dir/World.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hadi/SFML_test/World.cpp -o CMakeFiles/sfml.dir/World.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hadi/tdp005/Game/World.cpp -o CMakeFiles/sfml.dir/World.cpp.s
 
 CMakeFiles/sfml.dir/Entity.cpp.o: CMakeFiles/sfml.dir/flags.make
 CMakeFiles/sfml.dir/Entity.cpp.o: Entity.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hadi/SFML_test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/sfml.dir/Entity.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sfml.dir/Entity.cpp.o -c /home/hadi/SFML_test/Entity.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hadi/tdp005/Game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/sfml.dir/Entity.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sfml.dir/Entity.cpp.o -c /home/hadi/tdp005/Game/Entity.cpp
 
 CMakeFiles/sfml.dir/Entity.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sfml.dir/Entity.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hadi/SFML_test/Entity.cpp > CMakeFiles/sfml.dir/Entity.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hadi/tdp005/Game/Entity.cpp > CMakeFiles/sfml.dir/Entity.cpp.i
 
 CMakeFiles/sfml.dir/Entity.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sfml.dir/Entity.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hadi/SFML_test/Entity.cpp -o CMakeFiles/sfml.dir/Entity.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hadi/tdp005/Game/Entity.cpp -o CMakeFiles/sfml.dir/Entity.cpp.s
 
 CMakeFiles/sfml.dir/Player.cpp.o: CMakeFiles/sfml.dir/flags.make
 CMakeFiles/sfml.dir/Player.cpp.o: Player.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hadi/SFML_test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/sfml.dir/Player.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sfml.dir/Player.cpp.o -c /home/hadi/SFML_test/Player.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hadi/tdp005/Game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/sfml.dir/Player.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sfml.dir/Player.cpp.o -c /home/hadi/tdp005/Game/Player.cpp
 
 CMakeFiles/sfml.dir/Player.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sfml.dir/Player.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hadi/SFML_test/Player.cpp > CMakeFiles/sfml.dir/Player.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hadi/tdp005/Game/Player.cpp > CMakeFiles/sfml.dir/Player.cpp.i
 
 CMakeFiles/sfml.dir/Player.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sfml.dir/Player.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hadi/SFML_test/Player.cpp -o CMakeFiles/sfml.dir/Player.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hadi/tdp005/Game/Player.cpp -o CMakeFiles/sfml.dir/Player.cpp.s
 
 CMakeFiles/sfml.dir/Enemy.cpp.o: CMakeFiles/sfml.dir/flags.make
 CMakeFiles/sfml.dir/Enemy.cpp.o: Enemy.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hadi/SFML_test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/sfml.dir/Enemy.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sfml.dir/Enemy.cpp.o -c /home/hadi/SFML_test/Enemy.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hadi/tdp005/Game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/sfml.dir/Enemy.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sfml.dir/Enemy.cpp.o -c /home/hadi/tdp005/Game/Enemy.cpp
 
 CMakeFiles/sfml.dir/Enemy.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sfml.dir/Enemy.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hadi/SFML_test/Enemy.cpp > CMakeFiles/sfml.dir/Enemy.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hadi/tdp005/Game/Enemy.cpp > CMakeFiles/sfml.dir/Enemy.cpp.i
 
 CMakeFiles/sfml.dir/Enemy.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sfml.dir/Enemy.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hadi/SFML_test/Enemy.cpp -o CMakeFiles/sfml.dir/Enemy.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hadi/tdp005/Game/Enemy.cpp -o CMakeFiles/sfml.dir/Enemy.cpp.s
 
 CMakeFiles/sfml.dir/Big_Plane.cpp.o: CMakeFiles/sfml.dir/flags.make
 CMakeFiles/sfml.dir/Big_Plane.cpp.o: Big_Plane.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hadi/SFML_test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/sfml.dir/Big_Plane.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sfml.dir/Big_Plane.cpp.o -c /home/hadi/SFML_test/Big_Plane.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hadi/tdp005/Game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/sfml.dir/Big_Plane.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sfml.dir/Big_Plane.cpp.o -c /home/hadi/tdp005/Game/Big_Plane.cpp
 
 CMakeFiles/sfml.dir/Big_Plane.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sfml.dir/Big_Plane.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hadi/SFML_test/Big_Plane.cpp > CMakeFiles/sfml.dir/Big_Plane.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hadi/tdp005/Game/Big_Plane.cpp > CMakeFiles/sfml.dir/Big_Plane.cpp.i
 
 CMakeFiles/sfml.dir/Big_Plane.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sfml.dir/Big_Plane.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hadi/SFML_test/Big_Plane.cpp -o CMakeFiles/sfml.dir/Big_Plane.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hadi/tdp005/Game/Big_Plane.cpp -o CMakeFiles/sfml.dir/Big_Plane.cpp.s
 
 # Object files for target sfml
 sfml_OBJECTS = \
@@ -159,7 +159,7 @@ sfml: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1
 sfml: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1
 sfml: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
 sfml: CMakeFiles/sfml.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hadi/SFML_test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable sfml"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hadi/tdp005/Game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable sfml"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sfml.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -172,6 +172,6 @@ CMakeFiles/sfml.dir/clean:
 .PHONY : CMakeFiles/sfml.dir/clean
 
 CMakeFiles/sfml.dir/depend:
-	cd /home/hadi/SFML_test && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hadi/SFML_test /home/hadi/SFML_test /home/hadi/SFML_test /home/hadi/SFML_test /home/hadi/SFML_test/CMakeFiles/sfml.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/hadi/tdp005/Game && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hadi/tdp005/Game /home/hadi/tdp005/Game /home/hadi/tdp005/Game /home/hadi/tdp005/Game /home/hadi/tdp005/Game/CMakeFiles/sfml.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/sfml.dir/depend
 

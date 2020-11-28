@@ -12,10 +12,14 @@ public:
   Player();
   
   void process_event(sf::Keyboard::Key const& key);
-  void tick(sf::Time const& delta, sf::Keyboard::Key const& key) override;
+  void tick(sf::Time const& delta) override;
   
 private:
   int health{};
+  bool up;
+  bool down;
+  bool right;
+  bool left;
 };
 
 #endif
