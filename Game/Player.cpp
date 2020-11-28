@@ -2,7 +2,8 @@
 #include <iostream>
 
 #include "Player.h"
-
+#include "Bullet.h"
+#include "World.h"
 
 Player::Player()
 {
@@ -42,6 +43,12 @@ void Player::process_event(sf::Keyboard::Key const& key)
       break;
     }
 }
+
+void Player::shoot()
+{
+  
+}
+
 void Player::tick(sf::Time const& delta)
 {
   /* Speed dependent  */

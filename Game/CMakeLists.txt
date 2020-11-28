@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(sfml)
+project(game)
 
-set(SOURCE_FILES sfml.cpp World.cpp World.h Entity.cpp Entity.h Player.cpp Player.h Enemy.cpp Enemy.h Big_Plane.cpp Big_Plane.h Bullet.cpp Bullet.h)
+set(SOURCE_FILES main.cpp World.cpp World.h Entity.cpp Entity.h Player.cpp Player.h Enemy.cpp Enemy.h Bullet.cpp Bullet.h)
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -26,5 +26,5 @@ list(APPEND SFML_LIBRARIES "sfml-${i}")
 endforeach(i)
 endif()
 
-add_executable(sfml ${SOURCE_FILES})
-target_link_libraries(sfml ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})
+add_executable(game ${SOURCE_FILES})
+target_link_libraries(game ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})

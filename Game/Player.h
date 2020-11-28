@@ -12,6 +12,7 @@ public:
   Player();
   
   void process_event(sf::Keyboard::Key const& key);
+  void shoot();
   void tick(sf::Time const& delta) override;
   
 private:

@@ -111,44 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named sfml
+# Target rules for targets named game
 
 # Build rule for target.
-sfml: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sfml
-.PHONY : sfml
+game: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 game
+.PHONY : game
 
 # fast build rule for target.
-sfml/fast:
-	$(MAKE) -f CMakeFiles/sfml.dir/build.make CMakeFiles/sfml.dir/build
-.PHONY : sfml/fast
-
-Big_Plane.o: Big_Plane.cpp.o
-
-.PHONY : Big_Plane.o
-
-# target to build an object file
-Big_Plane.cpp.o:
-	$(MAKE) -f CMakeFiles/sfml.dir/build.make CMakeFiles/sfml.dir/Big_Plane.cpp.o
-.PHONY : Big_Plane.cpp.o
-
-Big_Plane.i: Big_Plane.cpp.i
-
-.PHONY : Big_Plane.i
-
-# target to preprocess a source file
-Big_Plane.cpp.i:
-	$(MAKE) -f CMakeFiles/sfml.dir/build.make CMakeFiles/sfml.dir/Big_Plane.cpp.i
-.PHONY : Big_Plane.cpp.i
-
-Big_Plane.s: Big_Plane.cpp.s
-
-.PHONY : Big_Plane.s
-
-# target to generate assembly for a file
-Big_Plane.cpp.s:
-	$(MAKE) -f CMakeFiles/sfml.dir/build.make CMakeFiles/sfml.dir/Big_Plane.cpp.s
-.PHONY : Big_Plane.cpp.s
+game/fast:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/build
+.PHONY : game/fast
 
 Bullet.o: Bullet.cpp.o
 
@@ -156,7 +129,7 @@ Bullet.o: Bullet.cpp.o
 
 # target to build an object file
 Bullet.cpp.o:
-	$(MAKE) -f CMakeFiles/sfml.dir/build.make CMakeFiles/sfml.dir/Bullet.cpp.o
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/Bullet.cpp.o
 .PHONY : Bullet.cpp.o
 
 Bullet.i: Bullet.cpp.i
@@ -165,7 +138,7 @@ Bullet.i: Bullet.cpp.i
 
 # target to preprocess a source file
 Bullet.cpp.i:
-	$(MAKE) -f CMakeFiles/sfml.dir/build.make CMakeFiles/sfml.dir/Bullet.cpp.i
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/Bullet.cpp.i
 .PHONY : Bullet.cpp.i
 
 Bullet.s: Bullet.cpp.s
@@ -174,7 +147,7 @@ Bullet.s: Bullet.cpp.s
 
 # target to generate assembly for a file
 Bullet.cpp.s:
-	$(MAKE) -f CMakeFiles/sfml.dir/build.make CMakeFiles/sfml.dir/Bullet.cpp.s
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/Bullet.cpp.s
 .PHONY : Bullet.cpp.s
 
 Enemy.o: Enemy.cpp.o
@@ -183,7 +156,7 @@ Enemy.o: Enemy.cpp.o
 
 # target to build an object file
 Enemy.cpp.o:
-	$(MAKE) -f CMakeFiles/sfml.dir/build.make CMakeFiles/sfml.dir/Enemy.cpp.o
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/Enemy.cpp.o
 .PHONY : Enemy.cpp.o
 
 Enemy.i: Enemy.cpp.i
@@ -192,7 +165,7 @@ Enemy.i: Enemy.cpp.i
 
 # target to preprocess a source file
 Enemy.cpp.i:
-	$(MAKE) -f CMakeFiles/sfml.dir/build.make CMakeFiles/sfml.dir/Enemy.cpp.i
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/Enemy.cpp.i
 .PHONY : Enemy.cpp.i
 
 Enemy.s: Enemy.cpp.s
@@ -201,7 +174,7 @@ Enemy.s: Enemy.cpp.s
 
 # target to generate assembly for a file
 Enemy.cpp.s:
-	$(MAKE) -f CMakeFiles/sfml.dir/build.make CMakeFiles/sfml.dir/Enemy.cpp.s
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/Enemy.cpp.s
 .PHONY : Enemy.cpp.s
 
 Entity.o: Entity.cpp.o
@@ -210,7 +183,7 @@ Entity.o: Entity.cpp.o
 
 # target to build an object file
 Entity.cpp.o:
-	$(MAKE) -f CMakeFiles/sfml.dir/build.make CMakeFiles/sfml.dir/Entity.cpp.o
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/Entity.cpp.o
 .PHONY : Entity.cpp.o
 
 Entity.i: Entity.cpp.i
@@ -219,7 +192,7 @@ Entity.i: Entity.cpp.i
 
 # target to preprocess a source file
 Entity.cpp.i:
-	$(MAKE) -f CMakeFiles/sfml.dir/build.make CMakeFiles/sfml.dir/Entity.cpp.i
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/Entity.cpp.i
 .PHONY : Entity.cpp.i
 
 Entity.s: Entity.cpp.s
@@ -228,7 +201,7 @@ Entity.s: Entity.cpp.s
 
 # target to generate assembly for a file
 Entity.cpp.s:
-	$(MAKE) -f CMakeFiles/sfml.dir/build.make CMakeFiles/sfml.dir/Entity.cpp.s
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/Entity.cpp.s
 .PHONY : Entity.cpp.s
 
 Player.o: Player.cpp.o
@@ -237,7 +210,7 @@ Player.o: Player.cpp.o
 
 # target to build an object file
 Player.cpp.o:
-	$(MAKE) -f CMakeFiles/sfml.dir/build.make CMakeFiles/sfml.dir/Player.cpp.o
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/Player.cpp.o
 .PHONY : Player.cpp.o
 
 Player.i: Player.cpp.i
@@ -246,7 +219,7 @@ Player.i: Player.cpp.i
 
 # target to preprocess a source file
 Player.cpp.i:
-	$(MAKE) -f CMakeFiles/sfml.dir/build.make CMakeFiles/sfml.dir/Player.cpp.i
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/Player.cpp.i
 .PHONY : Player.cpp.i
 
 Player.s: Player.cpp.s
@@ -255,7 +228,7 @@ Player.s: Player.cpp.s
 
 # target to generate assembly for a file
 Player.cpp.s:
-	$(MAKE) -f CMakeFiles/sfml.dir/build.make CMakeFiles/sfml.dir/Player.cpp.s
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/Player.cpp.s
 .PHONY : Player.cpp.s
 
 World.o: World.cpp.o
@@ -264,7 +237,7 @@ World.o: World.cpp.o
 
 # target to build an object file
 World.cpp.o:
-	$(MAKE) -f CMakeFiles/sfml.dir/build.make CMakeFiles/sfml.dir/World.cpp.o
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/World.cpp.o
 .PHONY : World.cpp.o
 
 World.i: World.cpp.i
@@ -273,7 +246,7 @@ World.i: World.cpp.i
 
 # target to preprocess a source file
 World.cpp.i:
-	$(MAKE) -f CMakeFiles/sfml.dir/build.make CMakeFiles/sfml.dir/World.cpp.i
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/World.cpp.i
 .PHONY : World.cpp.i
 
 World.s: World.cpp.s
@@ -282,35 +255,35 @@ World.s: World.cpp.s
 
 # target to generate assembly for a file
 World.cpp.s:
-	$(MAKE) -f CMakeFiles/sfml.dir/build.make CMakeFiles/sfml.dir/World.cpp.s
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/World.cpp.s
 .PHONY : World.cpp.s
 
-sfml.o: sfml.cpp.o
+main.o: main.cpp.o
 
-.PHONY : sfml.o
+.PHONY : main.o
 
 # target to build an object file
-sfml.cpp.o:
-	$(MAKE) -f CMakeFiles/sfml.dir/build.make CMakeFiles/sfml.dir/sfml.cpp.o
-.PHONY : sfml.cpp.o
+main.cpp.o:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/main.cpp.o
+.PHONY : main.cpp.o
 
-sfml.i: sfml.cpp.i
+main.i: main.cpp.i
 
-.PHONY : sfml.i
+.PHONY : main.i
 
 # target to preprocess a source file
-sfml.cpp.i:
-	$(MAKE) -f CMakeFiles/sfml.dir/build.make CMakeFiles/sfml.dir/sfml.cpp.i
-.PHONY : sfml.cpp.i
+main.cpp.i:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-sfml.s: sfml.cpp.s
+main.s: main.cpp.s
 
-.PHONY : sfml.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-sfml.cpp.s:
-	$(MAKE) -f CMakeFiles/sfml.dir/build.make CMakeFiles/sfml.dir/sfml.cpp.s
-.PHONY : sfml.cpp.s
+main.cpp.s:
+	$(MAKE) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -320,10 +293,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... sfml"
-	@echo "... Big_Plane.o"
-	@echo "... Big_Plane.i"
-	@echo "... Big_Plane.s"
+	@echo "... game"
 	@echo "... Bullet.o"
 	@echo "... Bullet.i"
 	@echo "... Bullet.s"
@@ -339,9 +309,9 @@ help:
 	@echo "... World.o"
 	@echo "... World.i"
 	@echo "... World.s"
-	@echo "... sfml.o"
-	@echo "... sfml.i"
-	@echo "... sfml.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

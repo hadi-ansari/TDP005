@@ -33,10 +33,6 @@ void World::run(sf::RenderWindow & window)
   while(window.isOpen())
     {
       sf::Event event;
-      // bool key_w_pressed{false};
-      // bool key_s_pressed{false};
-      // bool key_d_pressed{false};
-      // bool key_a_pressed{false};
       
       while(window.pollEvent(event))
       	{
@@ -48,25 +44,9 @@ void World::run(sf::RenderWindow & window)
 	    {
 	      player -> process_event(event.key.code);
 	    }
-	  // else if(sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-	  //   {
-	  //     key_w_pressed = true;
-	  //   }
-	  // else if(sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-	  //   {
-	  //     key_s_pressed = true;
-	  //   }
-	  // else if(sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-	  //   {
-	  //     key_d_pressed = true;
-	  //   }
-	  // else if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-	  //   {
-	  //     key_a_pressed = true;
-	  //   }
 	}
 
-      window.clear(sf::Color::White);
+      window.clear(sf::Color(76, 208, 255));
       sf::Time delta = clock.restart();
       for(auto object: objects)
       	{
