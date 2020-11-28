@@ -2,7 +2,7 @@
 
 
 
-\newcommand{\version}{Version 1.0}
+\newcommand{\version}{Version 1.1}
 \author{Hadi Ansari, \url{hadan326@student.liu.se}\\
   Nils Bark, \url{nilba048@student.liu.se}}
 \title{Kravspecifikation}
@@ -24,7 +24,8 @@ Nils Bark}
 \hline
 Ver. & Revisionsbeskrivning & Datum \\\hline
 0.1 & Första utkastet & 2020-11-17 \\\hline
-1.0 & Komplettering efter feed-back& 2020-11-22 \\\hline
+1.0 & Komplettering efter feed-back & 2020-11-22 \\\hline
+1.1 & Komplettering för VG & 2020-11-27 \\\hline
 
 \end{tabularx}
 \end{table}
@@ -33,8 +34,8 @@ Ver. & Revisionsbeskrivning & Datum \\\hline
 \section{Spelidé}
 Spelet går ut på att spelaren, via sitt flygplan, ska flyga igenom banor där den möter andra fiendeplan och bomber som försöker hindra en på vägen mot slutet. 
 Målet är att samla så många poäng som möjligt genom att skjuta och förstöra så många fiender som möjligt samtidigt som spelaren undviker att själv bli träffad av fienderna eller deras skott.
-Det kommer även finnas power-ups att plocka upp i varje nivå. Dessa ger diverse positiva effekter som hjälper spelaren med sitt mål. Ju skickligare spelaren är på att samla ihop poäng, desto fler stjärnor får den i slutet av varje nivå.
-
+Det kommer även finnas power-ups att plocka upp i varje nivå. Dessa ger diverse positiva effekter som hjälper spelaren med sitt mål. 
+Ju skickligare spelaren är på att samla ihop poäng, desto fler stjärnor får den i slutet av varje nivå.
 Spelet utspelar sig i en 2D-miljö från ett sidoperspektiv. Spelaren kan röra sig i åtta olika
 riktningar och skjuta skott mot de ankommande fienderna. Skotten som spelaren skjuter gör
 skada till fienderna om den träffar och kommer till slut förstöra den. När en fiende förstörs
@@ -91,7 +92,13 @@ utan används bara för att ge ett perspektiv kring hur de relaterar till varand
 \end{itemize}
 
 \subsection{Spelare}
-\includegraphics[scale=0.2]{Images/Player.png}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.2]{Images/Player.png}
+  \label{}
+  \caption{Spelarobjektets utseende.}
+\end{figure}
 \begin{itemize}
 \item Spelaren har en fixerad storlek.
 \item Spelaren kan röra på sig i åtta riktningar.
@@ -132,12 +139,19 @@ Nedan kommer allmänna regler som har tänkts följas i spelet.
 De olika fiendetyperna i spelet har följande egenskaper:
 
 \subsubsection*{Small plane}
-\includegraphics[scale=0.15]{Images/Enemy1.png}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.15]{Images/Enemy1.png}
+  \label{}
+  \caption{Small planes utseende.}
+\end{figure}
+
 \begin{itemize}
 \item Den har samma (fixerade) storlek som spelaren.
 \item Den har 1 liv.
 \item Vid kollision skadar den spelaren med 1.
-\item Den rör sig åt vänster enligt en bestämd våg-liknande rörelse (se figur 1).
+\item Den rör sig åt vänster enligt en bestämd våg-liknande rörelse (se figur 3).
 \item Den har röreslehastighet 3. 
 \item Den skjuter skott rakt fram.
 \item Den skjuter skott när den är i höjd med spelaren.
@@ -145,7 +159,7 @@ De olika fiendetyperna i spelet har följande egenskaper:
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.4]{Images/Enemy1-movement.png}
-  \label{Bild 1}
+  \label{}
   \caption{Hur Small plane rör sig åt vänster}
 \end{figure}
 
@@ -153,28 +167,40 @@ De olika fiendetyperna i spelet har följande egenskaper:
 
 \newpage
 \subsubsection*{Big plane}
-\includegraphics[scale=0.2]{Images/Enemy2.png}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.2]{Images/Enemy2.png}
+  \label{}
+  \caption{Big planes utseende.}
+\end{figure}
 \begin{itemize}
 \item Den har en fixerad storlek, något större än Small plane.
 \item Den har 2 liv.
 \item Vid kollision skadar den spelaren med 2.
-\item Den rör sig åt vänster enligt en linjärt mönster (se figur2).
+\item Den rör sig åt vänster enligt en linjärt mönster (se figur 5).
 \item Den har röreslehastighet 2.
 \item Den skjuter när den är i höjd med spelaren.
 \end{itemize}
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.4]{Images/Enemy2-movement.png}
-  \label{Bild 2}
+  \label{}
   \caption{Hur Big plane rör sig åt vänster}
 \end{figure}
 
 \newpage
 \subsubsection*{Bomb}
-\includegraphics[scale=0.08]{Images/Bomb.png}\\
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.08]{Images/Bomb.png}
+  \label{}
+  \caption{Bombens utseende.}
+\end{figure}
+
 \begin{itemize}
 \item De har en fixerad storlek, en bit mindre än spelaren.
 \item Den har 1 liv.
+\item Den rör sig åt vänster enligt en linjärt mönster (se figur 7).
 \item Vid kollision skadar den spelaren med 1.
 \item Den har rörelsehastighet 1.
 
@@ -224,7 +250,7 @@ Det här är ett exempel på hur spelet kan se ut. Observera att spelaren är de
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.35]{Images/Game.png}
-  \label{Bild 3}
+  \label{}
   \caption{Ett exempel på hur en nivå kan se ut}
 \end{figure}
 
@@ -237,7 +263,10 @@ Nedan kommer alla de krav som spelet i slutändan ska uppfylla. Ska-krav är hö
 \item Det ska finnas ett spelarobjekt.
 \item Spelplanen ska ha en fixerad storlek som är lika stor som skärmen.
 \item Spelet ska utspela sig i en 2D-miljö sedd från sidoperspektiv.
-\item Spelet ska ha en startmeny där en nivå kan väljas, spelet kan avslutas, och hjälpsidan visas.
+\item Spelet ska ha en startmeny.
+\item Startmenyn ska länka till sidan med alla nivåer.
+\item Startmenyn ska länka till hjälpsidan.
+\item Spelet ska kunna avlutas med en knapp på startmenyn.
 \item Spelet ska ha en hjälpsida där regler och kontroller förklaras.
 \item Alla spelobjekt som visas på spelplanen ska ha en av 4 hastigheter som bestäms av vilken typ av objekt det är.
 \item Spelaren ska kontrollera en spelarkaraktär.
@@ -246,7 +275,8 @@ Nedan kommer alla de krav som spelet i slutändan ska uppfylla. Ska-krav är hö
 \item Spelaren styrs via tangentbordet.
 \item Spelaren ska kunna skjuta skott framför sig.
 \item Spelaren ska kunna förstöra fiender med sina skott.
-\item Spelaren ska ta skada ifall den kolliderar med fiender eller deras skott.
+\item Spelaren ska ta skada ifall den kolliderar med fiender.
+\item Spelaren ska ta skada ifall den kolliderar med fienders skott.
 \item Vid kollison med spelaren ska fiender förstöras.
 \item Spelaren ska förlora poäng vid kollision med fiende.
 \item Spelaren ska samla poäng när den förstör en fiende.
@@ -256,13 +286,13 @@ Nedan kommer alla de krav som spelet i slutändan ska uppfylla. Ska-krav är hö
 \item Spelaren ska inte kunna inte förstöra fiender via kollision under odödlighetsperioden.
 \item När spelaren dör ska rundan avslutas och spelaren ges möjlighet att spela igen eller gå tillbaka till startmenyn. 
 \item Det ska finnas 3 typer av fiender.
-\item Fiender ska röra på sig enligt förbestämda mönster och hastigheter.
-\item Vissa fiender ska skjuta skott.
+\item Fiender ska röra på sig enligt förbestämda mönster (se kapitel 6.5 och figur 3, 5 och 7) för  och hastigheter.
+\item Fiender av typen Small plane och Big plane ska skjuta skott.
 \item Fiender ska ignorera kollision med andra fienders skott och modeller.
 \item Fiender ska skada spelaren antingen genom att träffa den med skott eller genom att kollidera med den.
 \item Fiender ska endast skjuta när de befinner sig i höjd med spelaren.
 \item Det ska finnas en nivå (Level 1) i spelet.
-\item Det ska kunna läggas till flera nivåer med använder samma spelobjekt.
+\item Det ska kunna läggas till flera nivåer som använder samma spelobjekt.
 \item Det ska kunna finnas flera fiender av samma typ på spelplanen samtidigt.
 \item Fienderna ska röra på sig enligt ett mönster i spel nivån.
 \item Det ska finnas tre olika power-ups som regelbundet färdas åt vänster över spelplanen.
@@ -275,7 +305,7 @@ Nedan kommer alla de krav som spelet i slutändan ska uppfylla. Ska-krav är hö
 \subsection{Bör-krav}
 \begin{enumerate}
 \item Spelet ska ha ljud för diverse händelser.
-\item Speler ska ha bakgrundsmusik.
+\item Spelet ska ha bakgrundsmusik.
 \item Power-ups ska dras mot spelaren då den kommer i närheten av dem.
 \item Antalet intjänade poäng ska sparas när spelaren till slut förlorar och rundan är avslutad.
 \item Spelet ska ha en sida där intjänade poäng från tidigare rundor visas i en topplista.
@@ -292,23 +322,23 @@ Nedan kommer alla de krav som spelet i slutändan ska uppfylla. Ska-krav är hö
 \textit{\textbf{``Spelet ska simulera en värld som innehåller olika typer av objekt. Objekten ska ha olika beteenden och röra sig i världen och agera på olika sätt när de möter andra objekt.''}}
 
 
-Uppfylls av krav 3, 8, 12, 13, 14, 15, 22, 26\\
+Uppfylls av krav 3, 12, 15, 16, 18, 19, 26, 30\\
 
 
 \textit{\textbf{``Det måste finnas minst tre olika typer av objekt och det ska finnas flera instanser av minst två av dessa. T.ex ett spelarobjekt och många instanser av två olika slags fiendeobjekt.''}}
 
 
-Uppfylls av krav 1, 22, 32\\
+Uppfylls av krav 1, 26, 36\\
 
 \textit{\textbf{``Ett beteende som måste finnas med är att figurerna ska röra sig över skärmen. Rörelsen kan följa ett mönster och/eller vara slumpmässig. Minst ett objekt, utöver spelaren ska ha någon typ av rörelse.''}}
 
 
-Uppfylls av krav 23 och 32\\
+Uppfylls av krav 27 och 36\\
 
 \textit{\textbf{``En figur ska styras av spelaren, antingen med tangentbordet eller med musen. Du kan även göra ett spel där man spelar två stycken genom att dela på tangentbordet (varje spelare använder olika tangenter). Då styr man var sin figur.''}}
 
 
-Uppfylls av krav 7 och 8\\
+Uppfylls av krav 10 och 11\\
 
 \textit{\textbf{``Grafiken ska vara tvådimensionell.''}}
 
@@ -323,12 +353,12 @@ Uppfylls av krav 2\\
 \textit{\textbf{``Det ska finnas kollisionshantering, det vill säga, det ska hända olika saker när objekten möter varandra, de ska påverka varandra på något sätt. T.ex kan ett av objekten tas bort, eller så kan objekten förvandlas på något sätt, eller så kan ett nytt objekt skapas. ''}}
 
 
-Uppfylls av krav 12, 13, 14, 15, 26, 36\\
+Uppfylls av krav 15, 16, 17, 18, 30, 40\\
 
 \textit{\textbf{``Det ska vara enkelt att lägga till eller ändra banor i spelet. Detta kan exempelvis lösas genom att läsa in banor från en fil, eller genom att ha funktioner i programkoden som bygger upp en datastruktur som definierar en  nivå .''}}
 
 
-Uppfylls av 29\\
+Uppfylls av 33\\
 
 \textit{\textbf{`` Spelet måste upplevas som ett sammanhängande spel som går att spela! ''}}
 
