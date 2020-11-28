@@ -3,8 +3,8 @@
 Big_Plane::Big_Plane()
 {
   health = 2;
-  location = {700, 0};
-  speed = 50.0f;
+  location = {700, 30};
+  speed = 150.0f;
   if(!texture.loadFromFile("Enemy2_85x27.png", sf::IntRect(0, 0, 85, 27)))
     {
       std::cerr << "Error" << std::endl;
@@ -15,7 +15,7 @@ Big_Plane::Big_Plane()
 
 void Big_Plane::tick(sf::Time const& delta)
 {
-  location.x -= 1;
-  //  location.x -= delta.asMicroseconds() * speed / 1000000.0f;
+  // location.x -= 1;
+  location.x -= delta.asMicroseconds() * speed / 1000000.0f;
   sprite.setPosition(location);
 }

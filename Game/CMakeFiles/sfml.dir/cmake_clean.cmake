@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/sfml.dir/Big_Plane.cpp.o"
+  "CMakeFiles/sfml.dir/Bullet.cpp.o"
   "CMakeFiles/sfml.dir/Enemy.cpp.o"
   "CMakeFiles/sfml.dir/Entity.cpp.o"
   "CMakeFiles/sfml.dir/Player.cpp.o"

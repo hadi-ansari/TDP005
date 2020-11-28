@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/hadi/tdp005/Game/Big_Plane.cpp" "/home/hadi/tdp005/Game/CMakeFiles/sfml.dir/Big_Plane.cpp.o"
+  "/home/hadi/tdp005/Game/Bullet.cpp" "/home/hadi/tdp005/Game/CMakeFiles/sfml.dir/Bullet.cpp.o"
   "/home/hadi/tdp005/Game/Enemy.cpp" "/home/hadi/tdp005/Game/CMakeFiles/sfml.dir/Enemy.cpp.o"
   "/home/hadi/tdp005/Game/Entity.cpp" "/home/hadi/tdp005/Game/CMakeFiles/sfml.dir/Entity.cpp.o"
   "/home/hadi/tdp005/Game/Player.cpp" "/home/hadi/tdp005/Game/CMakeFiles/sfml.dir/Player.cpp.o"

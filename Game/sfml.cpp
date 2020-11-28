@@ -6,14 +6,19 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "Big_Plane.h"
+#include "Bullet.h"
 
 int main()
 {
   sf::RenderWindow window(sf::VideoMode(800, 600), "Test game");
   window.setVerticalSyncEnabled(true);
-  window.setKeyRepeatEnabled(false);
+  // window.setKeyRepeatEnabled(false);
 
+  sf::Vector2f test{0, 10};
   World world{};
+  world.insert_object(new Big_Plane{});
+  world.insert_object(new Bullet{test});
+  //  world.insert_object(new Bullet{test});
   world.run(window);
   
   // float speed{150.0f};

@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 
 project(sfml)
 
-set(SOURCE_FILES sfml.cpp World.cpp World.h Entity.cpp Entity.h Player.cpp Player.h Enemy.cpp Enemy.h Big_Plane.cpp Big_Plane.h)
+set(SOURCE_FILES sfml.cpp World.cpp World.h Entity.cpp Entity.h Player.cpp Player.h Enemy.cpp Enemy.h Big_Plane.cpp Big_Plane.h Bullet.cpp Bullet.h)
 
 set(CMAKE_CXX_STANDARD 17)
 

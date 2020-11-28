@@ -13,14 +13,14 @@ public:
   World();
   ~World();
 
-  void insert_object(Entity* const object);
+  void insert_object(Entity* object);
   Player get_player() const;
   std::vector <Entity*> get_objects() const;
   void run(sf::RenderWindow & window);
   
 private:
   std::vector <Entity*> objects{};
-  Player player{};
+  Player* player{};
 };
 
 #endif

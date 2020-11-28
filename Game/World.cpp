@@ -4,9 +4,9 @@
 #include "World.h"
 
 World::World()
-  : objects{}, player{}
+  : objects{}, player{new Player{}}
 {
-  
+  objects.push_back(player);
 }
 
 World::~World()
@@ -17,7 +17,7 @@ World::~World()
     }
 }
 
-void World::insert_object(Entity* const object)
+void World::insert_object(Entity* object)
 {
   objects.push_back(object);
 }
@@ -46,7 +46,7 @@ void World::run(sf::RenderWindow & window)
 	    }
 	  else
 	    {
-	      player.process_event(event.key.code);
+	      player -> process_event(event.key.code);
 	    }
 	  // else if(sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 	  //   {
@@ -66,15 +66,13 @@ void World::run(sf::RenderWindow & window)
 	  //   }
 	}
 
-      window.clear();
+      window.clear(sf::Color::White);
       sf::Time delta = clock.restart();
       for(auto object: objects)
       	{
       	  object -> tick(delta);
 	  window.draw(object -> sprite);
       	}
-      player.tick(delta);
-      window.draw(player.sprite);
       
       window.display();
 

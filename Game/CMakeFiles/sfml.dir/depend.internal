@@ -6,6 +6,10 @@ CMakeFiles/sfml.dir/Big_Plane.cpp.o
  /home/hadi/tdp005/Game/Big_Plane.h
  /home/hadi/tdp005/Game/Enemy.h
  /home/hadi/tdp005/Game/Entity.h
+CMakeFiles/sfml.dir/Bullet.cpp.o
+ /home/hadi/tdp005/Game/Bullet.cpp
+ /home/hadi/tdp005/Game/Bullet.h
+ /home/hadi/tdp005/Game/Entity.h
 CMakeFiles/sfml.dir/Enemy.cpp.o
  /home/hadi/tdp005/Game/Enemy.cpp
  /home/hadi/tdp005/Game/Enemy.h
@@ -24,6 +28,7 @@ CMakeFiles/sfml.dir/World.cpp.o
  /home/hadi/tdp005/Game/World.h
 CMakeFiles/sfml.dir/sfml.cpp.o
  /home/hadi/tdp005/Game/Big_Plane.h
+ /home/hadi/tdp005/Game/Bullet.h
  /home/hadi/tdp005/Game/Enemy.h
  /home/hadi/tdp005/Game/Entity.h
  /home/hadi/tdp005/Game/Player.h

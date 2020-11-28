@@ -44,26 +44,46 @@ void Player::process_event(sf::Keyboard::Key const& key)
 }
 void Player::tick(sf::Time const& delta)
 {
-  // location += delta.asmilliseconds() * speed / 1000.0f;
-  // sprite.setPosition(location);
+  /* Speed dependent  */
+  // if(up)
+  //   {
+  //     location.y -= delta.asMicroseconds() * speed / 1000000.0f;
+  //     up = false;
+  //   }
+  // else if(down)
+  //   {
+  //     location.y += delta.asMicroseconds() * speed / 1000000.0f;
+  //     down = false;
+  //   }
+  // else if(right)
+  //   {
+  //     location.x -= delta.asMicroseconds() * speed / 1000000.0f;
+  //     right = false;
+  //   }
+  // else if(left)
+  //   {
+  //     location.x += delta.asMicroseconds() * speed / 1000000.0f;
+  //   left = false;
+  // }
+  
   if(up)
     {
-      location.y -= delta.asMilliseconds() * speed / 1000.0f;
+      location.y -= 10;
       up = false;
     }
   else if(down)
     {
-      location.y += delta.asMilliseconds() * speed / 1000.0f;
+      location.y += 10;
       down = false;
     }
   else if(right)
     {
-      location.x -= delta.asMilliseconds() * speed / 1000.0f;
+      location.x -= 10;
       right = false;
     }
   else if(left)
     {
-      location.x += delta.asMilliseconds() * speed / 1000.0f;
+      location.x += 10;
       left = false;
     }
   sprite.setPosition(location);

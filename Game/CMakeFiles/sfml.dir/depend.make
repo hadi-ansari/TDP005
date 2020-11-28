@@ -6,6 +6,10 @@ CMakeFiles/sfml.dir/Big_Plane.cpp.o: Big_Plane.h
 CMakeFiles/sfml.dir/Big_Plane.cpp.o: Enemy.h
 CMakeFiles/sfml.dir/Big_Plane.cpp.o: Entity.h
 
+CMakeFiles/sfml.dir/Bullet.cpp.o: Bullet.cpp
+CMakeFiles/sfml.dir/Bullet.cpp.o: Bullet.h
+CMakeFiles/sfml.dir/Bullet.cpp.o: Entity.h
+
 CMakeFiles/sfml.dir/Enemy.cpp.o: Enemy.cpp
 CMakeFiles/sfml.dir/Enemy.cpp.o: Enemy.h
 CMakeFiles/sfml.dir/Enemy.cpp.o: Entity.h
@@ -23,6 +27,7 @@ CMakeFiles/sfml.dir/World.cpp.o: World.cpp
 CMakeFiles/sfml.dir/World.cpp.o: World.h
 
 CMakeFiles/sfml.dir/sfml.cpp.o: Big_Plane.h
+CMakeFiles/sfml.dir/sfml.cpp.o: Bullet.h
 CMakeFiles/sfml.dir/sfml.cpp.o: Enemy.h
 CMakeFiles/sfml.dir/sfml.cpp.o: Entity.h
 CMakeFiles/sfml.dir/sfml.cpp.o: Player.h

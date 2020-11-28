@@ -150,6 +150,33 @@ Big_Plane.cpp.s:
 	$(MAKE) -f CMakeFiles/sfml.dir/build.make CMakeFiles/sfml.dir/Big_Plane.cpp.s
 .PHONY : Big_Plane.cpp.s
 
+Bullet.o: Bullet.cpp.o
+
+.PHONY : Bullet.o
+
+# target to build an object file
+Bullet.cpp.o:
+	$(MAKE) -f CMakeFiles/sfml.dir/build.make CMakeFiles/sfml.dir/Bullet.cpp.o
+.PHONY : Bullet.cpp.o
+
+Bullet.i: Bullet.cpp.i
+
+.PHONY : Bullet.i
+
+# target to preprocess a source file
+Bullet.cpp.i:
+	$(MAKE) -f CMakeFiles/sfml.dir/build.make CMakeFiles/sfml.dir/Bullet.cpp.i
+.PHONY : Bullet.cpp.i
+
+Bullet.s: Bullet.cpp.s
+
+.PHONY : Bullet.s
+
+# target to generate assembly for a file
+Bullet.cpp.s:
+	$(MAKE) -f CMakeFiles/sfml.dir/build.make CMakeFiles/sfml.dir/Bullet.cpp.s
+.PHONY : Bullet.cpp.s
+
 Enemy.o: Enemy.cpp.o
 
 .PHONY : Enemy.o
@@ -297,6 +324,9 @@ help:
 	@echo "... Big_Plane.o"
 	@echo "... Big_Plane.i"
 	@echo "... Big_Plane.s"
+	@echo "... Bullet.o"
+	@echo "... Bullet.i"
+	@echo "... Bullet.s"
 	@echo "... Enemy.o"
 	@echo "... Enemy.i"
 	@echo "... Enemy.s"

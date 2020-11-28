@@ -6,25 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/home/hadi/tdp005/Game/Entity.h
+/home/hadi/tdp005/Game/Bullet.cpp
 SFML/Graphics.hpp
 -
 iostream
 -
+Bullet.h
+/home/hadi/tdp005/Game/Bullet.h
 
-/home/hadi/tdp005/Game/Player.cpp
-SFML/Graphics.hpp
--
-iostream
--
-Player.h
-/home/hadi/tdp005/Game/Player.h
-
-/home/hadi/tdp005/Game/Player.h
+/home/hadi/tdp005/Game/Bullet.h
 SFML/Graphics.hpp
 -
 iostream
 -
 Entity.h
 /home/hadi/tdp005/Game/Entity.h
+
+/home/hadi/tdp005/Game/Entity.h
+SFML/Graphics.hpp
+-
+iostream
+-
 
