@@ -6,35 +6,49 @@
 
 #IncludeRegexTransform: 
 
-/home/hadi/tdp005/Game/Entity.h
-SFML/Graphics.hpp
--
-iostream
--
-
-/home/hadi/tdp005/Game/Player.h
+/home/hadi/CLionProjects/tdp005/Game/Bullet.h
 SFML/Graphics.hpp
 -
 iostream
 -
 Entity.h
-/home/hadi/tdp005/Game/Entity.h
+/home/hadi/CLionProjects/tdp005/Game/Entity.h
 
-/home/hadi/tdp005/Game/World.cpp
+/home/hadi/CLionProjects/tdp005/Game/Entity.h
 SFML/Graphics.hpp
 -
 iostream
 -
-World.h
-/home/hadi/tdp005/Game/World.h
 
-/home/hadi/tdp005/Game/World.h
+/home/hadi/CLionProjects/tdp005/Game/Player.cpp
 SFML/Graphics.hpp
 -
 iostream
 -
-Entity.h
-/home/hadi/tdp005/Game/Entity.h
 Player.h
-/home/hadi/tdp005/Game/Player.h
+/home/hadi/CLionProjects/tdp005/Game/Player.h
+Bullet.h
+/home/hadi/CLionProjects/tdp005/Game/Bullet.h
+World.h
+/home/hadi/CLionProjects/tdp005/Game/World.h
+
+/home/hadi/CLionProjects/tdp005/Game/Player.h
+SFML/Graphics.hpp
+-
+iostream
+-
+Entity.h
+/home/hadi/CLionProjects/tdp005/Game/Entity.h
+Bullet.h
+/home/hadi/CLionProjects/tdp005/Game/Bullet.h
+
+/home/hadi/CLionProjects/tdp005/Game/World.h
+SFML/Graphics.hpp
+-
+iostream
+-
+Entity.h
+/home/hadi/CLionProjects/tdp005/Game/Entity.h
+Player.h
+/home/hadi/CLionProjects/tdp005/Game/Player.h
 

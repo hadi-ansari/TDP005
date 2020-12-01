@@ -31,28 +31,32 @@ void World::run(sf::RenderWindow & window)
   sf::Clock clock;
   
   while(window.isOpen())
-    {
+  {
       sf::Event event;
       
       while(window.pollEvent(event))
-      	{
-	  if(event.type == sf::Event::Closed)
-	    {
-	      window.close();
-	    }
-	  else
-	    {
-	      player -> process_event(event.key.code);
-	    }
-	}
+      {
+          if(event.type == sf::Event::Closed)
+          {
+              window.close();
+          }
+          else
+          {
+              player -> process_event(event.key.code);
+          }
+      }
 
       window.clear(sf::Color(76, 208, 255));
+      if(player -> want_shoot())
+      {
+          insert_object(player -> shoot());
+      }
       sf::Time delta = clock.restart();
       for(auto object: objects)
-      	{
-      	  object -> tick(delta);
-	  window.draw(object -> sprite);
-      	}
+      {
+          object -> tick(delta);
+          window.draw(object -> sprite);
+      }
       
       window.display();
 

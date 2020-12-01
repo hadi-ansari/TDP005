@@ -5,6 +5,7 @@
 #include <iostream>
 
 #include "Entity.h"
+#include "Bullet.h"
 
 class Player: public Entity
 {
@@ -12,8 +13,9 @@ public:
   Player();
   
   void process_event(sf::Keyboard::Key const& key);
-  void shoot();
+  Bullet* shoot();
   void tick(sf::Time const& delta) override;
+  bool want_shoot();
   
 private:
   int health{};
@@ -21,6 +23,7 @@ private:
   bool down;
   bool right;
   bool left;
+  bool sht;
 };
 
 #endif

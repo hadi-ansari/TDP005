@@ -15,7 +15,6 @@ int main()
   
   World world{};
   world.insert_object(new Big_Plane{});
-  world.insert_object(new Bullet{test});
   world.run(window);
 
   return 0;

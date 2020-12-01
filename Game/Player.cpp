@@ -19,34 +19,38 @@ Player::Player()
   down = false;
   right = false;
   left = false;
-
-  
+  sht = false;
 }
 
 void Player::process_event(sf::Keyboard::Key const& key)
 {
   switch(key)
-    {
-    case sf::Keyboard::W:
-      up = true;
-      break;
-    case sf::Keyboard::S:
-      down = true;
-      break;
-    case sf::Keyboard::A:
-      right = true;
-      break;
-    case sf::Keyboard::D:
-      left = true;
-      break;
-    default:
-      break;
-    }
+  {
+      case sf::Keyboard::W:
+          up = true;
+          break;
+      case sf::Keyboard::S:
+          down = true;
+          break;
+      case sf::Keyboard::A:
+          right = true;
+          break;
+      case sf::Keyboard::D:
+          left = true;
+          break;
+      case sf::Keyboard::Space:
+          sht = true;
+          break;
+      default:
+          break;
+  }
 }
 
-void Player::shoot()
+Bullet* Player::shoot()
 {
-  
+    sht = false;
+    sf::Vector2f temp{location.x + 65, location.y + 10};
+    return (new Bullet{temp});
 }
 
 void Player::tick(sf::Time const& delta)
@@ -94,4 +98,8 @@ void Player::tick(sf::Time const& delta)
       left = false;
     }
   sprite.setPosition(location);
+}
+bool Player::want_shoot()
+{
+    return sht;
 }
