@@ -7,16 +7,17 @@
 #include "Entity.h"
 
 struct Enemy: public Entity
-{  
-  virtual void tick(sf::Time const& delta) = 0;
+{
+    virtual ~Enemy() = default;
   
-  int health{};
+    int health{};
 };
 
 class Big_Plane: public Enemy
 {
 public:
-  Big_Plane();
+    Big_Plane();
+    ~Big_Plane() = default;
 
   void tick(sf::Time const& delta) override;
   bool kill_me()override;

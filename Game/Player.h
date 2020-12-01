@@ -10,21 +10,22 @@
 class Player: public Entity
 {
 public:
-  Player();
-  
-  void process_event(sf::Keyboard::Key const& key);
-  Bullet* shoot();
-  void tick(sf::Time const& delta) override;
-  bool want_shoot();
-  bool kill_me()override;
-  
+    Player();
+    ~Player() = default;
+
+    void process_event(sf::Keyboard::Key const& key);
+    Bullet* shoot();
+    void tick(sf::Time const& delta) override;
+    bool want_shoot();
+    bool kill_me()override;
+
 private:
-  int health{};
-  bool up;
-  bool down;
-  bool right;
-  bool left;
-  bool sht;
+    int health{};
+    bool up;
+    bool down;
+    bool right;
+    bool left;
+    bool sht;
 };
 
 #endif

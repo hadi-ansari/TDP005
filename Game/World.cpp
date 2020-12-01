@@ -72,6 +72,5 @@ void World::run(sf::RenderWindow & window)
       }
       
       window.display();
-
-    }
+  }
 }
