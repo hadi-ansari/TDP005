@@ -16,6 +16,7 @@ public:
   Bullet* shoot();
   void tick(sf::Time const& delta) override;
   bool want_shoot();
+  bool kill_me()override;
   
 private:
   int health{};

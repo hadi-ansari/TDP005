@@ -103,3 +103,7 @@ bool Player::want_shoot()
 {
     return sht;
 }
+bool Player::kill_me()
+{
+    return (location.x < 0 || location.y < 0 || location.y > 768);
+}

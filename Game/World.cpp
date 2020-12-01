@@ -51,6 +51,19 @@ void World::run(sf::RenderWindow & window)
       {
           insert_object(player -> shoot());
       }
+      objects.erase(remove_if(objects.begin(), objects.end(),
+                              [](Entity* & x)
+                              {
+                                  if( x -> kill_me())
+                                  {
+                                      delete x;
+                                      return true;
+                                  }
+                                  return false;
+                              }
+                              ), objects.end());
+
+
       sf::Time delta = clock.restart();
       for(auto object: objects)
       {

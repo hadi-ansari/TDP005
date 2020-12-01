@@ -19,3 +19,7 @@ void Big_Plane::tick(sf::Time const& delta)
   location.x -= delta.asMicroseconds() * speed / 1000000.0f;
   sprite.setPosition(location);
 }
+bool Big_Plane::kill_me()
+{
+    return (location.x < 0 || location.y < 0 || location.y > 768);
+}

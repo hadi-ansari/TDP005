@@ -5,9 +5,11 @@
 #include "Enemy.h"
 #include "Bullet.h"
 
+size_t const width = 1024;
+size_t const height = 768;
 int main()
 {
-  sf::RenderWindow window(sf::VideoMode(800, 600), "Test game");
+  sf::RenderWindow window(sf::VideoMode(width, height), "Test game");
   window.setVerticalSyncEnabled(true);
   // window.setKeyRepeatEnabled(false);
 

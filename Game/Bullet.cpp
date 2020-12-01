@@ -20,3 +20,6 @@ void Bullet::tick(sf::Time const& delta)
   location.x += speed * (delta.asMicroseconds() / 1000000.0f);
   sprite.setPosition(location);
 }
+bool Bullet::kill_me() {
+    return (location.x < 0 || location.y < 0 || location.y > 768);
+}

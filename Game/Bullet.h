@@ -11,6 +11,7 @@ class Bullet : public Entity
 public:
   Bullet(sf::Vector2f test);
   void tick(sf::Time const& delta) override;
+  bool kill_me() override;
 };
 
 #endif
