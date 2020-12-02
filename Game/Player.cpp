@@ -130,7 +130,7 @@ void Player::collision(std::vector<Entity*> const& objects)
             std::cout << "Colliding Player with " << object -> get_type() <<  std::endl;
             std::string type = object -> get_type();
 
-            if(type == "Big Plane" || type == "Enemy-Bullet")
+            if(type == "Big Plane" || type == "Enemy-Bullet" || type == "Bomb")
                     health -= 2;
             else if(type == "Small Plane")
                     health -= 1;

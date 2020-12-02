@@ -16,6 +16,7 @@ int main()
     sf::Vector2f test{300, 200};
     World world{};
     world.insert_object(new Big_Plane{});
+    world.insert_object(new Bomb{});
     world.run(window);
 
     return 0;

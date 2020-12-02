@@ -32,7 +32,7 @@ void Player_Bullet::collision(std::vector<Entity *> const&objects)
             std::cout << "Colliding Player-Bullet with " << object -> get_type() << std::endl;
             std::string type = object -> get_type();
 
-            if (type == "Big Plane" || type == "Small Plane")
+            if (type == "Big Plane" || type == "Small Plane" || type == "Bomb")
                 health -= 1;
          }
     }
