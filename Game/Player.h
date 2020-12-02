@@ -28,6 +28,9 @@ private:
     bool right;
     bool left;
     bool sht;
+    float shoot_speed;
+    sf::Clock clock1;
+    sf::Time t1;
 };
 
 #endif

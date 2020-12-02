@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <iomanip>
 
 #include "Player.h"
 #include "Bullet.h"
@@ -14,11 +15,13 @@ Player::Player()
     sprite.setTexture(texture);
     health = 3;
     speed = 150.0f;
+    shoot_speed = 0.30f;
     up = false;
     down = false;
     right = false;
     left = false;
     sht = false;
+    t1 = clock1.restart();
 
 }
 
@@ -39,7 +42,10 @@ void Player::process_event(sf::Keyboard::Key const& key)
           left = true;
           break;
       case sf::Keyboard::Space:
-          sht = true;
+          if (t1.asSeconds() > shoot_speed){
+              sht = true;
+              t1 = clock1.restart();
+          }
           break;
       default:
           break;
@@ -55,6 +61,7 @@ Bullet* Player::shoot()
 
 void Player::tick(sf::Time const& delta)
 {
+    t1 = clock1.getElapsedTime();
   /* Speed dependent  */
   // if(up)
   //   {
@@ -76,7 +83,6 @@ void Player::tick(sf::Time const& delta)
   //     location.x += delta.asMicroseconds() * speed / 1000000.0f;
   //   left = false;
   // }
-  
   if(up)
     {
       location.y -= 10;
