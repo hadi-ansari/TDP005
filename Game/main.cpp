@@ -9,7 +9,8 @@ size_t const width = 1024;
 size_t const height = 768;
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(width, height), "Test game");
+
+    sf::RenderWindow window(sf::VideoMode(width, height), "Test game", sf::Style::Close);
     window.setVerticalSyncEnabled(true);
     // window.setKeyRepeatEnabled(false);
 
