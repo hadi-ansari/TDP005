@@ -14,7 +14,7 @@ Player::Player()
     }
     sprite.setTexture(texture);
     health = 3;
-    speed = 0.6f;
+    speed = 0.5f;
     shoot_speed = 0.30f;
     sht = false;
     t1 = clock1.restart();
@@ -23,7 +23,6 @@ Player::Player()
 
 sf::Vector2f Player::process_event(sf::Time delta)
 {
-
     sf::Vector2f v;
     float ElapsedTime = delta.asMilliseconds();
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
@@ -39,7 +38,7 @@ sf::Vector2f Player::process_event(sf::Time delta)
             sht = true;
             t1 = clock1.restart();
         }
-            return v;
+    return v;
 }
 
 Bullet* Player::shoot()
@@ -53,57 +52,9 @@ void Player::tick(sf::Time const& delta)
 {
     t1 = clock1.getElapsedTime();
   /* Speed dependent  */
-  // if(up)
-  //   {
-  //     location.y -= delta.asMicroseconds() * speed / 1000000.0f;
-  //     up = false;
-  //   }
-  // else if(down)
-  //   {
-  //     location.y += delta.asMicroseconds() * speed / 1000000.0f;
-  //     down = false;
-  //   }
-  // else if(right)
-  //   {
-  //     location.x -= delta.asMicroseconds() * speed / 1000000.0f;
-  //     right = false;
-  //   }
-  // else if(left)
-  //   {
-  //     location.x += delta.asMicroseconds() * speed / 1000000.0f;
-  //   left = false;
-  // }
-
-
-//  if(up)
-//    {
-//      if(location.y - 10 > 0){
-//          location.y -= 10;
-//      }
-//        up = false;
-//    }
-//  else if(down)
-//    {
-//        if(location.y + 10 < 747){
-//            location.y += 10;
-//        }
-//      down = false;
-//    }
-//  else if(right)
-//    {
-//        if(location.x - 10 > 0){
-//            location.x -= 10;
-//        }
-//      right = false;
-//    }
-//  else if(left)
-//    {
-//        if(location.x + 75 < 1024){
-//            location.x += 10;
-//        }
-//        left = false;
-//    }
-  sprite.setPosition(location += process_event(delta));
+    sf::Vector2f temp = location + process_event(delta);
+    if (temp.x < 959 && temp.x >= 0 && temp.y < 747  && temp.y >= 0 )
+        sprite.setPosition(location += process_event(delta));
 }
 bool Player::want_shoot() const
 {
