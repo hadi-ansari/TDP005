@@ -1,4 +1,6 @@
 #include <SFML/Graphics.hpp>
-#include <iostream>
 
 #include "Entity.h"
+Entity::Entity(sf::Vector2f location)
+        :location(location)
+{}

@@ -2,10 +2,15 @@
 #include <iostream>
 
 #include "Bullet.h"
+#include "Entity.h"
 
-Player_Bullet::Player_Bullet(sf::Vector2f test)
+//Bullet
+Bullet::Bullet(sf::Vector2f location) : Entity(location)
+{}
+
+// Player-Bullet
+Player_Bullet::Player_Bullet(sf::Vector2f location): Bullet(location)
 {
-    location = test;
     speed = 700.0f;
     health = 1;
     if(!texture.loadFromFile("Bullet.png", sf::IntRect(0, 0, 15, 3)))
@@ -41,3 +46,4 @@ std::string Player_Bullet::get_type()
 {
     return "Player-Bullet";
 }
+

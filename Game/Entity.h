@@ -7,6 +7,7 @@
 
 struct Entity
 {
+    explicit Entity(sf::Vector2f location);
     virtual ~Entity() = default;
 
     virtual void tick(sf::Time const& delta) = 0;

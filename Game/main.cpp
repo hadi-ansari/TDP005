@@ -3,7 +3,6 @@
 
 #include "World.h"
 #include "Enemy.h"
-#include "Bullet.h"
 
 size_t const width = 1024;
 size_t const height = 768;
@@ -13,10 +12,9 @@ int main()
     window.setVerticalSyncEnabled(true);
     // window.setKeyRepeatEnabled(false);
 
-    sf::Vector2f test{300, 200};
     World world{};
-    world.insert_object(new Big_Plane{});
-    world.insert_object(new Bomb{});
+    world.insert_object(new Big_Plane{sf::Vector2f (1000, 0)});
+    world.insert_object(new Bomb{sf::Vector2f ( 950, 400)});
     world.run(window);
 
     return 0;

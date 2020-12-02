@@ -5,8 +5,7 @@
 #include "Player.h"
 #include "Bullet.h"
 
-Player::Player()
-{
+Player::Player(sf::Vector2f location) : Entity(location) {
     location = {0, 0};
     if(!texture.loadFromFile("Player65x21.png", sf::IntRect(0, 0, 65, 21)))
     {

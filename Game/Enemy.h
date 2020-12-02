@@ -9,13 +9,14 @@
 
 struct Enemy: public Entity
 {
+    explicit Enemy(sf::Vector2f location);
     ~Enemy() override = default;
 
 };
 class Bomb : public Enemy
 {
 public:
-    Bomb();
+    explicit Bomb(sf::Vector2f location);
     ~Bomb() override= default;
 
     void tick(sf::Time const& delta) override;
@@ -26,8 +27,8 @@ public:
 class Big_Plane: public Enemy
 {
 public:
-    Big_Plane();
-    ~Big_Plane() override= default;
+    explicit Big_Plane(sf::Vector2f location);
+    ~Big_Plane() override = default;
 
     void tick(sf::Time const& delta) override;
     bool kill_me() override;

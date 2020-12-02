@@ -9,14 +9,16 @@
 class Bullet : public Entity
 {
 public:
-    virtual ~Bullet() = default;
+    explicit Bullet(sf::Vector2f location);
+    ~Bullet() override = default;
 };
 
 class Player_Bullet : public Bullet
 {
 public:
-    Player_Bullet(sf::Vector2f test);
-    ~Player_Bullet() = default;
+    explicit Player_Bullet(sf::Vector2f test);
+
+    ~Player_Bullet() override = default;
 
     void tick(sf::Time const& delta) override;
     bool kill_me() override;

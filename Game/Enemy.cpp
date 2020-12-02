@@ -1,11 +1,13 @@
 #include <string>
 
 #include "Enemy.h"
+//
+Enemy::Enemy(sf::Vector2f location):Entity(location)
+{}
 
 // Bomb
-Bomb::Bomb()
+Bomb::Bomb(sf::Vector2f location):Enemy(location)
 {
-    location = {900, 100};
     health = 1;
     speed = 100.0f;
     if(!texture.loadFromFile("Bomb50x50.png", sf::IntRect(0, 0, 50, 50)))
@@ -43,10 +45,11 @@ std::string Bomb::get_type()
     return "Bomb";
 }
 
+
+
 // Big Plane
-Big_Plane::Big_Plane()
+Big_Plane::Big_Plane(sf::Vector2f location): Enemy(location)
 {
-    location = {900, 0};
     health = 2;
     speed = 150.0f;
     if(!texture.loadFromFile("Enemy2_85x27.png", sf::IntRect(0, 0, 85, 27)))

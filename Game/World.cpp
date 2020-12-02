@@ -5,7 +5,7 @@
 #include "World.h"
 
 World::World()
-  : objects{}, player{new Player{}}
+  : objects{}, player{new Player{sf::Vector2f(0 , 0)}}
 {
   objects.push_back(player);
 }
