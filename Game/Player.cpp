@@ -14,25 +14,26 @@ Player::Player()
     }
     sprite.setTexture(texture);
     health = 3;
-    speed = 150.0f;
+    speed = 0.6f;
     shoot_speed = 0.30f;
     sht = false;
     t1 = clock1.restart();
 
 }
 
-sf::Vector2f Player::process_event()
+sf::Vector2f Player::process_event(sf::Time delta)
 {
-    const float speed = 0.5;
+
     sf::Vector2f v;
+    float ElapsedTime = delta.asMilliseconds();
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-        v.y -= speed;
+        v.y -= speed * ElapsedTime;
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-        v.y += speed;
+        v.y += speed * ElapsedTime;
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-        v.x -= speed;
+        v.x -= speed * ElapsedTime;
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-        v.x += speed;
+        v.x += speed * ElapsedTime;
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
         if (t1.asSeconds() > shoot_speed) {
             sht = true;
@@ -102,7 +103,7 @@ void Player::tick(sf::Time const& delta)
 //        }
 //        left = false;
 //    }
-  sprite.setPosition(location += process_event());
+  sprite.setPosition(location += process_event(delta));
 }
 bool Player::want_shoot() const
 {
