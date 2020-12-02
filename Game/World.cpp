@@ -25,7 +25,7 @@ void World::insert_object(Entity* object)
 void World::run(sf::RenderWindow & window)
 {
   sf::Clock clock;
-  
+
   while(window.isOpen())
   {
       sf::Event evnet{};
@@ -38,7 +38,8 @@ void World::run(sf::RenderWindow & window)
           }
           else
           {
-              player -> process_event();
+              sf::Time delta = clock.getElapsedTime();
+              player -> process_event(delta);
           }
       }
 
