@@ -14,6 +14,7 @@ int main()
 
     World world{};
     world.insert_object(new Big_Plane{sf::Vector2f (1000, 0)});
+    world.insert_object(new Small_Plane{sf::Vector2f ( 880, 250)});
     world.insert_object(new Bomb{sf::Vector2f ( 950, 400)});
     world.run(window);
 

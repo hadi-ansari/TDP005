@@ -9,7 +9,7 @@ Enemy::Enemy(sf::Vector2f location):Entity(location)
 Bomb::Bomb(sf::Vector2f location):Enemy(location)
 {
     health = 1;
-    speed = 100.0f;
+    speed = 0.2f;
     if(!texture.loadFromFile("Bomb50x50.png", sf::IntRect(0, 0, 50, 50)))
     {
         std::cerr << "Error" << std::endl;
@@ -18,7 +18,7 @@ Bomb::Bomb(sf::Vector2f location):Enemy(location)
 }
 void Bomb::tick(sf::Time const& delta)
 {
-    location.x -= delta.asMicroseconds() * speed / 1000000.0f;
+    location.x -= delta.asMilliseconds() * speed;
     sprite.setPosition(location);
 }
 bool Bomb::kill_me()
@@ -45,13 +45,51 @@ std::string Bomb::get_type()
     return "Bomb";
 }
 
+// Small Plane
+Small_Plane::Small_Plane(sf::Vector2f location): Enemy(location)
+{
+    health = 1;
+    speed = 0.5f;
+    if(!texture.loadFromFile("Enemy1_75x22.png", sf::IntRect(0, 0, 75, 22)))
+    {
+        std::cerr << "Error" << std::endl;
+    }
+    sprite.setTexture(texture);
+}
 
+void Small_Plane::tick(sf::Time const& delta)
+{
+    location.x -= delta.asMilliseconds() * speed;
+    sprite.setPosition(location);
+}
+bool Small_Plane::kill_me()
+{
+    return (location.x < 0 || location.y < 0 || location.y > 768 || health < 1);
+}
+
+void Small_Plane::collision(std::vector<Entity*> const& objects)
+{
+    for(auto object: objects)
+    {
+        if ( sprite.getGlobalBounds().intersects((object -> sprite).getGlobalBounds()) )
+        {
+            std::cout << "Colliding Small Plane with " << object -> get_type()<< std::endl;
+            std::string type = object -> get_type();
+
+            if (type == "Player" || type == "Player-Bullet")
+                health -= 1;
+        }
+    }
+}
+std::string Small_Plane::get_type() {
+    return "Small Plane";
+}
 
 // Big Plane
 Big_Plane::Big_Plane(sf::Vector2f location): Enemy(location)
 {
     health = 2;
-    speed = 150.0f;
+    speed = 0.3f;
     if(!texture.loadFromFile("Enemy2_85x27.png", sf::IntRect(0, 0, 85, 27)))
     {
         std::cerr << "Error" << std::endl;
@@ -61,8 +99,7 @@ Big_Plane::Big_Plane(sf::Vector2f location): Enemy(location)
 
 void Big_Plane::tick(sf::Time const& delta)
 {
-  // location.x -= 1;
-  location.x -= delta.asMicroseconds() * speed / 1000000.0f;
+  location.x -= delta.asMilliseconds() * speed;
   sprite.setPosition(location);
 }
 bool Big_Plane::kill_me()

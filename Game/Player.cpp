@@ -7,7 +7,7 @@
 
 Player::Player(sf::Vector2f location) : Entity(location) {
     location = {0, 0};
-    if(!texture.loadFromFile("Player65x21.png", sf::IntRect(0, 0, 65, 21)))
+    if(!texture.loadFromFile("Player70x22.png", sf::IntRect(0, 0, 70, 22)))
     {
         std::cerr << "Error" << std::endl;
     }
