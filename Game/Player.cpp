@@ -85,23 +85,31 @@ void Player::tick(sf::Time const& delta)
   // }
   if(up)
     {
-      location.y -= 10;
-      up = false;
+      if(location.y - 10 > 0){
+          location.y -= 10;
+      }
+        up = false;
     }
   else if(down)
     {
-      location.y += 10;
+        if(location.y + 10 < 747){
+            location.y += 10;
+        }
       down = false;
     }
   else if(right)
     {
-      location.x -= 10;
+        if(location.x - 10 > 0){
+            location.x -= 10;
+        }
       right = false;
     }
   else if(left)
     {
-      location.x += 10;
-      left = false;
+        if(location.x + 75 < 1024){
+            location.x += 10;
+        }
+        left = false;
     }
   sprite.setPosition(location);
 }
