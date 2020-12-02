@@ -10,7 +10,9 @@ Bomb::Bomb(sf::Vector2f location):Enemy(location)
 {
     health = 1;
     speed = 0.2f;
-    if(!texture.loadFromFile("Bomb50x50.png", sf::IntRect(0, 0, 50, 50)))
+    width = 50;
+    height = 50;
+    if(!texture.loadFromFile("Bomb50x50.png", sf::IntRect(0, 0, width, height)))
     {
         std::cerr << "Error" << std::endl;
     }
@@ -50,7 +52,9 @@ Small_Plane::Small_Plane(sf::Vector2f location): Enemy(location)
 {
     health = 1;
     speed = 0.5f;
-    if(!texture.loadFromFile("Enemy1_75x22.png", sf::IntRect(0, 0, 75, 22)))
+    width = 75;
+    height = 22;
+    if(!texture.loadFromFile("Enemy1_75x22.png", sf::IntRect(0, 0, width, height)))
     {
         std::cerr << "Error" << std::endl;
     }
@@ -90,7 +94,9 @@ Big_Plane::Big_Plane(sf::Vector2f location): Enemy(location)
 {
     health = 2;
     speed = 0.3f;
-    if(!texture.loadFromFile("Enemy2_85x27.png", sf::IntRect(0, 0, 85, 27)))
+    width = 100;
+    height = 31;
+    if(!texture.loadFromFile("Enemy2_100x31.png", sf::IntRect(0, 0, width, height)))
     {
         std::cerr << "Error" << std::endl;
     }

@@ -20,6 +20,9 @@ struct Entity
     sf::Sprite sprite;
     float speed;
     int health;
+    int width;
+    int height;
+
 };
 
 #endif
