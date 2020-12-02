@@ -34,13 +34,13 @@ void Big_Plane::collision(std::vector<Entity*> const& objects)
             std::cout << "Colliding Big Plane with " << object -> get_type()<< std::endl;
             std::string type = object -> get_type();
 
-            if (type == "P")
+            if (type == "Player")
                 health -= 2;
-            else if(type == "PB")
+            else if(type == "Player-Bullet")
                 health -= 1;
         }
     }
 }
 std::string Big_Plane::get_type() {
-    return "BP";
+    return "Big Plane";
 }

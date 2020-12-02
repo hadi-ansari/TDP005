@@ -47,35 +47,9 @@ void World::run(sf::RenderWindow & window)
       {
           insert_object(player -> shoot());
       }
-/*
-      objects.erase(std::remove_if(objects.begin(), objects.end(),
-                              [](Entity* & x)
-                              {
-                                  if( x -> kill_me())
-                                  {
-                                      delete x;
-                                      return true;
-                                  }
-                                  return false;
-                              }
-                              ), objects.end());
 
-      for(auto object: objects)
-      {
-          std::vector <Entity*> new_vector(objects.size());
-          std::copy(objects.begin(), objects.end(), new_vector.begin());
-          new_vector.erase(std::remove_if(new_vector.begin(), new_vector.end(),
-                                  [&object](Entity* x)
-                                  {
-                                      return x == object;
-                                  }
-          ), new_vector.end());
-          object -> collision(new_vector);
-      }
-*/
-      std::vector<Entity*> new_vector;
-      new_vector.push_back(objects[1]);
-      player -> collision(new_vector);
+
+
 
       sf::Time delta = clock.restart();
       for(auto object: objects)
@@ -83,7 +57,37 @@ void World::run(sf::RenderWindow & window)
           object -> tick(delta);
           window.draw(object -> sprite);
       }
-      
+
+      for(auto object: objects)
+      {
+          std::vector <Entity*> new_vector(objects.size());
+          std::copy(objects.begin(), objects.end(), new_vector.begin());
+          new_vector.erase(std::remove_if(new_vector.begin(), new_vector.end(),
+                                          [&object](Entity* x)
+                                          {
+                                              return x == object;
+                                          }
+          ), new_vector.end());
+          object -> collision(new_vector);
+      }
+      objects.erase(std::remove_if(objects.begin(), objects.end(),
+                                   [](Entity* & x)
+                                   {
+                                       if( x -> kill_me())
+                                       {
+                                           delete x;
+                                           return true;
+                                       }
+                                       return false;
+                                   }
+      ), objects.end());
+
+
+    /*
+      std::vector<Entity*> new_vector;
+      new_vector.push_back(objects[1]);
+      player -> collision(new_vector);
+*/
       window.display();
   }
 }

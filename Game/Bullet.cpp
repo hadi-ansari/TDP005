@@ -29,15 +29,15 @@ void Player_Bullet::collision(std::vector<Entity *> const&objects)
     {
         if ( sprite.getGlobalBounds().intersects((object -> sprite).getGlobalBounds()) )
         {
-            std::cout << "Colliding" << std::endl;
+            std::cout << "Colliding Player-Bullet with " << object -> get_type() << std::endl;
             std::string type = object -> get_type();
 
-            if (type == "BP" || type == "SP")
+            if (type == "Big Plane" || type == "Small Plane")
                 health -= 1;
          }
     }
 }
 std::string Player_Bullet::get_type()
 {
-    return "PB";
+    return "Player-Bullet";
 }

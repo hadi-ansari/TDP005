@@ -116,14 +116,14 @@ void Player::collision(std::vector<Entity*> const& objects)
             std::cout << "Colliding Player with " << object -> get_type() <<  std::endl;
             std::string type = object -> get_type();
 
-            if(type == "BP" || type == "EB")
+            if(type == "Big Plane" || type == "Enemy-Bullet")
                     health -= 2;
-            else if(type == "SP")
+            else if(type == "Small Plane")
                     health -= 1;
         }
     }
 }
 
 std::string Player::get_type() {
-    return "P";
+    return "Player";
 }
