@@ -13,8 +13,7 @@ int main()
     window.setVerticalSyncEnabled(true);
     // window.setKeyRepeatEnabled(false);
 
-    sf::Vector2f test{0, 10};
-  
+    sf::Vector2f test{300, 200};
     World world{};
     world.insert_object(new Big_Plane{});
     world.run(window);

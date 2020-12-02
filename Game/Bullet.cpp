@@ -3,23 +3,41 @@
 
 #include "Bullet.h"
 
-
-Bullet::Bullet(sf::Vector2f test)
+Player_Bullet::Player_Bullet(sf::Vector2f test)
 {
-  location = test;
-  speed = 700.0f;
-  if(!texture.loadFromFile("Bullet.png", sf::IntRect(0, 0, 15, 3)))
+    location = test;
+    speed = 700.0f;
+    health = 1;
+    if(!texture.loadFromFile("Bullet.png", sf::IntRect(0, 0, 15, 3)))
     {
-      std::cerr << "Error" << std::endl;
+        std::cerr << "Error" << std::endl;
     }
-  sprite.setTexture(texture);
+    sprite.setTexture(texture);
 }
-  
-void Bullet::tick(sf::Time const& delta)
+
+void Player_Bullet::tick(sf::Time const& delta)
 {
   location.x += speed * (delta.asMicroseconds() / 1000000.0f);
   sprite.setPosition(location);
 }
-bool Bullet::kill_me() {
-    return (location.x < 0 || location.y < 0 || location.y > 768);
+bool Player_Bullet::kill_me() {
+    return (location.x < 0 || location.y < 0 || location.y > 768 || health < 1);
+}
+void Player_Bullet::collision(std::vector<Entity *> const&objects)
+{
+    for(auto object: objects)
+    {
+        if ( sprite.getGlobalBounds().intersects((object -> sprite).getGlobalBounds()) )
+        {
+            std::cout << "Colliding" << std::endl;
+            std::string type = object -> get_type();
+
+            if (type == "BP" || type == "SP")
+                health -= 1;
+         }
+    }
+}
+std::string Player_Bullet::get_type()
+{
+    return "PB";
 }

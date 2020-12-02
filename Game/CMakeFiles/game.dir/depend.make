@@ -16,7 +16,6 @@ CMakeFiles/game.dir/Player.cpp.o: Bullet.h
 CMakeFiles/game.dir/Player.cpp.o: Entity.h
 CMakeFiles/game.dir/Player.cpp.o: Player.cpp
 CMakeFiles/game.dir/Player.cpp.o: Player.h
-CMakeFiles/game.dir/Player.cpp.o: World.h
 
 CMakeFiles/game.dir/World.cpp.o: Bullet.h
 CMakeFiles/game.dir/World.cpp.o: Entity.h

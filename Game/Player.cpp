@@ -3,23 +3,23 @@
 
 #include "Player.h"
 #include "Bullet.h"
-#include "World.h"
 
 Player::Player()
 {
-  health = 3;
-  location = {0, 0};
-  speed = 150.0f;
-  if(!texture.loadFromFile("Player65x21.png", sf::IntRect(0, 0, 65, 21)))
+    location = {0, 0};
+    if(!texture.loadFromFile("Player65x21.png", sf::IntRect(0, 0, 65, 21)))
     {
-      std::cerr << "Error" << std::endl;
+        std::cerr << "Error" << std::endl;
     }
-  sprite.setTexture(texture);
-  up = false;
-  down = false;
-  right = false;
-  left = false;
-  sht = false;
+    sprite.setTexture(texture);
+    health = 3;
+    speed = 150.0f;
+    up = false;
+    down = false;
+    right = false;
+    left = false;
+    sht = false;
+
 }
 
 void Player::process_event(sf::Keyboard::Key const& key)
@@ -50,7 +50,7 @@ Bullet* Player::shoot()
 {
     sht = false;
     sf::Vector2f temp{location.x + 65, location.y + 10};
-    return (new Bullet{temp});
+    return (new Player_Bullet{temp});
 }
 
 void Player::tick(sf::Time const& delta)
@@ -99,11 +99,31 @@ void Player::tick(sf::Time const& delta)
     }
   sprite.setPosition(location);
 }
-bool Player::want_shoot()
+bool Player::want_shoot() const
 {
     return sht;
 }
 bool Player::kill_me()
 {
-    return (location.x < 0 || location.y < 0 || location.y > 768);
+    return (location.x < 0 || location.y < 0 || location.y > 768 || health < 1);
+}
+void Player::collision(std::vector<Entity*> const& objects)
+{
+    for(auto object: objects)
+    {
+        if ( sprite.getGlobalBounds().intersects((object -> sprite).getGlobalBounds()) )
+        {
+            std::cout << "Colliding Player with " << object -> get_type() <<  std::endl;
+            std::string type = object -> get_type();
+
+            if(type == "BP" || type == "EB")
+                    health -= 2;
+            else if(type == "SP")
+                    health -= 1;
+        }
+    }
+}
+
+std::string Player::get_type() {
+    return "P";
 }

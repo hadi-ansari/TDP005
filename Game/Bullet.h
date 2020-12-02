@@ -9,11 +9,19 @@
 class Bullet : public Entity
 {
 public:
-    Bullet(sf::Vector2f test);
-    ~Bullet() = default;
+    virtual ~Bullet() = default;
+};
+
+class Player_Bullet : public Bullet
+{
+public:
+    Player_Bullet(sf::Vector2f test);
+    ~Player_Bullet() = default;
 
     void tick(sf::Time const& delta) override;
     bool kill_me() override;
+    void collision(std::vector<Entity*> const& objects) override;
+    std::string get_type() override;
 };
 
 #endif

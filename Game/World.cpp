@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
+//#include <algorithm>
 
 #include "World.h"
 
@@ -21,28 +22,23 @@ void World::insert_object(Entity* object)
 {
   objects.push_back(object);
 }
-std::vector <Entity*> World::get_objects() const
-{
-  return objects;
-}
-
 void World::run(sf::RenderWindow & window)
 {
   sf::Clock clock;
   
   while(window.isOpen())
   {
-      sf::Event event;
+      sf::Event evnet{};
       
-      while(window.pollEvent(event))
+      while(window.pollEvent(evnet))
       {
-          if(event.type == sf::Event::Closed)
+          if(evnet.type == sf::Event::Closed)
           {
               window.close();
           }
           else
           {
-              player -> process_event(event.key.code);
+              player -> process_event(evnet.key.code);
           }
       }
 
@@ -51,7 +47,8 @@ void World::run(sf::RenderWindow & window)
       {
           insert_object(player -> shoot());
       }
-      objects.erase(remove_if(objects.begin(), objects.end(),
+/*
+      objects.erase(std::remove_if(objects.begin(), objects.end(),
                               [](Entity* & x)
                               {
                                   if( x -> kill_me())
@@ -63,6 +60,22 @@ void World::run(sf::RenderWindow & window)
                               }
                               ), objects.end());
 
+      for(auto object: objects)
+      {
+          std::vector <Entity*> new_vector(objects.size());
+          std::copy(objects.begin(), objects.end(), new_vector.begin());
+          new_vector.erase(std::remove_if(new_vector.begin(), new_vector.end(),
+                                  [&object](Entity* x)
+                                  {
+                                      return x == object;
+                                  }
+          ), new_vector.end());
+          object -> collision(new_vector);
+      }
+*/
+      std::vector<Entity*> new_vector;
+      new_vector.push_back(objects[1]);
+      player -> collision(new_vector);
 
       sf::Time delta = clock.restart();
       for(auto object: objects)
