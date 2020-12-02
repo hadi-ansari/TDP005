@@ -16,40 +16,29 @@ Player::Player()
     health = 3;
     speed = 150.0f;
     shoot_speed = 0.30f;
-    up = false;
-    down = false;
-    right = false;
-    left = false;
     sht = false;
     t1 = clock1.restart();
 
 }
 
-void Player::process_event(sf::Keyboard::Key const& key)
+sf::Vector2f Player::process_event()
 {
-  switch(key)
-  {
-      case sf::Keyboard::W:
-          up = true;
-          break;
-      case sf::Keyboard::S:
-          down = true;
-          break;
-      case sf::Keyboard::A:
-          right = true;
-          break;
-      case sf::Keyboard::D:
-          left = true;
-          break;
-      case sf::Keyboard::Space:
-          if (t1.asSeconds() > shoot_speed){
-              sht = true;
-              t1 = clock1.restart();
-          }
-          break;
-      default:
-          break;
-  }
+    const float speed = 0.5;
+    sf::Vector2f v;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+        v.y -= speed;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+        v.y += speed;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+        v.x -= speed;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+        v.x += speed;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+        if (t1.asSeconds() > shoot_speed) {
+            sht = true;
+            t1 = clock1.restart();
+        }
+            return v;
 }
 
 Bullet* Player::shoot()
@@ -83,35 +72,37 @@ void Player::tick(sf::Time const& delta)
   //     location.x += delta.asMicroseconds() * speed / 1000000.0f;
   //   left = false;
   // }
-  if(up)
-    {
-      if(location.y - 10 > 0){
-          location.y -= 10;
-      }
-        up = false;
-    }
-  else if(down)
-    {
-        if(location.y + 10 < 747){
-            location.y += 10;
-        }
-      down = false;
-    }
-  else if(right)
-    {
-        if(location.x - 10 > 0){
-            location.x -= 10;
-        }
-      right = false;
-    }
-  else if(left)
-    {
-        if(location.x + 75 < 1024){
-            location.x += 10;
-        }
-        left = false;
-    }
-  sprite.setPosition(location);
+
+
+//  if(up)
+//    {
+//      if(location.y - 10 > 0){
+//          location.y -= 10;
+//      }
+//        up = false;
+//    }
+//  else if(down)
+//    {
+//        if(location.y + 10 < 747){
+//            location.y += 10;
+//        }
+//      down = false;
+//    }
+//  else if(right)
+//    {
+//        if(location.x - 10 > 0){
+//            location.x -= 10;
+//        }
+//      right = false;
+//    }
+//  else if(left)
+//    {
+//        if(location.x + 75 < 1024){
+//            location.x += 10;
+//        }
+//        left = false;
+//    }
+  sprite.setPosition(location += process_event());
 }
 bool Player::want_shoot() const
 {

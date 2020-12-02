@@ -38,7 +38,7 @@ void World::run(sf::RenderWindow & window)
           }
           else
           {
-              player -> process_event(evnet.key.code);
+              player -> process_event();
           }
       }
 

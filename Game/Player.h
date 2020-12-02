@@ -14,7 +14,7 @@ public:
     Player();
     ~Player() override = default;
 
-    void process_event(sf::Keyboard::Key const& key);
+    sf::Vector2f process_event();
     Bullet* shoot();
     void tick(sf::Time const& delta) override;
     bool want_shoot() const;
@@ -23,10 +23,6 @@ public:
 
     std::string get_type() override;
 private:
-    bool up;
-    bool down;
-    bool right;
-    bool left;
     bool sht;
     float shoot_speed;
     sf::Clock clock1;
