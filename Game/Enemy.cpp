@@ -2,6 +2,24 @@
 
 #include "Enemy.h"
 
+// Bomb
+Bomb();
+{
+location = {900, 0};
+health = 2;
+speed = 150.0f;
+if(!texture.loadFromFile("Enemy2_85x27.png", sf::IntRect(0, 0, 85, 27)))
+{
+std::cerr << "Error" << std::endl;
+}
+sprite.setTexture(texture);
+}
+void tick(sf::Time const& delta) override;
+bool kill_me() override;
+void collision(std::vector<Entity*> const& objects) override;
+std::string get_type() override;
+
+// Big Plane
 Big_Plane::Big_Plane()
 {
     location = {900, 0};
@@ -44,3 +62,4 @@ void Big_Plane::collision(std::vector<Entity*> const& objects)
 std::string Big_Plane::get_type() {
     return "Big Plane";
 }
+
