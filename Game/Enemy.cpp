@@ -34,7 +34,7 @@ Entity* Bomb::shoot()
 }
 bool Bomb::kill_me()
 {
-    return (location.x < 0 || location.y < 0 || location.y > 768 || health < 1);
+    return (location.x < 0 || location.y < 0 || location.y > 900|| health < 1);
 }
 void Bomb::collision(std::vector<Entity*> const& objects)
 {
@@ -60,8 +60,8 @@ std::string Bomb::get_type()
 Small_Plane::Small_Plane(sf::Vector2f location): Enemy(location)
 {
     health = 1;
-    speed = 0.15f;
-    shoot_speed = 0.30f;
+    speed = 0.5f;
+    shoot_speed = 0.1f;
     t1 = clock1.restart();
     width = 75;
     height = 22;
@@ -90,7 +90,7 @@ Entity* Small_Plane::shoot()
 }
 bool Small_Plane::kill_me()
 {
-    return (location.x < 0 || location.y < 0 || location.y > 768 || health < 1);
+    return (location.x < 0 || location.y < 0 || location.y > 900 || health < 1);
 }
 
 void Small_Plane::collision(std::vector<Entity*> const& objects)
@@ -145,7 +145,7 @@ Entity* Big_Plane::shoot()
 }
 bool Big_Plane::kill_me()
 {
-    return (location.x < 0 || location.y < 0 || location.y > 768 || health < 1);
+    return (location.x < 0 || location.y < 0 || location.y > 900 || health < 1);
 }
 void Big_Plane::collision(std::vector<Entity*> const& objects)
 {

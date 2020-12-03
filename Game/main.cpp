@@ -4,8 +4,8 @@
 #include "World.h"
 #include "Enemy.h"
 
-size_t const width = 1024;
-size_t const height = 768;
+size_t const width = 1600;
+size_t const height = 900;
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(width, height), "Sky Wars", sf::Style::Close);
@@ -13,19 +13,19 @@ int main()
     // window.setKeyRepeatEnabled(false);
 
     World world{};
-    world.insert_object(new Big_Plane{sf::Vector2f (1000, 0)});
-    world.insert_object(new Big_Plane{sf::Vector2f (1000, 70)});
-    world.insert_object(new Big_Plane{sf::Vector2f (1000, 100)});
-    world.insert_object(new Big_Plane{sf::Vector2f (1000, 300)});
-    world.insert_object(new Big_Plane{sf::Vector2f (1000, 400)});
-    world.insert_object(new Big_Plane{sf::Vector2f (1000, 760)});
-    world.insert_object(new Big_Plane{sf::Vector2f (1000, 650)});
-    world.insert_object(new Big_Plane{sf::Vector2f (1000, 340)});
-    world.insert_object(new Big_Plane{sf::Vector2f (1000, 480)});
-    world.insert_object(new Big_Plane{sf::Vector2f (1000, 700)});
-    world.insert_object(new Small_Plane{sf::Vector2f ( 880, 250)});
-    world.insert_object(new Bomb{sf::Vector2f ( 950, 400)});
-    world.insert_object(new Bomb{sf::Vector2f ( 700, 250)});
+    world.insert_object(new Big_Plane{sf::Vector2f (1600, 0)});
+
+    world.insert_object(new Big_Plane{sf::Vector2f (1600, 760)});
+    world.insert_object(new Big_Plane{sf::Vector2f (1600, 650)});
+    world.insert_object(new Big_Plane{sf::Vector2f (1600, 340)});
+    world.insert_object(new Big_Plane{sf::Vector2f (1600, 480)});
+    world.insert_object(new Big_Plane{sf::Vector2f (1600, 700)});
+    world.insert_object(new Small_Plane{sf::Vector2f ( 1600, 250)});
+    world.insert_object(new Small_Plane{sf::Vector2f ( 1600, 320)});
+    world.insert_object(new Small_Plane{sf::Vector2f ( 1600, 690)});
+    world.insert_object(new Small_Plane{sf::Vector2f ( 1600, 750)});
+    world.insert_object(new Bomb{sf::Vector2f ( 1600, 400)});
+    world.insert_object(new Bomb{sf::Vector2f ( 1600, 250)});
     world.run(window);
 
     return 0;

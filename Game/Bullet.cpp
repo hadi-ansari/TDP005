@@ -13,7 +13,9 @@ Player_Bullet::Player_Bullet(sf::Vector2f location): Bullet(location)
 {
     speed = 0.7f;
     health = 1;
-    if(!texture.loadFromFile("Bullet.png", sf::IntRect(0, 0, 15, 3)))
+    width = 15;
+    height = 3;
+    if(!texture.loadFromFile("Bullet.png", sf::IntRect(0, 0, width, height)))
     {
         std::cerr << "Error" << std::endl;
     }
@@ -34,7 +36,7 @@ Bullet* Player_Bullet::shoot()
     return nullptr;
 }
 bool Player_Bullet::kill_me() {
-    return (location.x < 0 || location.x > 1024 || health < 1);
+    return (location.x < 0 || location.x > 1600 || health < 1);
 }
 void Player_Bullet::collision(std::vector<Entity *> const&objects)
 {
@@ -60,7 +62,9 @@ Enemy_Bullet::Enemy_Bullet(sf::Vector2f location): Bullet(location)
 {
     speed = 0.7f;
     health = 1;
-    if(!texture.loadFromFile("Enemy-Bullet.png", sf::IntRect(0, 0, 15, 3)))
+    width = 15;
+    height = 3;
+    if(!texture.loadFromFile("Enemy-Bullet.png", sf::IntRect(0, 0, width, height)))
     {
         std::cerr << "Error" << std::endl;
     }
@@ -81,7 +85,7 @@ Bullet* Enemy_Bullet::shoot()
     return nullptr;
 }
 bool Enemy_Bullet::kill_me() {
-    return (location.x < 0 || location.x > 1024 || health < 1);
+    return (location.x < 0 || location.x > 1600 || health < 1);
 }
 void Enemy_Bullet::collision(std::vector<Entity *> const&objects)
 {

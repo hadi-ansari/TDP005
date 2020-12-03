@@ -46,7 +46,7 @@ void Player::tick(sf::Time const& delta)
     t1 = clock1.getElapsedTime();
   /* Speed dependent  */
     sf::Vector2f temp = location + process_event(delta);
-    if (temp.x < (float)(1024 - width) && temp.x >= 0 && temp.y < (float)(768 - height)  && temp.y >= 0 )
+    if (temp.x < (float)(1600 - width) && temp.x >= 0 && temp.y < (float)(900 - height)  && temp.y >= 0 )
         sprite.setPosition(location += process_event(delta));
 }
 bool Player::want_shoot() const
@@ -61,7 +61,7 @@ Entity* Player::shoot()
 }
 bool Player::kill_me()
 {
-    return (location.x < 0 || location.y < 0 || location.y > 768 || health < 1);
+    return health < 1;
 }
 void Player::collision(std::vector<Entity*> const& objects)
 {
