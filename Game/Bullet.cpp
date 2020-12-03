@@ -34,7 +34,7 @@ Bullet* Player_Bullet::shoot()
     return nullptr;
 }
 bool Player_Bullet::kill_me() {
-    return (location.x < 0 || location.y < 0 || location.y > 768 || health < 1);
+    return (location.x < 0 || location.x > 1024 || health < 1);
 }
 void Player_Bullet::collision(std::vector<Entity *> const&objects)
 {
