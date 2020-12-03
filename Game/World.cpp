@@ -28,11 +28,11 @@ void World::run(sf::RenderWindow & window)
 
   while(window.isOpen())
   {
-      sf::Event evnet{};
+      sf::Event event{};
       
-      while(window.pollEvent(evnet))
+      while(window.pollEvent(event))
       {
-          if(evnet.type == sf::Event::Closed)
+          if(event.type == sf::Event::Closed)
           {
               window.close();
           }
