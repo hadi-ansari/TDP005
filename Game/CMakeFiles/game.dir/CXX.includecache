@@ -6,16 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/hadan326/CLionProjects/tdp005/Game/Bullet.cpp
-SFML/Graphics.hpp
--
-iostream
--
-Bullet.h
-/home/hadan326/CLionProjects/tdp005/Game/Bullet.h
-Entity.h
-/home/hadan326/CLionProjects/tdp005/Game/Entity.h
-
 /home/hadan326/CLionProjects/tdp005/Game/Bullet.h
 SFML/Graphics.hpp
 -
@@ -31,4 +21,34 @@ iostream
 -
 string
 -
+
+/home/hadan326/CLionProjects/tdp005/Game/Player.h
+SFML/Graphics.hpp
+-
+iostream
+-
+string
+-
+Entity.h
+/home/hadan326/CLionProjects/tdp005/Game/Entity.h
+Bullet.h
+/home/hadan326/CLionProjects/tdp005/Game/Bullet.h
+
+/home/hadan326/CLionProjects/tdp005/Game/World.cpp
+SFML/Graphics.hpp
+-
+iostream
+-
+World.h
+/home/hadan326/CLionProjects/tdp005/Game/World.h
+
+/home/hadan326/CLionProjects/tdp005/Game/World.h
+SFML/Graphics.hpp
+-
+iostream
+-
+Entity.h
+/home/hadan326/CLionProjects/tdp005/Game/Entity.h
+Player.h
+/home/hadan326/CLionProjects/tdp005/Game/Player.h
 

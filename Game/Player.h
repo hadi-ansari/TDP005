@@ -15,9 +15,9 @@ public:
     ~Player() override = default;
 
     sf::Vector2f process_event(sf::Time delta);
-    Bullet* shoot();
     void tick(sf::Time const& delta) override;
     bool want_shoot() const override;
+    Entity* shoot() override;
     bool kill_me() override;
     void collision(std::vector<Entity*> const& objects) override;
 

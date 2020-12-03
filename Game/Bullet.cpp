@@ -29,6 +29,10 @@ bool Player_Bullet::want_shoot() const
 {
     return false;
 }
+Bullet* Player_Bullet::shoot()
+{
+    return nullptr;
+}
 bool Player_Bullet::kill_me() {
     return (location.x < 0 || location.y < 0 || location.y > 768 || health < 1);
 }
@@ -71,6 +75,10 @@ void Enemy_Bullet::tick(sf::Time const& delta)
 bool Enemy_Bullet::want_shoot() const
 {
     return false;
+}
+Bullet* Enemy_Bullet::shoot()
+{
+    return nullptr;
 }
 bool Enemy_Bullet::kill_me() {
     return (location.x < 0 || location.y < 0 || location.y > 768 || health < 1);

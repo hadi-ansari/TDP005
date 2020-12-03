@@ -5,6 +5,7 @@ CMakeFiles/game.dir/Bullet.cpp.o: Bullet.cpp
 CMakeFiles/game.dir/Bullet.cpp.o: Bullet.h
 CMakeFiles/game.dir/Bullet.cpp.o: Entity.h
 
+CMakeFiles/game.dir/Enemy.cpp.o: Bullet.h
 CMakeFiles/game.dir/Enemy.cpp.o: Enemy.cpp
 CMakeFiles/game.dir/Enemy.cpp.o: Enemy.h
 CMakeFiles/game.dir/Enemy.cpp.o: Entity.h

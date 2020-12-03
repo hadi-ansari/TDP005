@@ -41,14 +41,6 @@ sf::Vector2f Player::process_event(sf::Time delta)
         }
     return v;
 }
-
-Bullet* Player::shoot()
-{
-    sht = false;
-    sf::Vector2f temp{location.x + 65, location.y + 10};
-    return (new Player_Bullet{temp});
-}
-
 void Player::tick(sf::Time const& delta)
 {
     t1 = clock1.getElapsedTime();
@@ -60,6 +52,12 @@ void Player::tick(sf::Time const& delta)
 bool Player::want_shoot() const
 {
     return sht;
+}
+Entity* Player::shoot()
+{
+    sht = false;
+    sf::Vector2f temp{location.x + 65, location.y + 10};
+    return (new Player_Bullet{temp});
 }
 bool Player::kill_me()
 {

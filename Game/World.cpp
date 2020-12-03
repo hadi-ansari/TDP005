@@ -45,7 +45,7 @@ void World::run(sf::RenderWindow & window)
 
       window.clear(sf::Color(76, 208, 255));
 
-/*
+
       for(auto object: objects)
       {
           if(object -> want_shoot())
@@ -54,8 +54,8 @@ void World::run(sf::RenderWindow & window)
           }
 
       }
-
 /*
+
       if(player -> want_shoot())
       {
           insert_object(player -> shoot());
