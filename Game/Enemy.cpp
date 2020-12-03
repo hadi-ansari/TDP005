@@ -23,6 +23,10 @@ void Bomb::tick(sf::Time const& delta)
     location.x -= delta.asMilliseconds() * speed;
     sprite.setPosition(location);
 }
+bool Bomb::Bomb::want_shoot() const
+{
+    return false;
+}
 bool Bomb::kill_me()
 {
     return (location.x < 0 || location.y < 0 || location.y > 768 || health < 1);
@@ -66,6 +70,10 @@ void Small_Plane::tick(sf::Time const& delta)
     location.x -= delta.asMilliseconds() * speed;
     sprite.setPosition(location);
 }
+bool Small_Plane::want_shoot() const
+{
+    return false;
+}
 bool Small_Plane::kill_me()
 {
     return (location.x < 0 || location.y < 0 || location.y > 768 || health < 1);
@@ -108,11 +116,14 @@ void Big_Plane::tick(sf::Time const& delta)
   location.x -= delta.asMilliseconds() * speed;
   sprite.setPosition(location);
 }
+bool Big_Plane::want_shoot() const
+{
+    return false;
+}
 bool Big_Plane::kill_me()
 {
     return (location.x < 0 || location.y < 0 || location.y > 768 || health < 1);
 }
-
 void Big_Plane::collision(std::vector<Entity*> const& objects)
 {
     for(auto object: objects)
