@@ -60,7 +60,7 @@ Enemy_Bullet::Enemy_Bullet(sf::Vector2f location): Bullet(location)
 {
     speed = 0.7f;
     health = 1;
-    if(!texture.loadFromFile("Bullet.png", sf::IntRect(0, 0, 15, 3)))
+    if(!texture.loadFromFile("Enemy-Bullet.png", sf::IntRect(0, 0, 15, 3)))
     {
         std::cerr << "Error" << std::endl;
     }
@@ -69,7 +69,7 @@ Enemy_Bullet::Enemy_Bullet(sf::Vector2f location): Bullet(location)
 
 void Enemy_Bullet::tick(sf::Time const& delta)
 {
-    location.x += speed * delta.asMilliseconds();
+    location.x -= speed * delta.asMilliseconds();
     sprite.setPosition(location);
 }
 bool Enemy_Bullet::want_shoot() const
@@ -81,7 +81,7 @@ Bullet* Enemy_Bullet::shoot()
     return nullptr;
 }
 bool Enemy_Bullet::kill_me() {
-    return (location.x < 0 || location.y < 0 || location.y > 768 || health < 1);
+    return (location.x < 0 || location.x > 1024 || health < 1);
 }
 void Enemy_Bullet::collision(std::vector<Entity *> const&objects)
 {

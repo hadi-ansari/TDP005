@@ -60,7 +60,9 @@ std::string Bomb::get_type()
 Small_Plane::Small_Plane(sf::Vector2f location): Enemy(location)
 {
     health = 1;
-    speed = 0.5f;
+    speed = 0.15f;
+    shoot_speed = 0.30f;
+    t1 = clock1.restart();
     width = 75;
     height = 22;
     if(!texture.loadFromFile("Enemy1_75x22.png", sf::IntRect(0, 0, width, height)))
@@ -72,17 +74,19 @@ Small_Plane::Small_Plane(sf::Vector2f location): Enemy(location)
 
 void Small_Plane::tick(sf::Time const& delta)
 {
+    t1 = clock1.getElapsedTime();
     location.x -= delta.asMilliseconds() * speed;
     sprite.setPosition(location);
 }
 bool Small_Plane::want_shoot() const
 {
-    return false;
+    return (t1.asSeconds() > shoot_speed);
 }
 Entity* Small_Plane::shoot()
 {
-    sf::Vector2f temp{location.x - float(width), location.y + float(height) / 2};
-    return (new Player_Bullet{temp});
+    t1 = clock1.restart();
+    sf::Vector2f temp{location.x , location.y + float(height) / 2};
+    return new Enemy_Bullet{temp};
 }
 bool Small_Plane::kill_me()
 {
@@ -112,6 +116,8 @@ Big_Plane::Big_Plane(sf::Vector2f location): Enemy(location)
 {
     health = 2;
     speed = 0.3f;
+    shoot_speed = 0.9f;
+    t1 = clock1.restart();
     width = 100;
     height = 31;
     if(!texture.loadFromFile("Enemy2_100x31.png", sf::IntRect(0, 0, width, height)))
@@ -123,17 +129,19 @@ Big_Plane::Big_Plane(sf::Vector2f location): Enemy(location)
 
 void Big_Plane::tick(sf::Time const& delta)
 {
-  location.x -= delta.asMilliseconds() * speed;
-  sprite.setPosition(location);
+    t1 = clock1.getElapsedTime();
+    location.x -= delta.asMilliseconds() * speed;
+    sprite.setPosition(location);
 }
 bool Big_Plane::want_shoot() const
 {
-    return false;
+    return (t1.asSeconds() > shoot_speed);
 }
 Entity* Big_Plane::shoot()
 {
-    sf::Vector2f temp{location.x - float(width), location.y + float(height) / 2 };
-    return (new Player_Bullet{temp});
+    t1 = clock1.restart();
+    sf::Vector2f temp{location.x , location.y + 5 + float(height) / 2 };
+    return (new Enemy_Bullet{temp});
 }
 bool Big_Plane::kill_me()
 {

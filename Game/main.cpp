@@ -14,6 +14,14 @@ int main()
 
     World world{};
     world.insert_object(new Big_Plane{sf::Vector2f (1000, 0)});
+    world.insert_object(new Big_Plane{sf::Vector2f (1000, 70)});
+    world.insert_object(new Big_Plane{sf::Vector2f (1000, 100)});
+    world.insert_object(new Big_Plane{sf::Vector2f (1000, 300)});
+    world.insert_object(new Big_Plane{sf::Vector2f (1000, 400)});
+    world.insert_object(new Big_Plane{sf::Vector2f (1000, 760)});
+    world.insert_object(new Big_Plane{sf::Vector2f (1000, 650)});
+    world.insert_object(new Big_Plane{sf::Vector2f (1000, 340)});
+    world.insert_object(new Big_Plane{sf::Vector2f (1000, 480)});
     world.insert_object(new Big_Plane{sf::Vector2f (1000, 700)});
     world.insert_object(new Small_Plane{sf::Vector2f ( 880, 250)});
     world.insert_object(new Bomb{sf::Vector2f ( 950, 400)});

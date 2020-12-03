@@ -38,6 +38,11 @@ public:
     bool kill_me() override;
     void collision(std::vector<Entity*> const& objects) override;
     std::string get_type() override;
+
+private:
+    float shoot_speed;
+    sf::Clock clock1;
+    sf::Time t1;
 };
 
 class Big_Plane: public Enemy
@@ -52,5 +57,10 @@ public:
     bool kill_me() override;
     void collision(std::vector<Entity*> const& objects) override;
     std::string get_type() override;
+
+private:
+    float shoot_speed;
+    sf::Clock clock1;
+    sf::Time t1;
 };
 #endif
