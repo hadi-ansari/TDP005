@@ -18,6 +18,10 @@ CMakeFiles/game.dir/Player.cpp.o: Entity.h
 CMakeFiles/game.dir/Player.cpp.o: Player.cpp
 CMakeFiles/game.dir/Player.cpp.o: Player.h
 
+CMakeFiles/game.dir/Powerup.cpp.o: Entity.h
+CMakeFiles/game.dir/Powerup.cpp.o: Powerup.cpp
+CMakeFiles/game.dir/Powerup.cpp.o: Powerup.h
+
 CMakeFiles/game.dir/World.cpp.o: Bullet.h
 CMakeFiles/game.dir/World.cpp.o: Entity.h
 CMakeFiles/game.dir/World.cpp.o: Player.h
@@ -28,6 +32,7 @@ CMakeFiles/game.dir/main.cpp.o: Bullet.h
 CMakeFiles/game.dir/main.cpp.o: Enemy.h
 CMakeFiles/game.dir/main.cpp.o: Entity.h
 CMakeFiles/game.dir/main.cpp.o: Player.h
+CMakeFiles/game.dir/main.cpp.o: Powerup.h
 CMakeFiles/game.dir/main.cpp.o: World.h
 CMakeFiles/game.dir/main.cpp.o: main.cpp
 

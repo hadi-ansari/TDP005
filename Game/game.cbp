@@ -5,117 +5,123 @@
 		<Option title="game"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/hadan326/CLionProjects/tdp005/Game"/>
+				<Option working_dir="/home/nils/TDP005/Game"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/hadan326/CLionProjects/tdp005/Game/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/hadan326/CLionProjects/tdp005/Game/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/hadan326/CLionProjects/tdp005/Game/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/hadan326/CLionProjects/tdp005/Game/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/nils/TDP005/Game/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/nils/TDP005/Game/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/nils/TDP005/Game/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/nils/TDP005/Game/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/hadan326/CLionProjects/tdp005/Game"/>
+				<Option working_dir="/home/nils/TDP005/Game"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/hadan326/CLionProjects/tdp005/Game/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/hadan326/CLionProjects/tdp005/Game/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/hadan326/CLionProjects/tdp005/Game/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/hadan326/CLionProjects/tdp005/Game/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/nils/TDP005/Game/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/nils/TDP005/Game/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/nils/TDP005/Game/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/nils/TDP005/Game/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/hadan326/CLionProjects/tdp005/Game"/>
+				<Option working_dir="/home/nils/TDP005/Game"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/hadan326/CLionProjects/tdp005/Game/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/hadan326/CLionProjects/tdp005/Game/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/hadan326/CLionProjects/tdp005/Game/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/hadan326/CLionProjects/tdp005/Game/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/nils/TDP005/Game/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/nils/TDP005/Game/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/nils/TDP005/Game/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/nils/TDP005/Game/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="game">
-				<Option output="/home/hadan326/CLionProjects/tdp005/Game/game" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/hadan326/CLionProjects/tdp005/Game"/>
+				<Option output="/home/nils/TDP005/Game/game" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/nils/TDP005/Game"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/hadan326/CLionProjects/tdp005/Game/Makefile&quot;  VERBOSE=1 game"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/hadan326/CLionProjects/tdp005/Game/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/hadan326/CLionProjects/tdp005/Game/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/hadan326/CLionProjects/tdp005/Game/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/nils/TDP005/Game/Makefile&quot;  VERBOSE=1 game"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/nils/TDP005/Game/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/nils/TDP005/Game/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/nils/TDP005/Game/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="game/fast">
-				<Option output="/home/hadan326/CLionProjects/tdp005/Game/game" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/hadan326/CLionProjects/tdp005/Game"/>
+				<Option output="/home/nils/TDP005/Game/game" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/nils/TDP005/Game"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/hadan326/CLionProjects/tdp005/Game/Makefile&quot;  VERBOSE=1 game/fast"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/hadan326/CLionProjects/tdp005/Game/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/hadan326/CLionProjects/tdp005/Game/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/hadan326/CLionProjects/tdp005/Game/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/nils/TDP005/Game/Makefile&quot;  VERBOSE=1 game/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/nils/TDP005/Game/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/nils/TDP005/Game/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/nils/TDP005/Game/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/Bullet.cpp">
+		<Unit filename="/home/nils/TDP005/Game/Bullet.cpp">
 			<Option target="game"/>
 		</Unit>
-		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/Bullet.h">
+		<Unit filename="/home/nils/TDP005/Game/Bullet.h">
 			<Option target="game"/>
 		</Unit>
-		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/Enemy.cpp">
+		<Unit filename="/home/nils/TDP005/Game/Enemy.cpp">
 			<Option target="game"/>
 		</Unit>
-		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/Enemy.h">
+		<Unit filename="/home/nils/TDP005/Game/Enemy.h">
 			<Option target="game"/>
 		</Unit>
-		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/Entity.cpp">
+		<Unit filename="/home/nils/TDP005/Game/Entity.cpp">
 			<Option target="game"/>
 		</Unit>
-		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/Entity.h">
+		<Unit filename="/home/nils/TDP005/Game/Entity.h">
 			<Option target="game"/>
 		</Unit>
-		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/Player.cpp">
+		<Unit filename="/home/nils/TDP005/Game/Player.cpp">
 			<Option target="game"/>
 		</Unit>
-		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/Player.h">
+		<Unit filename="/home/nils/TDP005/Game/Player.h">
 			<Option target="game"/>
 		</Unit>
-		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/World.cpp">
+		<Unit filename="/home/nils/TDP005/Game/Powerup.cpp">
 			<Option target="game"/>
 		</Unit>
-		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/World.h">
+		<Unit filename="/home/nils/TDP005/Game/Powerup.h">
 			<Option target="game"/>
 		</Unit>
-		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/main.cpp">
+		<Unit filename="/home/nils/TDP005/Game/World.cpp">
 			<Option target="game"/>
 		</Unit>
-		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/CMakeLists.txt">
+		<Unit filename="/home/nils/TDP005/Game/World.h">
+			<Option target="game"/>
+		</Unit>
+		<Unit filename="/home/nils/TDP005/Game/main.cpp">
+			<Option target="game"/>
+		</Unit>
+		<Unit filename="/home/nils/TDP005/Game/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/../../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfig.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
+		<Unit filename="/home/nils/TDP005/Game/../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/../../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfigDependencies.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
+		<Unit filename="/home/nils/TDP005/Game/../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfigDependencies.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/../../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfigVersion.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
+		<Unit filename="/home/nils/TDP005/Game/../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/../../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLSharedTargets-none.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
+		<Unit filename="/home/nils/TDP005/Game/../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLSharedTargets-none.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/../../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLSharedTargets.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
+		<Unit filename="/home/nils/TDP005/Game/../../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLSharedTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>
