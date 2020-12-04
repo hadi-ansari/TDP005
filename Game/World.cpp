@@ -24,79 +24,83 @@ void World::insert_object(Entity* object)
 }
 void World::run(sf::RenderWindow & window)
 {
-  sf::Clock clock;
+    sf::Clock clock;
+    sf::Font font;
+    if(!font.loadFromFile("Lato-HeavyItalic.ttf"))
+    {
+        std::cerr << "Error!" << std::endl;
+    }
+    sf::Text player_life;
+    player_life.setFont(font);
 
-  while(window.isOpen())
-  {
-      sf::Event event{};
-      
-      while(window.pollEvent(event))
-      {
-          if(event.type == sf::Event::Closed)
-          {
-              window.close();
-          }
-          else
-          {
-              sf::Time delta = clock.getElapsedTime();
-              player -> process_event(delta);
-          }
-      }
+    player_life.setPosition(1500, 0);
 
-      window.clear(sf::Color(76, 208, 255));
+    while(window.isOpen())
+    {
+        sf::Event event{};
 
-      // Kontrollerar om det ska skapas nya skott i spelplanen
-      std::vector<Entity*> new_bullets{};
-      for(auto object: objects)
-      {
-          if(object -> want_shoot())
-          {
-              new_bullets.push_back( object -> shoot());
-          }
-      }
-      // Lägger till nya skott i spelplanen
-      for(auto bullet: new_bullets)
-      {
-          insert_object( bullet );
-      }
+        while(window.pollEvent(event))
+        {
+            if(event.type == sf::Event::Closed)
+            {
+                window.close();
+            }
+            else
+            {
+                sf::Time delta = clock.getElapsedTime();
+                player -> process_event(delta);
+            }
+        }
 
-      sf::Time delta = clock.restart();
-      for(auto object: objects)
-      {
-          object -> tick(delta);
-          window.draw(object -> sprite);
-      }
+        window.clear(sf::Color(76, 208, 255));
 
-      for(auto object: objects)
-      {
-          std::vector <Entity*> new_vector(objects.size());
-          std::copy(objects.begin(), objects.end(), new_vector.begin());
-          new_vector.erase(std::remove_if(new_vector.begin(), new_vector.end(),
-                                          [&object](Entity* x)
-                                          {
-                                              return x == object;
-                                          }
-          ), new_vector.end());
-          object -> collision(new_vector);
-      }
-      objects.erase(std::remove_if(objects.begin(), objects.end(),
-                                   [](Entity* & x)
-                                   {
-                                       if( x -> kill_me())
-                                       {
-                                           delete x;
-                                           return true;
-                                       }
-                                       return false;
-                                   }
-      ), objects.end());
+        // Kontrollerar om det ska skapas nya skott i spelplanen
+        std::vector<Entity*> new_bullets{};
+        for(auto object: objects)
+        {
+            if(object -> want_shoot())
+            {
+                new_bullets.push_back( object -> shoot());
+            }
+        }
+        // Lägger till nya skott i spelplanen
+        for(auto bullet: new_bullets)
+        {
+            insert_object( bullet );
+        }
 
+        sf::Time delta = clock.restart();
+        for(auto object: objects)
+        {
+            object -> tick(delta);
+            window.draw(object -> sprite);
+        }
 
-    /*
-      std::vector<Entity*> new_vector;
-      new_vector.push_back(objects[1]);
-      player -> collision(new_vector);
-*/
-      window.display();
-  }
+        for(auto object: objects)
+        {
+            std::vector <Entity*> new_vector(objects.size());
+            std::copy(objects.begin(), objects.end(), new_vector.begin());
+            new_vector.erase(std::remove_if(new_vector.begin(), new_vector.end(),
+                                            [&object](Entity* x)
+                                            {
+                                                return x == object;
+                                            }
+            ), new_vector.end());
+            object -> collision(new_vector);
+        }
+        objects.erase(std::remove_if(objects.begin(), objects.end(),
+                                     [](Entity* & x)
+                                     {
+                                         if( x -> kill_me())
+                                         {
+                                             delete x;
+                                             return true;
+                                         }
+                                         return false;
+                                     }
+        ), objects.end());
+        player_life.setString("Life: " + std::to_string(player -> health));
+        window.draw(player_life);
+        window.display();
+    }
 }
