@@ -23,7 +23,7 @@ void World::insert_object(Entity* object)
   objects.push_back(object);
 }
 
-void World::manage_text(sf::Text & player_life, sf::Font & font)
+void World::manage_text(sf::Text & player_life, sf::Text & shield_time, sf::Font & font)
 {
 
     if(!font.loadFromFile("Lato-HeavyItalic.ttf"))
@@ -31,7 +31,10 @@ void World::manage_text(sf::Text & player_life, sf::Font & font)
         std::cerr << "Error loading font!" << std::endl;
     }
     player_life.setFont(font);
+    shield_time.setFont(font);
+
     player_life.setPosition(1500, 0);
+    shield_time.setPosition(750, 0);
 }
 
 void World::new_bullets()
@@ -94,7 +97,8 @@ void World::run(sf::RenderWindow & window)
     sf::Font font;
 
     sf::Text player_life;
-    manage_text(player_life, font);
+    sf::Text shield_time;
+    manage_text(player_life, shield_time, font);
 
     while(window.isOpen())
     {
@@ -121,8 +125,16 @@ void World::run(sf::RenderWindow & window)
         manage_collision();
         remove_objects();
 
+        // liv
         player_life.setString("Life: " + std::to_string(player -> health));
         window.draw(player_life);
+
+        // shield
+        if(player -> has_shield())
+        {
+            shield_time.setString( player -> get_shield_time());
+            window.draw(shield_time);
+        }
         window.display();
     }
 }

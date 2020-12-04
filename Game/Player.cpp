@@ -15,6 +15,7 @@ Player::Player(sf::Vector2f location) : Entity(location)
     shoot_speed = 0.30f;
     sht = false;
     t1 = clock1.restart();
+    shield = false;
     if(!texture.loadFromFile("Player_75x22.png", sf::IntRect(0, 0, width, height)))
     {
         std::cerr << "Error" << std::endl;
@@ -44,7 +45,11 @@ sf::Vector2f Player::process_event(sf::Time delta)
 void Player::tick(sf::Time const& delta)
 {
     t1 = clock1.getElapsedTime();
-  /* Speed dependent  */
+    if(shield_clock.getElapsedTime().asSeconds() > 10)
+    {
+        shield = false;
+    }
+    /* Speed dependent  */
     sf::Vector2f temp = location + process_event(delta);
     if (temp.x < (float)(1600 - width) && temp.x >= 0 && temp.y < (float)(900 - height)  && temp.y >= 0 )
         sprite.setPosition(location += process_event(delta));
@@ -72,13 +77,24 @@ void Player::collision(std::vector<Entity*> const& objects)
             std::cout << "Colliding Player with " << object -> get_type() <<  std::endl;
             std::string type = object -> get_type();
 
-            if(type == "Big Plane"  || type == "Bomb")
+            if((type == "Big Plane"  || type == "Bomb") && !shield)
                     health -= 2;
-            else if(type == "Small Plane" || type == "Enemy-Bullet")
+            else if( (type == "Small Plane" || type == "Enemy-Bullet") && !shield)
                     health -= 1;
+            else if((type == "Big Plane"  || type == "Bomb" || type == "Small Plane") && shield)
+                shield = false;
             else if(type == "Heal" && health < 3)
             {
                 health += 1;
+            }
+            else if(type == "Shield")
+            {
+                shield = true;
+                shield_clock.restart();
+            }
+            else if(type == "Shield" && shield)
+            {
+                shield_clock.restart();
             }
         }
     }
@@ -87,3 +103,13 @@ void Player::collision(std::vector<Entity*> const& objects)
 std::string Player::get_type() {
     return "Player";
 }
+
+std::string Player::get_shield_time() const
+{
+    int time = 10 - (int)shield_clock.getElapsedTime().asSeconds();
+    return "Shield Time: " + std::to_string(time);
+}
+ bool Player::has_shield() const
+ {
+     return shield;
+ }

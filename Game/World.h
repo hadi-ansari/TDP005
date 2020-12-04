@@ -18,7 +18,7 @@ public:
 
 private:
     /* Tar hand om font och text på skärmen */
-    void manage_text(sf::Text & player_life, sf::Font & font);
+    void manage_text(sf::Text & player_life, sf::Text & shield_time,sf::Font & font);
 
     /* Kontrollerar om det ska skapas nya skott i spelplanen och  ägger till nya skott i spelplanen */
     void new_bullets();

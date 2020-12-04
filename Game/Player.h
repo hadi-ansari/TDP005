@@ -22,11 +22,15 @@ public:
     void collision(std::vector<Entity*> const& objects) override;
 
     std::string get_type() override;
+    std::string get_shield_time() const;
+    bool has_shield() const;
 private:
     bool sht;
     float shoot_speed;
     sf::Clock clock1;
     sf::Time t1;
+    bool shield;
+    sf::Clock shield_clock;
 };
 
 #endif

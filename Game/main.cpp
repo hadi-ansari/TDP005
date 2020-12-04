@@ -25,6 +25,7 @@ int main()
     world.insert_object(new Small_Plane{sf::Vector2f ( 1600, 690)});
     world.insert_object(new Small_Plane{sf::Vector2f ( 1600, 750)});
     world.insert_object(new Bomb{sf::Vector2f ( 1600, 400)});
+    world.insert_object(new Bomb{sf::Vector2f ( 3000, 400)});
     world.insert_object(new Heal{sf::Vector2f ( 1600, 250)});
     world.insert_object(new Shield{sf::Vector2f ( 1700, 250)});
     world.insert_object(new Tripleshot{sf::Vector2f ( 1800, 250)});
