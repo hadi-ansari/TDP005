@@ -93,7 +93,7 @@ void Enemy_Bullet::collision(std::vector<Entity *> const&objects)
     {
         if ( sprite.getGlobalBounds().intersects((object -> sprite).getGlobalBounds()) )
         {
-            //std::cout << "Colliding Enemy-Bullet with " << object -> get_type() << std::endl;
+            std::cout << "Colliding Enemy-Bullet with " << object -> get_type() << std::endl;
             std::string type = object -> get_type();
             if (type == "Player")
                 health -= 1;
