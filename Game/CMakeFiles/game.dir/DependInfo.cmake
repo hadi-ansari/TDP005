@@ -4,12 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/hadan326/CLionProjects/tdp005/Game/Bullet.cpp" "/home/hadan326/CLionProjects/tdp005/Game/CMakeFiles/game.dir/Bullet.cpp.o"
-  "/home/hadan326/CLionProjects/tdp005/Game/Enemy.cpp" "/home/hadan326/CLionProjects/tdp005/Game/CMakeFiles/game.dir/Enemy.cpp.o"
-  "/home/hadan326/CLionProjects/tdp005/Game/Entity.cpp" "/home/hadan326/CLionProjects/tdp005/Game/CMakeFiles/game.dir/Entity.cpp.o"
-  "/home/hadan326/CLionProjects/tdp005/Game/Player.cpp" "/home/hadan326/CLionProjects/tdp005/Game/CMakeFiles/game.dir/Player.cpp.o"
-  "/home/hadan326/CLionProjects/tdp005/Game/World.cpp" "/home/hadan326/CLionProjects/tdp005/Game/CMakeFiles/game.dir/World.cpp.o"
-  "/home/hadan326/CLionProjects/tdp005/Game/main.cpp" "/home/hadan326/CLionProjects/tdp005/Game/CMakeFiles/game.dir/main.cpp.o"
+  "/home/nils/TDP005/Game/Bullet.cpp" "/home/nils/TDP005/Game/CMakeFiles/game.dir/Bullet.cpp.o"
+  "/home/nils/TDP005/Game/Enemy.cpp" "/home/nils/TDP005/Game/CMakeFiles/game.dir/Enemy.cpp.o"
+  "/home/nils/TDP005/Game/Entity.cpp" "/home/nils/TDP005/Game/CMakeFiles/game.dir/Entity.cpp.o"
+  "/home/nils/TDP005/Game/Player.cpp" "/home/nils/TDP005/Game/CMakeFiles/game.dir/Player.cpp.o"
+  "/home/nils/TDP005/Game/Powerup.cpp" "/home/nils/TDP005/Game/CMakeFiles/game.dir/Powerup.cpp.o"
+  "/home/nils/TDP005/Game/World.cpp" "/home/nils/TDP005/Game/CMakeFiles/game.dir/World.cpp.o"
+  "/home/nils/TDP005/Game/main.cpp" "/home/nils/TDP005/Game/CMakeFiles/game.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

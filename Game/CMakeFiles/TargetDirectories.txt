@@ -1,3 +1,3 @@
-/home/hadan326/CLionProjects/tdp005/Game/CMakeFiles/rebuild_cache.dir
-/home/hadan326/CLionProjects/tdp005/Game/CMakeFiles/edit_cache.dir
-/home/hadan326/CLionProjects/tdp005/Game/CMakeFiles/game.dir
+/home/nils/TDP005/Game/CMakeFiles/rebuild_cache.dir
+/home/nils/TDP005/Game/CMakeFiles/game.dir
+/home/nils/TDP005/Game/CMakeFiles/edit_cache.dir
