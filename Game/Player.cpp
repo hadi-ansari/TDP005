@@ -76,6 +76,10 @@ void Player::collision(std::vector<Entity*> const& objects)
                     health -= 2;
             else if(type == "Small Plane" || type == "Enemy-Bullet")
                     health -= 1;
+            else if(type == "Heal" && health < 3)
+            {
+                health += 1;
+            }
         }
     }
 }
