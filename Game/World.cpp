@@ -45,24 +45,20 @@ void World::run(sf::RenderWindow & window)
 
       window.clear(sf::Color(76, 208, 255));
 
-
+      // Kontrollerar om det ska skapas nya skott i spelplanen
+      std::vector<Entity*> new_bullets{};
       for(auto object: objects)
       {
           if(object -> want_shoot())
           {
-              insert_object( object -> shoot());
+              new_bullets.push_back( object -> shoot());
           }
-
       }
-/*
-
-      if(player -> want_shoot())
+      // Lägger till nya skott i spelplanen
+      for(auto bullet: new_bullets)
       {
-          insert_object(player -> shoot());
+          insert_object( bullet );
       }
-*/
-
-
 
       sf::Time delta = clock.restart();
       for(auto object: objects)
