@@ -7,6 +7,8 @@
 #include "Entity.h"
 #include "Player.h"
 
+struct Score;
+
 class World
 {
 public:
@@ -15,6 +17,7 @@ public:
 
     void insert_object(Entity* object);
     void run(sf::RenderWindow & window);
+    void tick(sf::Time delta);
 
 private:
     /* Tar hand om font och text på skärmen */
@@ -34,5 +37,6 @@ private:
 
     std::vector <Entity*> objects{};
     Player* player{};
+    //Score score;
 };
 #endif

@@ -44,6 +44,7 @@ void World::new_bullets()
     std::vector<Entity*> new_bullets{};
     for(auto & object: objects)
     {
+
         auto po = dynamic_cast<Player*>(object);
         auto bp = dynamic_cast<Big_Plane*>(object);
         auto sp = dynamic_cast<Small_Plane*>(object);
@@ -147,3 +148,14 @@ void World::run(sf::RenderWindow & window)
         window.display();
     }
 }
+void World::tick(sf::Time delta)
+{
+
+}
+
+struct Score
+{
+    Score() :sum{}
+    {}
+    int sum;
+};
