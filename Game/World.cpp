@@ -71,9 +71,8 @@ void World::update_objects(sf::Time const& delta, sf::RenderWindow & window)
     for(auto & object: objects)
     {
         object -> tick(delta);
-        window.draw(object -> sprite);
+        window.draw(object -> get_sprite());
     }
-
 }
 void World::manage_collision()
 {
@@ -140,7 +139,7 @@ void World::run(sf::RenderWindow & window)
         remove_objects();
 
         // liv
-        player_life.setString("Life: " + std::to_string(player -> health));
+        player_life.setString("Life: " + std::to_string(player -> get_health()));
         window.draw(player_life);
 
         // shield

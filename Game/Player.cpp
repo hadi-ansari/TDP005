@@ -70,7 +70,7 @@ void Player::collision(std::vector<Entity*> const& objects)
 {
     for(auto object: objects)
     {
-        if ( sprite.getGlobalBounds().intersects((object -> sprite).getGlobalBounds()) )
+        if ( sprite.getGlobalBounds().intersects((object -> get_sprite()).getGlobalBounds()) )
         {
             std::cout << "Colliding Player with " << object -> get_type() <<  std::endl;
             std::string type = object -> get_type();

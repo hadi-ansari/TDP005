@@ -32,7 +32,7 @@ void Bomb::collision(std::vector<Entity*> const& objects)
 {
     for(auto object: objects)
     {
-        if ( sprite.getGlobalBounds().intersects((object -> sprite).getGlobalBounds()) )
+        if ( sprite.getGlobalBounds().intersects((object -> get_sprite()).getGlobalBounds()) )
         {
             std::cout << "Colliding Bomb with " << object -> get_type() <<  std::endl;
             std::string type = object -> get_type();
@@ -88,7 +88,7 @@ void Small_Plane::collision(std::vector<Entity*> const& objects)
 {
     for(auto object: objects)
     {
-        if ( sprite.getGlobalBounds().intersects((object -> sprite).getGlobalBounds()) )
+        if ( sprite.getGlobalBounds().intersects((object -> get_sprite()).getGlobalBounds()) )
         {
             std::cout << "Colliding Small Plane with " << object -> get_type()<< std::endl;
             std::string type = object -> get_type();
@@ -141,7 +141,7 @@ void Big_Plane::collision(std::vector<Entity*> const& objects)
 {
     for(auto object: objects)
     {
-        if ( sprite.getGlobalBounds().intersects((object -> sprite).getGlobalBounds()) )
+        if ( sprite.getGlobalBounds().intersects((object -> get_sprite()).getGlobalBounds()) )
         {
             std::cout << "Colliding Big Plane with " << object -> get_type()<< std::endl;
             std::string type = object -> get_type();
