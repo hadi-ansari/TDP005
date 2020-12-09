@@ -24,10 +24,6 @@ void Heal::tick(sf::Time const& delta)
     location.x -= delta.asMilliseconds() * speed;
     sprite.setPosition(location);
 }
-bool Heal::kill_me()
-{
-    return (location.x < 0 || health < 1);
-}
 void Heal::collision(std::vector<Entity*> const& objects)
 {
     for(auto object: objects)
@@ -65,10 +61,6 @@ void Shield::tick(sf::Time const& delta)
 {
     location.x -= delta.asMilliseconds() * speed;
     sprite.setPosition(location);
-}
-bool Shield::kill_me()
-{
-    return (location.x < 0 || health < 1);
 }
 void Shield::collision(std::vector<Entity*> const& objects)
 {
@@ -108,10 +100,6 @@ void Tripleshot::tick(sf::Time const& delta)
 {
     location.x -= delta.asMilliseconds() * speed;
     sprite.setPosition(location);
-}
-bool Tripleshot::kill_me()
-{
-    return (location.x < 0 || health < 1);
 }
 void Tripleshot::collision(std::vector<Entity*> const& objects)
 {

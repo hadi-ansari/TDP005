@@ -21,7 +21,6 @@ public:
     ~Heal() override= default;
 
     void tick(sf::Time const& delta) override;
-    bool kill_me() override;
     void collision(std::vector<Entity*> const& objects) override;
     std::string get_type() override;
 };
@@ -33,7 +32,6 @@ public:
     ~Shield() override= default;
 
     void tick(sf::Time const& delta) override;
-    bool kill_me() override;
     void collision(std::vector<Entity*> const& objects) override;
     std::string get_type() override;
 };
@@ -45,7 +43,6 @@ public:
     ~Tripleshot() override= default;
 
     void tick(sf::Time const& delta) override;
-    bool kill_me() override;
     void collision(std::vector<Entity*> const& objects) override;
     std::string get_type() override;
 };

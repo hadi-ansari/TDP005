@@ -27,9 +27,6 @@ void Player_Bullet::tick(sf::Time const& delta)
   location.x += speed * delta.asMilliseconds();
   sprite.setPosition(location);
 }
-bool Player_Bullet::kill_me() {
-    return (location.x < 0 || location.x > 1600 || health < 1);
-}
 void Player_Bullet::collision(std::vector<Entity *> const&objects)
 {
     for(auto object: objects)
@@ -67,9 +64,6 @@ void Enemy_Bullet::tick(sf::Time const& delta)
 {
     location.x -= speed * delta.asMilliseconds();
     sprite.setPosition(location);
-}
-bool Enemy_Bullet::kill_me() {
-    return (location.x < 0 || location.x > 1600 || health < 1);
 }
 void Enemy_Bullet::collision(std::vector<Entity *> const&objects)
 {
