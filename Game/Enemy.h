@@ -36,8 +36,8 @@ public:
 
 private:
     float shoot_speed;
-    sf::Clock clock1;
-    sf::Time t1;
+    sf::Clock shoot_clock;
+    //sf::Time t1;
 };
 
 class Big_Plane: public Enemy
@@ -53,7 +53,7 @@ public:
 
 private:
     float shoot_speed;
-    sf::Clock clock1;
-    sf::Time t1;
+    sf::Clock shoot_clock;
+    //sf::Time t1;
 };
 #endif
