@@ -45,17 +45,18 @@ void World::new_bullets()
     for(auto & object: objects)
     {
         auto po = dynamic_cast<Player*>(object);
-        if(po && po)
+        auto bp = dynamic_cast<Big_Plane*>(object);
+        auto sp = dynamic_cast<Small_Plane*>(object);
+
+        if(po)
         {
             po -> shoot(new_bullets);
         }
-        auto bp = dynamic_cast<Big_Plane*>(object);
-        if(bp && bp)
+        else if(bp)
         {
             bp -> shoot(new_bullets);
         }
-        auto sp = dynamic_cast<Small_Plane*>(object);
-        if(sp && sp)
+        else if(sp)
         {
             sp -> shoot(new_bullets);
         }
@@ -122,11 +123,6 @@ void World::run(sf::RenderWindow & window)
             if(event.type == sf::Event::Closed)
             {
                 window.close();
-            }
-            else
-            {
-                sf::Time delta = clock.getElapsedTime();
-                player -> process_event(delta);
             }
         }
         window.clear(sf::Color(76, 208, 255));

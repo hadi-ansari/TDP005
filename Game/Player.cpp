@@ -21,21 +21,6 @@ Player::Player(sf::Vector2f location) : Entity(location)
     }
     sprite.setTexture(texture);
 }
-
-sf::Vector2f Player::process_event(sf::Time delta)
-{
-    sf::Vector2f v;
-    float ElapsedTime = delta.asMilliseconds();
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-        v.y -= speed * ElapsedTime;
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-        v.y += speed * ElapsedTime;
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-        v.x -= speed * ElapsedTime;
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-        v.x += speed * ElapsedTime;
-    return v;
-}
 void Player::tick(sf::Time const& delta)
 {
     if(shield_clock.getElapsedTime().asSeconds() > 10)
@@ -43,9 +28,24 @@ void Player::tick(sf::Time const& delta)
         shield = false;
     }
     /* Speed dependent  */
-    sf::Vector2f temp = location + process_event(delta);
+
+    sf::Vector2f temp;
+    float ElapsedTime = delta.asMilliseconds();
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+        temp.y -= speed * ElapsedTime;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+        temp.y += speed * ElapsedTime;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+        temp.x -= speed * ElapsedTime;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+        temp.x += speed * ElapsedTime;
+
+    temp += location;
     if (temp.x < (float)(1600 - width) && temp.x >= 0 && temp.y < (float)(900 - height)  && temp.y >= 0 )
-        sprite.setPosition(location += process_event(delta));
+    {
+        location = temp;
+        sprite.setPosition(location);
+    }
 }
 void Player::shoot(std::vector<Entity*> & new_bullets)
 {

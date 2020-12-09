@@ -14,7 +14,6 @@ public:
     explicit Player(sf::Vector2f location);
     ~Player() override = default;
 
-    sf::Vector2f process_event(sf::Time delta);
     void tick(sf::Time const& delta) override;
     void shoot(std::vector<Entity*> & new_bullets);
     void collision(std::vector<Entity*> const& objects) override;
