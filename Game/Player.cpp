@@ -13,8 +13,7 @@ Player::Player(sf::Vector2f location) : Entity(location)
     width = 75;
     height = 22;
     shoot_speed = 0.30f;
-    sht = false;
-    t1 = clock1.restart();
+    shoot_clock.restart();
     shield = false;
     if(!texture.loadFromFile("Player_75x22.png", sf::IntRect(0, 0, width, height)))
     {
@@ -35,16 +34,10 @@ sf::Vector2f Player::process_event(sf::Time delta)
         v.x -= speed * ElapsedTime;
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
         v.x += speed * ElapsedTime;
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
-        if (t1.asSeconds() > shoot_speed) {
-            sht = true;
-            t1 = clock1.restart();
-        }
     return v;
 }
 void Player::tick(sf::Time const& delta)
 {
-    t1 = clock1.getElapsedTime();
     if(shield_clock.getElapsedTime().asSeconds() > 10)
     {
         shield = false;
@@ -56,15 +49,13 @@ void Player::tick(sf::Time const& delta)
 }
 void Player::shoot(std::vector<Entity*> & new_bullets)
 {
-    if (sht) {
-        sht = false;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)
+    && shoot_clock.getElapsedTime().asSeconds() > shoot_speed)
+    {
+        shoot_clock.restart();
         sf::Vector2f temp{location.x + 65, location.y + 10};
         new_bullets.push_back(new Player_Bullet{temp});
     }
-}
-bool Player::kill_me()
-{
-    return health < 1;
 }
 void Player::collision(std::vector<Entity*> const& objects)
 {
