@@ -1,10 +1,64 @@
 #include <string>
+#include <utility>
 
 #include "Powerup.h"
 
-Powerup::Powerup(sf::Vector2f location):Entity(location)
-        {}
+Powerup::Powerup(std::string name, sf::Vector2f location): name(name), Entity(location)
+{
+    health = 1;
+    speed = 0.2f;
+    width = 35;
+    height = 35;
+    if(name == "Heal")
+    {
+        if(!texture.loadFromFile("Health_sprite.png", sf::IntRect(0, 0, width, height)))
+        {
+            std::cerr << "Error" << std::endl;
+        }
+    }
+    else if(name == "Shield")
+    {
+        if(!texture.loadFromFile("Shield_sprite.png", sf::IntRect(0, 0, width, height)))
+        {
+            std::cerr << "Error" << std::endl;
+        }
+    }
+    else if(name == "Tripleshot")
+    {
+        if(!texture.loadFromFile("Tripleshot_sprite.png", sf::IntRect(0, 0, width, height)))
+        {
+            std::cerr << "Error" << std::endl;
+        }
+    }
 
+    sprite.setTexture(texture);
+}
+
+void Powerup::tick(sf::Time const& delta)
+{
+    location.x -= delta.asMilliseconds() * speed;
+    sprite.setPosition(location);
+}
+void Powerup::collision(std::vector<Entity*> const& objects)
+{
+    for(auto object: objects)
+    {
+        if ( sprite.getGlobalBounds().intersects((object -> get_sprite()).getGlobalBounds()) )
+        {
+            //std::cout << "Colliding "<< name << " with " << object -> get_type() <<  std::endl;
+            std::string type = object -> get_type();
+
+            if(type == "Player")
+                health -= 1;
+        }
+    }
+
+}
+std::string Powerup::get_type()
+{
+    return name;
+}
+/*
 // ---------Heal Powerup----------
 Heal::Heal(sf::Vector2f location):Powerup(location){
     health = 1;
@@ -119,4 +173,4 @@ void Tripleshot::collision(std::vector<Entity*> const& objects)
 std::string Tripleshot::get_type()
 {
     return "Tripleshot";
-}
+}*/

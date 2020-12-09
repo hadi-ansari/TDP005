@@ -7,14 +7,23 @@
 
 #include "Entity.h"
 
-struct Powerup : public Entity
+class Powerup : public Entity
 {
-    explicit Powerup(sf::Vector2f location);
+public:
+    Powerup(std::string name, sf::Vector2f location);
+
     ~Powerup() override = default;
+
+    void tick(sf::Time const& delta) override;
+    void collision(std::vector<Entity*> const& objects) override;
+    std::string get_type() override;
+
+private:
+    std::string name;
 };
 
 
-class Heal : public Powerup
+/*class Heal : public Powerup
 {
 public:
     explicit Heal(sf::Vector2f location);
@@ -45,5 +54,5 @@ public:
     void tick(sf::Time const& delta) override;
     void collision(std::vector<Entity*> const& objects) override;
     std::string get_type() override;
-};
+};*/
 #endif

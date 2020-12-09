@@ -12,7 +12,7 @@ int main()
     sf::RenderWindow window(sf::VideoMode(width, height), "Sky Wars", sf::Style::Close);
     window.setVerticalSyncEnabled(true);
     // window.setKeyRepeatEnabled(false);
-
+    //Powerup p1{"test", sf::Vector2f(200, 200)};
     World world{};
     world.insert_object(new Big_Plane{sf::Vector2f (1600, 0)});
     world.insert_object(new Big_Plane{sf::Vector2f (1600, 760)});
@@ -26,9 +26,9 @@ int main()
     world.insert_object(new Small_Plane{sf::Vector2f ( 1600, 750)});
     world.insert_object(new Bomb{sf::Vector2f ( 1600, 400)});
     world.insert_object(new Bomb{sf::Vector2f ( 3000, 400)});
-    world.insert_object(new Heal{sf::Vector2f ( 1600, 230)});
-    world.insert_object(new Shield{sf::Vector2f ( 1600, 290)});
-    world.insert_object(new Tripleshot{sf::Vector2f ( 1300, 380)});
+    world.insert_object(new Powerup("Heal",sf::Vector2f ( 1600, 230)));
+    world.insert_object(new Powerup("Shield", sf::Vector2f ( 1600, 290)));
+    world.insert_object(new Powerup("Tripleshot" , sf::Vector2f ( 1300, 380)));
 
     world.run(window);
 
