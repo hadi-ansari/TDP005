@@ -3,7 +3,7 @@
 
 #include "Powerup.h"
 
-Powerup::Powerup(std::string name, sf::Vector2f location): name(name), Entity(location)
+Powerup::Powerup(const std::string& name, sf::Vector2f location): name(name), Entity(location)
 {
     health = 1;
     speed = 0.2f;
@@ -11,26 +11,17 @@ Powerup::Powerup(std::string name, sf::Vector2f location): name(name), Entity(lo
     height = 35;
     if(name == "Heal")
     {
-        if(!texture.loadFromFile("Health_sprite.png", sf::IntRect(0, 0, width, height)))
-        {
-            std::cerr << "Error" << std::endl;
-        }
+        texture.loadFromFile("Health_sprite.png", sf::IntRect(0, 0, width, height));
     }
     else if(name == "Shield")
     {
-        if(!texture.loadFromFile("Shield_sprite.png", sf::IntRect(0, 0, width, height)))
-        {
-            std::cerr << "Error" << std::endl;
-        }
+        texture.loadFromFile("Shield_sprite.png", sf::IntRect(0, 0, width, height));
+
     }
     else if(name == "Tripleshot")
     {
-        if(!texture.loadFromFile("Tripleshot_sprite.png", sf::IntRect(0, 0, width, height)))
-        {
-            std::cerr << "Error" << std::endl;
-        }
+        texture.loadFromFile("Tripleshot_sprite.png", sf::IntRect(0, 0, width, height));
     }
-
     sprite.setTexture(texture);
 }
 
@@ -48,10 +39,6 @@ void Powerup::collision(std::vector<Entity*> const& objects)
         }
     }
 
-}
-std::string Powerup::get_type()
-{
-    return name;
 }
 /*
 // ---------Heal Powerup----------

@@ -2,7 +2,7 @@
 
 #include "Enemy.h"
 #include "Bullet.h"
-//
+// Enemy
 Enemy::Enemy(sf::Vector2f location):Entity(location)
 {}
 void Enemy::collision(std::vector<Entity*> const& objects)

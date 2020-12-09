@@ -6,15 +6,16 @@
 
 //Bullet
 Bullet::Bullet(sf::Vector2f location) : Entity(location)
-{}
-
-// Player-Bullet
-Player_Bullet::Player_Bullet(sf::Vector2f location): Bullet(location)
 {
     speed = 0.7f;
     health = 1;
     width = 15;
     height = 3;
+}
+
+// Player-Bullet
+Player_Bullet::Player_Bullet(sf::Vector2f location): Bullet(location)
+{
     if(!texture.loadFromFile("Bullet.png", sf::IntRect(0, 0, width, height)))
     {
         std::cerr << "Error" << std::endl;
@@ -49,10 +50,7 @@ std::string Player_Bullet::get_type()
 // Enemy Bullet
 Enemy_Bullet::Enemy_Bullet(sf::Vector2f location): Bullet(location)
 {
-    speed = 0.7f;
-    health = 1;
-    width = 15;
-    height = 3;
+
     if(!texture.loadFromFile("Enemy-Bullet.png", sf::IntRect(0, 0, width, height)))
     {
         std::cerr << "Error" << std::endl;
