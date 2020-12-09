@@ -34,11 +34,6 @@ Powerup::Powerup(std::string name, sf::Vector2f location): name(name), Entity(lo
     sprite.setTexture(texture);
 }
 
-void Powerup::tick(sf::Time const& delta)
-{
-    location.x -= delta.asMilliseconds() * speed;
-    sprite.setPosition(location);
-}
 void Powerup::collision(std::vector<Entity*> const& objects)
 {
     for(auto object: objects)

@@ -60,11 +60,6 @@ Enemy_Bullet::Enemy_Bullet(sf::Vector2f location): Bullet(location)
     sprite.setTexture(texture);
 }
 
-void Enemy_Bullet::tick(sf::Time const& delta)
-{
-    location.x -= speed * delta.asMilliseconds();
-    sprite.setPosition(location);
-}
 void Enemy_Bullet::collision(std::vector<Entity *> const&objects)
 {
     for(auto object: objects)

@@ -14,7 +14,6 @@ public:
 
     ~Powerup() override = default;
 
-    void tick(sf::Time const& delta) override;
     void collision(std::vector<Entity*> const& objects) override;
     std::string get_type() override;
 

@@ -11,8 +11,8 @@ public:
     explicit Entity(sf::Vector2f location);
     virtual ~Entity() = default;
 
-    virtual void tick(sf::Time const& delta) = 0;
-    bool kill_me();
+    virtual void tick(sf::Time const& delta);
+    bool kill_me() const;
     virtual void collision(std::vector<Entity*> const& objects) = 0;
     virtual std::string get_type() = 0;
 
@@ -23,9 +23,9 @@ protected:
     sf::Vector2f location;
     sf::Texture texture;
     sf::Sprite sprite;
-    float speed;
-    int health;
-    int width;
-    int height;
+    float speed{};
+    int health{};
+    int width{};
+    int height{};
 };
 #endif
