@@ -19,16 +19,6 @@ Heal::Heal(sf::Vector2f location):Powerup(location){
     sprite.setTexture(texture);
 }
 
-bool Heal::Heal::want_shoot() const
-{
-    return false;
-}
-
-/*Entity* Heal::shoot()
-{
-    return nullptr;
-}*/
-
 void Heal::tick(sf::Time const& delta)
 {
     location.x -= delta.asMilliseconds() * speed;
@@ -70,16 +60,6 @@ Shield::Shield(sf::Vector2f location):Powerup(location){
     }
     sprite.setTexture(texture);
 }
-
-bool Shield::Shield::want_shoot() const
-{
-    return false;
-}
-
-/*Entity* Shield::shoot()
-{
-    return nullptr;
-}*/
 
 void Shield::tick(sf::Time const& delta)
 {
@@ -123,16 +103,6 @@ Tripleshot::Tripleshot(sf::Vector2f location):Powerup(location){
     }
     sprite.setTexture(texture);
 }
-
-bool Tripleshot::Tripleshot::want_shoot() const
-{
-    return false;
-}
-
-/*Entity* Tripleshot::shoot()
-{
-    return nullptr;
-}*/
 
 void Tripleshot::tick(sf::Time const& delta)
 {

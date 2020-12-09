@@ -24,9 +24,6 @@ public:
     bool kill_me() override;
     void collision(std::vector<Entity*> const& objects) override;
     std::string get_type() override;
-    virtual bool want_shoot() const override;
-    //virtual Entity* shoot() override;
-
 };
 
 class Shield : public Powerup
@@ -39,10 +36,6 @@ public:
     bool kill_me() override;
     void collision(std::vector<Entity*> const& objects) override;
     std::string get_type() override;
-    virtual bool want_shoot() const override;
-    //virtual Entity* shoot() override;
-
-
 };
 
 class Tripleshot : public Powerup
@@ -55,7 +48,5 @@ public:
     bool kill_me() override;
     void collision(std::vector<Entity*> const& objects) override;
     std::string get_type() override;
-    virtual bool want_shoot() const override;
-    //virtual Entity* shoot() override;
 };
 #endif

@@ -45,17 +45,17 @@ void World::new_bullets()
     for(auto & object: objects)
     {
         auto po = dynamic_cast<Player*>(object);
-        if(po && po -> want_shoot())
+        if(po && po)
         {
             po -> shoot(new_bullets);
         }
         auto bp = dynamic_cast<Big_Plane*>(object);
-        if(bp && bp -> want_shoot())
+        if(bp && bp)
         {
             bp -> shoot(new_bullets);
         }
         auto sp = dynamic_cast<Small_Plane*>(object);
-        if(sp && sp -> want_shoot())
+        if(sp && sp)
         {
             sp -> shoot(new_bullets);
         }

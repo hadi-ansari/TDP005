@@ -24,14 +24,6 @@ void Bomb::tick(sf::Time const& delta)
     location.x -= delta.asMilliseconds() * speed;
     sprite.setPosition(location);
 }
-bool Bomb::Bomb::want_shoot() const
-{
-    return false;
-}
-/*Entity* Bomb::shoot()
-{
-    return nullptr;
-}*/
 bool Bomb::kill_me()
 {
     return (location.x < 0 || location.y < 0 || location.y > 900|| health < 1);
@@ -78,15 +70,14 @@ void Small_Plane::tick(sf::Time const& delta)
     location.x -= delta.asMilliseconds() * speed;
     sprite.setPosition(location);
 }
-bool Small_Plane::want_shoot() const
-{
-    return (t1.asSeconds() > shoot_speed);
-}
 void Small_Plane::shoot(std::vector<Entity*> & new_bullets)
 {
-    t1 = clock1.restart();
-    sf::Vector2f temp{location.x , location.y + float(height) / 2};
-    new_bullets.push_back(new Enemy_Bullet{temp});
+    if(t1.asSeconds() > shoot_speed)
+    {
+        t1 = clock1.restart();
+        sf::Vector2f temp{location.x , location.y + float(height) / 2};
+        new_bullets.push_back(new Enemy_Bullet{temp});
+    }
 }
 bool Small_Plane::kill_me()
 {
@@ -133,15 +124,14 @@ void Big_Plane::tick(sf::Time const& delta)
     location.x -= delta.asMilliseconds() * speed;
     sprite.setPosition(location);
 }
-bool Big_Plane::want_shoot() const
-{
-    return (t1.asSeconds() > shoot_speed);
-}
 void Big_Plane::shoot(std::vector<Entity*> & new_bullets)
 {
-    t1 = clock1.restart();
-    sf::Vector2f temp{location.x , location.y + 5 + float(height) / 2 };
-    new_bullets.push_back(new Enemy_Bullet{temp});
+    if(t1.asSeconds() > shoot_speed)
+    {
+        t1 = clock1.restart();
+        sf::Vector2f temp{location.x, location.y + 5 + float(height) / 2};
+        new_bullets.push_back(new Enemy_Bullet{temp});
+    }
 }
 bool Big_Plane::kill_me()
 {

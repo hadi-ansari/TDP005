@@ -27,14 +27,6 @@ void Player_Bullet::tick(sf::Time const& delta)
   location.x += speed * delta.asMilliseconds();
   sprite.setPosition(location);
 }
-bool Player_Bullet::want_shoot() const
-{
-    return false;
-}
-/*Bullet* Player_Bullet::shoot()
-{
-    return nullptr;
-}*/
 bool Player_Bullet::kill_me() {
     return (location.x < 0 || location.x > 1600 || health < 1);
 }
@@ -76,14 +68,6 @@ void Enemy_Bullet::tick(sf::Time const& delta)
     location.x -= speed * delta.asMilliseconds();
     sprite.setPosition(location);
 }
-bool Enemy_Bullet::want_shoot() const
-{
-    return false;
-}
-/*Bullet* Enemy_Bullet::shoot()
-{
-    return nullptr;
-}*/
 bool Enemy_Bullet::kill_me() {
     return (location.x < 0 || location.x > 1600 || health < 1);
 }

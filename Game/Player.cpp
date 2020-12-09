@@ -54,10 +54,6 @@ void Player::tick(sf::Time const& delta)
     if (temp.x < (float)(1600 - width) && temp.x >= 0 && temp.y < (float)(900 - height)  && temp.y >= 0 )
         sprite.setPosition(location += process_event(delta));
 }
-bool Player::want_shoot() const
-{
-    return sht;
-}
 void Player::shoot(std::vector<Entity*> & new_bullets)
 {
     if (sht) {

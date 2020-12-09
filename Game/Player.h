@@ -16,7 +16,6 @@ public:
 
     sf::Vector2f process_event(sf::Time delta);
     void tick(sf::Time const& delta) override;
-    bool want_shoot() const override;
     void shoot(std::vector<Entity*> & new_bullets);
     bool kill_me() override;
     void collision(std::vector<Entity*> const& objects) override;
