@@ -10,6 +10,8 @@ CMakeFiles/game.dir/Enemy.cpp.o
  /home/hadan326/CLionProjects/tdp005/Game/Enemy.cpp
  /home/hadan326/CLionProjects/tdp005/Game/Enemy.h
  /home/hadan326/CLionProjects/tdp005/Game/Entity.h
+ /home/hadan326/CLionProjects/tdp005/Game/Player.h
+ /home/hadan326/CLionProjects/tdp005/Game/World.h
 CMakeFiles/game.dir/Entity.cpp.o
  /home/hadan326/CLionProjects/tdp005/Game/Entity.cpp
  /home/hadan326/CLionProjects/tdp005/Game/Entity.h
@@ -18,6 +20,7 @@ CMakeFiles/game.dir/Player.cpp.o
  /home/hadan326/CLionProjects/tdp005/Game/Entity.h
  /home/hadan326/CLionProjects/tdp005/Game/Player.cpp
  /home/hadan326/CLionProjects/tdp005/Game/Player.h
+ /home/hadan326/CLionProjects/tdp005/Game/World.h
 CMakeFiles/game.dir/Powerup.cpp.o
  /home/hadan326/CLionProjects/tdp005/Game/Entity.h
  /home/hadan326/CLionProjects/tdp005/Game/Powerup.cpp

@@ -4,10 +4,10 @@
 
 #include "Player.h"
 #include "Bullet.h"
+#include "World.h"
 
 Player::Player(sf::Vector2f location) : Entity(location)
 {
-    location = {0, 0};
     health = 3;
     speed = 0.5f;
     width = 75;
@@ -21,14 +21,14 @@ Player::Player(sf::Vector2f location) : Entity(location)
     }
     sprite.setTexture(texture);
 }
-void Player::tick(sf::Time const& delta)
+bool Player::tick(sf::Time delta, World &world)
 {
-    if(shield_clock.getElapsedTime().asSeconds() > 10)
+    if(shield && shield_clock.getElapsedTime().asSeconds() > 10)
     {
         shield = false;
     }
-    /* Speed dependent  */
 
+    /* Förflyttning av player  */
     sf::Vector2f temp;
     float ElapsedTime = delta.asMilliseconds();
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
@@ -46,8 +46,18 @@ void Player::tick(sf::Time const& delta)
         location = temp;
         sprite.setPosition(location);
     }
+    // skjuta skott
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)
+        && shoot_clock.getElapsedTime().asSeconds() > shoot_speed)
+    {
+        shoot_clock.restart();
+        temp = {location.x + 65, location.y + 10};
+        world.insert_object(new Player_Bullet{temp});
+    }
+
+    return health > 1;
 }
-void Player::shoot(std::vector<Entity*> & new_bullets)
+/*void Player::shoot(std::vector<Entity*> & new_bullets)
 {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)
     && shoot_clock.getElapsedTime().asSeconds() > shoot_speed)
@@ -56,7 +66,7 @@ void Player::shoot(std::vector<Entity*> & new_bullets)
         sf::Vector2f temp{location.x + 65, location.y + 10};
         new_bullets.push_back(new Player_Bullet{temp});
     }
-}
+}*/
 void Player::collision(std::vector<Entity*> const& objects)
 {
     for(auto object: objects)

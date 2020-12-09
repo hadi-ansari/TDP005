@@ -19,7 +19,7 @@ public:
     explicit Player_Bullet(sf::Vector2f location);
     ~Player_Bullet() override = default;
 
-    void tick(sf::Time const& delta) override;
+    bool tick(sf::Time delta, World & world) override;
     void collision(std::vector<Entity*> const& objects) override;
     std::string get_type() override {return "Player-Bullet";};
 };

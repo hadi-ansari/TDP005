@@ -39,43 +39,6 @@ void World::manage_text(sf::Text & player_life, sf::Text & shield_time, sf::Font
     shield_time.setPosition(750, 0);
 }
 
-void World::new_bullets()
-{
-    std::vector<Entity*> new_bullets{};
-    for(auto & object: objects)
-    {
-
-        auto po = dynamic_cast<Player*>(object);
-        auto bp = dynamic_cast<Big_Plane*>(object);
-        auto sp = dynamic_cast<Small_Plane*>(object);
-
-        if(po)
-        {
-            po -> shoot(new_bullets);
-        }
-        else if(bp)
-        {
-            bp -> shoot(new_bullets);
-        }
-        else if(sp)
-        {
-            sp -> shoot(new_bullets);
-        }
-
-    }
-    for(auto & bullet: new_bullets)
-    {
-        insert_object( bullet );
-    }
-}
-void World::update_objects(sf::Time const& delta, sf::RenderWindow & window)
-{
-    for(auto & object: objects)
-    {
-        object -> tick(delta);
-        window.draw(object -> get_sprite());
-    }
-}
 void World::manage_collision()
 {
     for(auto & object: objects)
@@ -90,20 +53,6 @@ void World::manage_collision()
         ), new_vector.end());
         object -> collision(new_vector);
     }
-}
-void World::remove_objects()
-{
-    objects.erase(std::remove_if(objects.begin(), objects.end(),
-                                 [](Entity* & x)
-                                 {
-                                     if( x -> kill_me())
-                                     {
-                                         delete x;
-                                         return true;
-                                     }
-                                     return false;
-                                 }
-    ), objects.end());
 }
 
 void World::run(sf::RenderWindow & window)
@@ -127,14 +76,15 @@ void World::run(sf::RenderWindow & window)
             }
         }
         window.clear(sf::Color(76, 208, 255));
-        new_bullets();
 
         sf::Time delta = clock.restart();
-        update_objects(delta, window);
 
-        manage_collision();
-        remove_objects();
 
+        // manage_collision();
+
+        tick(delta);
+
+        draw(window);
         // liv
         player_life.setString("Life: " + std::to_string(player -> get_health()));
         window.draw(player_life);
@@ -151,11 +101,19 @@ void World::run(sf::RenderWindow & window)
 void World::tick(sf::Time delta)
 {
 
+    for(size_t i = 0 ; i < objects.size(); i++)
+    {
+        if(!objects[i] -> tick(delta, *this))
+        {
+            objects.erase(objects.begin() + i);
+            i--;
+        }
+    }
 }
-
-struct Score
+void World::draw(sf::RenderWindow &window)
 {
-    Score() :sum{}
-    {}
-    int sum;
-};
+    for(auto object: objects)
+    {
+        window.draw(object -> get_sprite());
+    }
+}

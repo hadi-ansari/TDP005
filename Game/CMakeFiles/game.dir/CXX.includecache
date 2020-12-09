@@ -44,16 +44,6 @@ Entity.h
 Bullet.h
 /home/hadan326/CLionProjects/tdp005/Game/Bullet.h
 
-/home/hadan326/CLionProjects/tdp005/Game/Powerup.h
-SFML/Graphics.hpp
--
-iostream
--
-string
--
-Entity.h
-/home/hadan326/CLionProjects/tdp005/Game/Entity.h
-
 /home/hadan326/CLionProjects/tdp005/Game/World.cpp
 SFML/Graphics.hpp
 -
@@ -75,16 +65,4 @@ Entity.h
 /home/hadan326/CLionProjects/tdp005/Game/Entity.h
 Player.h
 /home/hadan326/CLionProjects/tdp005/Game/Player.h
-
-/home/hadan326/CLionProjects/tdp005/Game/main.cpp
-SFML/Graphics.hpp
--
-iostream
--
-World.h
-/home/hadan326/CLionProjects/tdp005/Game/World.h
-Enemy.h
-/home/hadan326/CLionProjects/tdp005/Game/Enemy.h
-Powerup.h
-/home/hadan326/CLionProjects/tdp005/Game/Powerup.h
 

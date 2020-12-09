@@ -4,10 +4,11 @@
 Entity::Entity(sf::Vector2f location)
         :location(location)
 {}
-void Entity::tick(sf::Time const& delta)
+bool Entity::tick(sf::Time delta, World & world)
 {
     location.x -= delta.asMilliseconds() * speed;
     sprite.setPosition(location);
+    return !kill_me();
 }
 bool Entity::kill_me() const
 {

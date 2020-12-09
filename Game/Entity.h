@@ -5,13 +5,15 @@
 #include <iostream>
 #include <string>
 
+class World;
+
 class Entity
 {
 public:
     explicit Entity(sf::Vector2f location);
     virtual ~Entity() = default;
 
-    virtual void tick(sf::Time const& delta);
+    virtual bool tick(sf::Time delta, World &world);
     bool kill_me() const;
     virtual void collision(std::vector<Entity*> const& objects) = 0;
     virtual std::string get_type() = 0;

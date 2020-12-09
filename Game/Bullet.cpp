@@ -20,10 +20,11 @@ Player_Bullet::Player_Bullet(sf::Vector2f location): Bullet(location)
     sprite.setTexture(texture);
 }
 
-void Player_Bullet::tick(sf::Time const& delta)
+bool Player_Bullet::tick(sf::Time delta, World &)
 {
   location.x += speed * delta.asMilliseconds();
   sprite.setPosition(location);
+  return !kill_me();
 }
 void Player_Bullet::collision(std::vector<Entity *> const&objects)
 {
