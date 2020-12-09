@@ -25,7 +25,7 @@ public:
     void collision(std::vector<Entity*> const& objects) override;
     std::string get_type() override;
     virtual bool want_shoot() const override;
-    virtual Entity* shoot() override;
+    //virtual Entity* shoot() override;
 
 };
 
@@ -40,7 +40,7 @@ public:
     void collision(std::vector<Entity*> const& objects) override;
     std::string get_type() override;
     virtual bool want_shoot() const override;
-    virtual Entity* shoot() override;
+    //virtual Entity* shoot() override;
 
 
 };
@@ -56,6 +56,6 @@ public:
     void collision(std::vector<Entity*> const& objects) override;
     std::string get_type() override;
     virtual bool want_shoot() const override;
-    virtual Entity* shoot() override;
+    //virtual Entity* shoot() override;
 };
 #endif

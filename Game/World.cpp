@@ -3,6 +3,8 @@
 //#include <algorithm>
 
 #include "World.h"
+#include "Player.h"
+#include "Enemy.h"
 
 World::World()
   : objects{}, player{new Player{sf::Vector2f(0 , 0)}}
@@ -42,10 +44,22 @@ void World::new_bullets()
     std::vector<Entity*> new_bullets{};
     for(auto & object: objects)
     {
-        if(object -> want_shoot())
+        auto po = dynamic_cast<Player*>(object);
+        if(po && po -> want_shoot())
         {
-            new_bullets.push_back( object -> shoot());
+            po -> shoot(new_bullets);
         }
+        auto bp = dynamic_cast<Big_Plane*>(object);
+        if(bp && bp -> want_shoot())
+        {
+            bp -> shoot(new_bullets);
+        }
+        auto sp = dynamic_cast<Small_Plane*>(object);
+        if(sp && sp -> want_shoot())
+        {
+            sp -> shoot(new_bullets);
+        }
+
     }
     for(auto & bullet: new_bullets)
     {

@@ -31,10 +31,10 @@ bool Player_Bullet::want_shoot() const
 {
     return false;
 }
-Bullet* Player_Bullet::shoot()
+/*Bullet* Player_Bullet::shoot()
 {
     return nullptr;
-}
+}*/
 bool Player_Bullet::kill_me() {
     return (location.x < 0 || location.x > 1600 || health < 1);
 }
@@ -80,10 +80,10 @@ bool Enemy_Bullet::want_shoot() const
 {
     return false;
 }
-Bullet* Enemy_Bullet::shoot()
+/*Bullet* Enemy_Bullet::shoot()
 {
     return nullptr;
-}
+}*/
 bool Enemy_Bullet::kill_me() {
     return (location.x < 0 || location.x > 1600 || health < 1);
 }

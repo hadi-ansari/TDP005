@@ -21,7 +21,7 @@ public:
 
     void tick(sf::Time const& delta) override;
     bool want_shoot() const override;
-    Bullet* shoot() override;
+    //Bullet* shoot() override;
     bool kill_me() override;
     void collision(std::vector<Entity*> const& objects) override;
     std::string get_type() override;
@@ -35,7 +35,7 @@ public:
 
     void tick(sf::Time const& delta) override;
     bool want_shoot() const override;
-    Bullet* shoot() override;
+    //Bullet* shoot() override;
     bool kill_me() override;
     void collision(std::vector<Entity*> const& objects) override;
     std::string get_type() override;

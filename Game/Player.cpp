@@ -58,11 +58,13 @@ bool Player::want_shoot() const
 {
     return sht;
 }
-Entity* Player::shoot()
+void Player::shoot(std::vector<Entity*> & new_bullets)
 {
-    sht = false;
-    sf::Vector2f temp{location.x + 65, location.y + 10};
-    return (new Player_Bullet{temp});
+    if (sht) {
+        sht = false;
+        sf::Vector2f temp{location.x + 65, location.y + 10};
+        new_bullets.push_back(new Player_Bullet{temp});
+    }
 }
 bool Player::kill_me()
 {

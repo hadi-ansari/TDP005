@@ -24,10 +24,10 @@ bool Heal::Heal::want_shoot() const
     return false;
 }
 
-Entity* Heal::shoot()
+/*Entity* Heal::shoot()
 {
     return nullptr;
-}
+}*/
 
 void Heal::tick(sf::Time const& delta)
 {
@@ -76,10 +76,10 @@ bool Shield::Shield::want_shoot() const
     return false;
 }
 
-Entity* Shield::shoot()
+/*Entity* Shield::shoot()
 {
     return nullptr;
-}
+}*/
 
 void Shield::tick(sf::Time const& delta)
 {
@@ -129,10 +129,10 @@ bool Tripleshot::Tripleshot::want_shoot() const
     return false;
 }
 
-Entity* Tripleshot::shoot()
+/*Entity* Tripleshot::shoot()
 {
     return nullptr;
-}
+}*/
 
 void Tripleshot::tick(sf::Time const& delta)
 {
