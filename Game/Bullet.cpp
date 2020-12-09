@@ -16,10 +16,7 @@ Bullet::Bullet(sf::Vector2f location) : Entity(location)
 // Player-Bullet
 Player_Bullet::Player_Bullet(sf::Vector2f location): Bullet(location)
 {
-    if(!texture.loadFromFile("Bullet.png", sf::IntRect(0, 0, width, height)))
-    {
-        std::cerr << "Error" << std::endl;
-    }
+    texture.loadFromFile("Bullet.png", sf::IntRect(0, 0, width, height));
     sprite.setTexture(texture);
 }
 
@@ -42,19 +39,12 @@ void Player_Bullet::collision(std::vector<Entity *> const&objects)
          }
     }
 }
-std::string Player_Bullet::get_type()
-{
-    return "Player-Bullet";
-}
 
 // Enemy Bullet
 Enemy_Bullet::Enemy_Bullet(sf::Vector2f location): Bullet(location)
 {
 
-    if(!texture.loadFromFile("Enemy-Bullet.png", sf::IntRect(0, 0, width, height)))
-    {
-        std::cerr << "Error" << std::endl;
-    }
+    texture.loadFromFile("Enemy-Bullet.png", sf::IntRect(0, 0, width, height));
     sprite.setTexture(texture);
 }
 
@@ -71,8 +61,5 @@ void Enemy_Bullet::collision(std::vector<Entity *> const&objects)
         }
     }
 }
-std::string Enemy_Bullet::get_type()
-{
-    return "Enemy-Bullet";
-}
+
 

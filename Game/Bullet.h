@@ -21,7 +21,7 @@ public:
 
     void tick(sf::Time const& delta) override;
     void collision(std::vector<Entity*> const& objects) override;
-    std::string get_type() override;
+    std::string get_type() override {return "Player-Bullet";};
 };
 
 class Enemy_Bullet : public Bullet
@@ -31,7 +31,7 @@ public:
     ~Enemy_Bullet() override = default;
 
     void collision(std::vector<Entity*> const& objects) override;
-    std::string get_type() override;
+    std::string get_type() override {return "Enemy-Bullet";};
 
 private:
 
