@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <memory>
 
 #include "Entity.h"
 #include "Player.h"
@@ -11,12 +12,12 @@ class World
 {
 public:
     World();
-    ~World();
+    ~World() = default;
 
-    void insert_object(Entity* object);
+    void insert_object(std::shared_ptr<Entity> const& object);
     void run(sf::RenderWindow & window);
     void tick(sf::Time delta);
-    void draw(sf::RenderWindow & window);
+    void render(sf::RenderWindow & window);
 
 private:
     /* Tar hand om font och text på skärmen */
@@ -34,7 +35,7 @@ private:
     /* Tar bort spelobjekt som ska förstöras */
    // void remove_objects();
 
-    std::vector <Entity*> objects{};
-    Player* player{};
+    std::vector <std::shared_ptr <Entity>> objects{};
+    std::shared_ptr<Player> player{};
 };
 #endif

@@ -277,6 +277,33 @@ Powerup.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/Powerup.cpp.s
 .PHONY : Powerup.cpp.s
 
+Texture_manager.o: Texture_manager.cpp.o
+
+.PHONY : Texture_manager.o
+
+# target to build an object file
+Texture_manager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/Texture_manager.cpp.o
+.PHONY : Texture_manager.cpp.o
+
+Texture_manager.i: Texture_manager.cpp.i
+
+.PHONY : Texture_manager.i
+
+# target to preprocess a source file
+Texture_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/Texture_manager.cpp.i
+.PHONY : Texture_manager.cpp.i
+
+Texture_manager.s: Texture_manager.cpp.s
+
+.PHONY : Texture_manager.s
+
+# target to generate assembly for a file
+Texture_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/Texture_manager.cpp.s
+.PHONY : Texture_manager.cpp.s
+
 World.o: World.cpp.o
 
 .PHONY : World.o
@@ -355,6 +382,9 @@ help:
 	@echo "... Powerup.o"
 	@echo "... Powerup.i"
 	@echo "... Powerup.s"
+	@echo "... Texture_manager.o"
+	@echo "... Texture_manager.i"
+	@echo "... Texture_manager.s"
 	@echo "... World.o"
 	@echo "... World.i"
 	@echo "... World.s"

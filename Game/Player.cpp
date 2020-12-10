@@ -6,7 +6,7 @@
 #include "Bullet.h"
 #include "World.h"
 
-Player::Player(sf::Vector2f location) : Entity(location)
+Player::Player(sf::Vector2f location) : Textured_object(location, 75, 22,"Player_75x22.png")
 {
     health = 3;
     speed = 0.5f;
@@ -15,8 +15,6 @@ Player::Player(sf::Vector2f location) : Entity(location)
     shoot_speed = 0.30f;
     shoot_clock.restart();
     shield = false;
-    texture.loadFromFile("Player_75x22.png", sf::IntRect(0, 0, width, height));
-    sprite.setTexture(texture);
 }
 bool Player::tick(sf::Time delta, World &world)
 {
@@ -49,15 +47,15 @@ bool Player::tick(sf::Time delta, World &world)
     {
         shoot_clock.restart();
         temp = {location.x + 65, location.y + 10};
-        world.insert_object(new Player_Bullet{temp});
+        world.insert_object(std::make_shared<Player_Bullet>(Player_Bullet{temp}));
     }
 
     return health >= 1;
 }
 
-void Player::collision(std::vector<Entity*> const& objects)
+void Player::collision(std::vector<std::shared_ptr<Entity>> const& objects)
 {
-    for(auto object: objects)
+    for(auto const& object: objects)
     {
         if ( sprite.getGlobalBounds().intersects((object -> get_sprite()).getGlobalBounds()) )
         {

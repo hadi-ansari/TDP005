@@ -15,6 +15,7 @@ CMakeFiles/game.dir/Enemy.cpp.o
 CMakeFiles/game.dir/Entity.cpp.o
  /home/hadan326/CLionProjects/tdp005/Game/Entity.cpp
  /home/hadan326/CLionProjects/tdp005/Game/Entity.h
+ /home/hadan326/CLionProjects/tdp005/Game/Texture_manager.h
 CMakeFiles/game.dir/Player.cpp.o
  /home/hadan326/CLionProjects/tdp005/Game/Bullet.h
  /home/hadan326/CLionProjects/tdp005/Game/Entity.h
@@ -25,6 +26,9 @@ CMakeFiles/game.dir/Powerup.cpp.o
  /home/hadan326/CLionProjects/tdp005/Game/Entity.h
  /home/hadan326/CLionProjects/tdp005/Game/Powerup.cpp
  /home/hadan326/CLionProjects/tdp005/Game/Powerup.h
+CMakeFiles/game.dir/Texture_manager.cpp.o
+ /home/hadan326/CLionProjects/tdp005/Game/Texture_manager.cpp
+ /home/hadan326/CLionProjects/tdp005/Game/Texture_manager.h
 CMakeFiles/game.dir/World.cpp.o
  /home/hadan326/CLionProjects/tdp005/Game/Bullet.h
  /home/hadan326/CLionProjects/tdp005/Game/Enemy.h

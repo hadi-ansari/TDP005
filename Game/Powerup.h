@@ -7,17 +7,17 @@
 
 #include "Entity.h"
 
-class Powerup : public Entity
+class Powerup : public Textured_object
 {
 public:
-    Powerup(const std::string& name, sf::Vector2f location);
+    Powerup(std::string name, std::string const& texture_name ,sf::Vector2f location);
 
     ~Powerup() override = default;
 
-    void collision(std::vector<Entity*> const& objects) override;
+    void collision(std::vector<std::shared_ptr<Entity>> const& objects) override;
     std::string get_type() override {return name;};
 
 private:
-    std::string name;
+    std::string const name;
 };
 #endif

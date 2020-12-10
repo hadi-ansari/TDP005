@@ -3,31 +3,16 @@
 
 #include "Powerup.h"
 
-Powerup::Powerup(const std::string& name, sf::Vector2f location): name(name), Entity(location)
+Powerup::Powerup(std::string name, std::string const& texture_name ,sf::Vector2f location)
+: name(std::move(name)), Textured_object(location, 35, 35, texture_name)
 {
     health = 1;
     speed = 0.2f;
-    width = 35;
-    height = 35;
-    if(name == "Heal")
-    {
-        texture.loadFromFile("Health_sprite.png", sf::IntRect(0, 0, width, height));
-    }
-    else if(name == "Shield")
-    {
-        texture.loadFromFile("Shield_sprite.png", sf::IntRect(0, 0, width, height));
-
-    }
-    else if(name == "Tripleshot")
-    {
-        texture.loadFromFile("Tripleshot_sprite.png", sf::IntRect(0, 0, width, height));
-    }
-    sprite.setTexture(texture);
 }
 
-void Powerup::collision(std::vector<Entity*> const& objects)
+void Powerup::collision(std::vector<std::shared_ptr<Entity>> const& objects)
 {
-    for(auto object: objects)
+    for(auto const& object: objects)
     {
         if ( sprite.getGlobalBounds().intersects((object -> get_sprite()).getGlobalBounds()) )
         {

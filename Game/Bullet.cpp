@@ -5,34 +5,30 @@
 #include "Entity.h"
 
 //Bullet
-Bullet::Bullet(sf::Vector2f location) : Entity(location)
+Bullet::Bullet(sf::Vector2f location, std::string const& texture_name)
+: Textured_object(location, 15, 3, texture_name)
 {
     speed = 0.7f;
     health = 1;
-    width = 15;
-    height = 3;
 }
 
 // Player-Bullet
-Player_Bullet::Player_Bullet(sf::Vector2f location): Bullet(location)
-{
-    texture.loadFromFile("Bullet.png", sf::IntRect(0, 0, width, height));
-    sprite.setTexture(texture);
-}
+Player_Bullet::Player_Bullet(sf::Vector2f location)
+: Bullet(location, "Bullet.png")
+{}
 
 bool Player_Bullet::tick(sf::Time delta, World &)
 {
   location.x += speed * delta.asMilliseconds();
-  sprite.setPosition(location);
   return !kill_me();
 }
-void Player_Bullet::collision(std::vector<Entity *> const&objects)
+void Player_Bullet::collision(std::vector<std::shared_ptr<Entity>> const& objects)
 {
-    for(auto object: objects)
+    for(auto const& object: objects)
     {
         if ( sprite.getGlobalBounds().intersects((object -> get_sprite()).getGlobalBounds()) )
         {
-            std::cout << "Colliding Player-Bullet with " << object -> get_type() << std::endl;
+            //std::cout << "Colliding Player-Bullet with " << object -> get_type() << std::endl;
             std::string type = object -> get_type();
 
             if (type == "Big Plane" || type == "Small Plane" || type == "Bomb")
@@ -42,20 +38,17 @@ void Player_Bullet::collision(std::vector<Entity *> const&objects)
 }
 
 // Enemy Bullet
-Enemy_Bullet::Enemy_Bullet(sf::Vector2f location): Bullet(location)
-{
+Enemy_Bullet::Enemy_Bullet(sf::Vector2f location)
+: Bullet(location, "Enemy-Bullet.png")
+{}
 
-    texture.loadFromFile("Enemy-Bullet.png", sf::IntRect(0, 0, width, height));
-    sprite.setTexture(texture);
-}
-
-void Enemy_Bullet::collision(std::vector<Entity *> const&objects)
+void Enemy_Bullet::collision(std::vector<std::shared_ptr<Entity>> const& objects)
 {
-    for(auto object: objects)
+    for(auto const& object: objects)
     {
         if ( sprite.getGlobalBounds().intersects((object -> get_sprite()).getGlobalBounds()) )
         {
-            std::cout << "Colliding Enemy-Bullet with " << object -> get_type() << std::endl;
+            //std::cout << "Colliding Enemy-Bullet with " << object -> get_type() << std::endl;
             std::string type = object -> get_type();
             if (type == "Player")
                 health -= 1;

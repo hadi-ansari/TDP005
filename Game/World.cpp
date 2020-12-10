@@ -1,26 +1,19 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
-//#include <algorithm>
+
 
 #include "World.h"
 #include "Player.h"
 #include "Enemy.h"
 
+using namespace std;
+
 World::World()
-  : objects{}, player{new Player{sf::Vector2f(0 , 0)}}
+  : objects{}, player{make_shared<Player>(Player{sf::Vector2f(0 , 0)})}
 {
   objects.push_back(player);
 }
-
-World::~World()
-{
-  for(auto object: objects)
-    {
-      delete object;
-    }
-}
-
-void World::insert_object(Entity* object)
+void World::insert_object(std::shared_ptr<Entity> const& object)
 {
   objects.push_back(object);
 }
@@ -41,12 +34,12 @@ void World::manage_text(sf::Text & player_life, sf::Text & shield_time, sf::Font
 
 void World::manage_collision()
 {
-    for(auto & object: objects)
+    for(auto object: objects)
     {
-        std::vector <Entity*> new_vector(objects.size());
+        std::vector <shared_ptr<Entity>> new_vector(objects.size());
         std::copy(objects.begin(), objects.end(), new_vector.begin());
         new_vector.erase(std::remove_if(new_vector.begin(), new_vector.end(),
-                                        [&object](Entity* & x)
+                                        [&object](shared_ptr<Entity> & x)
                                         {
                                             return x == object;
                                         }
@@ -79,11 +72,11 @@ void World::run(sf::RenderWindow & window)
 
         sf::Time delta = clock.restart();
 
-        tick(delta);
-
         manage_collision();
 
-        draw(window);
+        tick(delta);
+
+        render(window);
         // liv
         player_life.setString("Life: " + std::to_string(player -> get_health()));
         window.draw(player_life);
@@ -109,10 +102,10 @@ void World::tick(sf::Time delta)
         }
     }
 }
-void World::draw(sf::RenderWindow &window)
+void World::render(sf::RenderWindow &window)
 {
-    for(auto object: objects)
+    for(auto const& object: objects)
     {
-        window.draw(object -> get_sprite());
+        object -> render(window);
     }
 }

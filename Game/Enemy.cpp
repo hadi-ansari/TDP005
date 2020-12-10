@@ -4,15 +4,16 @@
 #include "Bullet.h"
 #include "World.h"
 // Enemy
-Enemy::Enemy(sf::Vector2f location):Entity(location)
+Enemy::Enemy(sf::Vector2f location, int width, int height, std::string const& texture_name)
+:Textured_object(location, width, height, texture_name)
 {}
-void Enemy::collision(std::vector<Entity*> const& objects)
+void Enemy::collision(std::vector<std::shared_ptr<Entity>> const& objects)
 {
-    for(auto object: objects)
+    for(auto const& object: objects)
     {
         if ( sprite.getGlobalBounds().intersects((object -> get_sprite()).getGlobalBounds()) )
         {
-            std::cout << "Colliding " << get_type() << " with " << object -> get_type()<< std::endl;
+            //std::cout << "Colliding " << get_type() << " with " << object -> get_type()<< std::endl;
             std::string type = object -> get_type();
 
             if (type == "Player")
@@ -23,67 +24,47 @@ void Enemy::collision(std::vector<Entity*> const& objects)
     }
 }
 // Bomb
-Bomb::Bomb(sf::Vector2f location):Enemy(location)
+Bomb::Bomb(sf::Vector2f location):Enemy(location, 50, 50, "Bomb50x50.png")
 {
     health = 1;
     speed = 0.2f;
-    width = 50;
-    height = 50;
-    if(!texture.loadFromFile("Bomb50x50.png", sf::IntRect(0, 0, width, height)))
-    {
-        std::cerr << "Error" << std::endl;
-    }
-    sprite.setTexture(texture);
 }
 
 // Small Plane
-Small_Plane::Small_Plane(sf::Vector2f location): Enemy(location)
+Small_Plane::Small_Plane(sf::Vector2f location): Enemy(location, 75, 22, "Enemy1_75x22.png")
 {
     health = 1;
     speed = 0.5f;
     shoot_speed = 0.7f;
     shoot_clock.restart();
-    width = 75;
-    height = 22;
-    if(!texture.loadFromFile("Enemy1_75x22.png", sf::IntRect(0, 0, width, height)))
-    {
-        std::cerr << "Error" << std::endl;
-    }
-    sprite.setTexture(texture);
 }
 bool Small_Plane::tick(sf::Time delta, World & world)
 {
     if(shoot_clock.getElapsedTime().asSeconds() > shoot_speed)
     {
         shoot_clock.restart();
-        sf::Vector2f temp{location.x , location.y + float(height) / 2};
-        world.insert_object(new Enemy_Bullet{temp});
+        sf::Vector2f temp{location.x , location.y + 5 + float(height) / 2};
+        world.insert_object(std::make_shared<Enemy_Bullet>(Enemy_Bullet{temp}));
     }
     return Entity::tick(delta, world);
 }
 
 // Big Plane
-Big_Plane::Big_Plane(sf::Vector2f location): Enemy(location)
+Big_Plane::Big_Plane(sf::Vector2f location): Enemy(location, 100, 31, "Enemy2_100x31.png")
 {
     health = 2;
     speed = 0.3f;
     shoot_speed = 0.9f;
     shoot_clock.restart();
-    width = 100;
-    height = 31;
-    if(!texture.loadFromFile("Enemy2_100x31.png", sf::IntRect(0, 0, width, height)))
-    {
-        std::cerr << "Error" << std::endl;
-    }
-    sprite.setTexture(texture);
 }
 bool Big_Plane::tick(sf::Time delta, World & world)
 {
     if(shoot_clock.getElapsedTime().asSeconds() > shoot_speed)
     {
         shoot_clock.restart();
-        sf::Vector2f temp{location.x, location.y + 5 + float(height) / 2};
-        world.insert_object(new Enemy_Bullet{temp});
+        //sf::Vector2f temp{location.x, location.y + 5 + float(height) / 2};
+        sf::Vector2f temp(location.x, location.y + 5 + (float)height / 2 );
+        world.insert_object(std::make_shared<Enemy_Bullet>(Enemy_Bullet{temp}));
     }
     return Entity::tick(delta, world);
 }

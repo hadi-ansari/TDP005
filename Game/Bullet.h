@@ -6,10 +6,10 @@
 
 #include "Entity.h"
 
-class Bullet : public Entity
+class Bullet : public Textured_object
 {
 public:
-    explicit Bullet(sf::Vector2f location);
+    explicit Bullet(sf::Vector2f location, std::string const& texture_name);
     ~Bullet() override = default;
 };
 
@@ -20,7 +20,7 @@ public:
     ~Player_Bullet() override = default;
 
     bool tick(sf::Time delta, World & world) override;
-    void collision(std::vector<Entity*> const& objects) override;
+    void collision(std::vector<std::shared_ptr<Entity>> const& objects) override;
     std::string get_type() override {return "Player-Bullet";};
 };
 
@@ -30,7 +30,7 @@ public:
     explicit Enemy_Bullet(sf::Vector2f location);
     ~Enemy_Bullet() override = default;
 
-    void collision(std::vector<Entity*> const& objects) override;
+    void collision(std::vector<std::shared_ptr<Entity>> const& objects) override;
     std::string get_type() override {return "Enemy-Bullet";};
 
 private:
