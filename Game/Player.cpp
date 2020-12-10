@@ -15,10 +15,7 @@ Player::Player(sf::Vector2f location) : Entity(location)
     shoot_speed = 0.30f;
     shoot_clock.restart();
     shield = false;
-    if(!texture.loadFromFile("Player_75x22.png", sf::IntRect(0, 0, width, height)))
-    {
-        std::cerr << "Error" << std::endl;
-    }
+    texture.loadFromFile("Player_75x22.png", sf::IntRect(0, 0, width, height));
     sprite.setTexture(texture);
 }
 bool Player::tick(sf::Time delta, World &world)
@@ -55,18 +52,9 @@ bool Player::tick(sf::Time delta, World &world)
         world.insert_object(new Player_Bullet{temp});
     }
 
-    return health > 1;
+    return health >= 1;
 }
-/*void Player::shoot(std::vector<Entity*> & new_bullets)
-{
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)
-    && shoot_clock.getElapsedTime().asSeconds() > shoot_speed)
-    {
-        shoot_clock.restart();
-        sf::Vector2f temp{location.x + 65, location.y + 10};
-        new_bullets.push_back(new Player_Bullet{temp});
-    }
-}*/
+
 void Player::collision(std::vector<Entity*> const& objects)
 {
     for(auto object: objects)
@@ -99,16 +87,8 @@ void Player::collision(std::vector<Entity*> const& objects)
     }
 }
 
-std::string Player::get_type() {
-    return "Player";
-}
-
 std::string Player::get_shield_time() const
 {
     int time = 10 - (int)shield_clock.getElapsedTime().asSeconds();
     return "Shield Time: " + std::to_string(time);
 }
- bool Player::has_shield() const
- {
-     return shield;
- }

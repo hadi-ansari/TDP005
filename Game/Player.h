@@ -15,12 +15,11 @@ public:
     ~Player() override = default;
 
     bool tick(sf::Time delta, World & world) override;
-    //void shoot(std::vector<Entity*> & new_bullets);
     void collision(std::vector<Entity*> const& objects) override;
 
-    std::string get_type() override;
+    std::string get_type() override {return "Player";};
     std::string get_shield_time() const;
-    bool has_shield() const;
+    bool has_shield() const {return shield;};
 private:
     float shoot_speed;
     sf::Clock shoot_clock;

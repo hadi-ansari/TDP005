@@ -51,16 +51,6 @@ Small_Plane::Small_Plane(sf::Vector2f location): Enemy(location)
     }
     sprite.setTexture(texture);
 }
-
-/*void Small_Plane::shoot(std::vector<Entity*> & new_bullets)
-{
-    if(shoot_clock.getElapsedTime().asSeconds() > shoot_speed)
-    {
-        shoot_clock.restart();
-        sf::Vector2f temp{location.x , location.y + float(height) / 2};
-        new_bullets.push_back(new Enemy_Bullet{temp});
-    }
-}*/
 bool Small_Plane::tick(sf::Time delta, World & world)
 {
     if(shoot_clock.getElapsedTime().asSeconds() > shoot_speed)
@@ -87,16 +77,6 @@ Big_Plane::Big_Plane(sf::Vector2f location): Enemy(location)
     }
     sprite.setTexture(texture);
 }
-
-/*void Big_Plane::shoot(std::vector<Entity*> & new_bullets)
-{
-    if(shoot_clock.getElapsedTime().asSeconds() > shoot_speed)
-    {
-        shoot_clock.restart();
-        sf::Vector2f temp{location.x, location.y + 5 + float(height) / 2};
-        new_bullets.push_back(new Enemy_Bullet{temp});
-    }
-}*/
 bool Big_Plane::tick(sf::Time delta, World & world)
 {
     if(shoot_clock.getElapsedTime().asSeconds() > shoot_speed)

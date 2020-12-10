@@ -79,10 +79,9 @@ void World::run(sf::RenderWindow & window)
 
         sf::Time delta = clock.restart();
 
-
-        // manage_collision();
-
         tick(delta);
+
+        manage_collision();
 
         draw(window);
         // liv

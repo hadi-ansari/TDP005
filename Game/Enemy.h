@@ -29,7 +29,6 @@ public:
     ~Small_Plane() override = default;
 
     bool tick(sf::Time delta, World & world) override;
-    //void shoot(std::vector<Entity*> & new_bullets);
     std::string get_type() override {return "Small Plane";};
 
 private:
@@ -44,7 +43,6 @@ public:
     ~Big_Plane() override = default;
 
     bool tick(sf::Time delta, World & world) override;
-    //void shoot(std::vector<Entity*> & new_bullets);
     std::string get_type() override {return "Big Plane";};
 
 private:
