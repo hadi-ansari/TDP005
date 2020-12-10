@@ -9,27 +9,20 @@
 using namespace std;
 
 World::World()
-  : objects{}, player{make_shared<Player>(Player{sf::Vector2f(0 , 0)})}
+  : objects{}, player{make_shared<Player>(Player{sf::Vector2f(0 , 450)})}, score{0}
 {
-  objects.push_back(player);
+    objects.push_back(player);
+    font.loadFromFile("Lato-HeavyItalic.ttf");
+    life_info.setFont(font);
+    shield_info.setFont(font);
+    score_info.setFont(font);
+    life_info.setPosition(1500, 0);
+    shield_info.setPosition(750, 0);
+    score_info.setPosition(0,0);
 }
 void World::insert_object(std::shared_ptr<Entity> const& object)
 {
   objects.push_back(object);
-}
-
-void World::manage_text(sf::Text & player_life, sf::Text & shield_time, sf::Font & font)
-{
-
-    if(!font.loadFromFile("Lato-HeavyItalic.ttf"))
-    {
-        std::cerr << "Error loading font!" << std::endl;
-    }
-    player_life.setFont(font);
-    shield_time.setFont(font);
-
-    player_life.setPosition(1500, 0);
-    shield_time.setPosition(750, 0);
 }
 
 void World::manage_collision()
@@ -44,18 +37,14 @@ void World::manage_collision()
                                             return x == object;
                                         }
         ), new_vector.end());
-        object -> collision(new_vector);
+        object -> collision(new_vector, *this);
     }
 }
 
 void World::run(sf::RenderWindow & window)
 {
     sf::Clock clock;
-    sf::Font font;
-
-    sf::Text player_life;
-    sf::Text shield_time;
-    manage_text(player_life, shield_time, font);
+    //manage_text(life_info, shield_info, font);
 
     while(window.isOpen())
     {
@@ -77,16 +66,7 @@ void World::run(sf::RenderWindow & window)
         tick(delta);
 
         render(window);
-        // liv
-        player_life.setString("Life: " + std::to_string(player -> get_health()));
-        window.draw(player_life);
 
-        // shield
-        if(player -> has_shield())
-        {
-            shield_time.setString( player -> get_shield_time());
-            window.draw(shield_time);
-        }
         window.display();
     }
 }
@@ -101,6 +81,7 @@ void World::tick(sf::Time delta)
             i--;
         }
     }
+
 }
 void World::render(sf::RenderWindow &window)
 {
@@ -108,4 +89,21 @@ void World::render(sf::RenderWindow &window)
     {
         object -> render(window);
     }
+    // liv
+    life_info.setString("Life: " + std::to_string(player -> get_health()));
+    window.draw(life_info);
+
+    // shield
+    if(player -> has_shield())
+    {
+        shield_info.setString( player -> get_shield_time());
+        window.draw(shield_info);
+    }
+    score_info.setString("Score : " + std::to_string(score));
+    window.draw(score_info);
+
+}
+
+void World::add_score(int num) {
+    score += num;
 }

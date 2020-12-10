@@ -14,7 +14,7 @@ public:
 
     ~Powerup() override = default;
 
-    void collision(std::vector<std::shared_ptr<Entity>> const& objects) override;
+    void collision(std::vector<std::shared_ptr<Entity>> const& objects, World &world) override;
     std::string get_type() override {return name;};
 
 private:

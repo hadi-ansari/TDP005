@@ -16,7 +16,7 @@ public:
     ~Player() override = default;
 
     bool tick(sf::Time delta, World & world) override;
-    void collision(std::vector<std::shared_ptr<Entity>> const& objects) override;
+    void collision(std::vector<std::shared_ptr<Entity>> const& objects, World &world) override;
 
     std::string get_type() override {return "Player";};
     std::string get_shield_time() const;

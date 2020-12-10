@@ -96,6 +96,12 @@
 		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/Powerup.h">
 			<Option target="game"/>
 		</Unit>
+		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/Texture_manager.cpp">
+			<Option target="game"/>
+		</Unit>
+		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/Texture_manager.h">
+			<Option target="game"/>
+		</Unit>
 		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/World.cpp">
 			<Option target="game"/>
 		</Unit>

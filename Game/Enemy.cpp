@@ -7,7 +7,7 @@
 Enemy::Enemy(sf::Vector2f location, int width, int height, std::string const& texture_name)
 :Textured_object(location, width, height, texture_name)
 {}
-void Enemy::collision(std::vector<std::shared_ptr<Entity>> const& objects)
+void Enemy::collision(std::vector<std::shared_ptr<Entity>> const& objects, World &world)
 {
     for(auto const& object: objects)
     {
@@ -15,11 +15,14 @@ void Enemy::collision(std::vector<std::shared_ptr<Entity>> const& objects)
         {
             //std::cout << "Colliding " << get_type() << " with " << object -> get_type()<< std::endl;
             std::string type = object -> get_type();
-
             if (type == "Player")
                 health -= 2;
-            else if(type == "Player-Bullet")
+            else if(type == "Player-Bullet") {
                 health -= 1;
+                if(health < 1 && get_type() == "Big Plane") world.add_score(100);
+                else if(health < 1 && get_type() == "Small Plane") world.add_score(150);
+                else if(health < 1 && get_type() == "Bomb") world.add_score(50);
+            }
         }
     }
 }

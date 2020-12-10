@@ -18,7 +18,7 @@ public:
     virtual bool tick(sf::Time delta, World &world);
     virtual void render(sf::RenderWindow &window) = 0;
     bool kill_me() const;
-    virtual void collision(std::vector<std::shared_ptr<Entity>> const& objects) = 0;
+    virtual void collision(std::vector<std::shared_ptr<Entity>> const& objects, World &world) = 0;
     virtual std::string get_type() = 0;
 
     virtual sf::Sprite get_sprite() const {return sprite;}

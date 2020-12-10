@@ -22,7 +22,7 @@ bool Player_Bullet::tick(sf::Time delta, World &)
   location.x += speed * delta.asMilliseconds();
   return !kill_me();
 }
-void Player_Bullet::collision(std::vector<std::shared_ptr<Entity>> const& objects)
+void Player_Bullet::collision(std::vector<std::shared_ptr<Entity>> const& objects, World &)
 {
     for(auto const& object: objects)
     {
@@ -42,7 +42,7 @@ Enemy_Bullet::Enemy_Bullet(sf::Vector2f location)
 : Bullet(location, "Enemy-Bullet.png")
 {}
 
-void Enemy_Bullet::collision(std::vector<std::shared_ptr<Entity>> const& objects)
+void Enemy_Bullet::collision(std::vector<std::shared_ptr<Entity>> const& objects, World &)
 {
     for(auto const& object: objects)
     {

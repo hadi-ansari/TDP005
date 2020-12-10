@@ -10,7 +10,7 @@ Powerup::Powerup(std::string name, std::string const& texture_name ,sf::Vector2f
     speed = 0.2f;
 }
 
-void Powerup::collision(std::vector<std::shared_ptr<Entity>> const& objects)
+void Powerup::collision(std::vector<std::shared_ptr<Entity>> const& objects, World &)
 {
     for(auto const& object: objects)
     {

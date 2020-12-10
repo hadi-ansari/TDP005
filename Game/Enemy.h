@@ -12,7 +12,7 @@ struct Enemy: public Textured_object
     explicit Enemy(sf::Vector2f location, int width, int height, const std::string& texture_name);
     ~Enemy() override = default;
 
-    void collision(std::vector<std::shared_ptr<Entity>> const& objects) override;
+    void collision(std::vector<std::shared_ptr<Entity>> const& objects, World &world) override;
 };
 class Bomb : public Enemy
 {

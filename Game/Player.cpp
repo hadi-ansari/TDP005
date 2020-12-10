@@ -53,7 +53,7 @@ bool Player::tick(sf::Time delta, World &world)
     return health >= 1;
 }
 
-void Player::collision(std::vector<std::shared_ptr<Entity>> const& objects)
+void Player::collision(std::vector<std::shared_ptr<Entity>> const& objects, World &world)
 {
     for(auto const& object: objects)
     {
