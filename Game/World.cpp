@@ -5,7 +5,6 @@
 #include "World.h"
 #include "Player.h"
 #include "Enemy.h"
-#include "Powerup.h"
 
 using namespace std;
 
@@ -47,7 +46,6 @@ void World::manage_collision()
 void World::run(sf::RenderWindow & window)
 {
     sf::Clock clock;
-    //manage_text(life_info, shield_info, font);
 
     while(window.isOpen())
     {
@@ -64,8 +62,6 @@ void World::run(sf::RenderWindow & window)
 
         sf::Time delta = clock.restart();
 
-        manage_collision();
-
         tick(delta);
 
         render(window);
@@ -75,11 +71,12 @@ void World::run(sf::RenderWindow & window)
 }
 void World::tick(sf::Time delta)
 {
+    manage_collision();
 
     if (game_clock.getElapsedTime().asSeconds() > 3)
     {
         game_clock.restart();
-        for( auto i: level.load_enemy(counter))
+        for( auto const& i: level.load_enemy(counter))
         {
             insert_object(i);
         }

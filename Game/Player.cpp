@@ -59,7 +59,7 @@ void Player::collision(std::vector<std::shared_ptr<Entity>> const& objects, Worl
     {
         if ( sprite.getGlobalBounds().intersects((object -> get_sprite()).getGlobalBounds()) )
         {
-            std::cout << "Colliding Player with " << object -> get_type() <<  std::endl;
+            //std::cout << "Colliding Player with " << object -> get_type() <<  std::endl;
             std::string type = object -> get_type();
 
             if((type == "Big Plane"  || type == "Bomb") && !shield)
