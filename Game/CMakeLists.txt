@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 
 project(game)
 
-set(SOURCE_FILES main.cpp World.cpp World.h Entity.cpp Entity.h Player.cpp Player.h Enemy.cpp Enemy.h Bullet.cpp Bullet.h Powerup.h Powerup.cpp Texture_manager.cpp Texture_manager.h)
+set(SOURCE_FILES main.cpp World.cpp World.h Entity.cpp Entity.h Player.cpp Player.h Enemy.cpp Enemy.h Bullet.cpp Bullet.h Powerup.h Powerup.cpp Texture_manager.cpp Texture_manager.h Level.cpp Level.h)
 
 set(CMAKE_CXX_STANDARD 17)
 

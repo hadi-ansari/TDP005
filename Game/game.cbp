@@ -84,6 +84,12 @@
 		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/Entity.h">
 			<Option target="game"/>
 		</Unit>
+		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/Level.cpp">
+			<Option target="game"/>
+		</Unit>
+		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/Level.h">
+			<Option target="game"/>
+		</Unit>
 		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/Player.cpp">
 			<Option target="game"/>
 		</Unit>

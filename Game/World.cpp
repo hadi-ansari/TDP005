@@ -5,12 +5,15 @@
 #include "World.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "Powerup.h"
 
 using namespace std;
 
 World::World()
-  : objects{}, player{make_shared<Player>(Player{sf::Vector2f(0 , 450)})}, score{0}
+  : objects{}, player{make_shared<Player>(Player{sf::Vector2f(0 , 450)})}
+  , counter{0}, score{0}, level()
 {
+    game_clock.restart();
     objects.push_back(player);
     font.loadFromFile("Lato-HeavyItalic.ttf");
     life_info.setFont(font);
@@ -73,15 +76,21 @@ void World::run(sf::RenderWindow & window)
 void World::tick(sf::Time delta)
 {
 
-    for(size_t i = 0 ; i < objects.size(); i++)
+    if (game_clock.getElapsedTime().asSeconds() > 3)
     {
-        if(!objects[i] -> tick(delta, *this))
+        game_clock.restart();
+        for( auto i: level.load_enemy(counter))
         {
+            insert_object(i);
+        }
+        counter ++;
+    }
+    for (size_t i = 0; i < objects.size(); i++) {
+        if (!objects[i]->tick(delta, *this)) {
             objects.erase(objects.begin() + i);
             i--;
         }
     }
-
 }
 void World::render(sf::RenderWindow &window)
 {
@@ -92,7 +101,6 @@ void World::render(sf::RenderWindow &window)
     // liv
     life_info.setString("Life: " + std::to_string(player -> get_health()));
     window.draw(life_info);
-
     // shield
     if(player -> has_shield())
     {

@@ -7,6 +7,7 @@
 
 #include "Entity.h"
 #include "Player.h"
+#include "Level.h"
 
 class World
 {
@@ -37,9 +38,12 @@ private:
     std::vector <std::shared_ptr <Entity>> objects{};
     std::shared_ptr<Player> player{};
     int score;
+    int counter;
     sf::Font font;
     sf::Text life_info;
     sf::Text shield_info;
     sf::Text score_info;
+    sf::Clock game_clock;
+    Level level;
 };
 #endif

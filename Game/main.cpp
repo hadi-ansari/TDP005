@@ -14,6 +14,7 @@ int main()
     // window.setKeyRepeatEnabled(false);
     //Powerup p1{"test", sf::Vector2f(200, 200)};
     World world{};
+    /*
     world.insert_object(std::make_shared<Big_Plane>(Big_Plane{sf::Vector2f (1600, 0)}));
     world.insert_object(std::make_shared<Big_Plane>(Big_Plane{sf::Vector2f (1600, 760)}));
     world.insert_object(std::make_shared<Big_Plane>(Big_Plane{sf::Vector2f (1600, 650)}));
@@ -29,7 +30,7 @@ int main()
     world.insert_object(std::make_shared<Powerup>(Powerup("Heal", "Health_sprite.png",sf::Vector2f ( 1600, 230))));
     world.insert_object(std::make_shared<Powerup>(Powerup("Shield", "Shield_sprite.png", sf::Vector2f ( 1600, 290))));
     world.insert_object(std::make_shared<Powerup>(Powerup("Tripleshot" , "Tripleshot_sprite.png", sf::Vector2f ( 1300, 380))));
-
+*/
     world.run(window);
 
     return 0;
