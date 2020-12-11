@@ -1,6 +1,6 @@
 1600 0 Big_Plane
 1600 50 Heal
-1600 150 Small_Plane
+1600 0 Small_Plane
 1600 230 Bomb
 1600 400 Big_Plane
 1600 700 Small_Plane
@@ -23,4 +23,6 @@
 1600 300 Big_Plane
 1600 650 Heal
 1600 800 Small_Plane
+0 0 None
+1600 0 Small_Plane
 0 0 None

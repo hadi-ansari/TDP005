@@ -69,11 +69,15 @@ void Small_Plane::vertical_move(sf::Time delta)
     }
     if(upp_state)
     {
-        location.y -= delta.asMilliseconds() * speed / 2;
+        float temp = location.y - delta.asMilliseconds() * speed / 2;
+        if(temp >= 0)
+            location.y = temp;
     }
     else
     {
-        location.y += delta.asMilliseconds() * speed / 2;
+        float temp = location.y + delta.asMilliseconds() * speed / 2;
+        if(temp < 900)
+            location.y = temp;
     }
 
 }
@@ -91,7 +95,6 @@ bool Big_Plane::tick(sf::Time delta, World & world)
     if(shoot_clock.getElapsedTime().asSeconds() > shoot_speed)
     {
         shoot_clock.restart();
-        //sf::Vector2f temp{location.x, location.y + 5 + float(height) / 2};
         sf::Vector2f temp(location.x, location.y + 5 + (float)height / 2 );
         world.insert_object(std::make_shared<Enemy_Bullet>(Enemy_Bullet{temp}));
     }
