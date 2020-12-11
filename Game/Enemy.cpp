@@ -37,9 +37,12 @@ Bomb::Bomb(sf::Vector2f location):Enemy(location, 50, 50, "Bomb50x50.png")
 Small_Plane::Small_Plane(sf::Vector2f location): Enemy(location, 75, 22, "Enemy1_75x22.png")
 {
     health = 1;
-    speed = 0.5f;
+    speed = 0.4f;
     shoot_speed = 0.7f;
+    symmetry_line = location.x;
+    wave_height = 300;
     shoot_clock.restart();
+    vertical_timer.restart();
 }
 bool Small_Plane::tick(sf::Time delta, World & world)
 {
@@ -49,7 +52,30 @@ bool Small_Plane::tick(sf::Time delta, World & world)
         sf::Vector2f temp{location.x , location.y + 5 + float(height) / 2};
         world.insert_object(std::make_shared<Enemy_Bullet>(Enemy_Bullet{temp}));
     }
+    vertical_move(delta);
+
     return Entity::tick(delta, world);
+}
+
+void Small_Plane::vertical_move(sf::Time delta)
+{
+    if(vertical_timer.getElapsedTime().asMilliseconds() > 500)
+    {
+        if (upp_state)
+            upp_state = false;
+        else
+            upp_state = true;
+        vertical_timer.restart();
+    }
+    if(upp_state)
+    {
+        location.y -= delta.asMilliseconds() * speed / 2;
+    }
+    else
+    {
+        location.y += delta.asMilliseconds() * speed / 2;
+    }
+
 }
 
 // Big Plane

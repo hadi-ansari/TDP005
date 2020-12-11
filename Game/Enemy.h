@@ -32,8 +32,14 @@ public:
     std::string get_type() override {return "Small Plane";};
 
 private:
+    void vertical_move(sf::Time delta);
+
     float shoot_speed;
     sf::Clock shoot_clock;
+    bool upp_state;
+    sf::Clock vertical_timer;
+    float symmetry_line;
+    int wave_height;
 };
 
 class Big_Plane: public Enemy
