@@ -114,7 +114,22 @@
 		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/World.h">
 			<Option target="game"/>
 		</Unit>
+		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/common.h">
+			<Option target="game"/>
+		</Unit>
+		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/game_state.cpp">
+			<Option target="game"/>
+		</Unit>
+		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/game_state.h">
+			<Option target="game"/>
+		</Unit>
 		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/main.cpp">
+			<Option target="game"/>
+		</Unit>
+		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/state.cpp">
+			<Option target="game"/>
+		</Unit>
+		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/state.h">
 			<Option target="game"/>
 		</Unit>
 		<Unit filename="/home/hadan326/CLionProjects/tdp005/Game/CMakeLists.txt">

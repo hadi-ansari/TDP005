@@ -17,10 +17,9 @@ public:
 
     /* Lägger till en objekt */
     void insert_object(std::shared_ptr<Entity> const& object);
-    void run(sf::RenderWindow & window);
 
     /* Uppdaterar alla objekt*/
-    void tick(sf::Time delta);
+    bool tick(sf::Time delta);
 
     /* Ritar på skärmen*/
     void render(sf::RenderWindow & window);

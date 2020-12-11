@@ -1,13 +1,15 @@
-#pragma once
+#ifndef GAME_STATE_H
+#define GAME_STATE_H
+
 #include "state.h"
-#include "world.h"
+#include "World.h"
 
 class Game_State : public State {
 public:
     /**
      * Create it.
      */
-    Game_State();
+    Game_State() = default;
 
     /**
      * Tick all game elements.
@@ -25,4 +27,4 @@ private:
      */
     World world;
 };
-
+#endif

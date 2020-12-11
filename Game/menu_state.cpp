@@ -1,3 +1,4 @@
+/*
 #include "menu_state.h"
 #include "game_state.h"
 
@@ -77,3 +78,4 @@ void Menu_State::render(sf::RenderWindow &to) {
         to.draw(e.text);
     }
 }
+*/

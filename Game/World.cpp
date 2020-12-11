@@ -43,33 +43,7 @@ void World::manage_collision()
     }
 }
 
-void World::run(sf::RenderWindow & window)
-{
-    sf::Clock clock;
-
-    while(window.isOpen())
-    {
-        sf::Event event{};
-
-        while(window.pollEvent(event))
-        {
-            if(event.type == sf::Event::Closed)
-            {
-                window.close();
-            }
-        }
-        window.clear(sf::Color(76, 208, 255));
-
-        sf::Time delta = clock.restart();
-
-        tick(delta);
-
-        render(window);
-
-        window.display();
-    }
-}
-void World::tick(sf::Time delta)
+bool World::tick(sf::Time delta)
 {
     manage_collision();
 
@@ -88,6 +62,10 @@ void World::tick(sf::Time delta)
             i--;
         }
     }
+
+    if(player->get_health() < 1)
+        return false;
+    return true;
 }
 void World::render(sf::RenderWindow &window)
 {

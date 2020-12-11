@@ -1,9 +1,9 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <memory>
 
-#include "World.h"
-#include "Enemy.h"
-#include "Powerup.h"
+#include "state.h"
+#include "game_state.h"
 
 size_t const width = 1600;
 size_t const height = 900;
@@ -13,7 +13,7 @@ int main()
     window.setVerticalSyncEnabled(true);
     // window.setKeyRepeatEnabled(false);
     
-    Game_State::Start(window)
+    State::run(window, std::make_shared<Game_State>());
       // World world{};
       // world.run(window);
 

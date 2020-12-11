@@ -1,3 +1,5 @@
+#include <SFML/Graphics.hpp>
+
 #include "state.h"
 
 State::State() {}
@@ -28,7 +30,7 @@ void State::run(sf::RenderWindow &window, shared_ptr<State> state) {
             }
         }
 
-        window.clear();
+        window.clear(sf::Color(76, 208, 255));
         if (auto new_state = state->tick(clock.restart())) {
             if (std::dynamic_pointer_cast<Exit_State>(new_state)) {
                 return;
