@@ -12,9 +12,10 @@ int main()
     sf::RenderWindow window(sf::VideoMode(width, height), "Sky Wars", sf::Style::Close);
     window.setVerticalSyncEnabled(true);
     // window.setKeyRepeatEnabled(false);
-
-    World world{};
-    world.run(window);
+    
+    Game_State::Start(window)
+      // World world{};
+      // world.run(window);
 
     return 0;
 }

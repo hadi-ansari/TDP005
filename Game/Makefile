@@ -67,10 +67,10 @@ RM = /snap/cmake/715/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hadan326/CLionProjects/tdp005/Game
+CMAKE_SOURCE_DIR = /home/nils/TDP005/Game
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hadan326/CLionProjects/tdp005/Game
+CMAKE_BINARY_DIR = /home/nils/TDP005/Game
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hadan326/CLionProjects/tdp005/Game/CMakeFiles /home/hadan326/CLionProjects/tdp005/Game//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nils/TDP005/Game/CMakeFiles /home/nils/TDP005/Game//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hadan326/CLionProjects/tdp005/Game/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nils/TDP005/Game/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
