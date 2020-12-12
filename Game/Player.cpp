@@ -6,7 +6,7 @@
 #include "Bullet.h"
 #include "World.h"
 
-Player::Player(sf::Vector2f location) : Textured_object(location, 75, 22,"Player_75x22.png")
+Player::Player(sf::Vector2f location) : Textured_object(location, 65, 20,"Player_75x22.png")
 {
     health = 3;
     speed = 0.5f;
