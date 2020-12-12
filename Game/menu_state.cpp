@@ -14,21 +14,21 @@ Menu_State::Menu_State(shared_ptr<State> resume)
         background = resume;
     }
 
-    add("New game", []() { return std::make_shared<Game_State>(); });
-    add("Exit", []() { return std::make_shared<Exit_State>(); });
+    add("New game", []() { return make_shared<Game_State>(); });
+    add("Exit", []() { return make_shared<Exit_State>(); });
 }
 
 void Menu_State::add(const string &text, Action action) {
-    entries.push_back({ sf::Text{text, font, 60}, 0.0f, std::move(action) });
+    entries.push_back({ sf::Text{text, font, 60}, 0.0f, move(action) });
 }
 
 void Menu_State::on_key_press(sf::Keyboard::Key key) {
     switch (key) {
-    case sf::Keyboard::Down:
+    case sf::Keyboard::S:
         if (selected + 1 < entries.size())
             selected++;
         break;
-    case sf::Keyboard::Up:
+    case sf::Keyboard::W:
         if (selected > 0)
             selected--;
         break;
@@ -63,12 +63,13 @@ shared_ptr<State> Menu_State::tick(sf::Time time) {
         return nullptr;
 }
 
-void Menu_State::render(sf::RenderWindow &to) {
+void Menu_State::render(sf::RenderWindow &window) {
     if (background)
-        background->render(to);
-
-    float y{100};
-    auto windowSize = to.getSize();
+        background->render(window);
+    else
+        window.clear();
+    float y{300};
+    auto windowSize = window.getSize();
 
     for (auto &e : entries) {
         auto bounds = e.text.getLocalBounds();
@@ -77,6 +78,6 @@ void Menu_State::render(sf::RenderWindow &to) {
 
         int state = static_cast<int>(255 * e.state);
         e.text.setFillColor(sf::Color(state, 255, state));
-        to.draw(e.text);
+        window.draw(e.text);
     }
 }

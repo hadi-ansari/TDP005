@@ -1,6 +1,6 @@
 
 #include "common.h"
-#include "game_state.h"
+#include "menu_state.h"
 
 size_t const width = 1600;
 size_t const height = 900;
@@ -10,7 +10,7 @@ int main()
     window.setVerticalSyncEnabled(true);
     // window.setKeyRepeatEnabled(false);
     
-    State::run(window, std::make_shared<Game_State>());
+    State::run(window, make_shared<Menu_State>());
 
     return 0;
 }
