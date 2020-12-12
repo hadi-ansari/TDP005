@@ -2,13 +2,13 @@
 #include "Player.h"
 #include "World.h"
 
-Player::Player(sf::Vector2f location) : Textured_object(location, 65, 20,"Player_75x22.png")
+Player::Player(sf::Vector2f location) : Textured_object(location, 90, 29,"Images/Player_90X29.png")
 {
     health = 3;
-    speed = 0.5f;
+    speed = 0.4f;
     width = 75;
     height = 22;
-    shoot_speed = 0.30f;
+    shoot_speed = 0.5f;
     shoot_clock.restart();
     shield = false;
 }

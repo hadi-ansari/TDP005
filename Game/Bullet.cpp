@@ -11,7 +11,7 @@ Bullet::Bullet(sf::Vector2f location, std::string const& texture_name)
 
 // Player-Bullet
 Player_Bullet::Player_Bullet(sf::Vector2f location)
-: Bullet(location, "Bullet.png")
+: Bullet(location, "Images/Player_Bullet.png")
 {}
 
 bool Player_Bullet::tick(sf::Time delta, World &)
@@ -36,7 +36,7 @@ void Player_Bullet::collision(vector<shared_ptr<Entity>> const& objects, World &
 
 // Enemy Bullet
 Enemy_Bullet::Enemy_Bullet(sf::Vector2f location)
-: Bullet(location, "Enemy-Bullet.png")
+: Bullet(location, "Images/Enemy-Bullet.png")
 {}
 
 void Enemy_Bullet::collision(vector<shared_ptr<Entity>> const& objects, World &)

@@ -27,18 +27,18 @@ void Enemy::collision(vector<std::shared_ptr<Entity>> const& objects, World &wor
     }
 }
 // Bomb
-Bomb::Bomb(sf::Vector2f location):Enemy(location, 50, 50, "Bomb50x50.png")
+Bomb::Bomb(sf::Vector2f location):Enemy(location, 70, 70, "Images/Bomb70x70.png")
 {
     health = 1;
     speed = 0.2f;
 }
 
 // Small Plane
-Small_Plane::Small_Plane(sf::Vector2f location): Enemy(location, 75, 22, "Enemy1_75x22.png")
+Small_Plane::Small_Plane(sf::Vector2f location): Enemy(location, 90, 25, "Images/Small_Plane90x25.png")
 {
     health = 1;
     speed = 0.4f;
-    shoot_speed = 0.7f;
+    shoot_speed = 0.8f;
     shoot_clock.restart();
     upp_state = true;
     vertical_timer.restart();
@@ -82,7 +82,7 @@ void Small_Plane::vertical_move(sf::Time delta)
 }
 
 // Big Plane
-Big_Plane::Big_Plane(sf::Vector2f location): Enemy(location, 100, 31, "Enemy2_100x31.png")
+Big_Plane::Big_Plane(sf::Vector2f location): Enemy(location, 150, 48, "Images/Big_Plane150x48.png")
 {
     health = 2;
     speed = 0.3f;

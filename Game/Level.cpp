@@ -46,11 +46,11 @@ vector <shared_ptr <Entity>> Level::load_enemy(int index)
         else if(name == "Bomb")
             temp.push_back(make_shared<Bomb>(Bomb{sf::Vector2f(x, y)}));
         else if(name == "Heal")
-            temp.push_back(make_shared<Powerup>(Powerup{name, "Health_sprite.png",sf::Vector2f(x, y)}));
+            temp.push_back(make_shared<Powerup>(Powerup{name, "Images/Health_sprite.png",sf::Vector2f(x, y)}));
         else if(name == "Shield")
-            temp.push_back(make_shared<Powerup>(Powerup{name, "Shield_sprite.png",sf::Vector2f(x, y)}));
+            temp.push_back(make_shared<Powerup>(Powerup{name, "Images/Shield_sprite.png",sf::Vector2f(x, y)}));
         else if(name == "Tripleshot")
-            temp.push_back(make_shared<Powerup>(Powerup{name, "Tripleshot_sprite.png",sf::Vector2f(x, y)}));
+            temp.push_back(make_shared<Powerup>(Powerup{name, "Images/Tripleshot_sprite.png",sf::Vector2f(x, y)}));
     }
     return temp;
 }
