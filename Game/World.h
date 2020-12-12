@@ -1,10 +1,7 @@
 #ifndef WORLD_H
 #define WORLD_H
 
-#include <SFML/Graphics.hpp>
-#include <iostream>
-#include <memory>
-
+#include "common.h"
 #include "Entity.h"
 #include "Player.h"
 #include "Level.h"
@@ -16,7 +13,7 @@ public:
     ~World() = default;
 
     /* Lägger till en objekt */
-    void insert_object(std::shared_ptr<Entity> const& object);
+    void insert_object(shared_ptr<Entity> const& object);
 
     /* Uppdaterar alla objekt*/
     bool tick(sf::Time delta);
@@ -34,8 +31,8 @@ private:
     /* Åtgärdar konsekvenser för kollision mellan varje spelobjekt */
     void manage_collision();
 
-    std::vector <std::shared_ptr <Entity>> objects{};
-    std::shared_ptr<Player> player{};
+    vector <shared_ptr <Entity>> objects{};
+    shared_ptr<Player> player{};
     int score;
     int counter;
     sf::Font font;

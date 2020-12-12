@@ -1,13 +1,13 @@
-#include <string>
 
 #include "Enemy.h"
 #include "Bullet.h"
 #include "World.h"
+
 // Enemy
-Enemy::Enemy(sf::Vector2f location, int width, int height, std::string const& texture_name)
+Enemy::Enemy(sf::Vector2f location, int width, int height, string const& texture_name)
 :Textured_object(location, width, height, texture_name)
 {}
-void Enemy::collision(std::vector<std::shared_ptr<Entity>> const& objects, World &world)
+void Enemy::collision(vector<std::shared_ptr<Entity>> const& objects, World &world)
 {
     for(auto const& object: objects)
     {
@@ -39,9 +39,8 @@ Small_Plane::Small_Plane(sf::Vector2f location): Enemy(location, 75, 22, "Enemy1
     health = 1;
     speed = 0.4f;
     shoot_speed = 0.7f;
-    symmetry_line = location.x;
-    wave_height = 300;
     shoot_clock.restart();
+    upp_state = true;
     vertical_timer.restart();
 }
 bool Small_Plane::tick(sf::Time delta, World & world)

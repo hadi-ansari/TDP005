@@ -1,5 +1,3 @@
-#include <SFML/Graphics.hpp>
-
 #include "Entity.h"
 #include "Texture_manager.h"
 

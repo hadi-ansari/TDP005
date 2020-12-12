@@ -1,8 +1,5 @@
-#include <SFML/Graphics.hpp>
-#include <iostream>
-#include <memory>
 
-#include "state.h"
+#include "common.h"
 #include "game_state.h"
 
 size_t const width = 1600;
@@ -14,8 +11,6 @@ int main()
     // window.setKeyRepeatEnabled(false);
     
     State::run(window, std::make_shared<Game_State>());
-      // World world{};
-      // world.run(window);
 
     return 0;
 }

@@ -1,12 +1,5 @@
-#include <SFML/Graphics.hpp>
-#include <iostream>
-
 
 #include "World.h"
-#include "Player.h"
-#include "Enemy.h"
-
-using namespace std;
 
 World::World()
   : objects{}, player{make_shared<Player>(Player{sf::Vector2f(0 , 450)})}

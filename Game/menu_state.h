@@ -1,9 +1,8 @@
 
-#include <SFML/Graphics.hpp>
-#include <iostream>
-
-#include "state.h"
 #include <functional>
+
+#include "common.h"
+#include "state.h"
 
  /* State responsible for showing either the start menu or the pause menu. */
 

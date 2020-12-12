@@ -1,10 +1,5 @@
-#include <SFML/Graphics.hpp>
 
 #include "state.h"
-
-State::State() {}
-
-State::~State() {}
 
 void State::on_key_press(sf::Keyboard::Key) {}
 
@@ -31,8 +26,8 @@ void State::run(sf::RenderWindow &window, shared_ptr<State> state) {
         }
 
         window.clear(sf::Color(76, 208, 255));
-        if (auto new_state = state->tick(clock.restart())) {
-            if (std::dynamic_pointer_cast<Exit_State>(new_state)) {
+        if (auto new_state = state -> tick(clock.restart())) {
+            if (dynamic_pointer_cast<Exit_State>(new_state)) {
                 return;
             } else {
                 state = new_state;
@@ -40,7 +35,7 @@ void State::run(sf::RenderWindow &window, shared_ptr<State> state) {
             continue;
         }
 
-        state->render(window);
+        state -> render(window);
         window.display();
     }
 }

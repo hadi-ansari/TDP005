@@ -1,10 +1,7 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
-#include <SFML/Graphics.hpp>
-#include <iostream>
-#include <string>
-#include <memory>
+#include "common.h"
 
 class World;
 
@@ -18,7 +15,7 @@ public:
     virtual bool tick(sf::Time delta, World &world);
     virtual void render(sf::RenderWindow &window) = 0;
     bool kill_me() const;
-    virtual void collision(std::vector<std::shared_ptr<Entity>> const& objects, World &world) = 0;
+    virtual void collision(vector<shared_ptr<Entity>> const& objects, World &world) = 0;
     virtual std::string get_type() = 0;
 
     virtual sf::Sprite get_sprite() const {return sprite;}

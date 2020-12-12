@@ -1,12 +1,7 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include <SFML/Graphics.hpp>
-#include <iostream>
-#include <string>
-#include <memory>
-
-#include "Entity.h"
+#include "common.h"
 #include "Bullet.h"
 
 class Player: public Textured_object
@@ -16,10 +11,10 @@ public:
     ~Player() override = default;
 
     bool tick(sf::Time delta, World & world) override;
-    void collision(std::vector<std::shared_ptr<Entity>> const& objects, World &world) override;
+    void collision(vector<shared_ptr<Entity>> const& objects, World &world) override;
 
-    std::string get_type() override {return "Player";};
-    std::string get_shield_time() const;
+    string get_type() override {return "Player";};
+    string get_shield_time() const;
     bool has_shield() const {return shield;};
 private:
     float shoot_speed;

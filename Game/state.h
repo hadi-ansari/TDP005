@@ -1,28 +1,23 @@
 #ifndef STATE_H
 #define STATE_H
 
-#include <SFML/Graphics.hpp>
-#include <iostream>
+#include "common.h"
 
-#include <memory>
-#include "World.h"
-#include "Player.h"
-#include "Enemy.h"
 /**
  * A state that represents a large-scale state of the application. For example,
  * if we're in a menu, if we're in the game, etc.
  */
-class State : public std::enable_shared_from_this<State> {
+class State : public enable_shared_from_this<State> {
 public:
 	/**
 	 * Default creation.
 	 */
-	State();
+	State() = default;
 
 	/**
 	 * Make sure the destructor is virtual.
 	 */
-	virtual ~State();
+	virtual ~State() = default;
 
 	/**
 	 * Called when a key is pressed.
@@ -37,7 +32,7 @@ public:
 	/**
 	 * Called before each screen refresh. May switch states.
 	 */
-	virtual std::shared_ptr<State> tick(sf::Time time) = 0;
+	virtual shared_ptr<State> tick(sf::Time time) = 0;
 
 	/**
 	 * Called to draw the screen.
@@ -47,7 +42,7 @@ public:
 	/**
 	 * Run a state, handling state-switches, until completion.
 	 */
-	static void run(sf::RenderWindow &window, std::shared_ptr<State> state);
+	static void run(sf::RenderWindow &window, shared_ptr<State> state);
 };
 
 /**
@@ -55,7 +50,7 @@ public:
  */
 class Exit_State : public State {
 public:
-	std::shared_ptr<State> tick(sf::Time) override { return nullptr; }
+	shared_ptr<State> tick(sf::Time) override { return nullptr; }
 	void render(sf::RenderWindow &) override {}
 };
 #endif

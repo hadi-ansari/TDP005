@@ -1,9 +1,5 @@
-#include <SFML/Graphics.hpp>
-#include <iostream>
-#include <iomanip>
 
 #include "Player.h"
-#include "Bullet.h"
 #include "World.h"
 
 Player::Player(sf::Vector2f location) : Textured_object(location, 65, 20,"Player_75x22.png")
@@ -47,20 +43,20 @@ bool Player::tick(sf::Time delta, World &world)
     {
         shoot_clock.restart();
         temp = {location.x + 65, location.y + 10};
-        world.insert_object(std::make_shared<Player_Bullet>(Player_Bullet{temp}));
+        world.insert_object(make_shared<Player_Bullet>(Player_Bullet{temp}));
     }
 
     return health >= 1;
 }
 
-void Player::collision(std::vector<std::shared_ptr<Entity>> const& objects, World &world)
+void Player::collision(vector<shared_ptr<Entity>> const& objects, World &)
 {
     for(auto const& object: objects)
     {
         if ( sprite.getGlobalBounds().intersects((object -> get_sprite()).getGlobalBounds()) )
         {
-            //std::cout << "Colliding Player with " << object -> get_type() <<  std::endl;
-            std::string type = object -> get_type();
+            //cout << "Colliding Player with " << object -> get_type() <<  endl;
+            string type = object -> get_type();
 
             if((type == "Big Plane"  || type == "Bomb") && !shield)
                     health -= 2;
@@ -85,8 +81,8 @@ void Player::collision(std::vector<std::shared_ptr<Entity>> const& objects, Worl
     }
 }
 
-std::string Player::get_shield_time() const
+string Player::get_shield_time() const
 {
     int time = 10 - (int)shield_clock.getElapsedTime().asSeconds();
-    return "Shield Time: " + std::to_string(time);
+    return "Shield Time: " + to_string(time);
 }

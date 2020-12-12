@@ -6,3 +6,4 @@ Game/cmake_install.cmake
 Game/CMakeCache.txt
 Game/Makefile
 Game/Testing
+Game/game

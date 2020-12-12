@@ -26,5 +26,6 @@ private:
      * The game world.
      */
     World world;
+
 };
 #endif
