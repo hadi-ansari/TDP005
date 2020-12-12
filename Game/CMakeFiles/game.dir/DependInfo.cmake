@@ -14,6 +14,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/hadan326/CLionProjects/tdp005/Game/World.cpp" "/home/hadan326/CLionProjects/tdp005/Game/CMakeFiles/game.dir/World.cpp.o"
   "/home/hadan326/CLionProjects/tdp005/Game/game_state.cpp" "/home/hadan326/CLionProjects/tdp005/Game/CMakeFiles/game.dir/game_state.cpp.o"
   "/home/hadan326/CLionProjects/tdp005/Game/main.cpp" "/home/hadan326/CLionProjects/tdp005/Game/CMakeFiles/game.dir/main.cpp.o"
+  "/home/hadan326/CLionProjects/tdp005/Game/menu_state.cpp" "/home/hadan326/CLionProjects/tdp005/Game/CMakeFiles/game.dir/menu_state.cpp.o"
   "/home/hadan326/CLionProjects/tdp005/Game/state.cpp" "/home/hadan326/CLionProjects/tdp005/Game/CMakeFiles/game.dir/state.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

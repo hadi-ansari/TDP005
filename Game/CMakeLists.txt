@@ -4,7 +4,7 @@ project(game)
 
 set(SOURCE_FILES main.cpp World.cpp World.h Entity.cpp Entity.h Player.cpp Player.h
         Enemy.cpp Enemy.h Bullet.cpp Bullet.h Powerup.h Powerup.cpp Texture_manager.cpp
-        Texture_manager.h Level.cpp Level.h state.cpp state.h game_state.cpp game_state.h common.h)
+        Texture_manager.h Level.cpp Level.h state.cpp state.h menu_state.h menu_state.cpp game_state.cpp game_state.h common.h)
 
 set(CMAKE_CXX_STANDARD 17)
 

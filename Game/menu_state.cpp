@@ -1,11 +1,13 @@
-/*
+
 #include "menu_state.h"
+
+#include <utility>
 #include "game_state.h"
 
 Menu_State::Menu_State(shared_ptr<State> resume)
     : selected(0), enter_pressed(false), delay(sf::milliseconds(300)) {
 
-    font.loadFromFile("font.ttf");
+    font.loadFromFile("Lato-HeavyItalic.ttf");
 
     if (resume) {
         add("Resume", [resume]() { return resume; });
@@ -17,7 +19,7 @@ Menu_State::Menu_State(shared_ptr<State> resume)
 }
 
 void Menu_State::add(const string &text, Action action) {
-    entries.push_back({ sf::Text{text, font, 60}, 0.0f, action });
+    entries.push_back({ sf::Text{text, font, 60}, 0.0f, std::move(action) });
 }
 
 void Menu_State::on_key_press(sf::Keyboard::Key key) {
@@ -78,4 +80,3 @@ void Menu_State::render(sf::RenderWindow &to) {
         to.draw(e.text);
     }
 }
-*/

@@ -6,16 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/hadan326/CLionProjects/tdp005/Game/Bullet.cpp
-SFML/Graphics.hpp
--
-iostream
--
-Bullet.h
-/home/hadan326/CLionProjects/tdp005/Game/Bullet.h
-Entity.h
-/home/hadan326/CLionProjects/tdp005/Game/Entity.h
-
 /home/hadan326/CLionProjects/tdp005/Game/Bullet.h
 SFML/Graphics.hpp
 -
@@ -23,16 +13,6 @@ iostream
 -
 Entity.h
 /home/hadan326/CLionProjects/tdp005/Game/Entity.h
-
-/home/hadan326/CLionProjects/tdp005/Game/Enemy.cpp
-string
--
-Enemy.h
-/home/hadan326/CLionProjects/tdp005/Game/Enemy.h
-Bullet.h
-/home/hadan326/CLionProjects/tdp005/Game/Bullet.h
-World.h
-/home/hadan326/CLionProjects/tdp005/Game/World.h
 
 /home/hadan326/CLionProjects/tdp005/Game/Enemy.h
 SFML/Graphics.hpp
@@ -43,14 +23,6 @@ string
 -
 Entity.h
 /home/hadan326/CLionProjects/tdp005/Game/Entity.h
-
-/home/hadan326/CLionProjects/tdp005/Game/Entity.cpp
-SFML/Graphics.hpp
--
-Entity.h
-/home/hadan326/CLionProjects/tdp005/Game/Entity.h
-Texture_manager.h
-/home/hadan326/CLionProjects/tdp005/Game/Texture_manager.h
 
 /home/hadan326/CLionProjects/tdp005/Game/Entity.h
 SFML/Graphics.hpp
@@ -61,10 +33,6 @@ string
 -
 memory
 -
-
-/home/hadan326/CLionProjects/tdp005/Game/Level.cpp
-Level.h
-/home/hadan326/CLionProjects/tdp005/Game/Level.h
 
 /home/hadan326/CLionProjects/tdp005/Game/Level.h
 fstream
@@ -78,20 +46,6 @@ Enemy.h
 Powerup.h
 /home/hadan326/CLionProjects/tdp005/Game/Powerup.h
 
-/home/hadan326/CLionProjects/tdp005/Game/Player.cpp
-SFML/Graphics.hpp
--
-iostream
--
-iomanip
--
-Player.h
-/home/hadan326/CLionProjects/tdp005/Game/Player.h
-Bullet.h
-/home/hadan326/CLionProjects/tdp005/Game/Bullet.h
-World.h
-/home/hadan326/CLionProjects/tdp005/Game/World.h
-
 /home/hadan326/CLionProjects/tdp005/Game/Player.h
 SFML/Graphics.hpp
 -
@@ -106,14 +60,6 @@ Entity.h
 Bullet.h
 /home/hadan326/CLionProjects/tdp005/Game/Bullet.h
 
-/home/hadan326/CLionProjects/tdp005/Game/Powerup.cpp
-string
--
-utility
--
-Powerup.h
-/home/hadan326/CLionProjects/tdp005/Game/Powerup.h
-
 /home/hadan326/CLionProjects/tdp005/Game/Powerup.h
 SFML/Graphics.hpp
 -
@@ -123,40 +69,6 @@ string
 -
 Entity.h
 /home/hadan326/CLionProjects/tdp005/Game/Entity.h
-
-/home/hadan326/CLionProjects/tdp005/Game/Texture_manager.cpp
-Texture_manager.h
-/home/hadan326/CLionProjects/tdp005/Game/Texture_manager.h
-stdexcept
--
-
-/home/hadan326/CLionProjects/tdp005/Game/Texture_manager.h
-iostream
--
-string
--
-vector
--
-memory
--
-cmath
--
-SFML/Graphics.hpp
--
-map
--
-
-/home/hadan326/CLionProjects/tdp005/Game/World.cpp
-SFML/Graphics.hpp
--
-iostream
--
-World.h
-/home/hadan326/CLionProjects/tdp005/Game/World.h
-Player.h
-/home/hadan326/CLionProjects/tdp005/Game/Player.h
-Enemy.h
-/home/hadan326/CLionProjects/tdp005/Game/Enemy.h
 
 /home/hadan326/CLionProjects/tdp005/Game/World.h
 SFML/Graphics.hpp
@@ -172,33 +84,29 @@ Player.h
 Level.h
 /home/hadan326/CLionProjects/tdp005/Game/Level.h
 
-/home/hadan326/CLionProjects/tdp005/Game/game_state.cpp
-game_state.h
-/home/hadan326/CLionProjects/tdp005/Game/game_state.h
-
 /home/hadan326/CLionProjects/tdp005/Game/game_state.h
 state.h
 /home/hadan326/CLionProjects/tdp005/Game/state.h
 World.h
 /home/hadan326/CLionProjects/tdp005/Game/World.h
 
-/home/hadan326/CLionProjects/tdp005/Game/main.cpp
+/home/hadan326/CLionProjects/tdp005/Game/menu_state.cpp
+menu_state.h
+/home/hadan326/CLionProjects/tdp005/Game/menu_state.h
+utility
+-
+game_state.h
+/home/hadan326/CLionProjects/tdp005/Game/game_state.h
+
+/home/hadan326/CLionProjects/tdp005/Game/menu_state.h
 SFML/Graphics.hpp
 -
 iostream
 -
-memory
--
 state.h
 /home/hadan326/CLionProjects/tdp005/Game/state.h
-game_state.h
-/home/hadan326/CLionProjects/tdp005/Game/game_state.h
-
-/home/hadan326/CLionProjects/tdp005/Game/state.cpp
-SFML/Graphics.hpp
+functional
 -
-state.h
-/home/hadan326/CLionProjects/tdp005/Game/state.h
 
 /home/hadan326/CLionProjects/tdp005/Game/state.h
 SFML/Graphics.hpp

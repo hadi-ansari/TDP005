@@ -71,6 +71,18 @@ CMakeFiles/game.dir/main.cpp.o: game_state.h
 CMakeFiles/game.dir/main.cpp.o: main.cpp
 CMakeFiles/game.dir/main.cpp.o: state.h
 
+CMakeFiles/game.dir/menu_state.cpp.o: Bullet.h
+CMakeFiles/game.dir/menu_state.cpp.o: Enemy.h
+CMakeFiles/game.dir/menu_state.cpp.o: Entity.h
+CMakeFiles/game.dir/menu_state.cpp.o: Level.h
+CMakeFiles/game.dir/menu_state.cpp.o: Player.h
+CMakeFiles/game.dir/menu_state.cpp.o: Powerup.h
+CMakeFiles/game.dir/menu_state.cpp.o: World.h
+CMakeFiles/game.dir/menu_state.cpp.o: game_state.h
+CMakeFiles/game.dir/menu_state.cpp.o: menu_state.cpp
+CMakeFiles/game.dir/menu_state.cpp.o: menu_state.h
+CMakeFiles/game.dir/menu_state.cpp.o: state.h
+
 CMakeFiles/game.dir/state.cpp.o: Bullet.h
 CMakeFiles/game.dir/state.cpp.o: Enemy.h
 CMakeFiles/game.dir/state.cpp.o: Entity.h

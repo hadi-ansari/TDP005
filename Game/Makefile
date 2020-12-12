@@ -413,6 +413,33 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+menu_state.o: menu_state.cpp.o
+
+.PHONY : menu_state.o
+
+# target to build an object file
+menu_state.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/menu_state.cpp.o
+.PHONY : menu_state.cpp.o
+
+menu_state.i: menu_state.cpp.i
+
+.PHONY : menu_state.i
+
+# target to preprocess a source file
+menu_state.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/menu_state.cpp.i
+.PHONY : menu_state.cpp.i
+
+menu_state.s: menu_state.cpp.s
+
+.PHONY : menu_state.s
+
+# target to generate assembly for a file
+menu_state.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/menu_state.cpp.s
+.PHONY : menu_state.cpp.s
+
 state.o: state.cpp.o
 
 .PHONY : state.o
@@ -479,6 +506,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... menu_state.o"
+	@echo "... menu_state.i"
+	@echo "... menu_state.s"
 	@echo "... state.o"
 	@echo "... state.i"
 	@echo "... state.s"
