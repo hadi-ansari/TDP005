@@ -13,6 +13,10 @@ void State::run(sf::RenderWindow &window, shared_ptr<State> state) {
 //    sf::Time previousTime = fps_clock.getElapsedTime();
 //    sf::Time currentTime;
 
+    sf::Texture back_image;
+    back_image.loadFromFile("Images/Background.png");
+    sf::Sprite background(back_image);
+
     while (state) {
 
 //        --Skriver ut fps i terminalen--
@@ -22,9 +26,7 @@ void State::run(sf::RenderWindow &window, shared_ptr<State> state) {
 //        previousTime = currentTime;
 
         sf::Event event;
-        sf::Texture back_image;
-        back_image.loadFromFile("Images/Background.png");
-        sf::Sprite background(back_image);
+
         while (window.pollEvent(event)) {
 
             switch (event.type) {
@@ -42,8 +44,6 @@ void State::run(sf::RenderWindow &window, shared_ptr<State> state) {
 
             }
         }
-
-        window.clear(sf::Color(76, 208, 255));
         window.draw(background);
         if (auto new_state = state -> tick(clock.restart())) {
             if (dynamic_pointer_cast<Exit_State>(new_state)) {
