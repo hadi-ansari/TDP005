@@ -40,6 +40,7 @@ private:
     sf::Text shield_info;
     sf::Text score_info;
     sf::Clock game_clock;
+    sf::Clock cloud_clock;
     Level level;
 };
 #endif

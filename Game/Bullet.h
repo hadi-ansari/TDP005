@@ -7,7 +7,7 @@
 class Bullet : public Textured_object
 {
 public:
-    explicit Bullet(sf::Vector2f location, std::string const& texture_name);
+    explicit Bullet(sf::Vector2f location, int bullet_width, int bullet_height, std::string const& texture_name);
     ~Bullet() override = default;
 };
 

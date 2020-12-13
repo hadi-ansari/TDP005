@@ -8,6 +8,7 @@ int main()
 {
     sf::RenderWindow window(sf::VideoMode(width, height), "Sky Wars", sf::Style::Close);
     window.setVerticalSyncEnabled(true);
+    //window.setFramerateLimit(144);
     // window.setKeyRepeatEnabled(false);
     
     State::run(window, make_shared<Menu_State>());

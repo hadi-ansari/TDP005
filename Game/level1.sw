@@ -71,3 +71,19 @@
 1600 230 Bomb
 1600 400 Big_Plane
 1600 700 Small_Plane
+0 0 None
+1600 150 Small_Plane
+1600 300 Big_Plane
+1600 450 Small_Plane
+1600 600 Big_Plane
+0 0 None
+1600 100 Bomb
+1600 200 Bomb
+1600 300 Bomb
+1600 400 Bomb
+1600 500 Bomb
+1600 600 Bomb
+1600 700 Bomb
+1600 800 Bomb
+1700 900 Bomb
+

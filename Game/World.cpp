@@ -7,13 +7,20 @@ World::World()
 {
     game_clock.restart();
     objects.push_back(player);
-    font.loadFromFile("Lato-HeavyItalic.ttf");
+    //font.loadFromFile("Lato-HeavyItalic.ttf");
+    font.loadFromFile("RussoOne-Regular.ttf");
     life_info.setFont(font);
+    life_info.setPosition(1450, 0);
+    life_info.setOutlineColor(sf::Color::Black);
+    life_info.setOutlineThickness(1);
     shield_info.setFont(font);
-    score_info.setFont(font);
-    life_info.setPosition(1500, 0);
     shield_info.setPosition(750, 0);
-    score_info.setPosition(0,0);
+    shield_info.setOutlineColor(sf::Color::Black);
+    shield_info.setOutlineThickness(1);
+    score_info.setFont(font);
+    score_info.setOutlineColor(sf::Color::Black);
+    score_info.setOutlineThickness(1);
+    score_info.setPosition(50,0);
 }
 void World::insert_object(std::shared_ptr<Entity> const& object)
 {
@@ -40,6 +47,7 @@ bool World::tick(sf::Time delta)
 {
     manage_collision();
 
+
     if (game_clock.getElapsedTime().asSeconds() > 3)
     {
         game_clock.restart();
@@ -55,6 +63,7 @@ bool World::tick(sf::Time delta)
             i--;
         }
     }
+
 
     if(player->get_health() < 1)
         return false;
