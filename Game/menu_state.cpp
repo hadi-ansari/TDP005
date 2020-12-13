@@ -58,8 +58,7 @@ shared_ptr<State> Menu_State::tick(sf::Time time) {
 void Menu_State::render(sf::RenderWindow &window) {
     if (background)
         background->render(window);
-    else
-        window.clear();
+
     float y{400};
     auto windowSize = window.getSize();
 
@@ -83,9 +82,11 @@ Main_Menu_State::Main_Menu_State() {
 //
 Pause_State::Pause_State(shared_ptr<State> resume)
 {
+    background = resume;
+
     add("Resume", [resume]() { return resume; });
     add("Retry", []() {return make_shared<Game_State>(); });
-    background = resume;
+    add("Main Menu", []() {return make_shared<Main_Menu_State>(); });
     add("Exit", []() { return make_shared<Exit_State>(); });
 }
 
@@ -116,7 +117,7 @@ End_State::End_State(int player_health, int player_score) {
             rating.setTexture(texture);
         }
     }
-    rating.setPosition(550, 200);
+    rating.setPosition(540, 200);
     rating.setTexture(texture);
 
     add("Retry", []() {return make_shared<Game_State>(); });
