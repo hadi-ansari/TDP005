@@ -1,4 +1,4 @@
-
+#include "menu_state.h"
 #include "World.h"
 
 World::World()
@@ -7,7 +7,6 @@ World::World()
 {
     game_clock.restart();
     objects.push_back(player);
-    //font.loadFromFile("Lato-HeavyItalic.ttf");
     font.loadFromFile("RussoOne-Regular.ttf");
     life_info.setFont(font);
     life_info.setPosition(1450, 0);
@@ -43,10 +42,9 @@ void World::manage_collision()
     }
 }
 
-bool World::tick(sf::Time delta)
+shared_ptr<State> World::tick(sf::Time delta)
 {
     manage_collision();
-
 
     if (game_clock.getElapsedTime().asSeconds() > 3)
     {
@@ -64,10 +62,9 @@ bool World::tick(sf::Time delta)
         }
     }
 
-
-    if(player->get_health() < 1)
-        return false;
-    return true;
+    if( player -> get_health() < 1 )
+        return make_shared<End_State>(player -> get_health(), score);
+    return nullptr;
 }
 void World::render(sf::RenderWindow &window)
 {

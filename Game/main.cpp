@@ -11,7 +11,7 @@ int main()
     //window.setFramerateLimit(144);
     // window.setKeyRepeatEnabled(false);
     
-    State::run(window, make_shared<Menu_State>());
+    State::run(window, make_shared<Main_Menu_State>());
 
     return 0;
 }

@@ -11,8 +11,7 @@ public:
 
     /* Create the state. If 'resume' is set, the menu will show a "resume"
      * option to return to that state.*/
-    Menu_State(shared_ptr<State> resume = nullptr);
-
+    Menu_State();
 
      /* Handle key presses. */
     void on_key_press(sf::Keyboard::Key key) override;
@@ -21,12 +20,12 @@ public:
     shared_ptr<State> tick(sf::Time time) override;
 
      /* Render. */
-    void render(sf::RenderWindow &drawTo) override;
+    void render(sf::RenderWindow &window) override;
 
-private:
+protected:
 
      /* What to do when an item is selected. */
-    using Action = std::function<shared_ptr<State>()>;
+    using Action = function<shared_ptr<State>()>;
 
     /* Menu item. */
     struct Entry {
@@ -60,4 +59,25 @@ private:
 
     /* Helper to add an element. */
     void add(const string &text, Action action);
+};
+
+class Main_Menu_State: public Menu_State
+{
+public:
+    Main_Menu_State();
+};
+class Pause_State : public Menu_State
+{
+public:
+    Pause_State(shared_ptr<State> resume);
+};
+class End_State : public Menu_State
+{
+public:
+    End_State(int player_health, int player_score);
+
+    void render(sf::RenderWindow &window) override;
+
+private:
+    sf::Text status_text;
 };

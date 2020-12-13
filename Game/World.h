@@ -2,6 +2,7 @@
 #define WORLD_H
 
 #include "common.h"
+#include "state.h"
 #include "Entity.h"
 #include "Player.h"
 #include "Level.h"
@@ -16,7 +17,7 @@ public:
     void insert_object(shared_ptr<Entity> const& object);
 
     /* Uppdaterar alla objekt*/
-    bool tick(sf::Time delta);
+    shared_ptr<State> tick(sf::Time delta);
 
     /* Ritar på skärmen*/
     void render(sf::RenderWindow & window);
@@ -26,7 +27,6 @@ public:
 
 private:
     /* Tar hand om font och text på skärmen */
-    //void manage_text(sf::Text & player_life, sf::Text & shield_time,sf::Font & font);
 
     /* Åtgärdar konsekvenser för kollision mellan varje spelobjekt */
     void manage_collision();
