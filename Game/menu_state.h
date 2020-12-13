@@ -3,6 +3,8 @@
 
 #include "common.h"
 #include "state.h"
+#include "game_state.h"
+#include "Level.h"
 
  /* State responsible for showing either the start menu or the pause menu. */
 
@@ -66,6 +68,13 @@ class Main_Menu_State: public Menu_State
 public:
     Main_Menu_State();
 };
+class Level_Selection_State: public Menu_State
+{
+public:
+    Level_Selection_State();
+
+};
+
 class Pause_State : public Menu_State
 {
 public:
@@ -74,7 +83,7 @@ public:
 class End_State : public Menu_State
 {
 public:
-    End_State(int player_health, int player_score);
+    End_State(int player_health, int player_score, string const& level_name);
 
     void render(sf::RenderWindow &window) override;
 

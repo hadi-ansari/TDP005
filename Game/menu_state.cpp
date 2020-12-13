@@ -4,6 +4,7 @@
 #include "menu_state.h"
 #include "game_state.h"
 
+
 Menu_State::Menu_State()
     : selected(0), enter_pressed(false), delay(sf::milliseconds(300)) {
 
@@ -75,8 +76,13 @@ void Menu_State::render(sf::RenderWindow &window) {
 
 //
 Main_Menu_State::Main_Menu_State() {
-    add("New game", []() { return make_shared<Game_State>(); });
+    add("New game", []() { return make_shared<Level_Selection_State>(); });
     add("Exit", []() { return make_shared<Exit_State>(); });
+}
+//
+Level_Selection_State::Level_Selection_State() {
+    add("Level 1", []() { return make_shared<Game_State>("Levels/level1.sw"); });
+    add("Back", []() { return make_shared<Main_Menu_State>(); });
 }
 
 //
@@ -85,13 +91,13 @@ Pause_State::Pause_State(shared_ptr<State> resume)
     background = resume;
 
     add("Resume", [resume]() { return resume; });
-    add("Retry", []() {return make_shared<Game_State>(); });
+    add("Retry", []() {return make_shared<Game_State>("Levels/level1.sw"); });
     add("Main Menu", []() {return make_shared<Main_Menu_State>(); });
     add("Exit", []() { return make_shared<Exit_State>(); });
 }
 
 //
-End_State::End_State(int player_health, int player_score) {
+End_State::End_State(int player_health, int player_score, string const& level_name) {
     status_text.setFont(font);
     status_text.setCharacterSize(70);
     status_text.setPosition(550, 60);
@@ -120,7 +126,7 @@ End_State::End_State(int player_health, int player_score) {
     rating.setPosition(540, 200);
     rating.setTexture(texture);
 
-    add("Retry", []() {return make_shared<Game_State>(); });
+    add("Retry", []() {return make_shared<Game_State>("Levels/level1.sw"); });
     add("Main Menu", []() { return make_shared<Main_Menu_State>(); });
     add("Exit", []() { return make_shared<Exit_State>(); });
 }

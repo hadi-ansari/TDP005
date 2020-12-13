@@ -11,6 +11,8 @@ public:
      */
     Game_State() = default;
 
+    Game_State(string level_path);
+
     /**
      * Tick all game elements.
      */
@@ -21,11 +23,23 @@ public:
      */
     void render(sf::RenderWindow &to) override;
 
+    /**
+     * Return the current level name
+     */
+    int get_int() const {return test;};
+
 private:
     /**
      * The game world.
      */
     World world;
+
+    /**
+     * Save the current level path
+     * */
+    string const level_path;
+
+    int test;
 
 };
 #endif

@@ -1,11 +1,13 @@
 #include "menu_state.h"
 #include "World.h"
 
-World::World()
+World::World(string level_path)
   : objects{}, player{make_shared<Player>(Player{sf::Vector2f(0 , 450)})}
-  , counter{0}, score{0}, level()
+  , counter{0}, score{0}, level(level_path)
 {
+    level_name = level_path;
     game_clock.restart();
+    enemy_clock.restart();
     objects.push_back(player);
     font.loadFromFile("RussoOne-Regular.ttf");
     life_info.setFont(font);
@@ -46,9 +48,9 @@ shared_ptr<State> World::tick(sf::Time delta)
 {
     manage_collision();
 
-    if (game_clock.getElapsedTime().asSeconds() > 3)
+    if (enemy_clock.getElapsedTime().asSeconds() > 3)
     {
-        game_clock.restart();
+        enemy_clock.restart();
         for( auto const& i: level.load_enemy(counter))
         {
             insert_object(i);
@@ -62,8 +64,8 @@ shared_ptr<State> World::tick(sf::Time delta)
         }
     }
 
-    if( player -> get_health() < 1 )
-        return make_shared<End_State>(player -> get_health(), score);
+    if( player -> get_health() < 1 || game_clock.getElapsedTime().asSeconds() > 120)
+        return make_shared<End_State>(player -> get_health(), score,  level_name);
     return nullptr;
 }
 void World::render(sf::RenderWindow &window)
@@ -81,7 +83,7 @@ void World::render(sf::RenderWindow &window)
         shield_info.setString( player -> get_shield_time());
         window.draw(shield_info);
     }
-    score_info.setString("Score : " + std::to_string(score));
+    score_info.setString("Score : " + to_string(score));
     window.draw(score_info);
 
 }

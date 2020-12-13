@@ -1,14 +1,12 @@
-//
-// Created by hadan326 on 2020-12-11.
-//
+
 #include "Level.h"
 
 using namespace std;
 
-Level::Level()
+Level::Level(string const& file_name)
 :data{}
 {
-    ifstream ifs{"level1.sw"};
+    ifstream ifs{file_name};
     map<pair<int, int>, string> m;
     pair<int, int> p{};
 

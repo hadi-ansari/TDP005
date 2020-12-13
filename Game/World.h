@@ -10,7 +10,7 @@
 class World
 {
 public:
-    World();
+    World(string level);
     ~World() = default;
 
     /* Lägger till en objekt */
@@ -39,8 +39,10 @@ private:
     sf::Text life_info;
     sf::Text shield_info;
     sf::Text score_info;
+    sf::Clock enemy_clock;
     sf::Clock game_clock;
     sf::Clock cloud_clock;
     Level level;
+    string level_name;
 };
 #endif

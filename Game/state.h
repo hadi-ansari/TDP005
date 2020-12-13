@@ -43,6 +43,7 @@ public:
 	 * Run a state, handling state-switches, until completion.
 	 */
 	static void run(sf::RenderWindow &window, shared_ptr<State> state);
+
 };
 
 /**

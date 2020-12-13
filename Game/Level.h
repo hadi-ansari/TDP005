@@ -16,7 +16,7 @@ using namespace std;
 class Level
 {
 public:
-    Level();
+    Level(string const& file_name);
     ~Level() = default;
 
     vector <shared_ptr <Entity>> load_enemy(int index);
