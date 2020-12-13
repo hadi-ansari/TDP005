@@ -80,4 +80,6 @@ public:
 
 private:
     sf::Text status_text;
+    sf::Texture texture;
+    sf::Sprite rating;
 };

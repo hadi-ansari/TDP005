@@ -60,7 +60,7 @@ void Menu_State::render(sf::RenderWindow &window) {
         background->render(window);
     else
         window.clear();
-    float y{300};
+    float y{400};
     auto windowSize = window.getSize();
 
     for (auto &e : entries) {
@@ -84,27 +84,40 @@ Main_Menu_State::Main_Menu_State() {
 Pause_State::Pause_State(shared_ptr<State> resume)
 {
     add("Resume", [resume]() { return resume; });
-    add("Retry", []() {return make_shared<Main_Menu_State>(); });
+    add("Retry", []() {return make_shared<Game_State>(); });
     background = resume;
     add("Exit", []() { return make_shared<Exit_State>(); });
 }
 
 //
-End_State::End_State(int player_health, int player_score)
-{
+End_State::End_State(int player_health, int player_score) {
     status_text.setFont(font);
     status_text.setCharacterSize(70);
-    status_text.setPosition(550, 100);
-    if(player_health > 1)
-    {
-        status_text.setFillColor(sf::Color::Green);
-        status_text.setString("Mission passed!");
-    }
-    else
-    {
+    status_text.setPosition(550, 60);
+
+   if (player_health < 1) {
         status_text.setFillColor(sf::Color::Red);
         status_text.setString("Mission failed!");
+        texture.loadFromFile("Images/Rating_stars.png", sf::IntRect(0, 0, 580, 180));
+    } else {
+        status_text.setFillColor(sf::Color::Green);
+        status_text.setString("Mission passed!");
+        if (player_score < 1000) {
+            texture.loadFromFile("Images/Rating_stars.png", sf::IntRect(0, 0, 580, 180));
+            rating.setTexture(texture);
+        } else if (player_score < 1500) {
+            texture.loadFromFile("Images/Rating_stars.png", sf::IntRect(0, 180, 580, 180));
+            rating.setTexture(texture);
+        } else if (player_score < 2000) {
+            texture.loadFromFile("Images/Rating_stars.png", sf::IntRect(0, 360, 580, 180));
+            rating.setTexture(texture);
+        } else if (player_score < 2500) {
+            texture.loadFromFile("Images/Rating_stars.png", sf::IntRect(0, 540, 580, 180));
+            rating.setTexture(texture);
+        }
     }
+    rating.setPosition(550, 200);
+    rating.setTexture(texture);
 
     add("Retry", []() {return make_shared<Game_State>(); });
     add("Main Menu", []() { return make_shared<Main_Menu_State>(); });
@@ -114,5 +127,6 @@ End_State::End_State(int player_health, int player_score)
 void End_State::render(sf::RenderWindow &window) {
     Menu_State::render(window);
     window.draw(status_text);
+    window.draw(rating);
 }
 
