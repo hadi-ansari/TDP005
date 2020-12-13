@@ -13,7 +13,7 @@ shared_ptr<State> Game_State::tick(sf::Time delta) {
         return std::make_shared<Exit_State>();
 
     // Pause?
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::P))
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::P) || sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
         return std::make_shared<Menu_State>(shared_from_this());
 
     return nullptr;

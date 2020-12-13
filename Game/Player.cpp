@@ -1,11 +1,13 @@
 
 #include "Player.h"
 #include "World.h"
+#include "state.h"
+#include "menu_state.h"
 
 Player::Player(sf::Vector2f location) : Textured_object(location, 90, 29,"Images/Player_90X29.png")
 {
     health = 3;
-    speed = 0.4f;
+    speed = 0.5f;
     width = 75;
     height = 22;
     shoot_speed = 0.5f;
@@ -18,7 +20,6 @@ bool Player::tick(sf::Time delta, World &world)
     {
         shield = false;
     }
-
     /* Förflyttning av player  */
     sf::Vector2f temp;
     float ElapsedTime = delta.asMilliseconds();
