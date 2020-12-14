@@ -22,7 +22,7 @@ public:
     vector <shared_ptr <Entity>> load_enemy(int index);
 
 private:
-    vector <map<pair <int, int>, string> > data{};
+    vector < map<int, string> > data{};
 };
 
 #endif

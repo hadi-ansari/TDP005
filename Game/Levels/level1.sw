@@ -1,89 +1,91 @@
-1600 450 Big_Plane
-1700 750 Big_Plane
-0 0 None
-1600 200 Small_Plane
-1600 800 Small_Plane
-0 0 None
-1600 200 Bomb
-1600 400 Bomb
-1600 600 Bomb
-1600 800 Bomb
-0 0 None
-1600 400 Small_Plane
-1600 600 Small_Plane
-0 0 None
-1600 200 Big_Plane
-1600 450 Heal
-1600 850 Big_Plane
-0 0 None
-1600 450 Big_Plane
-1600 0 Big_Plane
-1600 0 Small_Plane
-1600 230 Bomb
-1600 400 Big_Plane
-1600 700 Small_Plane
-0 0 None
-1600 30 Bomb
-1600 40 Small_Plane
-1600 100 Small_Plane
-1600 400 Big_Plane
-1600 700 Big_Plane
-1600 800 Tripleshot
-0 0 None
-1600 700 Big_Plane
-1600 400 Small_Plane
-1600 50 Heal
-0 0 None
-1600 450 Shield
-0 0 None
-0 0 None
-1600 300 Big_Plane
-1600 400 Big_Plane
-1600 500 Big_Plane
-1600 600 Big_Plane
-1600 700 Big_Plane
-1600 800 Big_Plane
-0 0 None
-1600 150 Small_Plane
-1600 300 Small_Plane
-1600 450 Small_Plane
-1600 600 Small_Plane
-1600 750 Small_Plane
-0 0 None
-1600 300 Heal
-1600 300 Big_Plane
-1600 400 Small_Plane
-1600 500 Bomb
-1600 550 Small_Plane
-1600 700 Bomb
-0 0 None
-1600 700 Heal
-1600 300 Big_Plane
-1600 300 Small_Plane
-1600 400 Bomb
-1600 500 Tripleshot
-1600 550 Big_Plane
-1600 700 Bomb
-0 0 None
-1600 450 Big_Plane
-1600 0 Big_Plane
-1600 0 Small_Plane
-1600 230 Bomb
-1600 400 Big_Plane
-1600 700 Small_Plane
-0 0 None
-1600 150 Small_Plane
-1600 300 Big_Plane
-1600 450 Small_Plane
-1600 600 Big_Plane
-0 0 None
-1600 100 Bomb
-1600 200 Bomb
-1600 300 Bomb
-1600 400 Bomb
-1600 500 Bomb
-1600 600 Bomb
-1600 700 Bomb
-1600 800 Bomb
-1700 900 Bomb
-
+450 BP
+750 BP
+0 None
+200 SP
+800 SP
+0 None
+200 BO
+400 BO
+600 BO
+800 BO
+0 None
+400 SP
+600 SP
+0 None
+200 BP
+450 HP
+850 BP
+0 None
+450 BP
+0 BP
+0 SP
+230 BO
+400 BP
+700 SP
+0 None
+30 BO
+40 SP
+100 SP
+400 BP
+700 BP
+800 TSP
+0 None
+700 BP
+400 SP
+50 HP
+0 None
+450 SHP
+0 None
+0 None
+300 BP
+400 BP
+500 BP
+600 BP
+700 BP
+800 BP
+0 None
+150 SP
+300 SP
+450 SP
+600 SP
+750 SP
+0 None
+300 HP
+300 BP
+400 SP
+500 BO
+550 SP
+700 BO
+0 None
+700 HP
+300 BP
+300 SP
+400 BO
+500 TSP
+550 BP
+700 BO
+0 None
+450 BP
+0 BP
+0 SP
+230 BO
+400 BP
+700 SP
+0 None
+150 Sp
+300 BP
+450 SP
+600 BP
+0 None
+100 BO
+200 BO
+300 BO
+400 BO
+500 BO
+600 BO
+700 BO
+800 BO
+900 BO
+0 None
+400 BP
+0 None

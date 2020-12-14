@@ -13,7 +13,7 @@ bool Entity::tick(sf::Time delta, World & world)
 }
 bool Entity::kill_me() const
 {
- return(location.x < 0 || location.x > 1600 || location.y < 0 || location.y > 900 || health < 1);
+ return(-150 > location.x || location.x > 1600 || location.y < 0 || location.y > 900 || health < 1);
 }
 
 int Entity::get_health() const

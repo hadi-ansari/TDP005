@@ -1,0 +1,12 @@
+Enemy:
+========================================
+BP: Big_Plane
+SP: Small_Plane
+BO: Bomb
+
+
+Powerups:
+========================================
+HP: Heal
+SHP: Sheild
+TSP: Tripleshot

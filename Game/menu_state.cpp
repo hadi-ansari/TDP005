@@ -89,7 +89,6 @@ Level_Selection_State::Level_Selection_State() {
 Pause_State::Pause_State(shared_ptr<State> resume, string current_level)
 {
     background = resume;
-    cout << current_level << endl;
 
     add("Resume", [resume]() { return resume; });
     add("Retry", [current_level]() {return make_shared<Game_State>(current_level); });
