@@ -19,8 +19,12 @@ public:
 private:
     float shoot_speed;
     sf::Clock shoot_clock;
+
     bool shield;
     sf::Clock shield_clock;
+
+    bool tripleshot;
+    sf::Clock triple_timer;
 };
 
 #endif

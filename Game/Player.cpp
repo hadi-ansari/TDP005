@@ -13,12 +13,18 @@ Player::Player(sf::Vector2f location) : Textured_object(location, 90, 29,"Images
     shoot_speed = 0.5f;
     shoot_clock.restart();
     shield = false;
+    tripleshot = false;
+
 }
 bool Player::tick(sf::Time delta, World &world)
 {
     if(shield && shield_clock.getElapsedTime().asSeconds() > 10)
     {
         shield = false;
+    }
+    if(tripleshot && triple_timer.getElapsedTime().asSeconds() > 10)
+    {
+        tripleshot = false;
     }
     /* Förflyttning av player  */
     sf::Vector2f temp;
@@ -45,6 +51,14 @@ bool Player::tick(sf::Time delta, World &world)
         shoot_clock.restart();
         temp = {location.x + 65, location.y + 10};
         world.insert_object(make_shared<Player_Bullet>(Player_Bullet{temp}));
+
+        if(tripleshot)
+        {
+            sf::Vector2f upper_bullet = {location.x + 65, location.y + 28};
+            sf::Vector2f lower_bullet = {location.x + 65, location.y - 8 };
+            world.insert_object(make_shared<Player_Bullet>(Player_Bullet{upper_bullet}));
+            world.insert_object(make_shared<Player_Bullet>(Player_Bullet{lower_bullet}));
+        }
     }
 
     return health >= 1;
@@ -68,6 +82,11 @@ void Player::collision(vector<shared_ptr<Entity>> const& objects, World &)
             else if(type == "Heal" && health < 3)
             {
                 health += 1;
+            }
+            else if(type == "Tripleshot")
+            {
+                tripleshot = true;
+                triple_timer.restart();
             }
             else if(type == "Shield")
             {

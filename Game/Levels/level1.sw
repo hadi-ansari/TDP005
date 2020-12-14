@@ -1,3 +1,4 @@
+20 TSP
 450 BP
 750 BP
 0 None
@@ -24,7 +25,7 @@
 700 SP
 0 None
 30 BO
-40 SP
+240 SP
 100 SP
 400 BP
 700 BP
