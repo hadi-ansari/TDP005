@@ -48,3 +48,24 @@ vector <shared_ptr <Entity>> Level::load_enemy(int index)
     }
     return temp;
 }
+
+int Level::max_score() const
+{
+    int sum{0};
+    map<int, string> temp;
+
+    for (auto const& i: data)
+    {
+        temp = i;
+        for (auto const& p: temp)
+        {
+            if(p.second == "BP")
+                sum += 100;
+            else if(p.second == "SP")
+                sum += 150;
+            else if(p.second == "BO")
+                sum += 50;
+        }
+    }
+    return sum;
+}

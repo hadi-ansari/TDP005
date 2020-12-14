@@ -97,7 +97,13 @@ Pause_State::Pause_State(shared_ptr<State> resume, string current_level)
 }
 
 //
-End_State::End_State(int player_health, int player_score, string const& level_name) {
+End_State::End_State(int player_health, int player_score, string const& level_name, int max_score)
+{
+    score_info.setFont(font);
+    score_info.setCharacterSize(20);
+    score_info.setPosition(710, 160);
+    score_info.setString("Your score :  " + to_string(player_score));
+
     status_text.setFont(font);
     status_text.setCharacterSize(70);
     status_text.setPosition(550, 60);
@@ -105,25 +111,26 @@ End_State::End_State(int player_health, int player_score, string const& level_na
    if (player_health < 1) {
         status_text.setFillColor(sf::Color::Red);
         status_text.setString("Mission failed!");
-        texture.loadFromFile("Images/Rating_stars.png", sf::IntRect(0, 0, 580, 180));
+        texture.loadFromFile("Images/Rating_stars.png", sf::IntRect(0, 0, 580, 175));
     } else {
         status_text.setFillColor(sf::Color::Green);
         status_text.setString("Mission passed!");
-        if (player_score < 1000) {
+
+        if (player_score > (max_score * 60 / 100) ) {
+            texture.loadFromFile("Images/Rating_stars.png", sf::IntRect(0, 540, 580, 175));
+            rating.setTexture(texture);
+        } else if (player_score < (max_score * 40 / 100) ) {
+            texture.loadFromFile("Images/Rating_stars.png", sf::IntRect(0, 360, 580, 175));
+            rating.setTexture(texture);
+        } else if (player_score < (max_score * 20 / 100) ) {
+            texture.loadFromFile("Images/Rating_stars.png", sf::IntRect(0, 180, 580, 175));
+            rating.setTexture(texture);
+        } else {
             texture.loadFromFile("Images/Rating_stars.png", sf::IntRect(0, 0, 580, 180));
-            rating.setTexture(texture);
-        } else if (player_score < 1500) {
-            texture.loadFromFile("Images/Rating_stars.png", sf::IntRect(0, 180, 580, 180));
-            rating.setTexture(texture);
-        } else if (player_score < 2000) {
-            texture.loadFromFile("Images/Rating_stars.png", sf::IntRect(0, 360, 580, 180));
-            rating.setTexture(texture);
-        } else if (player_score < 2500) {
-            texture.loadFromFile("Images/Rating_stars.png", sf::IntRect(0, 540, 580, 180));
             rating.setTexture(texture);
         }
     }
-    rating.setPosition(540, 200);
+    rating.setPosition(530, 200);
     rating.setTexture(texture);
 
     add("Retry", [level_name]() {return make_shared<Game_State>(level_name); });
@@ -135,5 +142,7 @@ void End_State::render(sf::RenderWindow &window) {
     Menu_State::render(window);
     window.draw(status_text);
     window.draw(rating);
+    window.draw(score_info);
+
 }
 

@@ -20,6 +20,7 @@ public:
     ~Level() = default;
 
     vector <shared_ptr <Entity>> load_enemy(int index);
+    int max_score() const;
 
 private:
     vector < map<int, string> > data{};

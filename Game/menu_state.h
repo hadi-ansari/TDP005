@@ -88,7 +88,7 @@ private:
 class End_State : public Menu_State
 {
 public:
-    End_State(int player_health, int player_score, string const& level_name);
+    End_State(int player_health, int player_score, string const& level_name, int max_score);
 
     void render(sf::RenderWindow &window) override;
 
@@ -96,4 +96,5 @@ private:
     sf::Text status_text;
     sf::Texture texture;
     sf::Sprite rating;
+    sf::Text score_info;
 };
