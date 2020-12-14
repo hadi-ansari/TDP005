@@ -86,12 +86,13 @@ Level_Selection_State::Level_Selection_State() {
 }
 
 //
-Pause_State::Pause_State(shared_ptr<State> resume)
+Pause_State::Pause_State(shared_ptr<State> resume, string current_level)
 {
     background = resume;
+    cout << current_level << endl;
 
     add("Resume", [resume]() { return resume; });
-    add("Retry", []() {return make_shared<Game_State>("Levels/level1.sw"); });
+    add("Retry", [current_level]() {return make_shared<Game_State>(current_level); });
     add("Main Menu", []() {return make_shared<Main_Menu_State>(); });
     add("Exit", []() { return make_shared<Exit_State>(); });
 }
@@ -126,7 +127,7 @@ End_State::End_State(int player_health, int player_score, string const& level_na
     rating.setPosition(540, 200);
     rating.setTexture(texture);
 
-    add("Retry", []() {return make_shared<Game_State>("Levels/level1.sw"); });
+    add("Retry", [level_name]() {return make_shared<Game_State>(level_name); });
     add("Main Menu", []() { return make_shared<Main_Menu_State>(); });
     add("Exit", []() { return make_shared<Exit_State>(); });
 }

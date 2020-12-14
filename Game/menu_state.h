@@ -59,6 +59,8 @@ protected:
     /* State to use as a background (if any). */
     shared_ptr<State> background;
 
+
+
     /* Helper to add an element. */
     void add(const string &text, Action action);
 };
@@ -78,7 +80,10 @@ public:
 class Pause_State : public Menu_State
 {
 public:
-    Pause_State(shared_ptr<State> resume);
+    Pause_State(shared_ptr<State> resume, string current_level);
+
+private:
+    string level_path;
 };
 class End_State : public Menu_State
 {

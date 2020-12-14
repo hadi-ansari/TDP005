@@ -11,7 +11,7 @@ public:
      */
     Game_State() = default;
 
-    Game_State(string level_path);
+    Game_State(string const& level_path);
 
     /**
      * Tick all game elements.
@@ -22,11 +22,6 @@ public:
      * Draw all game elements.
      */
     void render(sf::RenderWindow &to) override;
-
-    /**
-     * Return the current level name
-     */
-    int get_int() const {return test;};
 
 private:
     /**
@@ -39,7 +34,6 @@ private:
      * */
     string const level_path;
 
-    int test;
 
 };
 #endif
