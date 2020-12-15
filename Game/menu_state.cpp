@@ -77,7 +77,33 @@ void Menu_State::render(sf::RenderWindow &window) {
 //
 Main_Menu_State::Main_Menu_State() {
     add("New game", []() { return make_shared<Level_Selection_State>(); });
+    add("Help", []() { return make_shared<Help_State>(); });
     add("Exit", []() { return make_shared<Exit_State>(); });
+}
+//
+
+Help_State::Help_State()
+{
+    texture.loadFromFile("Images/keyboard_guide.png");
+    keyboard_guide.setTexture(texture);
+    keyboard_guide.setPosition(500, 150);
+
+    add("Got it!", []() { return make_shared<Main_Menu_State>(); });
+}
+
+void Help_State::render(sf::RenderWindow &window)
+{
+    float y{750};
+    auto windowSize = window.getSize();
+
+    auto e = entries[0];
+    auto bounds = e.text.getLocalBounds();
+    e.text.setPosition((windowSize.x - bounds.width) / 2, y);
+    int state = static_cast<int>(255 * e.state);
+    e.text.setFillColor(sf::Color(state, 255, state));
+    window.draw(e.text);
+
+    window.draw(keyboard_guide);
 }
 //
 Level_Selection_State::Level_Selection_State() {

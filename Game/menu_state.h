@@ -70,11 +70,20 @@ class Main_Menu_State: public Menu_State
 public:
     Main_Menu_State();
 };
+class Help_State: public Menu_State
+{
+public:
+    Help_State();
+    void render(sf::RenderWindow &window) override;
+
+private:
+    sf::Sprite keyboard_guide;
+    sf::Texture texture;
+};
 class Level_Selection_State: public Menu_State
 {
 public:
     Level_Selection_State();
-
 };
 
 class Pause_State : public Menu_State
@@ -82,8 +91,6 @@ class Pause_State : public Menu_State
 public:
     Pause_State(shared_ptr<State> resume, string current_level);
 
-private:
-    string level_path;
 };
 class End_State : public Menu_State
 {
