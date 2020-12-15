@@ -16,7 +16,7 @@ if (DEFINED ENV{LOADEDMODULES} AND ("$ENV{LOADEDMODULES}" MATCHES ".*prog/gcc/6.
       endif()
 endif()
 
-set(SFML_MODULES network graphics window system)
+set(SFML_MODULES network graphics window system audio)
 
 find_package(SFML 2 COMPONENTS ${SFML_MODULES})
 include_directories(${SFML_INCLUDE_DIR})

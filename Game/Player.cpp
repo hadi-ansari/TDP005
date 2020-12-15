@@ -4,6 +4,14 @@
 #include "state.h"
 #include "menu_state.h"
 
+bool Player::invincible;
+
+void Player::set_invincibility()
+{
+    Player::invincible = true;
+    std::cout << "setting invincibility" << std::endl;
+}
+
 Player::Player(sf::Vector2f location) : Textured_object(location, 90, 29,"Images/Player_90X29.png")
 {
     health = 3;
@@ -14,10 +22,23 @@ Player::Player(sf::Vector2f location) : Textured_object(location, 90, 29,"Images
     shoot_clock.restart();
     shield = false;
     tripleshot = false;
+    invincible = false;
+
+
+
 
 }
 bool Player::tick(sf::Time delta, World &world)
 {
+    if(give_invincible){
+        invincible = true;
+        invincibility_timer.restart();
+        give_invincible = false;
+    }
+    if(invincible && invincibility_timer.getElapsedTime().asSeconds() > 3)
+    {
+        invincible = false;
+    }
     if(shield && shield_clock.getElapsedTime().asSeconds() > 10)
     {
         shield = false;
@@ -37,6 +58,10 @@ bool Player::tick(sf::Time delta, World &world)
         temp.x -= speed * ElapsedTime;
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
         temp.x += speed * ElapsedTime;
+
+    //Fusktangenter
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num9))
+        health = 999;
 
     temp += location;
     if (temp.x < (float)(1600 - width) && temp.x >= 0 && temp.y < (float)(900 - height)  && temp.y >= 0 )
@@ -73,15 +98,30 @@ void Player::collision(vector<shared_ptr<Entity>> const& objects, World &)
             //cout << "Colliding Player with " << object -> get_type() <<  endl;
             string type = object -> get_type();
 
-            if((type == "Big Plane"  || type == "Bomb") && !shield)
-                    health -= 2;
-            else if( (type == "Small Plane" || type == "Enemy-Bullet") && !shield)
-                    health -= 1;
-            else if((type == "Big Plane"  || type == "Bomb" || type == "Small Plane") && shield)
+            if((type == "Big Plane"  || type == "Bomb") && !shield && !invincible)
+            {
+                health -= 2;
+                give_invincible = true;
+                //std::cout << invincible << std::endl;
+                //invincible = true;
+               // invincibility_timer.restart();
+            }
+            else if( (type == "Small Plane" || type == "Enemy-Bullet") && !shield && !invincible)
+            {
+                health -= 1;
+                give_invincible = true;
+               // invincible = true;
+                //invincibility_timer.restart();
+            }
+            else if((type == "Big Plane"  || type == "Bomb" || type == "Small Plane") && shield && !invincible)
                 shield = false;
             else if(type == "Heal" && health < 3)
             {
                 health += 1;
+            }
+            else if(type == "Heal" && health  >= 3)
+            {
+                //World::add_score(5);
             }
             else if(type == "Tripleshot")
             {
@@ -106,3 +146,4 @@ string Player::get_shield_time() const
     int time = 10 - (int)shield_clock.getElapsedTime().asSeconds();
     return "Shield Time: " + to_string(time);
 }
+
