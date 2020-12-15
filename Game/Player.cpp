@@ -19,14 +19,11 @@ Player::Player(sf::Vector2f location) : Textured_object(location, 90, 29,"Images
     width = 75;
     height = 22;
     shoot_speed = 0.5f;
-    shoot_clock.restart();
+    shoot_timer.restart();
     shield = false;
+    shield_time = sf::seconds(0);
     tripleshot = false;
     invincible = false;
-
-
-
-
 }
 bool Player::tick(sf::Time delta, World &world)
 {
@@ -39,10 +36,14 @@ bool Player::tick(sf::Time delta, World &world)
     {
         invincible = false;
     }
-    if(shield && shield_clock.getElapsedTime().asSeconds() > 10)
+    // Shield check
+    shield_time += shield_clock.restart();
+
+    if(shield && shield_time.asSeconds() > 10)
     {
         shield = false;
     }
+
     if(tripleshot && triple_timer.getElapsedTime().asSeconds() > 10)
     {
         tripleshot = false;
@@ -69,11 +70,12 @@ bool Player::tick(sf::Time delta, World &world)
         location = temp;
         sprite.setPosition(location);
     }
+
     // skjuta skott
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)
-        && shoot_clock.getElapsedTime().asSeconds() > shoot_speed)
+        && shoot_timer.getElapsedTime().asSeconds() > shoot_speed)
     {
-        shoot_clock.restart();
+        shoot_timer.restart();
         temp = {location.x + 65, location.y + 10};
         world.insert_object(make_shared<Player_Bullet>(Player_Bullet{temp}));
 
@@ -95,23 +97,17 @@ void Player::collision(vector<shared_ptr<Entity>> const& objects, World &)
     {
         if ( sprite.getGlobalBounds().intersects((object -> get_sprite()).getGlobalBounds()) )
         {
-            //cout << "Colliding Player with " << object -> get_type() <<  endl;
             string type = object -> get_type();
 
             if((type == "Big Plane"  || type == "Bomb") && !shield && !invincible)
             {
                 health -= 2;
                 give_invincible = true;
-                //std::cout << invincible << std::endl;
-                //invincible = true;
-               // invincibility_timer.restart();
             }
             else if( (type == "Small Plane" || type == "Enemy-Bullet") && !shield && !invincible)
             {
                 health -= 1;
                 give_invincible = true;
-               // invincible = true;
-                //invincibility_timer.restart();
             }
             else if((type == "Big Plane"  || type == "Bomb" || type == "Small Plane") && shield && !invincible)
                 shield = false;
@@ -128,13 +124,15 @@ void Player::collision(vector<shared_ptr<Entity>> const& objects, World &)
                 tripleshot = true;
                 triple_timer.restart();
             }
-            else if(type == "Shield")
+            else if(type == "Shield" && !shield)
             {
                 shield = true;
+                shield_time = sf::seconds(0);
                 shield_clock.restart();
             }
             else if(type == "Shield" && shield)
             {
+                shield_time = sf::seconds(0);
                 shield_clock.restart();
             }
         }
@@ -143,7 +141,7 @@ void Player::collision(vector<shared_ptr<Entity>> const& objects, World &)
 
 string Player::get_shield_time() const
 {
-    int time = 10 - (int)shield_clock.getElapsedTime().asSeconds();
+    int time = 10 - (int)shield_time.asSeconds();
     return "Shield Time: " + to_string(time);
 }
 

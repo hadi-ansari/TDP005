@@ -22,10 +22,12 @@ public:
 
 private:
     float shoot_speed;
-    sf::Clock shoot_clock;
+    sf::Clock shoot_timer;
+    sf::Time shoot_time;
 
     bool shield;
     sf::Clock shield_clock;
+    sf::Time shield_time;
 
     bool tripleshot;
     sf::Clock triple_timer;
@@ -34,8 +36,6 @@ private:
     sf::Clock invincibility_timer;
 
     bool give_invincible;
-
-
 
 };
 
