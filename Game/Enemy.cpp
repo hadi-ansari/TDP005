@@ -15,12 +15,10 @@ void Enemy::collision(vector<std::shared_ptr<Entity>> const& objects, World &wor
     {
         if ( sprite.getGlobalBounds().intersects((object -> get_sprite()).getGlobalBounds()) )
         {
-            //std::cout << "Colliding " << get_type() << " with " << object -> get_type()<< std::endl;
             std::string type = object -> get_type();
             if (type == "Player" && !Player::is_invincible()){
-                //Player::set_invincibility();
-                health -= 2;
 
+                health -= 2;
 
             }
 

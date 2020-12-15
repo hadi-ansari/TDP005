@@ -18,7 +18,7 @@ public:
     string get_shield_time() const;
     bool has_shield() const {return shield;};
     static bool is_invincible() {return invincible;};
-    static void set_invincibility();
+    //static void set_invincibility();
 
 
 private:

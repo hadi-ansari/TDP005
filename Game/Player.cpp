@@ -6,11 +6,11 @@
 
 bool Player::invincible;
 
-void Player::set_invincibility()
+/*void Player::set_invincibility()
 {
     Player::invincible = true;
     std::cout << "setting invincibility" << std::endl;
-}
+}*/
 
 Player::Player(sf::Vector2f location) : Textured_object(location, 90, 29,"Images/Player_90X29.png")
 {
@@ -31,17 +31,25 @@ bool Player::tick(sf::Time delta, World &world)
         freeze_state = false;
         shield_clock.restart();
         triple_timer.restart();
+        invincibility_timer.restart();
     }
 
     if(give_invincible){
         invincible = true;
+        invincibility_time = sf::seconds(0);
         invincibility_timer.restart();
         give_invincible = false;
     }
-    if(invincible && invincibility_timer.getElapsedTime().asSeconds() > 3)
+    if(invincible)
     {
-        invincible = false;
+        invincibility_time += invincibility_timer.restart();
+
+        if( invincibility_time.asSeconds() > 3)
+        {
+            invincible = false;
+        }
     }
+
     // Shield check
     if(shield)
     {
