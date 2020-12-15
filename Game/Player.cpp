@@ -26,6 +26,24 @@ Player::Player(sf::Vector2f location) : Textured_object(location, 90, 29,"Images
 }
 bool Player::tick(sf::Time delta, World &world)
 {
+    cheat();
+
+    update_status();
+
+    set_position(delta);
+
+    shoot(world);
+
+    return health >= 1;
+}
+void Player::cheat()
+{
+    //Fusktangenter
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num9))
+        health = 999;
+}
+void Player::update_status()
+{
     if(freeze_state)
     {
         freeze_state = false;
@@ -41,10 +59,10 @@ bool Player::tick(sf::Time delta, World &world)
         invincibility_timer.restart();
         give_invincible = false;
     }
+
     if(invincible)
     {
         invincibility_time += invincibility_timer.restart();
-
         if( invincibility_time.asSeconds() > 3)
         {
             invincible = false;
@@ -54,7 +72,6 @@ bool Player::tick(sf::Time delta, World &world)
     if(shield)
     {
         shield_time += shield_timer.restart();
-
         if(shield_time.asSeconds() > 10)
         {
             shield = false;
@@ -69,8 +86,10 @@ bool Player::tick(sf::Time delta, World &world)
             tripleshot = false;
         }
     }
+}
 
-    /* Förflyttning av player  */
+void Player::set_position(sf::Time delta)
+{
     sf::Vector2f temp;
     float ElapsedTime = delta.asMilliseconds();
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
@@ -81,25 +100,21 @@ bool Player::tick(sf::Time delta, World &world)
         temp.x -= speed * ElapsedTime;
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
         temp.x += speed * ElapsedTime;
-
-    //Fusktangenter
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num9))
-        health = 999;
-
     temp += location;
     if (temp.x < (float)(1600 - width) && temp.x >= 0 && temp.y < (float)(900 - height)  && temp.y >= 0 )
     {
         location = temp;
         sprite.setPosition(location);
     }
-
-    // skjuta skott
+}
+void Player::shoot(World &world)
+{
     shoot_time += shoot_timer.restart();
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)
         && shoot_time.asSeconds() > shoot_speed)
     {
         shoot_time = sf::seconds(0);
-        temp = {location.x + 65, location.y + 10};
+        sf::Vector2f temp = {location.x + 65, location.y + 10};
         world.insert_object(make_shared<Player_Bullet>(Player_Bullet{temp}));
         // Lägger till 2 extra skott om den har tripleshot aktiv
         if(tripleshot)
@@ -110,8 +125,6 @@ bool Player::tick(sf::Time delta, World &world)
             world.insert_object(make_shared<Player_Bullet>(Player_Bullet{lower_bullet}));
         }
     }
-
-    return health >= 1;
 }
 
 void Player::collision(vector<shared_ptr<Entity>> const& objects, World &)
@@ -176,3 +189,4 @@ string Player::get_shield_time() const
     int time = 10 - (int)shield_time.asSeconds();
     return "Shield Time: " + to_string(time);
 }
+

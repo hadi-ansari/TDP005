@@ -18,10 +18,14 @@ public:
     string get_shield_time() const;
     bool has_shield() const {return shield;};
     static bool is_invincible() {return invincible;};
-    //static void set_invincibility();
-
 
 private:
+    void cheat();
+    void set_position(sf::Time delta);
+    void update_status();
+    void shoot(World &world);
+
+
     float shoot_speed;
     sf::Clock shoot_timer;
     sf::Time shoot_time;
