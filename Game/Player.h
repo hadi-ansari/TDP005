@@ -16,6 +16,10 @@ public:
     string get_type() override {return "Player";};
     string get_shield_time() const;
     bool has_shield() const {return shield;};
+    static bool is_invincible() {return invincible;};
+    static void set_invincibility();
+
+
 private:
     float shoot_speed;
     sf::Clock shoot_clock;
@@ -25,6 +29,14 @@ private:
 
     bool tripleshot;
     sf::Clock triple_timer;
+
+    static bool invincible;
+    sf::Clock invincibility_timer;
+
+    bool give_invincible;
+
+
+
 };
 
 #endif

@@ -72,12 +72,6 @@
 		<Unit filename="/home/nils/TDP005/Game/Bullet.h">
 			<Option target="game"/>
 		</Unit>
-		<Unit filename="/home/nils/TDP005/Game/Cloud_Spawner.cpp">
-			<Option target="game"/>
-		</Unit>
-		<Unit filename="/home/nils/TDP005/Game/Cloud_Spawner.h">
-			<Option target="game"/>
-		</Unit>
 		<Unit filename="/home/nils/TDP005/Game/Enemy.cpp">
 			<Option target="game"/>
 		</Unit>
