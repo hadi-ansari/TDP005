@@ -59,8 +59,6 @@ protected:
     /* State to use as a background (if any). */
     shared_ptr<State> background;
 
-
-
     /* Helper to add an element. */
     void add(const string &text, Action action);
 };
@@ -100,6 +98,7 @@ public:
     void render(sf::RenderWindow &window) override;
 
 private:
+
     sf::Text status_text;
     sf::Texture texture;
     sf::Sprite rating;
