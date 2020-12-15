@@ -27,7 +27,7 @@ private:
     sf::Time shoot_time;
 
     bool shield;
-    sf::Clock shield_clock;
+    sf::Clock shield_timer;
     /* Sparar den tiden som spelaren hade sheild aktiv */
     sf::Time shield_time;
 

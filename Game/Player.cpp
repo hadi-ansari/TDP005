@@ -29,7 +29,8 @@ bool Player::tick(sf::Time delta, World &world)
     if(freeze_state)
     {
         freeze_state = false;
-        shield_clock.restart();
+        shoot_timer.restart();
+        shield_timer.restart();
         triple_timer.restart();
         invincibility_timer.restart();
     }
@@ -50,10 +51,9 @@ bool Player::tick(sf::Time delta, World &world)
         }
     }
 
-    // Shield check
     if(shield)
     {
-        shield_time += shield_clock.restart();
+        shield_time += shield_timer.restart();
 
         if(shield_time.asSeconds() > 10)
         {
@@ -94,13 +94,14 @@ bool Player::tick(sf::Time delta, World &world)
     }
 
     // skjuta skott
+    shoot_time += shoot_timer.restart();
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)
-        && shoot_timer.getElapsedTime().asSeconds() > shoot_speed)
+        && shoot_time.asSeconds() > shoot_speed)
     {
-        shoot_timer.restart();
+        shoot_time = sf::seconds(0);
         temp = {location.x + 65, location.y + 10};
         world.insert_object(make_shared<Player_Bullet>(Player_Bullet{temp}));
-
+        // Lägger till 2 extra skott om den har tripleshot aktiv
         if(tripleshot)
         {
             sf::Vector2f upper_bullet = {location.x + 65, location.y + 28};
@@ -156,12 +157,12 @@ void Player::collision(vector<shared_ptr<Entity>> const& objects, World &)
             {
                 shield = true;
                 shield_time = sf::seconds(0);
-                shield_clock.restart();
+                shield_timer.restart();
             }
             else if(type == "Shield" && shield)
             {
                 shield_time = sf::seconds(0);
-                shield_clock.restart();
+                shield_timer.restart();
             }
         }
     }
@@ -175,4 +176,3 @@ string Player::get_shield_time() const
     int time = 10 - (int)shield_time.asSeconds();
     return "Shield Time: " + to_string(time);
 }
-

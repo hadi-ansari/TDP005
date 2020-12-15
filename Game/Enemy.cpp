@@ -10,18 +10,15 @@ Enemy::Enemy(sf::Vector2f location, int width, int height, string const& texture
 {}
 void Enemy::collision(vector<std::shared_ptr<Entity>> const& objects, World &world)
 {
-
     for(auto const& object: objects)
     {
+        if(health < 1) break;
         if ( sprite.getGlobalBounds().intersects((object -> get_sprite()).getGlobalBounds()) )
         {
-            std::string type = object -> get_type();
+            string type = object -> get_type();
             if (type == "Player" && !Player::is_invincible()){
-
                 health -= 2;
-
             }
-
             else if(type == "Player-Bullet") {
                 health -= 1;
                 if(health < 1 && get_type() == "Big Plane") world.add_score(100);
