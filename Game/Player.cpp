@@ -22,6 +22,7 @@ Player::Player(sf::Vector2f location) : Textured_object(location, 90, 29,"Images
     shield = false;
     tripleshot = false;
     invincible = false;
+    give_invincible = false;
     freeze_state = false;
 }
 bool Player::tick(sf::Time delta, World &world)
@@ -55,6 +56,7 @@ void Player::update_status()
 
     if(give_invincible){
         invincible = true;
+        //set_texture("Images/test.png");
         invincibility_time = sf::seconds(0);
         invincibility_timer.restart();
         give_invincible = false;
@@ -66,6 +68,7 @@ void Player::update_status()
         if( invincibility_time.asSeconds() > 3)
         {
             invincible = false;
+            //set_texture("Images/Player_90X29.png");
         }
     }
 

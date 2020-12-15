@@ -32,3 +32,8 @@ void Textured_object::render(sf::RenderWindow &window)
     sprite.setPosition(location);
     window.draw(sprite);
 }
+void Textured_object::set_texture(string const& texture_name)
+{
+    sf::Texture *t = Texture_Manager::get(texture_name, width, height);
+    sprite.setTexture(*t);
+}

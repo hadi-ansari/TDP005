@@ -36,5 +36,6 @@ class Textured_object : public Entity
 public:
     Textured_object(sf::Vector2f location, int width, int height, std::string const& texture_name);
     void render(sf::RenderWindow &window) override;
+    void set_texture(string const& texture_name);
 };
 #endif
