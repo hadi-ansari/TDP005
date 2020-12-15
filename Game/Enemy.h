@@ -26,15 +26,22 @@ public:
     ~Small_Plane() override = default;
 
     bool tick(sf::Time delta, World & world) override;
+    void freeze() override;
+
     string get_type() override {return "Small Plane";};
 
 private:
     void vertical_move(sf::Time delta);
 
     float shoot_speed;
-    sf::Clock shoot_clock;
+    sf::Clock shoot_timer;
+    sf::Time shoot_time;
+
     bool upp_state;
     sf::Clock vertical_timer;
+    sf::Time vertical_time;
+
+    bool freeze_state;
 };
 
 class Big_Plane: public Enemy
@@ -44,10 +51,14 @@ public:
     ~Big_Plane() override = default;
 
     bool tick(sf::Time delta, World & world) override;
+    void freeze() override;
+
     string get_type() override {return "Big Plane";};
 
 private:
     float shoot_speed;
-    sf::Clock shoot_clock;
+    sf::Clock shoot_timer;
+    sf::Time shoot_time;
+    bool freeze_state;
 };
 #endif

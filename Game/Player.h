@@ -12,6 +12,7 @@ public:
 
     bool tick(sf::Time delta, World & world) override;
     void collision(vector<shared_ptr<Entity>> const& objects, World &world) override;
+    void freeze() override;
 
     string get_type() override {return "Player";};
     string get_shield_time() const;
@@ -27,16 +28,20 @@ private:
 
     bool shield;
     sf::Clock shield_clock;
+    /* Sparar den tiden som spelaren hade sheild aktiv */
     sf::Time shield_time;
 
     bool tripleshot;
     sf::Clock triple_timer;
+    sf::Time triple_time;
 
     static bool invincible;
     sf::Clock invincibility_timer;
+    sf::Time invincibility_time;
 
     bool give_invincible;
 
+    bool freeze_state;
 };
 
 #endif

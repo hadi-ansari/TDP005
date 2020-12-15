@@ -145,13 +145,14 @@ End_State::End_State(int player_health, int player_score, string const& level_na
         if (player_score > (max_score * 60 / 100) ) {
             texture.loadFromFile("Images/Rating_stars.png", sf::IntRect(0, 540, 580, 175));
             rating.setTexture(texture);
-        } else if (player_score < (max_score * 40 / 100) ) {
+        } else if (player_score > (max_score * 40 / 100) ) {
             texture.loadFromFile("Images/Rating_stars.png", sf::IntRect(0, 360, 580, 175));
             rating.setTexture(texture);
-        } else if (player_score < (max_score * 20 / 100) ) {
+        } else if (player_score > (max_score * 20 / 100) ) {
             texture.loadFromFile("Images/Rating_stars.png", sf::IntRect(0, 180, 580, 175));
             rating.setTexture(texture);
         } else {
+
             texture.loadFromFile("Images/Rating_stars.png", sf::IntRect(0, 0, 580, 180));
             rating.setTexture(texture);
         }

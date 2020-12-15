@@ -10,7 +10,11 @@ shared_ptr<State> Game_State::tick(sf::Time delta) {
 
     // pause?
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::P) || sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+    {
+        world.freeze();
         return make_shared<Pause_State>( shared_from_this(), level_path);
+    }
+
 
     return world.tick(delta);
 }

@@ -19,14 +19,20 @@ Player::Player(sf::Vector2f location) : Textured_object(location, 90, 29,"Images
     width = 75;
     height = 22;
     shoot_speed = 0.5f;
-    shoot_timer.restart();
     shield = false;
-    shield_time = sf::seconds(0);
     tripleshot = false;
     invincible = false;
+    freeze_state = false;
 }
 bool Player::tick(sf::Time delta, World &world)
 {
+    if(freeze_state)
+    {
+        freeze_state = false;
+        shield_clock.restart();
+        triple_timer.restart();
+    }
+
     if(give_invincible){
         invincible = true;
         invincibility_timer.restart();
@@ -37,17 +43,25 @@ bool Player::tick(sf::Time delta, World &world)
         invincible = false;
     }
     // Shield check
-    shield_time += shield_clock.restart();
-
-    if(shield && shield_time.asSeconds() > 10)
+    if(shield)
     {
-        shield = false;
+        shield_time += shield_clock.restart();
+
+        if(shield_time.asSeconds() > 10)
+        {
+            shield = false;
+        }
     }
 
-    if(tripleshot && triple_timer.getElapsedTime().asSeconds() > 10)
+    if(tripleshot)
     {
-        tripleshot = false;
+        triple_time += triple_timer.restart();
+        if(triple_time.asSeconds() > 10)
+        {
+            tripleshot = false;
+        }
     }
+
     /* Förflyttning av player  */
     sf::Vector2f temp;
     float ElapsedTime = delta.asMilliseconds();
@@ -119,9 +133,15 @@ void Player::collision(vector<shared_ptr<Entity>> const& objects, World &)
             {
                 //World::add_score(5);
             }
-            else if(type == "Tripleshot")
+            else if(type == "Tripleshot" && !tripleshot)
             {
                 tripleshot = true;
+                triple_time = sf::seconds(0);
+                triple_timer.restart();
+            }
+            else if(type == "Tripleshot" && tripleshot)
+            {
+                triple_time = sf::seconds(0);
                 triple_timer.restart();
             }
             else if(type == "Shield" && !shield)
@@ -137,6 +157,9 @@ void Player::collision(vector<shared_ptr<Entity>> const& objects, World &)
             }
         }
     }
+}
+void Player::freeze() {
+    freeze_state = true;
 }
 
 string Player::get_shield_time() const

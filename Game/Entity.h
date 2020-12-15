@@ -16,11 +16,12 @@ public:
     virtual void render(sf::RenderWindow &window) = 0;
     bool kill_me() const;
     virtual void collision(vector<shared_ptr<Entity>> const& objects, World &world) = 0;
+    virtual void freeze() {};
+
     virtual std::string get_type() = 0;
-
     virtual sf::Sprite get_sprite() const {return sprite;}
-
     int get_health() const;
+
 protected:
     sf::Vector2f location{};
     float speed{};

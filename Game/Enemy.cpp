@@ -46,15 +46,21 @@ Small_Plane::Small_Plane(sf::Vector2f location): Enemy(location, 115, 30, "Image
     health = 1;
     speed = 0.3f;
     shoot_speed = 1.1f;
-    shoot_clock.restart();
     upp_state = true;
-    vertical_timer.restart();
+    freeze_state = false;
 }
 bool Small_Plane::tick(sf::Time delta, World & world)
 {
-    if(shoot_clock.getElapsedTime().asSeconds() > shoot_speed)
+    if(freeze_state)
     {
-        shoot_clock.restart();
+        freeze_state = false;
+        shoot_timer.restart();
+        vertical_timer.restart();
+    }
+    shoot_time += shoot_timer.restart();
+    if(shoot_time.asSeconds() > shoot_speed)
+    {
+        shoot_time = sf::seconds(0);
         sf::Vector2f temp{location.x , location.y + 5 + float(height) / 2};
         world.insert_object(std::make_shared<Enemy_Bullet>(Enemy_Bullet{temp}));
     }
@@ -65,13 +71,14 @@ bool Small_Plane::tick(sf::Time delta, World & world)
 
 void Small_Plane::vertical_move(sf::Time delta)
 {
-    if(vertical_timer.getElapsedTime().asMilliseconds() > 1000)
+    vertical_time += vertical_timer.restart();
+    if(vertical_time.asMilliseconds() > 1000)
     {
         if (upp_state)
             upp_state = false;
         else
             upp_state = true;
-        vertical_timer.restart();
+        vertical_time = sf::seconds(0);
     }
     if(upp_state)
     {
@@ -87,6 +94,9 @@ void Small_Plane::vertical_move(sf::Time delta)
     }
 
 }
+void Small_Plane::freeze() {
+    freeze_state = true;
+}
 
 // Big Plane
 Big_Plane::Big_Plane(sf::Vector2f location): Enemy(location, 150, 48, "Images/Big_Plane150x48.png")
@@ -94,15 +104,24 @@ Big_Plane::Big_Plane(sf::Vector2f location): Enemy(location, 150, 48, "Images/Bi
     health = 2;
     speed = 0.25f;
     shoot_speed = 1.3f;
-    shoot_clock.restart();
+    freeze_state = false;
 }
 bool Big_Plane::tick(sf::Time delta, World & world)
 {
-    if(shoot_clock.getElapsedTime().asSeconds() > shoot_speed)
+    if(freeze_state)
     {
-        shoot_clock.restart();
+        freeze_state = false;
+        shoot_timer.restart();
+    }
+    shoot_time += shoot_timer.restart();
+    if(shoot_time.asSeconds() > shoot_speed)
+    {
+        shoot_time = sf::seconds(0);
         sf::Vector2f temp(location.x, location.y + 5 + (float)height / 2 );
         world.insert_object(std::make_shared<Enemy_Bullet>(Enemy_Bullet{temp}));
     }
     return Entity::tick(delta, world);
+}
+void Big_Plane::freeze() {
+    freeze_state = true;
 }

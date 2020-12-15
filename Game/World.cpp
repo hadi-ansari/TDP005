@@ -6,8 +6,7 @@ World::World(string level_path)
   , counter{0}, score{0}, level(level_path)
 {
     level_name = level_path;
-    game_clock.restart();
-    enemy_clock.restart();
+    freeze_state = false;
     objects.push_back(player);
     font.loadFromFile("RussoOne-Regular.ttf");
     life_info.setFont(font);
@@ -48,9 +47,16 @@ shared_ptr<State> World::tick(sf::Time delta)
 {
     manage_collision();
 
-    if (enemy_clock.getElapsedTime().asSeconds() > 2)
+    if(freeze_state)
     {
-        enemy_clock.restart();
+        freeze_state = false;
+        enemy_timer.restart();
+        game_timer.restart();
+    }
+    enemy_time += enemy_timer.restart();
+    if (enemy_time.asSeconds() > 2)
+    {
+        enemy_time = sf::seconds(0);
         for( auto const& i: level.load_enemy(counter))
         {
             insert_object(i);
@@ -63,8 +69,8 @@ shared_ptr<State> World::tick(sf::Time delta)
             i--;
         }
     }
-
-    if( player -> get_health() < 1 || game_clock.getElapsedTime().asSeconds() > 120)
+    game_time += game_timer.restart();
+    if( player -> get_health() < 1 || game_time.asSeconds() > 120)
         return make_shared<End_State>(player -> get_health(), score, level_name, level.max_score());
     return nullptr;
 }
@@ -85,9 +91,18 @@ void World::render(sf::RenderWindow &window)
     }
     score_info.setString("Score : " + to_string(score));
     window.draw(score_info);
-
 }
 
 void World::add_score(int num) {
     score += num;
+}
+
+void World::freeze()
+{
+    freeze_state = true;
+    for(auto object: objects)
+    {
+        object -> freeze();
+    }
+
 }

@@ -25,9 +25,9 @@ public:
     /* Lägger till poäng */
     void add_score(int num);
 
-private:
-    /* Tar hand om font och text på skärmen */
+    void freeze();
 
+private:
     /* Åtgärdar konsekvenser för kollision mellan varje spelobjekt */
     void manage_collision();
 
@@ -39,10 +39,13 @@ private:
     sf::Text life_info;
     sf::Text shield_info;
     sf::Text score_info;
-    sf::Clock enemy_clock;
-    sf::Clock game_clock;
-    sf::Clock cloud_clock;
+    sf::Clock enemy_timer;
+    sf::Time enemy_time;
+    sf::Clock game_timer;
+    sf::Time game_time;
     Level level;
     string level_name;
+    bool freeze_state;
+
 };
 #endif
