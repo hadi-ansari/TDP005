@@ -156,7 +156,7 @@ void Player::collision(vector<shared_ptr<Entity>> const& objects, World & world)
             }
             else if(type == "Heal" && health  >= 3)
             {
-                world.add_score(5);
+                world.add_score(300);
             }
             else if(type == "Tripleshot" && !tripleshot)
             {
