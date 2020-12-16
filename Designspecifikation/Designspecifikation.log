@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.9.8)  7 DEC 2020 21:06
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.9.8)  16 DEC 2020 19:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -739,29 +739,31 @@ File: se-ascii-print.def 2019/11/29 v1.12 stringenc: Printable ASCII characters
 )
 [1
 
-]
-Overfull \hbox (37.21498pt too wide) in paragraph at lines 44--46
-[]\TU/lmtt/m/n/10 virtual Entity* shoot() = 0\TU/lmr/m/n/10 : Returnerar en ent
-ity-pekare som pekar på \TU/lmtt/m/n/10 player_bullet \TU/lmr/m/n/10 eller \TU/
-lmtt/m/n/10 enemy_bullet
+] [1]
+Overfull \hbox (1.455pt too wide) in paragraph at lines 79--80
+[]\TU/lmtt/m/n/10 sf::Clock triple_timer\TU/lmr/m/n/10 : Räknar tiden från och 
+med att spelaren plockade upp en tripleshot-powerup. 
  []
 
-[1]
+[2]
 File: UML_diagram.png Graphic file (type bmp)
 <UML_diagram.png>
 
-Overfull \hbox (69.51775pt too wide) in paragraph at lines 102--104
+Overfull \hbox (43.7544pt too wide) in paragraph at lines 125--127
  [][] 
  []
 
 
 AED: lastpage setting LastPage
-[2] [3]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 106.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 106.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[3] [4]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 129.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 129.
  (./Designspecifikation.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 106.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 106.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 129.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 129.
 Package rerunfilecheck Info: File `Designspecifikation.out' has not changed.
 (rerunfilecheck)             Checksum: 2411ECB088C1C068B6F28A9276EA31BB;510.
 
@@ -772,7 +774,7 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 106.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 129.
  ) 
 Here is how much of TeX's memory you used:
  22902 strings out of 479819
@@ -781,6 +783,6 @@ Here is how much of TeX's memory you used:
  39646 multiletter control sequences out of 15000+600000
  534321 words of font info for 38 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 68i,11n,64p,954b,640s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,12n,64p,954b,640s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Designspecifikation.xdv (4 pages, 68368 bytes).
+Output written on Designspecifikation.xdv (5 pages, 85028 bytes).

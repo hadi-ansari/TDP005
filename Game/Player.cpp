@@ -130,7 +130,7 @@ void Player::shoot(World &world)
     }
 }
 
-void Player::collision(vector<shared_ptr<Entity>> const& objects, World &)
+void Player::collision(vector<shared_ptr<Entity>> const& objects, World & world)
 {
     for(auto const& object: objects)
     {
@@ -156,7 +156,7 @@ void Player::collision(vector<shared_ptr<Entity>> const& objects, World &)
             }
             else if(type == "Heal" && health  >= 3)
             {
-                //World::add_score(5);
+                world.add_score(5);
             }
             else if(type == "Tripleshot" && !tripleshot)
             {
