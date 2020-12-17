@@ -6,32 +6,22 @@
 
 class Game_State : public State {
 public:
-    /**
-     * Create it.
-     */
+
     Game_State() = default;
 
     Game_State(string const& level_path);
 
-    /**
-     * Tick all game elements.
-     */
+
     shared_ptr<State> tick(sf::Time delta) override;
 
-    /**
-     * Draw all game elements.
-     */
+
     void render(sf::RenderWindow &to) override;
 
 private:
-    /**
-     * The game world.
-     */
+    //Spelvärlden
     World world;
 
-    /**
-     * Save the current level path
-     * */
+    //Sparar sökväg till nuvarande nivå
     string const level_path;
 
 

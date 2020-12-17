@@ -50,13 +50,13 @@ shared_ptr<State> World::tick(sf::Time delta)
     if(freeze_state)
     {
         freeze_state = false;
-        enemy_timer.restart();
+        spawn_timer.restart();
         game_timer.restart();
     }
-    enemy_time += enemy_timer.restart();
-    if (enemy_time.asSeconds() > 2)
+    spawn_time += spawn_timer.restart();
+    if (spawn_time.asSeconds() > 2)
     {
-        enemy_time = sf::seconds(0);
+        spawn_time = sf::seconds(0);
         for( auto const& i: level.load_enemy(counter))
         {
             insert_object(i);

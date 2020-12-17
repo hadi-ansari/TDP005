@@ -111,15 +111,27 @@ Den enda kollisionen som ignoreras av spelaren är med dess egna skott (och fien
 
 
 \section{Diskussion}
-Flera olika för- och nackdelar har visat sig under projektets gång. Här kommer vi att nämna och diskutera några av de viktigaste vi har lagt märkte till. 
-Först ut är \texttt{collision} som fungerar på ett mycket ineffektivt sätt. Den kontrollerar nämligen vid varje uppdatering om varje objekt har kolliderat med något annat objekt. 
-Den kontrollerar då kollision mot alla andra objekt på spelplanen. Även om det första objektet som kontrolleras är det som kollideras med fortsätter den att gå igenom alla möjliga objekt. En fördel med vårt system är dock att det låter båda objekten i en kollision påverkas på olika sätt om till exempel båda objekten ska ta skada vid en kollision.
+Flera olika för- och nackdelar har visat sig under projektets gång. 
+Här kommer vi att nämna och diskutera några av de viktigaste vi har lagt märkte till eller fått utpekade av andra. 
+Först ut är vår \texttt{collision} funktion som fungerar på ett mycket ineffektivt sätt. 
+Den kontrollerar nämligen vid varje uppdatering om varje objekt har kolliderat med något annat objekt. 
+Den kontrollerar då kollision mot alla andra objekt på spelplanen. 
+Även om det första objektet som kontrolleras är det som kollideras med fortsätter den att gå igenom alla möjliga objekt. 
+En fördel med vårt system är dock att det låter båda objekten i en kollision påverkas på olika sätt om till exempel båda objekten ska ta skada vid en kollision.
+Med tanke på att kollisionshanteringen var den första av den mer avancerade funktionaliteten vi implementerade så är det inte förvånande att den har problem. 
+Tvyärr fick vi detta utpekat för sent för att kunna åtgärda det då andra klasser var beroende på det specifika sättet \texttt{collision} fungerade på. 
+Det är möjligt att det kunde ha förbättras om vi till exempel hade en plan för ``effektivitetskontrollering'' när vi blev färdiga med olika delar av koden.
 
-Det sker viss kodupprepning i vår \texttt{Enemy}-klass eftersom vi har seperata underklasser för varje fiendetyp. Här kunde vi istället ha designat spelet så att alla, eller åtminstånde de flesta, fiender kan skapas från samma klass. Dock togs detta problemet upp för sent för att kunna åtgärdas på ett tidseffektivt sätt. I nuläget gör denna design det dock lätt att lägga till fler fiendetyper, speciellt ifall de har nya egenskaper.
+Det sker viss kodupprepning i vår \texttt{Enemy}-klass eftersom vi har seperata underklasser för varje fiendetyp. 
+Här kunde vi istället ha designat spelet så att alla, eller åtminstånde de flesta, fiender kan skapas från samma klass. 
+Dock togs detta problemet upp för sent för att kunna åtgärdas på ett tidseffektivt sätt. 
+I nuläget gör denna design det dock lätt att lägga till fler fiendetyper, speciellt ifall de har nya egenskaper.
+Kodupprepning var något vi drabbades av rejält i början av projektet, men efter kodgranskningen fick vi bra tips på hur vi kunde åtgärda det vilket ledde till en stor minskning på storleken av vår kod, 
+och vi gjorde betydligt bättre ifrån oss på den fronten senare i projektet.
 
 \section{Externa filformat} 
-Vi skapade ett eget filformat .sw (som i praktiken är en enkel textfil) där vi sparar varje nivå. Texten i filen skrivs i formatet: [y-koordinat] [fiendenamn (eller None)]. 
-Detta läses sedan in av programmet som då lägger in alla fiender på spelplanen samtidigt tills de når ett None (då tar det en paus på 2 sekunder). På så sätt kan man skapa vågor av fiender.
+Vi skapade ett eget filformat .sw (som i praktiken är en enkel textfil) där vi sparar varje nivå. Texten i filen skrivs i formatet: [y-koordinat] [fiendenamn (eller None)]. Till exempel ``450 BP'', där BP står för ``Big Plane''. 
+Detta läses sedan in av programmet som då lägger in alla fiender på spelplanen samtidigt tills de når ett None (då tar det en paus på 2 sekunder). På så sätt kan man skapa vågor av fiender i en exakt formation.
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.2]{UML_diagram.png}

@@ -11,6 +11,7 @@ public:
     ~Bullet() override = default;
 };
 
+//Denna bullet används enbart av spelaren
 class Player_Bullet : public Bullet
 {
 public:
@@ -22,6 +23,7 @@ public:
     string get_type() override {return "Player-Bullet";};
 };
 
+//Denna bullet används enbart av fiender, specifikt Small Plane och Big Plane
 class Enemy_Bullet : public Bullet
 {
 public:

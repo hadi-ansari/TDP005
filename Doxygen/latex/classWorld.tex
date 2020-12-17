@@ -1,0 +1,214 @@
+\hypertarget{classWorld}{}\doxysection{World Class Reference}
+\label{classWorld}\index{World@{World}}
+
+
+{\ttfamily \#include $<$World.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWorld_a5068639d59dcbe349c7c26f1812565c2}{World}} (string \mbox{\hyperlink{classWorld_af5ac468edefb0c62f41e40a5ec925616}{level}})
+\item 
+\mbox{\hyperlink{classWorld_a3d07ed2f713c3946fbbaa3a1b7b7f8c0}{$\sim$\+World}} ()=default
+\item 
+void \mbox{\hyperlink{classWorld_a0a0be6d2a2ba7162dfacd4562045be61}{insert\+\_\+object}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{classEntity}{Entity}} $>$ const \&object)
+\item 
+shared\+\_\+ptr$<$ \mbox{\hyperlink{classState}{State}} $>$ \mbox{\hyperlink{classWorld_a5223eefe472453de8c498fb18946d6d8}{tick}} (sf\+::\+Time delta)
+\item 
+void \mbox{\hyperlink{classWorld_a6be69ff54f7f29713c0954cabe34aecc}{render}} (sf\+::\+Render\+Window \&window)
+\item 
+void \mbox{\hyperlink{classWorld_a54b61b97efdaf493dbfb0a428945c82a}{add\+\_\+score}} (int num)
+\item 
+void \mbox{\hyperlink{classWorld_a43e7749f2c1c5952631a3e1c1b55b77e}{freeze}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classWorld_a93d09c9acb21da1a3084f3f6f796687f}{manage\+\_\+collision}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classEntity}{Entity}} $>$ $>$ \mbox{\hyperlink{classWorld_a87f5c9897c96a04755a0fa76b338e55b}{objects}} \{\}
+\item 
+shared\+\_\+ptr$<$ \mbox{\hyperlink{classPlayer}{Player}} $>$ \mbox{\hyperlink{classWorld_ad408bfdc4a70af6553056d67742f37ef}{player}} \{\}
+\item 
+int \mbox{\hyperlink{classWorld_ae70b4ef5dd9cb9e7336169a25aaee39c}{score}}
+\item 
+int \mbox{\hyperlink{classWorld_acdd06a60bf32604afa2628281529bd56}{counter}}
+\item 
+sf\+::\+Font \mbox{\hyperlink{classWorld_ae0e289ce0930a266779e8be230723791}{font}}
+\item 
+sf\+::\+Text \mbox{\hyperlink{classWorld_a2bc7e21bafa41942fe488b68a3cdcfa4}{life\+\_\+info}}
+\item 
+sf\+::\+Text \mbox{\hyperlink{classWorld_a2295e275dfba6fdb63d4479340e1c2fd}{shield\+\_\+info}}
+\item 
+sf\+::\+Text \mbox{\hyperlink{classWorld_a2848e5a6a8a1ec21db27db2c37133c3f}{score\+\_\+info}}
+\item 
+sf\+::\+Clock \mbox{\hyperlink{classWorld_a346dd733b74a60709867fca53893b730}{spawn\+\_\+timer}}
+\item 
+sf\+::\+Time \mbox{\hyperlink{classWorld_a632601e2d7cf87c6e7190fa925cae15b}{spawn\+\_\+time}}
+\item 
+sf\+::\+Clock \mbox{\hyperlink{classWorld_add24f710a95b821eb04cc00d5f2433ca}{game\+\_\+timer}}
+\item 
+sf\+::\+Time \mbox{\hyperlink{classWorld_a0977049ea1a8aa813901a3f51ab93002}{game\+\_\+time}}
+\item 
+\mbox{\hyperlink{classLevel}{Level}} \mbox{\hyperlink{classWorld_af5ac468edefb0c62f41e40a5ec925616}{level}}
+\item 
+string \mbox{\hyperlink{classWorld_a4a217de1a8732e26588358fc65a5edd3}{level\+\_\+name}}
+\item 
+bool \mbox{\hyperlink{classWorld_a4317e930495edd2be1e15cc22a62c000}{freeze\+\_\+state}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWorld_a5068639d59dcbe349c7c26f1812565c2}\label{classWorld_a5068639d59dcbe349c7c26f1812565c2}} 
+\index{World@{World}!World@{World}}
+\index{World@{World}!World@{World}}
+\doxysubsubsection{\texorpdfstring{World()}{World()}}
+{\footnotesize\ttfamily World\+::\+World (\begin{DoxyParamCaption}\item[{string}]{level }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classWorld_a3d07ed2f713c3946fbbaa3a1b7b7f8c0}\label{classWorld_a3d07ed2f713c3946fbbaa3a1b7b7f8c0}} 
+\index{World@{World}!````~World@{$\sim$World}}
+\index{````~World@{$\sim$World}!World@{World}}
+\doxysubsubsection{\texorpdfstring{$\sim$World()}{~World()}}
+{\footnotesize\ttfamily World\+::$\sim$\+World (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWorld_a54b61b97efdaf493dbfb0a428945c82a}\label{classWorld_a54b61b97efdaf493dbfb0a428945c82a}} 
+\index{World@{World}!add\_score@{add\_score}}
+\index{add\_score@{add\_score}!World@{World}}
+\doxysubsubsection{\texorpdfstring{add\_score()}{add\_score()}}
+{\footnotesize\ttfamily void World\+::add\+\_\+score (\begin{DoxyParamCaption}\item[{int}]{num }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classWorld_a43e7749f2c1c5952631a3e1c1b55b77e}\label{classWorld_a43e7749f2c1c5952631a3e1c1b55b77e}} 
+\index{World@{World}!freeze@{freeze}}
+\index{freeze@{freeze}!World@{World}}
+\doxysubsubsection{\texorpdfstring{freeze()}{freeze()}}
+{\footnotesize\ttfamily void World\+::freeze (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classWorld_a0a0be6d2a2ba7162dfacd4562045be61}\label{classWorld_a0a0be6d2a2ba7162dfacd4562045be61}} 
+\index{World@{World}!insert\_object@{insert\_object}}
+\index{insert\_object@{insert\_object}!World@{World}}
+\doxysubsubsection{\texorpdfstring{insert\_object()}{insert\_object()}}
+{\footnotesize\ttfamily void World\+::insert\+\_\+object (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classEntity}{Entity}} $>$ const \&}]{object }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classWorld_a93d09c9acb21da1a3084f3f6f796687f}\label{classWorld_a93d09c9acb21da1a3084f3f6f796687f}} 
+\index{World@{World}!manage\_collision@{manage\_collision}}
+\index{manage\_collision@{manage\_collision}!World@{World}}
+\doxysubsubsection{\texorpdfstring{manage\_collision()}{manage\_collision()}}
+{\footnotesize\ttfamily void World\+::manage\+\_\+collision (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classWorld_a6be69ff54f7f29713c0954cabe34aecc}\label{classWorld_a6be69ff54f7f29713c0954cabe34aecc}} 
+\index{World@{World}!render@{render}}
+\index{render@{render}!World@{World}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void World\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classWorld_a5223eefe472453de8c498fb18946d6d8}\label{classWorld_a5223eefe472453de8c498fb18946d6d8}} 
+\index{World@{World}!tick@{tick}}
+\index{tick@{tick}!World@{World}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$ \mbox{\hyperlink{classState}{State}} $>$ World\+::tick (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{delta }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classWorld_acdd06a60bf32604afa2628281529bd56}\label{classWorld_acdd06a60bf32604afa2628281529bd56}} 
+\index{World@{World}!counter@{counter}}
+\index{counter@{counter}!World@{World}}
+\doxysubsubsection{\texorpdfstring{counter}{counter}}
+{\footnotesize\ttfamily int World\+::counter\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classWorld_ae0e289ce0930a266779e8be230723791}\label{classWorld_ae0e289ce0930a266779e8be230723791}} 
+\index{World@{World}!font@{font}}
+\index{font@{font}!World@{World}}
+\doxysubsubsection{\texorpdfstring{font}{font}}
+{\footnotesize\ttfamily sf\+::\+Font World\+::font\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classWorld_a4317e930495edd2be1e15cc22a62c000}\label{classWorld_a4317e930495edd2be1e15cc22a62c000}} 
+\index{World@{World}!freeze\_state@{freeze\_state}}
+\index{freeze\_state@{freeze\_state}!World@{World}}
+\doxysubsubsection{\texorpdfstring{freeze\_state}{freeze\_state}}
+{\footnotesize\ttfamily bool World\+::freeze\+\_\+state\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classWorld_a0977049ea1a8aa813901a3f51ab93002}\label{classWorld_a0977049ea1a8aa813901a3f51ab93002}} 
+\index{World@{World}!game\_time@{game\_time}}
+\index{game\_time@{game\_time}!World@{World}}
+\doxysubsubsection{\texorpdfstring{game\_time}{game\_time}}
+{\footnotesize\ttfamily sf\+::\+Time World\+::game\+\_\+time\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classWorld_add24f710a95b821eb04cc00d5f2433ca}\label{classWorld_add24f710a95b821eb04cc00d5f2433ca}} 
+\index{World@{World}!game\_timer@{game\_timer}}
+\index{game\_timer@{game\_timer}!World@{World}}
+\doxysubsubsection{\texorpdfstring{game\_timer}{game\_timer}}
+{\footnotesize\ttfamily sf\+::\+Clock World\+::game\+\_\+timer\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classWorld_af5ac468edefb0c62f41e40a5ec925616}\label{classWorld_af5ac468edefb0c62f41e40a5ec925616}} 
+\index{World@{World}!level@{level}}
+\index{level@{level}!World@{World}}
+\doxysubsubsection{\texorpdfstring{level}{level}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLevel}{Level}} World\+::level\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classWorld_a4a217de1a8732e26588358fc65a5edd3}\label{classWorld_a4a217de1a8732e26588358fc65a5edd3}} 
+\index{World@{World}!level\_name@{level\_name}}
+\index{level\_name@{level\_name}!World@{World}}
+\doxysubsubsection{\texorpdfstring{level\_name}{level\_name}}
+{\footnotesize\ttfamily string World\+::level\+\_\+name\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classWorld_a2bc7e21bafa41942fe488b68a3cdcfa4}\label{classWorld_a2bc7e21bafa41942fe488b68a3cdcfa4}} 
+\index{World@{World}!life\_info@{life\_info}}
+\index{life\_info@{life\_info}!World@{World}}
+\doxysubsubsection{\texorpdfstring{life\_info}{life\_info}}
+{\footnotesize\ttfamily sf\+::\+Text World\+::life\+\_\+info\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classWorld_a87f5c9897c96a04755a0fa76b338e55b}\label{classWorld_a87f5c9897c96a04755a0fa76b338e55b}} 
+\index{World@{World}!objects@{objects}}
+\index{objects@{objects}!World@{World}}
+\doxysubsubsection{\texorpdfstring{objects}{objects}}
+{\footnotesize\ttfamily vector$<$shared\+\_\+ptr $<$\mbox{\hyperlink{classEntity}{Entity}}$>$ $>$ World\+::objects \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classWorld_ad408bfdc4a70af6553056d67742f37ef}\label{classWorld_ad408bfdc4a70af6553056d67742f37ef}} 
+\index{World@{World}!player@{player}}
+\index{player@{player}!World@{World}}
+\doxysubsubsection{\texorpdfstring{player}{player}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$\mbox{\hyperlink{classPlayer}{Player}}$>$ World\+::player \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classWorld_ae70b4ef5dd9cb9e7336169a25aaee39c}\label{classWorld_ae70b4ef5dd9cb9e7336169a25aaee39c}} 
+\index{World@{World}!score@{score}}
+\index{score@{score}!World@{World}}
+\doxysubsubsection{\texorpdfstring{score}{score}}
+{\footnotesize\ttfamily int World\+::score\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classWorld_a2848e5a6a8a1ec21db27db2c37133c3f}\label{classWorld_a2848e5a6a8a1ec21db27db2c37133c3f}} 
+\index{World@{World}!score\_info@{score\_info}}
+\index{score\_info@{score\_info}!World@{World}}
+\doxysubsubsection{\texorpdfstring{score\_info}{score\_info}}
+{\footnotesize\ttfamily sf\+::\+Text World\+::score\+\_\+info\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classWorld_a2295e275dfba6fdb63d4479340e1c2fd}\label{classWorld_a2295e275dfba6fdb63d4479340e1c2fd}} 
+\index{World@{World}!shield\_info@{shield\_info}}
+\index{shield\_info@{shield\_info}!World@{World}}
+\doxysubsubsection{\texorpdfstring{shield\_info}{shield\_info}}
+{\footnotesize\ttfamily sf\+::\+Text World\+::shield\+\_\+info\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classWorld_a632601e2d7cf87c6e7190fa925cae15b}\label{classWorld_a632601e2d7cf87c6e7190fa925cae15b}} 
+\index{World@{World}!spawn\_time@{spawn\_time}}
+\index{spawn\_time@{spawn\_time}!World@{World}}
+\doxysubsubsection{\texorpdfstring{spawn\_time}{spawn\_time}}
+{\footnotesize\ttfamily sf\+::\+Time World\+::spawn\+\_\+time\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classWorld_a346dd733b74a60709867fca53893b730}\label{classWorld_a346dd733b74a60709867fca53893b730}} 
+\index{World@{World}!spawn\_timer@{spawn\_timer}}
+\index{spawn\_timer@{spawn\_timer}!World@{World}}
+\doxysubsubsection{\texorpdfstring{spawn\_timer}{spawn\_timer}}
+{\footnotesize\ttfamily sf\+::\+Clock World\+::spawn\+\_\+timer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nils/\+TDP005/\+Game/\mbox{\hyperlink{World_8h}{World.\+h}}\item 
+/home/nils/\+TDP005/\+Game/\mbox{\hyperlink{World_8cpp}{World.\+cpp}}\end{DoxyCompactItemize}

@@ -20,19 +20,18 @@ public:
     static bool is_invincible() {return invincible;};
 
 private:
-    void cheat();
+    void cheat(); //Kollar om en tangent som aktiverar fusk är nedtryckt
     void set_position(sf::Time delta);
-    void update_status();
+    void update_status(); //Uppdaterar spelarens status, till exempel om den har shield eller tripleshot aktiv
     void shoot(World &world);
 
 
-    float shoot_speed;
+    float shoot_speed; //Tiden mellan varje skott. Högre värde ger långsammare skjutfrekvens
     sf::Clock shoot_timer;
     sf::Time shoot_time;
 
     bool shield;
-    sf::Clock shield_timer;
-    /* Sparar den tiden som spelaren hade sheild aktiv */
+    sf::Clock shield_timer; /* Sparar den tiden som spelaren hade shield aktiv */
     sf::Time shield_time;
 
     bool tripleshot;

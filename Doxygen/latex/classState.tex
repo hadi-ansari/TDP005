@@ -1,0 +1,98 @@
+\hypertarget{classState}{}\doxysection{State Class Reference}
+\label{classState}\index{State@{State}}
+
+
+{\ttfamily \#include $<$state.\+h$>$}
+
+Inheritance diagram for State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.093458cm]{classState}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classState_a95aa2ca390f05627acf00149efd568c7}{State}} ()=default
+\item 
+virtual \mbox{\hyperlink{classState_a783d52422b544bb226e13de8ecfd6ad6}{$\sim$\+State}} ()=default
+\item 
+virtual void \mbox{\hyperlink{classState_aebbc7a571250e1e4aa6e90d098e01036}{on\+\_\+key\+\_\+press}} (sf\+::\+Keyboard\+::\+Key key)
+\item 
+virtual void \mbox{\hyperlink{classState_a3985d55d34c976af2ce39e441206d594}{on\+\_\+key\+\_\+release}} (sf\+::\+Keyboard\+::\+Key key)
+\item 
+virtual shared\+\_\+ptr$<$ \mbox{\hyperlink{classState}{State}} $>$ \mbox{\hyperlink{classState_a62c94afbfbe48c1b745289ea481dfee1}{tick}} (sf\+::\+Time time)=0
+\item 
+virtual void \mbox{\hyperlink{classState_aed558c6b578efb70ee2ba7f6df9aebb9}{render}} (sf\+::\+Render\+Window \&to)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classState_a1cb8f29d65651c7f0e744f106f1cd831}{run}} (sf\+::\+Render\+Window \&window, shared\+\_\+ptr$<$ \mbox{\hyperlink{classState}{State}} $>$ state)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classState_a95aa2ca390f05627acf00149efd568c7}\label{classState_a95aa2ca390f05627acf00149efd568c7}} 
+\index{State@{State}!State@{State}}
+\index{State@{State}!State@{State}}
+\doxysubsubsection{\texorpdfstring{State()}{State()}}
+{\footnotesize\ttfamily State\+::\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classState_a783d52422b544bb226e13de8ecfd6ad6}\label{classState_a783d52422b544bb226e13de8ecfd6ad6}} 
+\index{State@{State}!````~State@{$\sim$State}}
+\index{````~State@{$\sim$State}!State@{State}}
+\doxysubsubsection{\texorpdfstring{$\sim$State()}{~State()}}
+{\footnotesize\ttfamily virtual State\+::$\sim$\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classState_aebbc7a571250e1e4aa6e90d098e01036}\label{classState_aebbc7a571250e1e4aa6e90d098e01036}} 
+\index{State@{State}!on\_key\_press@{on\_key\_press}}
+\index{on\_key\_press@{on\_key\_press}!State@{State}}
+\doxysubsubsection{\texorpdfstring{on\_key\_press()}{on\_key\_press()}}
+{\footnotesize\ttfamily void State\+::on\+\_\+key\+\_\+press (\begin{DoxyParamCaption}\item[{sf\+::\+Keyboard\+::\+Key}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classMenu__State_afb74b81dc3611cf35fdaad633342d5ad}{Menu\+\_\+\+State}}.
+
+\mbox{\Hypertarget{classState_a3985d55d34c976af2ce39e441206d594}\label{classState_a3985d55d34c976af2ce39e441206d594}} 
+\index{State@{State}!on\_key\_release@{on\_key\_release}}
+\index{on\_key\_release@{on\_key\_release}!State@{State}}
+\doxysubsubsection{\texorpdfstring{on\_key\_release()}{on\_key\_release()}}
+{\footnotesize\ttfamily void State\+::on\+\_\+key\+\_\+release (\begin{DoxyParamCaption}\item[{sf\+::\+Keyboard\+::\+Key}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classState_aed558c6b578efb70ee2ba7f6df9aebb9}\label{classState_aed558c6b578efb70ee2ba7f6df9aebb9}} 
+\index{State@{State}!render@{render}}
+\index{render@{render}!State@{State}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily virtual void State\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{to }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classEnd__State_a08e9d41dc8b72eba8c8c002e49cb658a}{End\+\_\+\+State}}, \mbox{\hyperlink{classHelp__State_a396145ed382059abf6f52c568a34ff6d}{Help\+\_\+\+State}}, \mbox{\hyperlink{classMenu__State_ad5a65e83cb4eb089c98c8ee2aeb53f4f}{Menu\+\_\+\+State}}, \mbox{\hyperlink{classGame__State_a5fcab9e468f8cba4afb3ac570e88d0e0}{Game\+\_\+\+State}}, and \mbox{\hyperlink{classExit__State_ad96690218f456ff4ca046612a56be188}{Exit\+\_\+\+State}}.
+
+\mbox{\Hypertarget{classState_a1cb8f29d65651c7f0e744f106f1cd831}\label{classState_a1cb8f29d65651c7f0e744f106f1cd831}} 
+\index{State@{State}!run@{run}}
+\index{run@{run}!State@{State}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void State\+::run (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classState}{State}} $>$}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classState_a62c94afbfbe48c1b745289ea481dfee1}\label{classState_a62c94afbfbe48c1b745289ea481dfee1}} 
+\index{State@{State}!tick@{tick}}
+\index{tick@{tick}!State@{State}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily virtual shared\+\_\+ptr$<$\mbox{\hyperlink{classState}{State}}$>$ State\+::tick (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classExit__State_a637ac2fa86306146c05ac652be3ca308}{Exit\+\_\+\+State}}, \mbox{\hyperlink{classMenu__State_a71e528538470cb0c42abf7ccf92ab6e7}{Menu\+\_\+\+State}}, and \mbox{\hyperlink{classGame__State_ac017af5bddbeca46076c0b82fc88d638}{Game\+\_\+\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nils/\+TDP005/\+Game/\mbox{\hyperlink{state_8h}{state.\+h}}\item 
+/home/nils/\+TDP005/\+Game/\mbox{\hyperlink{state_8cpp}{state.\+cpp}}\end{DoxyCompactItemize}

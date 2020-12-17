@@ -1,0 +1,153 @@
+\hypertarget{classSmall__Plane}{}\doxysection{Small\+\_\+\+Plane Class Reference}
+\label{classSmall__Plane}\index{Small\_Plane@{Small\_Plane}}
+
+
+{\ttfamily \#include $<$Enemy.\+h$>$}
+
+Inheritance diagram for Small\+\_\+\+Plane\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classSmall__Plane}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSmall__Plane_ac6c5539abe370890c86b571a3cfd617e}{Small\+\_\+\+Plane}} (sf\+::\+Vector2f \mbox{\hyperlink{classEntity_a5b94ee2356d46ca6852e2807c3701133}{location}})
+\item 
+\mbox{\hyperlink{classSmall__Plane_a2dc4de54777307b6a1154580bce33daa}{$\sim$\+Small\+\_\+\+Plane}} () override=default
+\item 
+bool \mbox{\hyperlink{classSmall__Plane_a7c46558601d833f8b523e2f23f29503f}{tick}} (sf\+::\+Time delta, \mbox{\hyperlink{classWorld}{World}} \&world) override
+\item 
+void \mbox{\hyperlink{classSmall__Plane_af2ed06390baa941e3169b6c302c1ccc0}{freeze}} () override
+\item 
+string \mbox{\hyperlink{classSmall__Plane_a6b1a44912e0a21740217f7c1c3f33bfe}{get\+\_\+type}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSmall__Plane_a0b8043bfe117ce6ec6a07d1ff27d8eb5}{vertical\+\_\+move}} (sf\+::\+Time delta)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{classSmall__Plane_a8592d8d99d885d72ac5194bfd5791894}{shoot\+\_\+speed}}
+\item 
+sf\+::\+Clock \mbox{\hyperlink{classSmall__Plane_a44445ef138ab75d255df1c6ea0a2521b}{shoot\+\_\+timer}}
+\item 
+sf\+::\+Time \mbox{\hyperlink{classSmall__Plane_a89cf2d44747980f753b02bfc9a00b327}{shoot\+\_\+time}}
+\item 
+bool \mbox{\hyperlink{classSmall__Plane_a6f14d273c22f82b247b7b1fa9a25bf61}{upp\+\_\+state}}
+\item 
+sf\+::\+Clock \mbox{\hyperlink{classSmall__Plane_acd68c8546705d4f3c50a2094a7e567a3}{vertical\+\_\+timer}}
+\item 
+sf\+::\+Time \mbox{\hyperlink{classSmall__Plane_a8a851a9cd5c97d4a4c6e4b788d7b0602}{vertical\+\_\+time}}
+\item 
+bool \mbox{\hyperlink{classSmall__Plane_af87ef1809b8f8984d388d0f8d862f493}{freeze\+\_\+state}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSmall__Plane_ac6c5539abe370890c86b571a3cfd617e}\label{classSmall__Plane_ac6c5539abe370890c86b571a3cfd617e}} 
+\index{Small\_Plane@{Small\_Plane}!Small\_Plane@{Small\_Plane}}
+\index{Small\_Plane@{Small\_Plane}!Small\_Plane@{Small\_Plane}}
+\doxysubsubsection{\texorpdfstring{Small\_Plane()}{Small\_Plane()}}
+{\footnotesize\ttfamily Small\+\_\+\+Plane\+::\+Small\+\_\+\+Plane (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{location }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classSmall__Plane_a2dc4de54777307b6a1154580bce33daa}\label{classSmall__Plane_a2dc4de54777307b6a1154580bce33daa}} 
+\index{Small\_Plane@{Small\_Plane}!````~Small\_Plane@{$\sim$Small\_Plane}}
+\index{````~Small\_Plane@{$\sim$Small\_Plane}!Small\_Plane@{Small\_Plane}}
+\doxysubsubsection{\texorpdfstring{$\sim$Small\_Plane()}{~Small\_Plane()}}
+{\footnotesize\ttfamily Small\+\_\+\+Plane\+::$\sim$\+Small\+\_\+\+Plane (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSmall__Plane_af2ed06390baa941e3169b6c302c1ccc0}\label{classSmall__Plane_af2ed06390baa941e3169b6c302c1ccc0}} 
+\index{Small\_Plane@{Small\_Plane}!freeze@{freeze}}
+\index{freeze@{freeze}!Small\_Plane@{Small\_Plane}}
+\doxysubsubsection{\texorpdfstring{freeze()}{freeze()}}
+{\footnotesize\ttfamily void Small\+\_\+\+Plane\+::freeze (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classEntity_a7af830e252e8a24710c734882b3df927}{Entity}}.
+
+\mbox{\Hypertarget{classSmall__Plane_a6b1a44912e0a21740217f7c1c3f33bfe}\label{classSmall__Plane_a6b1a44912e0a21740217f7c1c3f33bfe}} 
+\index{Small\_Plane@{Small\_Plane}!get\_type@{get\_type}}
+\index{get\_type@{get\_type}!Small\_Plane@{Small\_Plane}}
+\doxysubsubsection{\texorpdfstring{get\_type()}{get\_type()}}
+{\footnotesize\ttfamily string Small\+\_\+\+Plane\+::get\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classEntity_a6c717f0586afe7c6f45e2256290eb93a}{Entity}}.
+
+\mbox{\Hypertarget{classSmall__Plane_a7c46558601d833f8b523e2f23f29503f}\label{classSmall__Plane_a7c46558601d833f8b523e2f23f29503f}} 
+\index{Small\_Plane@{Small\_Plane}!tick@{tick}}
+\index{tick@{tick}!Small\_Plane@{Small\_Plane}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily bool Small\+\_\+\+Plane\+::tick (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{delta,  }\item[{\mbox{\hyperlink{classWorld}{World}} \&}]{world }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classEntity_a289f55af645e74428e0b73c1e3c9dc26}{Entity}}.
+
+\mbox{\Hypertarget{classSmall__Plane_a0b8043bfe117ce6ec6a07d1ff27d8eb5}\label{classSmall__Plane_a0b8043bfe117ce6ec6a07d1ff27d8eb5}} 
+\index{Small\_Plane@{Small\_Plane}!vertical\_move@{vertical\_move}}
+\index{vertical\_move@{vertical\_move}!Small\_Plane@{Small\_Plane}}
+\doxysubsubsection{\texorpdfstring{vertical\_move()}{vertical\_move()}}
+{\footnotesize\ttfamily void Small\+\_\+\+Plane\+::vertical\+\_\+move (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classSmall__Plane_af87ef1809b8f8984d388d0f8d862f493}\label{classSmall__Plane_af87ef1809b8f8984d388d0f8d862f493}} 
+\index{Small\_Plane@{Small\_Plane}!freeze\_state@{freeze\_state}}
+\index{freeze\_state@{freeze\_state}!Small\_Plane@{Small\_Plane}}
+\doxysubsubsection{\texorpdfstring{freeze\_state}{freeze\_state}}
+{\footnotesize\ttfamily bool Small\+\_\+\+Plane\+::freeze\+\_\+state\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSmall__Plane_a8592d8d99d885d72ac5194bfd5791894}\label{classSmall__Plane_a8592d8d99d885d72ac5194bfd5791894}} 
+\index{Small\_Plane@{Small\_Plane}!shoot\_speed@{shoot\_speed}}
+\index{shoot\_speed@{shoot\_speed}!Small\_Plane@{Small\_Plane}}
+\doxysubsubsection{\texorpdfstring{shoot\_speed}{shoot\_speed}}
+{\footnotesize\ttfamily float Small\+\_\+\+Plane\+::shoot\+\_\+speed\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSmall__Plane_a89cf2d44747980f753b02bfc9a00b327}\label{classSmall__Plane_a89cf2d44747980f753b02bfc9a00b327}} 
+\index{Small\_Plane@{Small\_Plane}!shoot\_time@{shoot\_time}}
+\index{shoot\_time@{shoot\_time}!Small\_Plane@{Small\_Plane}}
+\doxysubsubsection{\texorpdfstring{shoot\_time}{shoot\_time}}
+{\footnotesize\ttfamily sf\+::\+Time Small\+\_\+\+Plane\+::shoot\+\_\+time\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSmall__Plane_a44445ef138ab75d255df1c6ea0a2521b}\label{classSmall__Plane_a44445ef138ab75d255df1c6ea0a2521b}} 
+\index{Small\_Plane@{Small\_Plane}!shoot\_timer@{shoot\_timer}}
+\index{shoot\_timer@{shoot\_timer}!Small\_Plane@{Small\_Plane}}
+\doxysubsubsection{\texorpdfstring{shoot\_timer}{shoot\_timer}}
+{\footnotesize\ttfamily sf\+::\+Clock Small\+\_\+\+Plane\+::shoot\+\_\+timer\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSmall__Plane_a6f14d273c22f82b247b7b1fa9a25bf61}\label{classSmall__Plane_a6f14d273c22f82b247b7b1fa9a25bf61}} 
+\index{Small\_Plane@{Small\_Plane}!upp\_state@{upp\_state}}
+\index{upp\_state@{upp\_state}!Small\_Plane@{Small\_Plane}}
+\doxysubsubsection{\texorpdfstring{upp\_state}{upp\_state}}
+{\footnotesize\ttfamily bool Small\+\_\+\+Plane\+::upp\+\_\+state\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSmall__Plane_a8a851a9cd5c97d4a4c6e4b788d7b0602}\label{classSmall__Plane_a8a851a9cd5c97d4a4c6e4b788d7b0602}} 
+\index{Small\_Plane@{Small\_Plane}!vertical\_time@{vertical\_time}}
+\index{vertical\_time@{vertical\_time}!Small\_Plane@{Small\_Plane}}
+\doxysubsubsection{\texorpdfstring{vertical\_time}{vertical\_time}}
+{\footnotesize\ttfamily sf\+::\+Time Small\+\_\+\+Plane\+::vertical\+\_\+time\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSmall__Plane_acd68c8546705d4f3c50a2094a7e567a3}\label{classSmall__Plane_acd68c8546705d4f3c50a2094a7e567a3}} 
+\index{Small\_Plane@{Small\_Plane}!vertical\_timer@{vertical\_timer}}
+\index{vertical\_timer@{vertical\_timer}!Small\_Plane@{Small\_Plane}}
+\doxysubsubsection{\texorpdfstring{vertical\_timer}{vertical\_timer}}
+{\footnotesize\ttfamily sf\+::\+Clock Small\+\_\+\+Plane\+::vertical\+\_\+timer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nils/\+TDP005/\+Game/\mbox{\hyperlink{Enemy_8h}{Enemy.\+h}}\item 
+/home/nils/\+TDP005/\+Game/\mbox{\hyperlink{Enemy_8cpp}{Enemy.\+cpp}}\end{DoxyCompactItemize}

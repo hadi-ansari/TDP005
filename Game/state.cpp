@@ -7,23 +7,19 @@ void State::on_key_release(sf::Keyboard::Key) {}
 void State::run(sf::RenderWindow &window, shared_ptr<State> state) {
     sf::Clock clock;
 
-//    --variabler för fps-mätare--
-//    float fps;
-//    sf::Clock fps_clock;
-//    sf::Time previousTime = fps_clock.getElapsedTime();
-//    sf::Time currentTime;
 
     sf::Texture back_image;
     back_image.loadFromFile("Images/Background.png");
     sf::Sprite background(back_image);
 
-    while (state) {
+    //Laddar och startar bakgrundsmusik
+    sf::Music music;
+    music.setLoop(true);
+    music.setVolume(10);
+    if (music.openFromFile("Sound/music.ogg"));
+        music.play();
 
-//        --Skriver ut fps i terminalen--
-//        currentTime = fps_clock.getElapsedTime();
-//        fps = 1.0f / (currentTime.asSeconds() - previousTime.asSeconds()); // the asSeconds returns a float
-//        std::cout << "fps =" << floor(fps) << std::endl; // flooring it will make the frame rate a rounded number
-//        previousTime = currentTime;
+    while (state) {
 
         sf::Event event;
 

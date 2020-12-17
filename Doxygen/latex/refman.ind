@@ -1,0 +1,525 @@
+\begin{theindex}
+
+  \item {/home/nils/TDP005/Game/Bullet.cpp}, \hyperpage{53}
+  \item {/home/nils/TDP005/Game/Bullet.h}, \hyperpage{53}
+  \item {/home/nils/TDP005/Game/Enemy.cpp}, \hyperpage{53}
+  \item {/home/nils/TDP005/Game/Enemy.h}, \hyperpage{54}
+  \item {/home/nils/TDP005/Game/Entity.cpp}, \hyperpage{54}
+  \item {/home/nils/TDP005/Game/Entity.h}, \hyperpage{54}
+  \item {/home/nils/TDP005/Game/Level.cpp}, \hyperpage{55}
+  \item {/home/nils/TDP005/Game/Level.h}, \hyperpage{55}
+  \item {/home/nils/TDP005/Game/Player.cpp}, \hyperpage{56}
+  \item {/home/nils/TDP005/Game/Player.h}, \hyperpage{57}
+  \item {/home/nils/TDP005/Game/Powerup.cpp}, \hyperpage{57}
+  \item {/home/nils/TDP005/Game/Powerup.h}, \hyperpage{57}
+  \item {/home/nils/TDP005/Game/Texture\_manager.cpp}, \hyperpage{58}
+  \item {/home/nils/TDP005/Game/Texture\_manager.h}, \hyperpage{58}
+  \item {/home/nils/TDP005/Game/World.cpp}, \hyperpage{58}
+  \item {/home/nils/TDP005/Game/World.h}, \hyperpage{58}
+  \item {/home/nils/TDP005/Game/common.h}, \hyperpage{53}
+  \item {/home/nils/TDP005/Game/game\_state.cpp}, \hyperpage{54}
+  \item {/home/nils/TDP005/Game/game\_state.h}, \hyperpage{54}
+  \item {/home/nils/TDP005/Game/main.cpp}, \hyperpage{55}
+  \item {/home/nils/TDP005/Game/menu\_state.cpp}, \hyperpage{56}
+  \item {/home/nils/TDP005/Game/menu\_state.h}, \hyperpage{56}
+  \item {/home/nils/TDP005/Game/state.cpp}, \hyperpage{57}
+  \item {/home/nils/TDP005/Game/state.h}, \hyperpage{57}
+  \item {$\sim$Big\_Plane}
+    \subitem {Big\_Plane}, \hyperpage{8}
+  \item {$\sim$Bomb}
+    \subitem {Bomb}, \hyperpage{10}
+  \item {$\sim$Bullet}
+    \subitem {Bullet}, \hyperpage{11}
+  \item {$\sim$Enemy}
+    \subitem {Enemy}, \hyperpage{14}
+  \item {$\sim$Enemy\_Bullet}
+    \subitem {Enemy\_Bullet}, \hyperpage{15}
+  \item {$\sim$Entity}
+    \subitem {Entity}, \hyperpage{17}
+  \item {$\sim$Level}
+    \subitem {Level}, \hyperpage{25}
+  \item {$\sim$Player}
+    \subitem {Player}, \hyperpage{33}
+  \item {$\sim$Player\_Bullet}
+    \subitem {Player\_Bullet}, \hyperpage{37}
+  \item {$\sim$Powerup}
+    \subitem {Powerup}, \hyperpage{39}
+  \item {$\sim$Small\_Plane}
+    \subitem {Small\_Plane}, \hyperpage{41}
+  \item {$\sim$State}
+    \subitem {State}, \hyperpage{44}
+  \item {$\sim$World}
+    \subitem {World}, \hyperpage{48}
+
+  \indexspace
+
+  \item {Action}
+    \subitem {Menu\_State}, \hyperpage{29}
+  \item {action}
+    \subitem {Menu\_State::Entry}, \hyperpage{20}
+  \item {add}
+    \subitem {Menu\_State}, \hyperpage{29}
+  \item {add\_score}
+    \subitem {World}, \hyperpage{49}
+
+  \indexspace
+
+  \item {background}
+    \subitem {Menu\_State}, \hyperpage{30}
+  \item {Big\_Plane}, \hyperpage{7}
+    \subitem {$\sim$Big\_Plane}, \hyperpage{8}
+    \subitem {Big\_Plane}, \hyperpage{8}
+    \subitem {freeze}, \hyperpage{8}
+    \subitem {freeze\_state}, \hyperpage{9}
+    \subitem {get\_type}, \hyperpage{8}
+    \subitem {shoot\_speed}, \hyperpage{9}
+    \subitem {shoot\_time}, \hyperpage{9}
+    \subitem {shoot\_timer}, \hyperpage{9}
+    \subitem {tick}, \hyperpage{8}
+  \item {Bomb}, \hyperpage{9}
+    \subitem {$\sim$Bomb}, \hyperpage{10}
+    \subitem {Bomb}, \hyperpage{10}
+    \subitem {get\_type}, \hyperpage{10}
+  \item {Bullet}, \hyperpage{11}
+    \subitem {$\sim$Bullet}, \hyperpage{11}
+    \subitem {Bullet}, \hyperpage{11}
+
+  \indexspace
+
+  \item {cheat}
+    \subitem {Player}, \hyperpage{33}
+  \item {collision}
+    \subitem {Enemy}, \hyperpage{14}
+    \subitem {Enemy\_Bullet}, \hyperpage{16}
+    \subitem {Entity}, \hyperpage{18}
+    \subitem {Player}, \hyperpage{33}
+    \subitem {Player\_Bullet}, \hyperpage{38}
+    \subitem {Powerup}, \hyperpage{39}
+  \item {counter}
+    \subitem {World}, \hyperpage{49}
+
+  \indexspace
+
+  \item {data}
+    \subitem {Level}, \hyperpage{26}
+  \item {delay}
+    \subitem {Menu\_State}, \hyperpage{30}
+
+  \indexspace
+
+  \item {End\_State}, \hyperpage{12}
+    \subitem {End\_State}, \hyperpage{12}
+    \subitem {rating}, \hyperpage{13}
+    \subitem {render}, \hyperpage{12}
+    \subitem {score\_info}, \hyperpage{13}
+    \subitem {status\_text}, \hyperpage{13}
+    \subitem {texture}, \hyperpage{13}
+  \item {Enemy}, \hyperpage{14}
+    \subitem {$\sim$Enemy}, \hyperpage{14}
+    \subitem {collision}, \hyperpage{14}
+    \subitem {Enemy}, \hyperpage{14}
+  \item {Enemy\_Bullet}, \hyperpage{15}
+    \subitem {$\sim$Enemy\_Bullet}, \hyperpage{15}
+    \subitem {collision}, \hyperpage{16}
+    \subitem {Enemy\_Bullet}, \hyperpage{15}
+    \subitem {get\_type}, \hyperpage{16}
+  \item {enter\_pressed}
+    \subitem {Menu\_State}, \hyperpage{30}
+  \item {Entity}, \hyperpage{16}
+    \subitem {$\sim$Entity}, \hyperpage{17}
+    \subitem {collision}, \hyperpage{18}
+    \subitem {Entity}, \hyperpage{17}
+    \subitem {freeze}, \hyperpage{18}
+    \subitem {get\_health}, \hyperpage{18}
+    \subitem {get\_sprite}, \hyperpage{18}
+    \subitem {get\_type}, \hyperpage{18}
+    \subitem {health}, \hyperpage{19}
+    \subitem {height}, \hyperpage{19}
+    \subitem {kill\_me}, \hyperpage{18}
+    \subitem {location}, \hyperpage{19}
+    \subitem {render}, \hyperpage{18}
+    \subitem {speed}, \hyperpage{19}
+    \subitem {sprite}, \hyperpage{19}
+    \subitem {tick}, \hyperpage{19}
+    \subitem {width}, \hyperpage{20}
+  \item {entries}
+    \subitem {Menu\_State}, \hyperpage{30}
+  \item {Exit\_State}, \hyperpage{21}
+    \subitem {render}, \hyperpage{21}
+    \subitem {tick}, \hyperpage{21}
+
+  \indexspace
+
+  \item {font}
+    \subitem {Menu\_State}, \hyperpage{30}
+    \subitem {World}, \hyperpage{50}
+  \item {freeze}
+    \subitem {Big\_Plane}, \hyperpage{8}
+    \subitem {Entity}, \hyperpage{18}
+    \subitem {Player}, \hyperpage{33}
+    \subitem {Small\_Plane}, \hyperpage{41}
+    \subitem {World}, \hyperpage{49}
+  \item {freeze\_state}
+    \subitem {Big\_Plane}, \hyperpage{9}
+    \subitem {Player}, \hyperpage{35}
+    \subitem {Small\_Plane}, \hyperpage{42}
+    \subitem {World}, \hyperpage{50}
+
+  \indexspace
+
+  \item {Game\_State}, \hyperpage{22}
+    \subitem {Game\_State}, \hyperpage{22}
+    \subitem {level\_path}, \hyperpage{23}
+    \subitem {render}, \hyperpage{23}
+    \subitem {tick}, \hyperpage{23}
+    \subitem {world}, \hyperpage{23}
+  \item {game\_time}
+    \subitem {World}, \hyperpage{50}
+  \item {game\_timer}
+    \subitem {World}, \hyperpage{50}
+  \item {get}
+    \subitem {Texture\_Manager}, \hyperpage{46}
+  \item {get\_health}
+    \subitem {Entity}, \hyperpage{18}
+  \item {get\_shield\_time}
+    \subitem {Player}, \hyperpage{33}
+  \item {get\_sprite}
+    \subitem {Entity}, \hyperpage{18}
+  \item {get\_type}
+    \subitem {Big\_Plane}, \hyperpage{8}
+    \subitem {Bomb}, \hyperpage{10}
+    \subitem {Enemy\_Bullet}, \hyperpage{16}
+    \subitem {Entity}, \hyperpage{18}
+    \subitem {Player}, \hyperpage{34}
+    \subitem {Player\_Bullet}, \hyperpage{38}
+    \subitem {Powerup}, \hyperpage{39}
+    \subitem {Small\_Plane}, \hyperpage{41}
+  \item {give\_invincible}
+    \subitem {Player}, \hyperpage{35}
+
+  \indexspace
+
+  \item {has\_shield}
+    \subitem {Player}, \hyperpage{34}
+  \item {health}
+    \subitem {Entity}, \hyperpage{19}
+  \item {height}
+    \subitem {Entity}, \hyperpage{19}
+    \subitem {main.cpp}, \hyperpage{56}
+  \item {Help\_State}, \hyperpage{24}
+    \subitem {Help\_State}, \hyperpage{24}
+    \subitem {keyboard\_guide}, \hyperpage{25}
+    \subitem {render}, \hyperpage{24}
+    \subitem {texture}, \hyperpage{25}
+
+  \indexspace
+
+  \item {insert\_object}
+    \subitem {World}, \hyperpage{49}
+  \item {instance}
+    \subitem {Texture\_Manager}, \hyperpage{46}
+  \item {invincibility\_time}
+    \subitem {Player}, \hyperpage{35}
+  \item {invincibility\_timer}
+    \subitem {Player}, \hyperpage{35}
+  \item {invincible}
+    \subitem {Player}, \hyperpage{35}
+  \item {is\_invincible}
+    \subitem {Player}, \hyperpage{34}
+
+  \indexspace
+
+  \item {keyboard\_guide}
+    \subitem {Help\_State}, \hyperpage{25}
+  \item {kill\_me}
+    \subitem {Entity}, \hyperpage{18}
+
+  \indexspace
+
+  \item {Level}, \hyperpage{25}
+    \subitem {$\sim$Level}, \hyperpage{25}
+    \subitem {data}, \hyperpage{26}
+    \subitem {Level}, \hyperpage{25}
+    \subitem {load\_enemy}, \hyperpage{26}
+    \subitem {max\_score}, \hyperpage{26}
+  \item {level}
+    \subitem {World}, \hyperpage{50}
+  \item {level\_name}
+    \subitem {World}, \hyperpage{50}
+  \item {level\_path}
+    \subitem {Game\_State}, \hyperpage{23}
+  \item {Level\_Selection\_State}, \hyperpage{26}
+    \subitem {Level\_Selection\_State}, \hyperpage{27}
+  \item {life\_info}
+    \subitem {World}, \hyperpage{50}
+  \item {load\_enemy}
+    \subitem {Level}, \hyperpage{26}
+  \item {location}
+    \subitem {Entity}, \hyperpage{19}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.cpp}, \hyperpage{55}
+  \item {main.cpp}
+    \subitem {height}, \hyperpage{56}
+    \subitem {main}, \hyperpage{55}
+    \subitem {width}, \hyperpage{56}
+  \item {Main\_Menu\_State}, \hyperpage{27}
+    \subitem {Main\_Menu\_State}, \hyperpage{27}
+  \item {manage\_collision}
+    \subitem {World}, \hyperpage{49}
+  \item {max\_score}
+    \subitem {Level}, \hyperpage{26}
+  \item {Menu\_State}, \hyperpage{28}
+    \subitem {Action}, \hyperpage{29}
+    \subitem {add}, \hyperpage{29}
+    \subitem {background}, \hyperpage{30}
+    \subitem {delay}, \hyperpage{30}
+    \subitem {enter\_pressed}, \hyperpage{30}
+    \subitem {entries}, \hyperpage{30}
+    \subitem {font}, \hyperpage{30}
+    \subitem {Menu\_State}, \hyperpage{29}
+    \subitem {on\_key\_press}, \hyperpage{29}
+    \subitem {render}, \hyperpage{29}
+    \subitem {selected}, \hyperpage{30}
+    \subitem {tick}, \hyperpage{29}
+  \item {Menu\_State::Entry}, \hyperpage{20}
+    \subitem {action}, \hyperpage{20}
+    \subitem {state}, \hyperpage{20}
+    \subitem {text}, \hyperpage{20}
+
+  \indexspace
+
+  \item {name}
+    \subitem {Powerup}, \hyperpage{40}
+
+  \indexspace
+
+  \item {objects}
+    \subitem {World}, \hyperpage{50}
+  \item {on\_key\_press}
+    \subitem {Menu\_State}, \hyperpage{29}
+    \subitem {State}, \hyperpage{44}
+  \item {on\_key\_release}
+    \subitem {State}, \hyperpage{44}
+
+  \indexspace
+
+  \item {Pause\_State}, \hyperpage{31}
+    \subitem {Pause\_State}, \hyperpage{31}
+  \item {Player}, \hyperpage{32}
+    \subitem {$\sim$Player}, \hyperpage{33}
+    \subitem {cheat}, \hyperpage{33}
+    \subitem {collision}, \hyperpage{33}
+    \subitem {freeze}, \hyperpage{33}
+    \subitem {freeze\_state}, \hyperpage{35}
+    \subitem {get\_shield\_time}, \hyperpage{33}
+    \subitem {get\_type}, \hyperpage{34}
+    \subitem {give\_invincible}, \hyperpage{35}
+    \subitem {has\_shield}, \hyperpage{34}
+    \subitem {invincibility\_time}, \hyperpage{35}
+    \subitem {invincibility\_timer}, \hyperpage{35}
+    \subitem {invincible}, \hyperpage{35}
+    \subitem {is\_invincible}, \hyperpage{34}
+    \subitem {Player}, \hyperpage{33}
+    \subitem {set\_position}, \hyperpage{34}
+    \subitem {shield}, \hyperpage{35}
+    \subitem {shield\_time}, \hyperpage{35}
+    \subitem {shield\_timer}, \hyperpage{36}
+    \subitem {shoot}, \hyperpage{34}
+    \subitem {shoot\_speed}, \hyperpage{36}
+    \subitem {shoot\_time}, \hyperpage{36}
+    \subitem {shoot\_timer}, \hyperpage{36}
+    \subitem {tick}, \hyperpage{34}
+    \subitem {triple\_time}, \hyperpage{36}
+    \subitem {triple\_timer}, \hyperpage{36}
+    \subitem {tripleshot}, \hyperpage{36}
+    \subitem {update\_status}, \hyperpage{34}
+  \item {player}
+    \subitem {World}, \hyperpage{51}
+  \item {Player\_Bullet}, \hyperpage{37}
+    \subitem {$\sim$Player\_Bullet}, \hyperpage{37}
+    \subitem {collision}, \hyperpage{38}
+    \subitem {get\_type}, \hyperpage{38}
+    \subitem {Player\_Bullet}, \hyperpage{37}
+    \subitem {tick}, \hyperpage{38}
+  \item {Powerup}, \hyperpage{38}
+    \subitem {$\sim$Powerup}, \hyperpage{39}
+    \subitem {collision}, \hyperpage{39}
+    \subitem {get\_type}, \hyperpage{39}
+    \subitem {name}, \hyperpage{40}
+    \subitem {Powerup}, \hyperpage{39}
+
+  \indexspace
+
+  \item {rating}
+    \subitem {End\_State}, \hyperpage{13}
+  \item {render}
+    \subitem {End\_State}, \hyperpage{12}
+    \subitem {Entity}, \hyperpage{18}
+    \subitem {Exit\_State}, \hyperpage{21}
+    \subitem {Game\_State}, \hyperpage{23}
+    \subitem {Help\_State}, \hyperpage{24}
+    \subitem {Menu\_State}, \hyperpage{29}
+    \subitem {State}, \hyperpage{44}
+    \subitem {Textured\_object}, \hyperpage{47}
+    \subitem {World}, \hyperpage{49}
+  \item {run}
+    \subitem {State}, \hyperpage{44}
+
+  \indexspace
+
+  \item {score}
+    \subitem {World}, \hyperpage{51}
+  \item {score\_info}
+    \subitem {End\_State}, \hyperpage{13}
+    \subitem {World}, \hyperpage{51}
+  \item {selected}
+    \subitem {Menu\_State}, \hyperpage{30}
+  \item {set\_position}
+    \subitem {Player}, \hyperpage{34}
+  \item {set\_texture}
+    \subitem {Textured\_object}, \hyperpage{47}
+  \item {shield}
+    \subitem {Player}, \hyperpage{35}
+  \item {shield\_info}
+    \subitem {World}, \hyperpage{51}
+  \item {shield\_time}
+    \subitem {Player}, \hyperpage{35}
+  \item {shield\_timer}
+    \subitem {Player}, \hyperpage{36}
+  \item {shoot}
+    \subitem {Player}, \hyperpage{34}
+  \item {shoot\_speed}
+    \subitem {Big\_Plane}, \hyperpage{9}
+    \subitem {Player}, \hyperpage{36}
+    \subitem {Small\_Plane}, \hyperpage{42}
+  \item {shoot\_time}
+    \subitem {Big\_Plane}, \hyperpage{9}
+    \subitem {Player}, \hyperpage{36}
+    \subitem {Small\_Plane}, \hyperpage{42}
+  \item {shoot\_timer}
+    \subitem {Big\_Plane}, \hyperpage{9}
+    \subitem {Player}, \hyperpage{36}
+    \subitem {Small\_Plane}, \hyperpage{42}
+  \item {Small\_Plane}, \hyperpage{40}
+    \subitem {$\sim$Small\_Plane}, \hyperpage{41}
+    \subitem {freeze}, \hyperpage{41}
+    \subitem {freeze\_state}, \hyperpage{42}
+    \subitem {get\_type}, \hyperpage{41}
+    \subitem {shoot\_speed}, \hyperpage{42}
+    \subitem {shoot\_time}, \hyperpage{42}
+    \subitem {shoot\_timer}, \hyperpage{42}
+    \subitem {Small\_Plane}, \hyperpage{41}
+    \subitem {tick}, \hyperpage{41}
+    \subitem {upp\_state}, \hyperpage{42}
+    \subitem {vertical\_move}, \hyperpage{42}
+    \subitem {vertical\_time}, \hyperpage{43}
+    \subitem {vertical\_timer}, \hyperpage{43}
+  \item {spawn\_time}
+    \subitem {World}, \hyperpage{51}
+  \item {spawn\_timer}
+    \subitem {World}, \hyperpage{51}
+  \item {speed}
+    \subitem {Entity}, \hyperpage{19}
+  \item {sprite}
+    \subitem {Entity}, \hyperpage{19}
+  \item {State}, \hyperpage{43}
+    \subitem {$\sim$State}, \hyperpage{44}
+    \subitem {on\_key\_press}, \hyperpage{44}
+    \subitem {on\_key\_release}, \hyperpage{44}
+    \subitem {render}, \hyperpage{44}
+    \subitem {run}, \hyperpage{44}
+    \subitem {State}, \hyperpage{44}
+    \subitem {tick}, \hyperpage{45}
+  \item {state}
+    \subitem {Menu\_State::Entry}, \hyperpage{20}
+  \item {status\_text}
+    \subitem {End\_State}, \hyperpage{13}
+
+  \indexspace
+
+  \item {text}
+    \subitem {Menu\_State::Entry}, \hyperpage{20}
+  \item {texture}
+    \subitem {End\_State}, \hyperpage{13}
+    \subitem {Help\_State}, \hyperpage{25}
+  \item {Texture\_Manager}, \hyperpage{45}
+    \subitem {get}, \hyperpage{46}
+    \subitem {instance}, \hyperpage{46}
+    \subitem {Texture\_Manager}, \hyperpage{45}
+    \subitem {textures}, \hyperpage{46}
+  \item {Textured\_object}, \hyperpage{46}
+    \subitem {render}, \hyperpage{47}
+    \subitem {set\_texture}, \hyperpage{47}
+    \subitem {Textured\_object}, \hyperpage{47}
+  \item {textures}
+    \subitem {Texture\_Manager}, \hyperpage{46}
+  \item {tick}
+    \subitem {Big\_Plane}, \hyperpage{8}
+    \subitem {Entity}, \hyperpage{19}
+    \subitem {Exit\_State}, \hyperpage{21}
+    \subitem {Game\_State}, \hyperpage{23}
+    \subitem {Menu\_State}, \hyperpage{29}
+    \subitem {Player}, \hyperpage{34}
+    \subitem {Player\_Bullet}, \hyperpage{38}
+    \subitem {Small\_Plane}, \hyperpage{41}
+    \subitem {State}, \hyperpage{45}
+    \subitem {World}, \hyperpage{49}
+  \item {triple\_time}
+    \subitem {Player}, \hyperpage{36}
+  \item {triple\_timer}
+    \subitem {Player}, \hyperpage{36}
+  \item {tripleshot}
+    \subitem {Player}, \hyperpage{36}
+
+  \indexspace
+
+  \item {update\_status}
+    \subitem {Player}, \hyperpage{34}
+  \item {upp\_state}
+    \subitem {Small\_Plane}, \hyperpage{42}
+
+  \indexspace
+
+  \item {vertical\_move}
+    \subitem {Small\_Plane}, \hyperpage{42}
+  \item {vertical\_time}
+    \subitem {Small\_Plane}, \hyperpage{43}
+  \item {vertical\_timer}
+    \subitem {Small\_Plane}, \hyperpage{43}
+
+  \indexspace
+
+  \item {width}
+    \subitem {Entity}, \hyperpage{20}
+    \subitem {main.cpp}, \hyperpage{56}
+  \item {World}, \hyperpage{47}
+    \subitem {$\sim$World}, \hyperpage{48}
+    \subitem {add\_score}, \hyperpage{49}
+    \subitem {counter}, \hyperpage{49}
+    \subitem {font}, \hyperpage{50}
+    \subitem {freeze}, \hyperpage{49}
+    \subitem {freeze\_state}, \hyperpage{50}
+    \subitem {game\_time}, \hyperpage{50}
+    \subitem {game\_timer}, \hyperpage{50}
+    \subitem {insert\_object}, \hyperpage{49}
+    \subitem {level}, \hyperpage{50}
+    \subitem {level\_name}, \hyperpage{50}
+    \subitem {life\_info}, \hyperpage{50}
+    \subitem {manage\_collision}, \hyperpage{49}
+    \subitem {objects}, \hyperpage{50}
+    \subitem {player}, \hyperpage{51}
+    \subitem {render}, \hyperpage{49}
+    \subitem {score}, \hyperpage{51}
+    \subitem {score\_info}, \hyperpage{51}
+    \subitem {shield\_info}, \hyperpage{51}
+    \subitem {spawn\_time}, \hyperpage{51}
+    \subitem {spawn\_timer}, \hyperpage{51}
+    \subitem {tick}, \hyperpage{49}
+    \subitem {World}, \hyperpage{48}
+  \item {world}
+    \subitem {Game\_State}, \hyperpage{23}
+
+\end{theindex}

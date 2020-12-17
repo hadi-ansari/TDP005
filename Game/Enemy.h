@@ -11,6 +11,7 @@ struct Enemy: public Textured_object
 
     void collision(vector<shared_ptr<Entity>> const& objects, World &world) override;
 };
+
 class Bomb : public Enemy
 {
 public:
@@ -19,6 +20,7 @@ public:
 
     string get_type() override {return "Bomb";};
 };
+
 class Small_Plane: public Enemy
 {
 public:
@@ -31,17 +33,17 @@ public:
     string get_type() override {return "Small Plane";};
 
 private:
-    void vertical_move(sf::Time delta);
+    void vertical_move(sf::Time delta); //Flyttar small plane vertikalt upp/ner baserat på tid. Skapar en vågrörelse tillsammans med tick
 
     float shoot_speed;
     sf::Clock shoot_timer;
     sf::Time shoot_time;
 
-    bool upp_state;
+    bool upp_state; //Ska small plane färdas uppåt (true) eller nedåt (false)?
     sf::Clock vertical_timer;
     sf::Time vertical_time;
 
-    bool freeze_state;
+    bool freeze_state; //Är spelet pausat?
 };
 
 class Big_Plane: public Enemy

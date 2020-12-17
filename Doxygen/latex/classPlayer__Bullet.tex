@@ -1,0 +1,80 @@
+\hypertarget{classPlayer__Bullet}{}\doxysection{Player\+\_\+\+Bullet Class Reference}
+\label{classPlayer__Bullet}\index{Player\_Bullet@{Player\_Bullet}}
+
+
+{\ttfamily \#include $<$Bullet.\+h$>$}
+
+Inheritance diagram for Player\+\_\+\+Bullet\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classPlayer__Bullet}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPlayer__Bullet_a185a4bc261ba9b423d0ba2feb752dc19}{Player\+\_\+\+Bullet}} (sf\+::\+Vector2f \mbox{\hyperlink{classEntity_a5b94ee2356d46ca6852e2807c3701133}{location}})
+\item 
+\mbox{\hyperlink{classPlayer__Bullet_a75214f6b56278b8df916ca1dcad5754d}{$\sim$\+Player\+\_\+\+Bullet}} () override=default
+\item 
+bool \mbox{\hyperlink{classPlayer__Bullet_ad0bbf6d382bcd38b2b13669f20a055e6}{tick}} (sf\+::\+Time delta, \mbox{\hyperlink{classWorld}{World}} \&world) override
+\item 
+void \mbox{\hyperlink{classPlayer__Bullet_afca6c601268ea32f0964c8cccad340cc}{collision}} (vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classEntity}{Entity}} $>$$>$ const \&objects, \mbox{\hyperlink{classWorld}{World}} \&world) override
+\item 
+string \mbox{\hyperlink{classPlayer__Bullet_ad2c8322e31f2a502a81c9ec21ad76ab1}{get\+\_\+type}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPlayer__Bullet_a185a4bc261ba9b423d0ba2feb752dc19}\label{classPlayer__Bullet_a185a4bc261ba9b423d0ba2feb752dc19}} 
+\index{Player\_Bullet@{Player\_Bullet}!Player\_Bullet@{Player\_Bullet}}
+\index{Player\_Bullet@{Player\_Bullet}!Player\_Bullet@{Player\_Bullet}}
+\doxysubsubsection{\texorpdfstring{Player\_Bullet()}{Player\_Bullet()}}
+{\footnotesize\ttfamily Player\+\_\+\+Bullet\+::\+Player\+\_\+\+Bullet (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{location }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classPlayer__Bullet_a75214f6b56278b8df916ca1dcad5754d}\label{classPlayer__Bullet_a75214f6b56278b8df916ca1dcad5754d}} 
+\index{Player\_Bullet@{Player\_Bullet}!````~Player\_Bullet@{$\sim$Player\_Bullet}}
+\index{````~Player\_Bullet@{$\sim$Player\_Bullet}!Player\_Bullet@{Player\_Bullet}}
+\doxysubsubsection{\texorpdfstring{$\sim$Player\_Bullet()}{~Player\_Bullet()}}
+{\footnotesize\ttfamily Player\+\_\+\+Bullet\+::$\sim$\+Player\+\_\+\+Bullet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPlayer__Bullet_afca6c601268ea32f0964c8cccad340cc}\label{classPlayer__Bullet_afca6c601268ea32f0964c8cccad340cc}} 
+\index{Player\_Bullet@{Player\_Bullet}!collision@{collision}}
+\index{collision@{collision}!Player\_Bullet@{Player\_Bullet}}
+\doxysubsubsection{\texorpdfstring{collision()}{collision()}}
+{\footnotesize\ttfamily void Player\+\_\+\+Bullet\+::collision (\begin{DoxyParamCaption}\item[{vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classEntity}{Entity}} $>$$>$ const \&}]{objects,  }\item[{\mbox{\hyperlink{classWorld}{World}} \&}]{world }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classEntity_ade8262714897f41bd94e9d06a2b8df31}{Entity}}.
+
+\mbox{\Hypertarget{classPlayer__Bullet_ad2c8322e31f2a502a81c9ec21ad76ab1}\label{classPlayer__Bullet_ad2c8322e31f2a502a81c9ec21ad76ab1}} 
+\index{Player\_Bullet@{Player\_Bullet}!get\_type@{get\_type}}
+\index{get\_type@{get\_type}!Player\_Bullet@{Player\_Bullet}}
+\doxysubsubsection{\texorpdfstring{get\_type()}{get\_type()}}
+{\footnotesize\ttfamily string Player\+\_\+\+Bullet\+::get\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classEntity_a6c717f0586afe7c6f45e2256290eb93a}{Entity}}.
+
+\mbox{\Hypertarget{classPlayer__Bullet_ad0bbf6d382bcd38b2b13669f20a055e6}\label{classPlayer__Bullet_ad0bbf6d382bcd38b2b13669f20a055e6}} 
+\index{Player\_Bullet@{Player\_Bullet}!tick@{tick}}
+\index{tick@{tick}!Player\_Bullet@{Player\_Bullet}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily bool Player\+\_\+\+Bullet\+::tick (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{delta,  }\item[{\mbox{\hyperlink{classWorld}{World}} \&}]{world }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classEntity_a289f55af645e74428e0b73c1e3c9dc26}{Entity}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nils/\+TDP005/\+Game/\mbox{\hyperlink{Bullet_8h}{Bullet.\+h}}\item 
+/home/nils/\+TDP005/\+Game/\mbox{\hyperlink{Bullet_8cpp}{Bullet.\+cpp}}\end{DoxyCompactItemize}

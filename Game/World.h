@@ -16,10 +16,8 @@ public:
     /* Lägger till en objekt */
     void insert_object(shared_ptr<Entity> const& object);
 
-    /* Uppdaterar alla objekt*/
     shared_ptr<State> tick(sf::Time delta);
 
-    /* Ritar på skärmen*/
     void render(sf::RenderWindow & window);
 
     /* Lägger till poäng */
@@ -28,10 +26,10 @@ public:
     void freeze();
 
 private:
-    /* Åtgärdar konsekvenser för kollision mellan varje spelobjekt */
+    //Kallar på alla spelobjekts kollisionfunktioner
     void manage_collision();
 
-    vector <shared_ptr <Entity>> objects{};
+    vector <shared_ptr <Entity>> objects{}; //Sparar alla spelobjekt
     shared_ptr<Player> player{};
     int score;
     int counter;
@@ -39,8 +37,8 @@ private:
     sf::Text life_info;
     sf::Text shield_info;
     sf::Text score_info;
-    sf::Clock enemy_timer;
-    sf::Time enemy_time;
+    sf::Clock spawn_timer;
+    sf::Time spawn_time;
     sf::Clock game_timer;
     sf::Time game_time;
     Level level;

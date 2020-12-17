@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.9.8)  16 DEC 2020 19:35
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2020.9.8)  17 DEC 2020 13:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -749,7 +749,7 @@ med att spelaren plockade upp en tripleshot-powerup.
 File: UML_diagram.png Graphic file (type bmp)
 <UML_diagram.png>
 
-Overfull \hbox (43.7544pt too wide) in paragraph at lines 125--127
+Overfull \hbox (43.7544pt too wide) in paragraph at lines 137--139
  [][] 
  []
 
@@ -759,11 +759,11 @@ AED: lastpage setting LastPage
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [3] [4]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 129.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 129.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 141.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 141.
  (./Designspecifikation.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 129.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 129.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 141.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 141.
 Package rerunfilecheck Info: File `Designspecifikation.out' has not changed.
 (rerunfilecheck)             Checksum: 2411ECB088C1C068B6F28A9276EA31BB;510.
 
@@ -774,7 +774,7 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 129.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 141.
  ) 
 Here is how much of TeX's memory you used:
  22902 strings out of 479819
@@ -785,4 +785,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  68i,12n,64p,954b,640s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Designspecifikation.xdv (5 pages, 85028 bytes).
+Output written on Designspecifikation.xdv (5 pages, 93240 bytes).

@@ -1,0 +1,90 @@
+\hypertarget{classGame__State}{}\doxysection{Game\+\_\+\+State Class Reference}
+\label{classGame__State}\index{Game\_State@{Game\_State}}
+
+
+{\ttfamily \#include $<$game\+\_\+state.\+h$>$}
+
+Inheritance diagram for Game\+\_\+\+State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classGame__State}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGame__State_a624e26c42312574aa3e2259bb17530c1}{Game\+\_\+\+State}} ()=default
+\item 
+\mbox{\hyperlink{classGame__State_a4fa7da0b52b540983ca1fb9d6bad4400}{Game\+\_\+\+State}} (string const \&\mbox{\hyperlink{classGame__State_a14b37e14f3865876d96322326b66ba25}{level\+\_\+path}})
+\item 
+shared\+\_\+ptr$<$ \mbox{\hyperlink{classState}{State}} $>$ \mbox{\hyperlink{classGame__State_ac017af5bddbeca46076c0b82fc88d638}{tick}} (sf\+::\+Time delta) override
+\item 
+void \mbox{\hyperlink{classGame__State_a5fcab9e468f8cba4afb3ac570e88d0e0}{render}} (sf\+::\+Render\+Window \&to) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWorld}{World}} \mbox{\hyperlink{classGame__State_a48027fd071786916081f283f4982b294}{world}}
+\item 
+string const \mbox{\hyperlink{classGame__State_a14b37e14f3865876d96322326b66ba25}{level\+\_\+path}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGame__State_a624e26c42312574aa3e2259bb17530c1}\label{classGame__State_a624e26c42312574aa3e2259bb17530c1}} 
+\index{Game\_State@{Game\_State}!Game\_State@{Game\_State}}
+\index{Game\_State@{Game\_State}!Game\_State@{Game\_State}}
+\doxysubsubsection{\texorpdfstring{Game\_State()}{Game\_State()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Game\+\_\+\+State\+::\+Game\+\_\+\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classGame__State_a4fa7da0b52b540983ca1fb9d6bad4400}\label{classGame__State_a4fa7da0b52b540983ca1fb9d6bad4400}} 
+\index{Game\_State@{Game\_State}!Game\_State@{Game\_State}}
+\index{Game\_State@{Game\_State}!Game\_State@{Game\_State}}
+\doxysubsubsection{\texorpdfstring{Game\_State()}{Game\_State()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Game\+\_\+\+State\+::\+Game\+\_\+\+State (\begin{DoxyParamCaption}\item[{string const \&}]{level\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGame__State_a5fcab9e468f8cba4afb3ac570e88d0e0}\label{classGame__State_a5fcab9e468f8cba4afb3ac570e88d0e0}} 
+\index{Game\_State@{Game\_State}!render@{render}}
+\index{render@{render}!Game\_State@{Game\_State}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Game\+\_\+\+State\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{to }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classState_aed558c6b578efb70ee2ba7f6df9aebb9}{State}}.
+
+\mbox{\Hypertarget{classGame__State_ac017af5bddbeca46076c0b82fc88d638}\label{classGame__State_ac017af5bddbeca46076c0b82fc88d638}} 
+\index{Game\_State@{Game\_State}!tick@{tick}}
+\index{tick@{tick}!Game\_State@{Game\_State}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$ \mbox{\hyperlink{classState}{State}} $>$ Game\+\_\+\+State\+::tick (\begin{DoxyParamCaption}\item[{sf\+::\+Time}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classState_a62c94afbfbe48c1b745289ea481dfee1}{State}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classGame__State_a14b37e14f3865876d96322326b66ba25}\label{classGame__State_a14b37e14f3865876d96322326b66ba25}} 
+\index{Game\_State@{Game\_State}!level\_path@{level\_path}}
+\index{level\_path@{level\_path}!Game\_State@{Game\_State}}
+\doxysubsubsection{\texorpdfstring{level\_path}{level\_path}}
+{\footnotesize\ttfamily string const Game\+\_\+\+State\+::level\+\_\+path\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classGame__State_a48027fd071786916081f283f4982b294}\label{classGame__State_a48027fd071786916081f283f4982b294}} 
+\index{Game\_State@{Game\_State}!world@{world}}
+\index{world@{world}!Game\_State@{Game\_State}}
+\doxysubsubsection{\texorpdfstring{world}{world}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classWorld}{World}} Game\+\_\+\+State\+::world\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nils/\+TDP005/\+Game/\mbox{\hyperlink{game__state_8h}{game\+\_\+state.\+h}}\item 
+/home/nils/\+TDP005/\+Game/\mbox{\hyperlink{game__state_8cpp}{game\+\_\+state.\+cpp}}\end{DoxyCompactItemize}
