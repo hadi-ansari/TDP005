@@ -108,6 +108,7 @@ void Help_State::render(sf::RenderWindow &window)
 //
 Level_Selection_State::Level_Selection_State() {
     add("Level 1", []() { return make_shared<Game_State>("Levels/level1.sw"); });
+    add("Level 2", []() { return make_shared<Game_State>("Levels/level2.sw"); });
     add("Back", []() { return make_shared<Main_Menu_State>(); });
 }
 
